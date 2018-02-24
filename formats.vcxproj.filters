@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="rage">
+      <UniqueIdentifier>{043D9D7C-F073-9E0D-9960-841085761A0F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rw">
+      <UniqueIdentifier>{6E795900-5A05-880B-C3B3-880BAF5E880B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\formats\formats_pch.h" />
+    <ClInclude Include="src\formats\rage\ragecore.h">
+      <Filter>rage</Filter>
+    </ClInclude>
+    <ClInclude Include="src\formats\rw\rwbase.h">
+      <Filter>rw</Filter>
+    </ClInclude>
+    <ClInclude Include="src\formats\rw\rwcore.h">
+      <Filter>rw</Filter>
+    </ClInclude>
+    <ClInclude Include="src\formats\rw\rwplg.h">
+      <Filter>rw</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\formats\formats_pch.cpp" />
+    <ClCompile Include="src\formats\rw\rwbase.cpp">
+      <Filter>rw</Filter>
+    </ClCompile>
+    <ClCompile Include="src\formats\rw\rwcore.cpp">
+      <Filter>rw</Filter>
+    </ClCompile>
+    <ClCompile Include="src\formats\rw\rwplg.cpp">
+      <Filter>rw</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
