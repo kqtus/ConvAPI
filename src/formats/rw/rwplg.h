@@ -23,7 +23,7 @@ namespace rw
 			}* meshes;
 
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class morph : public chunk_base
@@ -33,7 +33,7 @@ namespace rw
 			uint32_t morph_target_index;
 
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class sky_mipmap_val : public chunk_base
@@ -43,7 +43,7 @@ namespace rw
 			uint32_t kl_value;
 
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class frame : public chunk_base
@@ -53,14 +53,14 @@ namespace rw
 			uint8_t* name;
 
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class hanim : public chunk_base
 		{
 			CONVERTIBLE_ENTITY
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 	}
 }

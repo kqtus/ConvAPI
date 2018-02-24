@@ -96,7 +96,7 @@ namespace rw
 		rpGEOMETRYNATIVEFLAGSMASK = 0x0F000000,
 	};
 
-	class chunk_base : public common::IReadable
+	class chunk_base : public common::IBinReadable
 	{
 		CONVERTIBLE_ENTITY
 	protected:
@@ -107,7 +107,7 @@ namespace rw
 	public:
 		chunk_base();
 
-		bool Read(in_stream& stream) override;
+		bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		std::string ToString() const;
 	};
 
@@ -115,7 +115,7 @@ namespace rw
 	{
 		CONVERTIBLE_ENTITY
 	public:
-		bool Read(in_stream& stream) override;
+		bool Read(in_stream<EStreamType::BINARY>& stream) override;
 	};
 
 }

@@ -3,15 +3,27 @@
 
 namespace common
 {
-	class IReadable
+	class IBinReadable
 	{
 	public:
-		virtual bool Read(in_stream& stream) = 0;
+		virtual bool Read(in_stream<EStreamType::BINARY>& stream) = 0;
 	};
 
-	class IWriteable
+	class IBinWriteable
 	{
 	public:
-		virtual bool Write(out_stream& stream) = 0;
+		virtual bool Write(out_stream<EStreamType::BINARY>& stream) = 0;
+	};
+
+	class ITexReadable
+	{
+	public:
+		virtual bool Read(in_stream<EStreamType::TEXT>& stream) = 0;
+	};
+
+	class ITexWriteable
+	{
+	public:
+		virtual bool Write(out_stream<EStreamType::TEXT>& stream) = 0;
 	};
 }

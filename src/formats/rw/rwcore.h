@@ -8,7 +8,6 @@ namespace rw
 {
 	namespace core
 	{
-
 		class texture_data : public chunk_base
 		{
 			CONVERTIBLE_ENTITY
@@ -17,7 +16,7 @@ namespace rw
 			uint16_t pad;
 
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class texture_ext : public chunk_base
@@ -27,7 +26,7 @@ namespace rw
 			plg::sky_mipmap_val sky_mimpap_val_plg;
 
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class texture : public chunk_base
@@ -40,7 +39,7 @@ namespace rw
 			texture_ext extension;
 
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class material_data : public chunk_base
@@ -56,14 +55,14 @@ namespace rw
 		public:
 			//material_data();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class material_ext : public chunk_base
 		{
 			CONVERTIBLE_ENTITY
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class material : public chunk_base
@@ -77,7 +76,7 @@ namespace rw
 		public:
 			//material();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class material_list_data : public chunk_base
@@ -90,7 +89,7 @@ namespace rw
 		public:
 			material_list_data();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class material_list : public chunk_base, private std::vector<material*>
@@ -102,7 +101,7 @@ namespace rw
 		public:
 			material_list();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			using vector::operator[];
 		};
 
@@ -171,7 +170,7 @@ namespace rw
 		public:
 			geometry_data();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class geometry_ext : public chunk_base
@@ -182,7 +181,7 @@ namespace rw
 			plg::morph morph_plg;
 
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class geometry : public chunk_base
@@ -196,7 +195,7 @@ namespace rw
 		public:
 			geometry();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class geometry_list_data : public chunk_base
@@ -208,7 +207,7 @@ namespace rw
 		public:
 			geometry_list_data();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class geometry_list : public chunk_base, private std::vector<geometry*>
@@ -220,7 +219,7 @@ namespace rw
 		public:
 			geometry_list();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			using vector::operator[];
 		};
 
@@ -241,7 +240,7 @@ namespace rw
 		public:
 			frame_list_data();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class frame_list_ext : public chunk_base
@@ -252,7 +251,7 @@ namespace rw
 			plg::frame frame_plg;
 
 		public:
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class frame_list : public chunk_base, private std::vector<frame_list_ext*>
@@ -264,7 +263,7 @@ namespace rw
 		public:
 			frame_list();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			using vector::operator[];
 		};
 
@@ -279,7 +278,7 @@ namespace rw
 		public:
 			clump_data();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			//std::string ToString() const;
 		};
 
@@ -294,7 +293,7 @@ namespace rw
 		public:
 			clump();
 
-			bool Read(in_stream& stream) override;
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			std::string ToString() const;
 		};
 	}

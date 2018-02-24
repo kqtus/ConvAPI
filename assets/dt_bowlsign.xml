@@ -1,0 +1,1025 @@
+<clump size="21339" type="16" version="268697599">
+    <clump_data size="12" type="1" version="268697599">
+        <object_count>1</object_count>
+        <pad1>0</pad1>
+        <pad2>0</pad2>
+    </clump_data>
+    <frame_list size="131" type="14" version="268697599">
+        <frame_list_data size="60" type="1" version="268697599">
+            <frame_count>1</frame_count>
+            <info>
+                <rotation_0_0>1.000000</rotation_0_0>
+                <rotation_0_1>0.000000</rotation_0_1>
+                <rotation_0_2>0.000000</rotation_0_2>
+                <rotation_1_0>0.000000</rotation_1_0>
+                <rotation_1_1>1.000000</rotation_1_1>
+                <rotation_1_2>0.000000</rotation_1_2>
+                <rotation_2_0>0.000000</rotation_2_0>
+                <rotation_2_1>0.000000</rotation_2_1>
+                <rotation_2_2>1.000000</rotation_2_2>
+                <coords_offset.x>0.000000</coords_offset.x>
+                <coords_offset.y>0.000000</coords_offset.y>
+                <coords_offset.z>0.000000</coords_offset.z>
+                <parent_frame>4294967295</parent_frame>
+                <pad>0</pad>
+            </info>
+        </frame_list_data>
+        <frame_list_ext size="47" type="3" version="268697599">
+            <hanim size="12" type="286" version="268697599"/>
+            <frame_plg size="11" type="39056126" version="268697599">
+                <name>dt_bowlsign</name>
+            </frame_plg>
+        </frame_list_ext>
+    </frame_list>
+    <geometry_list size="21096" type="26" version="268697599">
+        <geometry_list_data size="4" type="1" version="268697599">
+            <geometry_count>1</geometry_count>
+        </geometry_list_data>
+        <geometry size="21068" type="15" version="268697599">
+            <geometry_data size="15672" type="1" version="268697599">
+                <header>
+                    <flags>47</flags>
+                    <uv_count>1</uv_count>
+                    <native_flags>0</native_flags>
+                    <face_count>502</face_count>
+                    <vertex_count>484</vertex_count>
+                    <frame_count>1</frame_count>
+                </header>
+                <colours>
+                    <colour _id="0" alpha="255" blue="57" green="57" red="57"/>
+                    <colour _id="1" alpha="255" blue="113" green="113" red="113"/>
+                    <colour _id="2" alpha="255" blue="76" green="76" red="76"/>
+                    <colour _id="3" alpha="255" blue="73" green="73" red="73"/>
+                    <colour _id="4" alpha="255" blue="104" green="104" red="104"/>
+                    <colour _id="5" alpha="255" blue="19" green="19" red="19"/>
+                    <colour _id="6" alpha="255" blue="16" green="16" red="16"/>
+                    <colour _id="7" alpha="255" blue="94" green="94" red="94"/>
+                    <colour _id="8" alpha="255" blue="111" green="111" red="111"/>
+                    <colour _id="9" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="10" alpha="255" blue="32" green="32" red="32"/>
+                    <colour _id="11" alpha="255" blue="47" green="47" red="47"/>
+                    <colour _id="12" alpha="255" blue="8" green="8" red="8"/>
+                    <colour _id="13" alpha="255" blue="72" green="72" red="72"/>
+                    <colour _id="14" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="15" alpha="255" blue="69" green="69" red="69"/>
+                    <colour _id="16" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="17" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="18" alpha="255" blue="30" green="30" red="30"/>
+                    <colour _id="19" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="20" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="21" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="22" alpha="255" blue="51" green="51" red="51"/>
+                    <colour _id="23" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="24" alpha="255" blue="6" green="6" red="6"/>
+                    <colour _id="25" alpha="255" blue="12" green="12" red="12"/>
+                    <colour _id="26" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="27" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="28" alpha="255" blue="14" green="14" red="14"/>
+                    <colour _id="29" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="30" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="31" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="32" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="33" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="34" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="35" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="36" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="37" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="38" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="39" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="40" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="41" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="42" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="43" alpha="255" blue="93" green="93" red="93"/>
+                    <colour _id="44" alpha="255" blue="4" green="4" red="4"/>
+                    <colour _id="45" alpha="255" blue="94" green="94" red="94"/>
+                    <colour _id="46" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="47" alpha="255" blue="93" green="93" red="93"/>
+                    <colour _id="48" alpha="255" blue="115" green="115" red="115"/>
+                    <colour _id="49" alpha="255" blue="4" green="4" red="4"/>
+                    <colour _id="50" alpha="255" blue="94" green="94" red="94"/>
+                    <colour _id="51" alpha="255" blue="116" green="116" red="116"/>
+                    <colour _id="52" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="53" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="54" alpha="255" blue="3" green="3" red="3"/>
+                    <colour _id="55" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="56" alpha="255" blue="85" green="85" red="85"/>
+                    <colour _id="57" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="58" alpha="255" blue="3" green="3" red="3"/>
+                    <colour _id="59" alpha="255" blue="85" green="85" red="85"/>
+                    <colour _id="60" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="61" alpha="255" blue="70" green="70" red="70"/>
+                    <colour _id="62" alpha="255" blue="6" green="6" red="6"/>
+                    <colour _id="63" alpha="255" blue="72" green="72" red="72"/>
+                    <colour _id="64" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="65" alpha="255" blue="59" green="59" red="59"/>
+                    <colour _id="66" alpha="255" blue="70" green="70" red="70"/>
+                    <colour _id="67" alpha="255" blue="6" green="6" red="6"/>
+                    <colour _id="68" alpha="255" blue="60" green="60" red="60"/>
+                    <colour _id="69" alpha="255" blue="72" green="72" red="72"/>
+                    <colour _id="70" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="71" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="72" alpha="255" blue="4" green="4" red="4"/>
+                    <colour _id="73" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="74" alpha="255" blue="38" green="38" red="38"/>
+                    <colour _id="75" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="76" alpha="255" blue="4" green="4" red="4"/>
+                    <colour _id="77" alpha="255" blue="39" green="39" red="39"/>
+                    <colour _id="78" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="79" alpha="255" blue="80" green="80" red="80"/>
+                    <colour _id="80" alpha="255" blue="30" green="30" red="30"/>
+                    <colour _id="81" alpha="255" blue="81" green="81" red="81"/>
+                    <colour _id="82" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="83" alpha="255" blue="80" green="80" red="80"/>
+                    <colour _id="84" alpha="255" blue="101" green="101" red="101"/>
+                    <colour _id="85" alpha="255" blue="30" green="30" red="30"/>
+                    <colour _id="86" alpha="255" blue="82" green="82" red="82"/>
+                    <colour _id="87" alpha="255" blue="103" green="103" red="103"/>
+                    <colour _id="88" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="89" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="90" alpha="255" blue="20" green="20" red="20"/>
+                    <colour _id="91" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="92" alpha="255" blue="69" green="69" red="69"/>
+                    <colour _id="93" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="94" alpha="255" blue="21" green="21" red="21"/>
+                    <colour _id="95" alpha="255" blue="71" green="71" red="71"/>
+                    <colour _id="96" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="97" alpha="255" blue="48" green="48" red="48"/>
+                    <colour _id="98" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="99" alpha="255" blue="48" green="48" red="48"/>
+                    <colour _id="100" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="101" alpha="255" blue="29" green="29" red="29"/>
+                    <colour _id="102" alpha="255" blue="48" green="48" red="48"/>
+                    <colour _id="103" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="104" alpha="255" blue="29" green="29" red="29"/>
+                    <colour _id="105" alpha="255" blue="48" green="48" red="48"/>
+                    <colour _id="106" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="107" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="108" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="109" alpha="255" blue="18" green="18" red="18"/>
+                    <colour _id="110" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="111" alpha="255" blue="18" green="18" red="18"/>
+                    <colour _id="112" alpha="255" blue="80" green="80" red="80"/>
+                    <colour _id="113" alpha="255" blue="82" green="82" red="82"/>
+                    <colour _id="114" alpha="255" blue="84" green="84" red="84"/>
+                    <colour _id="115" alpha="255" blue="86" green="86" red="86"/>
+                    <colour _id="116" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="117" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="118" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="119" alpha="255" blue="50" green="50" red="50"/>
+                    <colour _id="120" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="121" alpha="255" blue="51" green="51" red="51"/>
+                    <colour _id="122" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="123" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="124" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="125" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="126" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="127" alpha="255" blue="30" green="30" red="30"/>
+                    <colour _id="128" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="129" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="130" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="131" alpha="255" blue="31" green="31" red="31"/>
+                    <colour _id="132" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="133" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="134" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="135" alpha="255" blue="79" green="79" red="79"/>
+                    <colour _id="136" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="137" alpha="255" blue="81" green="81" red="81"/>
+                    <colour _id="138" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="139" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="140" alpha="255" blue="50" green="50" red="50"/>
+                    <colour _id="141" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="142" alpha="255" blue="51" green="51" red="51"/>
+                    <colour _id="143" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="144" alpha="255" blue="9" green="9" red="9"/>
+                    <colour _id="145" alpha="255" blue="46" green="46" red="46"/>
+                    <colour _id="146" alpha="255" blue="10" green="10" red="10"/>
+                    <colour _id="147" alpha="255" blue="84" green="84" red="84"/>
+                    <colour _id="148" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="149" alpha="255" blue="9" green="9" red="9"/>
+                    <colour _id="150" alpha="255" blue="9" green="9" red="9"/>
+                    <colour _id="151" alpha="255" blue="64" green="64" red="64"/>
+                    <colour _id="152" alpha="255" blue="51" green="51" red="51"/>
+                    <colour _id="153" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="154" alpha="255" blue="8" green="8" red="8"/>
+                    <colour _id="155" alpha="255" blue="79" green="79" red="79"/>
+                    <colour _id="156" alpha="255" blue="5" green="5" red="5"/>
+                    <colour _id="157" alpha="255" blue="9" green="9" red="9"/>
+                    <colour _id="158" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="159" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="160" alpha="255" blue="8" green="8" red="8"/>
+                    <colour _id="161" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="162" alpha="255" blue="8" green="8" red="8"/>
+                    <colour _id="163" alpha="255" blue="49" green="49" red="49"/>
+                    <colour _id="164" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="165" alpha="255" blue="43" green="43" red="43"/>
+                    <colour _id="166" alpha="255" blue="68" green="68" red="68"/>
+                    <colour _id="167" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="168" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="169" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="170" alpha="255" blue="42" green="42" red="42"/>
+                    <colour _id="171" alpha="255" blue="47" green="47" red="47"/>
+                    <colour _id="172" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="173" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="174" alpha="255" blue="70" green="70" red="70"/>
+                    <colour _id="175" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="176" alpha="255" blue="32" green="32" red="32"/>
+                    <colour _id="177" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="178" alpha="255" blue="53" green="53" red="53"/>
+                    <colour _id="179" alpha="255" blue="45" green="45" red="45"/>
+                    <colour _id="180" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="181" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="182" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="183" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="184" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="185" alpha="255" blue="10" green="10" red="10"/>
+                    <colour _id="186" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="187" alpha="255" blue="18" green="18" red="18"/>
+                    <colour _id="188" alpha="255" blue="28" green="28" red="28"/>
+                    <colour _id="189" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="190" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="191" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="192" alpha="255" blue="3" green="3" red="3"/>
+                    <colour _id="193" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="194" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="195" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="196" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="197" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="198" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="199" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="200" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="201" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="202" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="203" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="204" alpha="255" blue="66" green="66" red="66"/>
+                    <colour _id="205" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="206" alpha="255" blue="66" green="66" red="66"/>
+                    <colour _id="207" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="208" alpha="255" blue="65" green="65" red="65"/>
+                    <colour _id="209" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="210" alpha="255" blue="66" green="66" red="66"/>
+                    <colour _id="211" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="212" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="213" alpha="255" blue="63" green="63" red="63"/>
+                    <colour _id="214" alpha="255" blue="68" green="68" red="68"/>
+                    <colour _id="215" alpha="255" blue="63" green="63" red="63"/>
+                    <colour _id="216" alpha="255" blue="68" green="68" red="68"/>
+                    <colour _id="217" alpha="255" blue="63" green="63" red="63"/>
+                    <colour _id="218" alpha="255" blue="68" green="68" red="68"/>
+                    <colour _id="219" alpha="255" blue="66" green="66" red="66"/>
+                    <colour _id="220" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="221" alpha="255" blue="61" green="61" red="61"/>
+                    <colour _id="222" alpha="255" blue="4" green="4" red="4"/>
+                    <colour _id="223" alpha="255" blue="5" green="5" red="5"/>
+                    <colour _id="224" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="225" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="226" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="227" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="228" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="229" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="230" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="231" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="232" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="233" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="234" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="235" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="236" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="237" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="238" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="239" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="240" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="241" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="242" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="243" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="244" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="245" alpha="255" blue="61" green="61" red="61"/>
+                    <colour _id="246" alpha="255" blue="61" green="61" red="61"/>
+                    <colour _id="247" alpha="255" blue="61" green="61" red="61"/>
+                    <colour _id="248" alpha="255" blue="61" green="61" red="61"/>
+                    <colour _id="249" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="250" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="251" alpha="255" blue="59" green="59" red="59"/>
+                    <colour _id="252" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="253" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="254" alpha="255" blue="4" green="4" red="4"/>
+                    <colour _id="255" alpha="255" blue="5" green="5" red="5"/>
+                    <colour _id="256" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="257" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="258" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="259" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="260" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="261" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="262" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="263" alpha="255" blue="59" green="59" red="59"/>
+                    <colour _id="264" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="265" alpha="255" blue="58" green="58" red="58"/>
+                    <colour _id="266" alpha="255" blue="50" green="50" red="50"/>
+                    <colour _id="267" alpha="255" blue="50" green="50" red="50"/>
+                    <colour _id="268" alpha="255" blue="61" green="61" red="61"/>
+                    <colour _id="269" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="270" alpha="255" blue="50" green="50" red="50"/>
+                    <colour _id="271" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="272" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="273" alpha="255" blue="50" green="50" red="50"/>
+                    <colour _id="274" alpha="255" blue="50" green="50" red="50"/>
+                    <colour _id="275" alpha="255" blue="59" green="59" red="59"/>
+                    <colour _id="276" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="277" alpha="255" blue="49" green="49" red="49"/>
+                    <colour _id="278" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="279" alpha="255" blue="3" green="3" red="3"/>
+                    <colour _id="280" alpha="255" blue="4" green="4" red="4"/>
+                    <colour _id="281" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="282" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="283" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="284" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="285" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="286" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="287" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="288" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="289" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="290" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="291" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="292" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="293" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="294" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="295" alpha="255" blue="3" green="3" red="3"/>
+                    <colour _id="296" alpha="255" blue="3" green="3" red="3"/>
+                    <colour _id="297" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="298" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="299" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="300" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="301" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="302" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="303" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="304" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="305" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="306" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="307" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="308" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="309" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="310" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="311" alpha="255" blue="48" green="48" red="48"/>
+                    <colour _id="312" alpha="255" blue="48" green="48" red="48"/>
+                    <colour _id="313" alpha="255" blue="48" green="48" red="48"/>
+                    <colour _id="314" alpha="255" blue="48" green="48" red="48"/>
+                    <colour _id="315" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="316" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="317" alpha="255" blue="47" green="47" red="47"/>
+                    <colour _id="318" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="319" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="320" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="321" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="322" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="323" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="324" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="325" alpha="255" blue="52" green="52" red="52"/>
+                    <colour _id="326" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="327" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="328" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="329" alpha="255" blue="51" green="51" red="51"/>
+                    <colour _id="330" alpha="255" blue="39" green="39" red="39"/>
+                    <colour _id="331" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="332" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="333" alpha="255" blue="39" green="39" red="39"/>
+                    <colour _id="334" alpha="255" blue="53" green="53" red="53"/>
+                    <colour _id="335" alpha="255" blue="39" green="39" red="39"/>
+                    <colour _id="336" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="337" alpha="255" blue="39" green="39" red="39"/>
+                    <colour _id="338" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="339" alpha="255" blue="38" green="38" red="38"/>
+                    <colour _id="340" alpha="255" blue="52" green="52" red="52"/>
+                    <colour _id="341" alpha="255" blue="2" green="2" red="2"/>
+                    <colour _id="342" alpha="255" blue="3" green="3" red="3"/>
+                    <colour _id="343" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="344" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="345" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="346" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="347" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="348" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="349" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="350" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="351" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="352" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="353" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="354" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="355" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="356" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="357" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="358" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="359" alpha="255" blue="38" green="38" red="38"/>
+                    <colour _id="360" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="361" alpha="255" blue="38" green="38" red="38"/>
+                    <colour _id="362" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="363" alpha="255" blue="38" green="38" red="38"/>
+                    <colour _id="364" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="365" alpha="255" blue="37" green="37" red="37"/>
+                    <colour _id="366" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="367" alpha="255" blue="2" green="2" red="2"/>
+                    <colour _id="368" alpha="255" blue="3" green="3" red="3"/>
+                    <colour _id="369" alpha="255" blue="63" green="63" red="63"/>
+                    <colour _id="370" alpha="255" blue="90" green="90" red="90"/>
+                    <colour _id="371" alpha="255" blue="67" green="67" red="67"/>
+                    <colour _id="372" alpha="255" blue="2" green="2" red="2"/>
+                    <colour _id="373" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="374" alpha="255" blue="43" green="43" red="43"/>
+                    <colour _id="375" alpha="255" blue="66" green="66" red="66"/>
+                    <colour _id="376" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="377" alpha="255" blue="55" green="55" red="55"/>
+                    <colour _id="378" alpha="255" blue="66" green="66" red="66"/>
+                    <colour _id="379" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="380" alpha="255" blue="5" green="5" red="5"/>
+                    <colour _id="381" alpha="255" blue="96" green="96" red="96"/>
+                    <colour _id="382" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="383" alpha="255" blue="99" green="99" red="99"/>
+                    <colour _id="384" alpha="255" blue="96" green="96" red="96"/>
+                    <colour _id="385" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="386" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="387" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="388" alpha="255" blue="26" green="26" red="26"/>
+                    <colour _id="389" alpha="255" blue="53" green="53" red="53"/>
+                    <colour _id="390" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="391" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="392" alpha="255" blue="60" green="60" red="60"/>
+                    <colour _id="393" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="394" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="395" alpha="255" blue="49" green="49" red="49"/>
+                    <colour _id="396" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="397" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="398" alpha="255" blue="60" green="60" red="60"/>
+                    <colour _id="399" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="400" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="401" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="402" alpha="255" blue="89" green="89" red="89"/>
+                    <colour _id="403" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="404" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="405" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="406" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="407" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="408" alpha="255" blue="60" green="60" red="60"/>
+                    <colour _id="409" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="410" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="411" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="412" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="413" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="414" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="415" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="416" alpha="255" blue="64" green="64" red="64"/>
+                    <colour _id="417" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="418" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="419" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="420" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="421" alpha="255" blue="2" green="2" red="2"/>
+                    <colour _id="422" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="423" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="424" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="425" alpha="255" blue="116" green="116" red="116"/>
+                    <colour _id="426" alpha="255" blue="144" green="144" red="144"/>
+                    <colour _id="427" alpha="255" blue="25" green="25" red="25"/>
+                    <colour _id="428" alpha="255" blue="48" green="48" red="48"/>
+                    <colour _id="429" alpha="255" blue="114" green="114" red="114"/>
+                    <colour _id="430" alpha="255" blue="89" green="89" red="89"/>
+                    <colour _id="431" alpha="255" blue="49" green="49" red="49"/>
+                    <colour _id="432" alpha="255" blue="126" green="126" red="126"/>
+                    <colour _id="433" alpha="255" blue="47" green="47" red="47"/>
+                    <colour _id="434" alpha="255" blue="53" green="53" red="53"/>
+                    <colour _id="435" alpha="255" blue="81" green="81" red="81"/>
+                    <colour _id="436" alpha="255" blue="121" green="121" red="121"/>
+                    <colour _id="437" alpha="255" blue="4" green="4" red="4"/>
+                    <colour _id="438" alpha="255" blue="96" green="96" red="96"/>
+                    <colour _id="439" alpha="255" blue="48" green="48" red="48"/>
+                    <colour _id="440" alpha="255" blue="80" green="80" red="80"/>
+                    <colour _id="441" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="442" alpha="255" blue="46" green="46" red="46"/>
+                    <colour _id="443" alpha="255" blue="126" green="126" red="126"/>
+                    <colour _id="444" alpha="255" blue="87" green="87" red="87"/>
+                    <colour _id="445" alpha="255" blue="12" green="12" red="12"/>
+                    <colour _id="446" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="447" alpha="255" blue="111" green="111" red="111"/>
+                    <colour _id="448" alpha="255" blue="6" green="6" red="6"/>
+                    <colour _id="449" alpha="255" blue="64" green="64" red="64"/>
+                    <colour _id="450" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="451" alpha="255" blue="14" green="14" red="14"/>
+                    <colour _id="452" alpha="255" blue="47" green="47" red="47"/>
+                    <colour _id="453" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="454" alpha="255" blue="45" green="45" red="45"/>
+                    <colour _id="455" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="456" alpha="255" blue="45" green="45" red="45"/>
+                    <colour _id="457" alpha="255" blue="73" green="73" red="73"/>
+                    <colour _id="458" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="459" alpha="255" blue="1" green="1" red="1"/>
+                    <colour _id="460" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="461" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="462" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="463" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="464" alpha="255" blue="46" green="46" red="46"/>
+                    <colour _id="465" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="466" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="467" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="468" alpha="255" blue="81" green="81" red="81"/>
+                    <colour _id="469" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="470" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="471" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="472" alpha="255" blue="60" green="60" red="60"/>
+                    <colour _id="473" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="474" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="475" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="476" alpha="255" blue="49" green="49" red="49"/>
+                    <colour _id="477" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="478" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="479" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="480" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="481" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="482" alpha="255" blue="0" green="0" red="0"/>
+                    <colour _id="483" alpha="255" blue="0" green="0" red="0"/>
+                </colours>
+                <texture_mappings>
+                    <texture_mapping _id="0" u="0.976847" v="0.588534"/>
+                    <texture_mapping _id="1" u="0.976847" v="0.411466"/>
+                    <texture_mapping _id="2" u="0.965137" v="0.317015"/>
+                    <texture_mapping _id="3" u="0.956086" v="0.715112"/>
+                    <texture_mapping _id="4" u="0.929816" v="0.532362"/>
+                    <texture_mapping _id="5" u="0.929816" v="0.833608"/>
+                    <texture_mapping _id="6" u="0.922493" v="0.428139"/>
+                    <texture_mapping _id="7" u="0.922493" v="0.141637"/>
+                    <texture_mapping _id="8" u="0.901732" v="0.268215"/>
+                    <texture_mapping _id="9" u="0.901732" v="0.731785"/>
+                    <texture_mapping _id="10" u="0.888901" v="0.151942"/>
+                    <texture_mapping _id="11" u="0.868139" v="0.759524"/>
+                    <texture_mapping _id="12" u="0.868139" v="0.936592"/>
+                    <texture_mapping _id="13" u="0.837344" v="0.073302"/>
+                    <texture_mapping _id="14" u="0.837344" v="0.560728"/>
+                    <texture_mapping _id="15" u="0.834547" v="0.483327"/>
+                    <texture_mapping _id="16" u="0.834547" v="0.946897"/>
+                    <texture_mapping _id="17" u="0.813786" v="0.295193"/>
+                    <texture_mapping _id="18" u="0.813786" v="0.008691"/>
+                    <texture_mapping _id="19" u="0.780193" v="0.786502"/>
+                    <texture_mapping _id="20" u="0.780193" v="0.909167"/>
+                    <texture_mapping _id="21" u="0.780193" v="0.090833"/>
+                    <texture_mapping _id="22" u="0.780193" v="0.213498"/>
+                    <texture_mapping _id="23" u="0.746601" v="0.991309"/>
+                    <texture_mapping _id="24" u="0.746601" v="0.704807"/>
+                    <texture_mapping _id="25" u="0.725839" v="0.053103"/>
+                    <texture_mapping _id="26" u="0.725839" v="0.516673"/>
+                    <texture_mapping _id="27" u="0.723042" v="0.926698"/>
+                    <texture_mapping _id="28" u="0.723042" v="0.439272"/>
+                    <texture_mapping _id="29" u="0.692247" v="0.240476"/>
+                    <texture_mapping _id="30" u="0.692247" v="0.063408"/>
+                    <texture_mapping _id="31" u="0.671486" v="0.848058"/>
+                    <texture_mapping _id="32" u="0.658654" v="0.731785"/>
+                    <texture_mapping _id="33" u="0.658654" v="0.268215"/>
+                    <texture_mapping _id="34" u="0.637893" v="0.858363"/>
+                    <texture_mapping _id="35" u="0.637893" v="0.571861"/>
+                    <texture_mapping _id="36" u="0.630570" v="0.166392"/>
+                    <texture_mapping _id="37" u="0.630570" v="0.467638"/>
+                    <texture_mapping _id="38" u="0.604301" v="0.284888"/>
+                    <texture_mapping _id="39" u="0.595249" v="0.682985"/>
+                    <texture_mapping _id="40" u="0.583539" v="0.588534"/>
+                    <texture_mapping _id="41" u="0.583539" v="0.411466"/>
+                    <texture_mapping _id="42" u="0.999500" v="0.613027"/>
+                    <texture_mapping _id="43" u="0.999500" v="0.613027"/>
+                    <texture_mapping _id="44" u="0.999501" v="0.362819"/>
+                    <texture_mapping _id="45" u="0.999501" v="0.362819"/>
+                    <texture_mapping _id="46" u="0.999500" v="0.613027"/>
+                    <texture_mapping _id="47" u="0.999500" v="0.613027"/>
+                    <texture_mapping _id="48" u="0.999500" v="0.613027"/>
+                    <texture_mapping _id="49" u="0.999501" v="0.362819"/>
+                    <texture_mapping _id="50" u="0.999501" v="0.362819"/>
+                    <texture_mapping _id="51" u="0.999501" v="0.362819"/>
+                    <texture_mapping _id="52" u="0.000499" v="0.613027"/>
+                    <texture_mapping _id="53" u="0.000500" v="0.362818"/>
+                    <texture_mapping _id="54" u="0.000500" v="0.362818"/>
+                    <texture_mapping _id="55" u="0.000499" v="0.613027"/>
+                    <texture_mapping _id="56" u="0.000499" v="0.613027"/>
+                    <texture_mapping _id="57" u="0.000500" v="0.362818"/>
+                    <texture_mapping _id="58" u="0.000500" v="0.362818"/>
+                    <texture_mapping _id="59" u="0.000500" v="0.362818"/>
+                    <texture_mapping _id="60" u="0.999501" v="0.369066"/>
+                    <texture_mapping _id="61" u="0.999501" v="0.369066"/>
+                    <texture_mapping _id="62" u="0.999501" v="0.000500"/>
+                    <texture_mapping _id="63" u="0.999501" v="0.000500"/>
+                    <texture_mapping _id="64" u="0.999501" v="0.369066"/>
+                    <texture_mapping _id="65" u="0.999501" v="0.369066"/>
+                    <texture_mapping _id="66" u="0.999501" v="0.369066"/>
+                    <texture_mapping _id="67" u="0.999501" v="0.000500"/>
+                    <texture_mapping _id="68" u="0.999501" v="0.000500"/>
+                    <texture_mapping _id="69" u="0.999501" v="0.000500"/>
+                    <texture_mapping _id="70" u="0.000500" v="0.369065"/>
+                    <texture_mapping _id="71" u="0.000500" v="0.000499"/>
+                    <texture_mapping _id="72" u="0.000500" v="0.000499"/>
+                    <texture_mapping _id="73" u="0.000500" v="0.369065"/>
+                    <texture_mapping _id="74" u="0.000500" v="0.369065"/>
+                    <texture_mapping _id="75" u="0.000500" v="0.000499"/>
+                    <texture_mapping _id="76" u="0.000500" v="0.000499"/>
+                    <texture_mapping _id="77" u="0.000500" v="0.000499"/>
+                    <texture_mapping _id="78" u="0.999500" v="0.999501"/>
+                    <texture_mapping _id="79" u="0.999500" v="0.999501"/>
+                    <texture_mapping _id="80" u="0.999501" v="0.867650"/>
+                    <texture_mapping _id="81" u="0.999501" v="0.867650"/>
+                    <texture_mapping _id="82" u="0.999500" v="0.999501"/>
+                    <texture_mapping _id="83" u="0.999500" v="0.999501"/>
+                    <texture_mapping _id="84" u="0.999500" v="0.999501"/>
+                    <texture_mapping _id="85" u="0.999501" v="0.867650"/>
+                    <texture_mapping _id="86" u="0.999501" v="0.867650"/>
+                    <texture_mapping _id="87" u="0.999501" v="0.867650"/>
+                    <texture_mapping _id="88" u="0.000499" v="0.999500"/>
+                    <texture_mapping _id="89" u="0.000500" v="0.867649"/>
+                    <texture_mapping _id="90" u="0.000500" v="0.867649"/>
+                    <texture_mapping _id="91" u="0.000499" v="0.999500"/>
+                    <texture_mapping _id="92" u="0.000499" v="0.999500"/>
+                    <texture_mapping _id="93" u="0.000500" v="0.867649"/>
+                    <texture_mapping _id="94" u="0.000500" v="0.867649"/>
+                    <texture_mapping _id="95" u="0.000500" v="0.867649"/>
+                    <texture_mapping _id="96" u="0.999501" v="0.861819"/>
+                    <texture_mapping _id="97" u="0.999501" v="0.861819"/>
+                    <texture_mapping _id="98" u="0.999501" v="0.606780"/>
+                    <texture_mapping _id="99" u="0.999501" v="0.606780"/>
+                    <texture_mapping _id="100" u="0.999501" v="0.861819"/>
+                    <texture_mapping _id="101" u="0.999501" v="0.861819"/>
+                    <texture_mapping _id="102" u="0.999501" v="0.861819"/>
+                    <texture_mapping _id="103" u="0.999501" v="0.606780"/>
+                    <texture_mapping _id="104" u="0.999501" v="0.606780"/>
+                    <texture_mapping _id="105" u="0.999501" v="0.606780"/>
+                    <texture_mapping _id="106" u="0.000499" v="0.861819"/>
+                    <texture_mapping _id="107" u="0.000499" v="0.606780"/>
+                    <texture_mapping _id="108" u="0.000499" v="0.861819"/>
+                    <texture_mapping _id="109" u="0.000499" v="0.861819"/>
+                    <texture_mapping _id="110" u="0.000499" v="0.606780"/>
+                    <texture_mapping _id="111" u="0.000499" v="0.606780"/>
+                    <texture_mapping _id="112" u="0.023655" v="0.999501"/>
+                    <texture_mapping _id="113" u="0.023655" v="0.000500"/>
+                    <texture_mapping _id="114" u="0.000500" v="0.999500"/>
+                    <texture_mapping _id="115" u="0.000500" v="0.000499"/>
+                    <texture_mapping _id="116" u="0.500000" v="0.000500"/>
+                    <texture_mapping _id="117" u="0.500000" v="0.000500"/>
+                    <texture_mapping _id="118" u="0.500000" v="0.023655"/>
+                    <texture_mapping _id="119" u="0.999500" v="0.999500"/>
+                    <texture_mapping _id="120" u="0.500000" v="0.023655"/>
+                    <texture_mapping _id="121" u="0.999501" v="0.000500"/>
+                    <texture_mapping _id="122" u="0.000500" v="0.000500"/>
+                    <texture_mapping _id="123" u="0.023655" v="0.999501"/>
+                    <texture_mapping _id="124" u="0.000500" v="0.000500"/>
+                    <texture_mapping _id="125" u="0.023655" v="0.000500"/>
+                    <texture_mapping _id="126" u="0.000499" v="0.023655"/>
+                    <texture_mapping _id="127" u="0.000499" v="0.999500"/>
+                    <texture_mapping _id="128" u="0.000500" v="0.999500"/>
+                    <texture_mapping _id="129" u="0.000499" v="0.023655"/>
+                    <texture_mapping _id="130" u="0.000500" v="0.000499"/>
+                    <texture_mapping _id="131" u="0.000500" v="0.000500"/>
+                    <texture_mapping _id="132" u="0.999501" v="0.000500"/>
+                    <texture_mapping _id="133" u="0.999501" v="0.000500"/>
+                    <texture_mapping _id="134" u="0.999500" v="0.023655"/>
+                    <texture_mapping _id="135" u="0.999500" v="0.999500"/>
+                    <texture_mapping _id="136" u="0.999500" v="0.023655"/>
+                    <texture_mapping _id="137" u="0.999501" v="0.000500"/>
+                    <texture_mapping _id="138" u="0.500000" v="0.000500"/>
+                    <texture_mapping _id="139" u="0.500000" v="0.000500"/>
+                    <texture_mapping _id="140" u="0.000500" v="0.999500"/>
+                    <texture_mapping _id="141" u="0.500000" v="0.023655"/>
+                    <texture_mapping _id="142" u="0.000500" v="0.000500"/>
+                    <texture_mapping _id="143" u="0.500000" v="0.023655"/>
+                    <texture_mapping _id="144" u="0.458931" v="0.999501"/>
+                    <texture_mapping _id="145" u="0.458931" v="0.999501"/>
+                    <texture_mapping _id="146" u="0.402335" v="0.999501"/>
+                    <texture_mapping _id="147" u="0.402335" v="0.999501"/>
+                    <texture_mapping _id="148" u="0.402335" v="0.999501"/>
+                    <texture_mapping _id="149" u="0.402335" v="0.999501"/>
+                    <texture_mapping _id="150" u="0.265700" v="0.999501"/>
+                    <texture_mapping _id="151" u="0.265700" v="0.999501"/>
+                    <texture_mapping _id="152" u="0.520765" v="0.633982"/>
+                    <texture_mapping _id="153" u="0.265700" v="0.999501"/>
+                    <texture_mapping _id="154" u="0.265700" v="0.999501"/>
+                    <texture_mapping _id="155" u="0.446058" v="0.633982"/>
+                    <texture_mapping _id="156" u="0.129066" v="0.999501"/>
+                    <texture_mapping _id="157" u="0.129066" v="0.999501"/>
+                    <texture_mapping _id="158" u="0.446058" v="0.633982"/>
+                    <texture_mapping _id="159" u="0.129066" v="0.999501"/>
+                    <texture_mapping _id="160" u="0.129066" v="0.999501"/>
+                    <texture_mapping _id="161" u="0.072470" v="0.999501"/>
+                    <texture_mapping _id="162" u="0.072470" v="0.999501"/>
+                    <texture_mapping _id="163" u="0.265700" v="0.633982"/>
+                    <texture_mapping _id="164" u="0.265701" v="0.633982"/>
+                    <texture_mapping _id="165" u="0.402098" v="0.315281"/>
+                    <texture_mapping _id="166" u="0.362148" v="0.315281"/>
+                    <texture_mapping _id="167" u="0.085343" v="0.633982"/>
+                    <texture_mapping _id="168" u="0.362148" v="0.315281"/>
+                    <texture_mapping _id="169" u="0.085343" v="0.633982"/>
+                    <texture_mapping _id="170" u="0.265700" v="0.315281"/>
+                    <texture_mapping _id="171" u="0.385449" v="0.146444"/>
+                    <texture_mapping _id="172" u="0.010636" v="0.633982"/>
+                    <texture_mapping _id="173" u="0.265700" v="0.315281"/>
+                    <texture_mapping _id="174" u="0.350375" v="0.146444"/>
+                    <texture_mapping _id="175" u="0.350375" v="0.146444"/>
+                    <texture_mapping _id="176" u="0.413136" v="0.034147"/>
+                    <texture_mapping _id="177" u="0.169253" v="0.315281"/>
+                    <texture_mapping _id="178" u="0.369953" v="0.034147"/>
+                    <texture_mapping _id="179" u="0.265700" v="0.146444"/>
+                    <texture_mapping _id="180" u="0.169253" v="0.315281"/>
+                    <texture_mapping _id="181" u="0.369953" v="0.034147"/>
+                    <texture_mapping _id="182" u="0.129303" v="0.315281"/>
+                    <texture_mapping _id="183" u="0.265700" v="0.146444"/>
+                    <texture_mapping _id="184" u="0.349603" v="0.000499"/>
+                    <texture_mapping _id="185" u="0.349603" v="0.000499"/>
+                    <texture_mapping _id="186" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="187" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="188" u="0.265700" v="0.034147"/>
+                    <texture_mapping _id="189" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="190" u="0.181026" v="0.146444"/>
+                    <texture_mapping _id="191" u="0.265700" v="0.000499"/>
+                    <texture_mapping _id="192" u="0.265700" v="0.000499"/>
+                    <texture_mapping _id="193" u="0.181026" v="0.146444"/>
+                    <texture_mapping _id="194" u="0.265700" v="0.034147"/>
+                    <texture_mapping _id="195" u="0.145952" v="0.146444"/>
+                    <texture_mapping _id="196" u="0.265700" v="0.000499"/>
+                    <texture_mapping _id="197" u="0.206372" v="0.000499"/>
+                    <texture_mapping _id="198" u="0.161448" v="0.034147"/>
+                    <texture_mapping _id="199" u="0.206372" v="0.000499"/>
+                    <texture_mapping _id="200" u="0.181798" v="0.000499"/>
+                    <texture_mapping _id="201" u="0.161448" v="0.034147"/>
+                    <texture_mapping _id="202" u="0.118265" v="0.034147"/>
+                    <texture_mapping _id="203" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="204" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="205" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="206" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="207" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="208" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="209" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="210" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="211" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="212" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="213" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="214" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="215" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="216" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="217" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="218" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="219" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="220" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="221" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="222" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="223" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="224" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="225" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="226" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="227" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="228" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="229" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="230" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="231" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="232" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="233" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="234" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="235" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="236" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="237" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="238" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="239" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="240" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="241" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="242" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="243" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="244" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="245" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="246" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="247" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="248" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="249" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="250" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="251" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="252" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="253" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="254" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="255" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="256" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="257" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="258" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="259" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="260" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="261" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="262" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="263" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="264" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="265" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="266" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="267" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="268" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="269" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="270" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="271" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="272" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="273" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="274" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="275" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="276" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="277" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="278" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="279" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="280" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="281" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="282" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="283" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="284" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="285" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="286" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="287" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="288" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="289" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="290" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="291" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="292" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="293" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="294" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="295" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="296" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="297" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="298" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="299" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="300" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="301" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="302" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="303" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="304" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="305" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="306" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="307" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="308" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="309" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="310" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="311" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="312" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="313" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="314" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="315" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="316" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="317" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="318" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="319" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="320" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="321" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="322" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="323" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="324" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="325" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="326" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="327" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="328" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="329" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="330" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="331" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="332" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="333" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="334" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="335" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="336" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="337" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="338" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="339" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="340" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="341" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="342" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="343" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="344" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="345" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="346" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="347" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="348" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="349" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="350" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="351" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="352" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="353" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="354" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="355" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="356" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="357" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="358" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="359" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="360" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="361" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="362" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="363" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="364" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="365" u="0.434783" v="0.077295"/>
+                    <texture_mapping _id="366" u="0.516908" v="0.077295"/>
+                    <texture_mapping _id="367" u="0.516908" v="0.241546"/>
+                    <texture_mapping _id="368" u="0.434783" v="0.241546"/>
+                    <texture_mapping _id="369" u="0.413136" v="0.034147"/>
+                    <texture_mapping _id="370" u="0.369953" v="0.034147"/>
+                    <texture_mapping _id="371" u="0.520765" v="0.633982"/>
+                    <texture_mapping _id="372" u="0.369953" v="0.034147"/>
+                    <texture_mapping _id="373" u="0.349603" v="0.000499"/>
+                    <texture_mapping _id="374" u="0.349603" v="0.000499"/>
+                    <texture_mapping _id="375" u="0.385449" v="0.146444"/>
+                    <texture_mapping _id="376" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="377" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="378" u="0.402098" v="0.315281"/>
+                    <texture_mapping _id="379" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="380" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="381" u="0.350375" v="0.146444"/>
+                    <texture_mapping _id="382" u="0.350375" v="0.146444"/>
+                    <texture_mapping _id="383" u="0.446058" v="0.633982"/>
+                    <texture_mapping _id="384" u="0.362148" v="0.315281"/>
+                    <texture_mapping _id="385" u="0.362148" v="0.315281"/>
+                    <texture_mapping _id="386" u="0.446058" v="0.633982"/>
+                    <texture_mapping _id="387" u="0.265700" v="0.000499"/>
+                    <texture_mapping _id="388" u="0.265700" v="0.000499"/>
+                    <texture_mapping _id="389" u="0.265700" v="0.034147"/>
+                    <texture_mapping _id="390" u="0.265700" v="0.000499"/>
+                    <texture_mapping _id="391" u="0.265700" v="0.034147"/>
+                    <texture_mapping _id="392" u="0.265700" v="0.146444"/>
+                    <texture_mapping _id="393" u="0.265700" v="0.146444"/>
+                    <texture_mapping _id="394" u="0.458931" v="0.999501"/>
+                    <texture_mapping _id="395" u="0.458931" v="0.999501"/>
+                    <texture_mapping _id="396" u="0.206372" v="0.000499"/>
+                    <texture_mapping _id="397" u="0.206372" v="0.000499"/>
+                    <texture_mapping _id="398" u="0.265700" v="0.315281"/>
+                    <texture_mapping _id="399" u="0.181798" v="0.000499"/>
+                    <texture_mapping _id="400" u="0.265700" v="0.315281"/>
+                    <texture_mapping _id="401" u="0.402335" v="0.999501"/>
+                    <texture_mapping _id="402" u="0.402335" v="0.999501"/>
+                    <texture_mapping _id="403" u="0.161448" v="0.034147"/>
+                    <texture_mapping _id="404" u="0.181026" v="0.146444"/>
+                    <texture_mapping _id="405" u="0.161448" v="0.034147"/>
+                    <texture_mapping _id="406" u="0.402335" v="0.999501"/>
+                    <texture_mapping _id="407" u="0.181026" v="0.146444"/>
+                    <texture_mapping _id="408" u="0.265700" v="0.633982"/>
+                    <texture_mapping _id="409" u="0.118265" v="0.034147"/>
+                    <texture_mapping _id="410" u="0.145952" v="0.146444"/>
+                    <texture_mapping _id="411" u="0.169253" v="0.315281"/>
+                    <texture_mapping _id="412" u="0.265701" v="0.633982"/>
+                    <texture_mapping _id="413" u="0.169253" v="0.315281"/>
+                    <texture_mapping _id="414" u="0.129303" v="0.315281"/>
+                    <texture_mapping _id="415" u="0.265700" v="0.999501"/>
+                    <texture_mapping _id="416" u="0.265700" v="0.999501"/>
+                    <texture_mapping _id="417" u="0.265700" v="0.999501"/>
+                    <texture_mapping _id="418" u="0.085343" v="0.633982"/>
+                    <texture_mapping _id="419" u="0.085343" v="0.633982"/>
+                    <texture_mapping _id="420" u="0.129066" v="0.999501"/>
+                    <texture_mapping _id="421" u="0.129066" v="0.999501"/>
+                    <texture_mapping _id="422" u="0.129066" v="0.999501"/>
+                    <texture_mapping _id="423" u="0.010636" v="0.633982"/>
+                    <texture_mapping _id="424" u="0.072470" v="0.999501"/>
+                    <texture_mapping _id="425" u="0.413136" v="0.034147"/>
+                    <texture_mapping _id="426" u="0.369953" v="0.034147"/>
+                    <texture_mapping _id="427" u="0.369953" v="0.034147"/>
+                    <texture_mapping _id="428" u="0.349603" v="0.000499"/>
+                    <texture_mapping _id="429" u="0.349603" v="0.000499"/>
+                    <texture_mapping _id="430" u="0.385449" v="0.146444"/>
+                    <texture_mapping _id="431" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="432" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="433" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="434" u="0.325029" v="0.000499"/>
+                    <texture_mapping _id="435" u="0.520765" v="0.633982"/>
+                    <texture_mapping _id="436" u="0.350375" v="0.146444"/>
+                    <texture_mapping _id="437" u="0.350375" v="0.146444"/>
+                    <texture_mapping _id="438" u="0.402098" v="0.315281"/>
+                    <texture_mapping _id="439" u="0.265700" v="0.000499"/>
+                    <texture_mapping _id="440" u="0.265700" v="0.000499"/>
+                    <texture_mapping _id="441" u="0.265700" v="0.000499"/>
+                    <texture_mapping _id="442" u="0.265700" v="0.000499"/>
+                    <texture_mapping _id="443" u="0.362148" v="0.315281"/>
+                    <texture_mapping _id="444" u="0.265700" v="0.034147"/>
+                    <texture_mapping _id="445" u="0.362148" v="0.315281"/>
+                    <texture_mapping _id="446" u="0.265700" v="0.034147"/>
+                    <texture_mapping _id="447" u="0.446058" v="0.633982"/>
+                    <texture_mapping _id="448" u="0.446058" v="0.633982"/>
+                    <texture_mapping _id="449" u="0.265700" v="0.146444"/>
+                    <texture_mapping _id="450" u="0.265700" v="0.146444"/>
+                    <texture_mapping _id="451" u="0.206372" v="0.000499"/>
+                    <texture_mapping _id="452" u="0.206372" v="0.000499"/>
+                    <texture_mapping _id="453" u="0.206372" v="0.000499"/>
+                    <texture_mapping _id="454" u="0.206372" v="0.000499"/>
+                    <texture_mapping _id="455" u="0.181798" v="0.000499"/>
+                    <texture_mapping _id="456" u="0.181798" v="0.000499"/>
+                    <texture_mapping _id="457" u="0.265700" v="0.315281"/>
+                    <texture_mapping _id="458" u="0.265700" v="0.315281"/>
+                    <texture_mapping _id="459" u="0.161448" v="0.034147"/>
+                    <texture_mapping _id="460" u="0.161448" v="0.034147"/>
+                    <texture_mapping _id="461" u="0.181026" v="0.146444"/>
+                    <texture_mapping _id="462" u="0.181026" v="0.146444"/>
+                    <texture_mapping _id="463" u="0.458931" v="0.999501"/>
+                    <texture_mapping _id="464" u="0.458931" v="0.999501"/>
+                    <texture_mapping _id="465" u="0.118265" v="0.034147"/>
+                    <texture_mapping _id="466" u="0.145952" v="0.146444"/>
+                    <texture_mapping _id="467" u="0.402335" v="0.999501"/>
+                    <texture_mapping _id="468" u="0.402335" v="0.999501"/>
+                    <texture_mapping _id="469" u="0.169253" v="0.315281"/>
+                    <texture_mapping _id="470" u="0.402335" v="0.999501"/>
+                    <texture_mapping _id="471" u="0.169253" v="0.315281"/>
+                    <texture_mapping _id="472" u="0.265700" v="0.633982"/>
+                    <texture_mapping _id="473" u="0.265701" v="0.633982"/>
+                    <texture_mapping _id="474" u="0.129303" v="0.315281"/>
+                    <texture_mapping _id="475" u="0.265700" v="0.999501"/>
+                    <texture_mapping _id="476" u="0.265700" v="0.999501"/>
+                    <texture_mapping _id="477" u="0.265700" v="0.999501"/>
+                    <texture_mapping _id="478" u="0.085343" v="0.633982"/>
+                    <texture_mapping _id="479" u="0.085343" v="0.633982"/>
+                    <texture_mapping _id="480" u="0.010636" v="0.633982"/>
+                    <texture_mapping _id="481" u="0.129066" v="0.999501"/>
+                    <texture_mapping _id="482" u="0.129066" v="0.999501"/>
+                    <texture_mapping _id="483" u="0.072470" v="0.999501"/>
+                </texture_mappings>
+            </geometry_data>
+            <material_list size="1864" type="8" version="268697599"/>
+            <geometry_ext size="3496" type="3" version="268697599"/>
+        </geometry>
+    </geometry_list>
+</clump>

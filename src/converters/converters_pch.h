@@ -4,6 +4,6 @@
 // MACROS
 // -----------------------
 
-class CGlobalDSConverter;
+class CConverter;
 
-#define GLOBAL_MAPPER_CLASS CGlobalDSConverter
+#define GLOBAL_MAPPER_CLASS CConverter

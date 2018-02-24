@@ -47,7 +47,7 @@ rw::core::clump::clump()
 {
 }
 
-bool rw::core::texture_data::Read(in_stream& stream)
+bool rw::core::texture_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	READ_VAR(stream, filter_mode_flags);
@@ -55,14 +55,14 @@ bool rw::core::texture_data::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::texture_ext::Read(in_stream& stream)
+bool rw::core::texture_ext::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	sky_mimpap_val_plg.Read(stream);
 	return true;
 }
 
-bool rw::core::texture::Read(in_stream& stream)
+bool rw::core::texture::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	data.Read(stream);
@@ -72,7 +72,7 @@ bool rw::core::texture::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::material_data::Read(in_stream& stream)
+bool rw::core::material_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	READ_VAR(stream, pad1);
@@ -88,13 +88,13 @@ bool rw::core::material_data::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::material_ext::Read(in_stream& stream)
+bool rw::core::material_ext::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	return true;
 }
 
-bool rw::core::material::Read(in_stream& stream)
+bool rw::core::material::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	data.Read(stream);
@@ -110,7 +110,7 @@ bool rw::core::material::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::material_list_data::Read(in_stream& stream)
+bool rw::core::material_list_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	READ_VAR(stream, material_count);
@@ -123,7 +123,7 @@ bool rw::core::material_list_data::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::material_list::Read(in_stream& stream)
+bool rw::core::material_list::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	data.Read(stream);
@@ -138,7 +138,7 @@ bool rw::core::material_list::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::geometry_data::Read(in_stream& stream)
+bool rw::core::geometry_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	READ_VAR(stream, header.flags);
@@ -216,7 +216,7 @@ bool rw::core::geometry_data::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::geometry_ext::Read(in_stream& stream)
+bool rw::core::geometry_ext::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	bin_mesh_plg.Read(stream);
@@ -224,7 +224,7 @@ bool rw::core::geometry_ext::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::geometry::Read(in_stream& stream)
+bool rw::core::geometry::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	data.Read(stream);
@@ -233,14 +233,14 @@ bool rw::core::geometry::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::geometry_list_data::Read(in_stream& stream)
+bool rw::core::geometry_list_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	READ_VAR(stream, geometry_count);
 	return true;
 }
 
-bool rw::core::geometry_list::Read(in_stream& stream)
+bool rw::core::geometry_list::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	data.Read(stream);
@@ -256,7 +256,7 @@ bool rw::core::geometry_list::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::frame_list_data::Read(in_stream& stream)
+bool rw::core::frame_list_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	READ_VAR(stream, frame_count);
@@ -282,7 +282,7 @@ bool rw::core::frame_list_data::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::frame_list_ext::Read(in_stream& stream)
+bool rw::core::frame_list_ext::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	hanim_plg.Read(stream);
@@ -290,7 +290,7 @@ bool rw::core::frame_list_ext::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::frame_list::Read(in_stream& stream)
+bool rw::core::frame_list::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	data.Read(stream);
@@ -306,7 +306,7 @@ bool rw::core::frame_list::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::core::clump_data::Read(in_stream& stream)
+bool rw::core::clump_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	READ_VAR(stream, object_count);
@@ -315,7 +315,7 @@ bool rw::core::clump_data::Read(in_stream& stream)
 	return true;
 }
  
-bool rw::core::clump::Read(in_stream& stream)
+bool rw::core::clump::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	data.Read(stream);

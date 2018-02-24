@@ -1,6 +1,14 @@
 #pragma once
 #include "utilities_pch.h"
+#include <string>
 
+enum class EStreamType
+{
+	BINARY,
+	TEXT
+};
+
+template<EStreamType stream_type>
 class stream
 {
 public:
@@ -11,12 +19,14 @@ protected:
 	FILE* m_File;
 };
 
-inline void stream::Close()
+template<EStreamType stream_type>
+inline void stream<stream_type>::Close()
 {
 	fclose(m_File);
 }
 
-class in_stream : public stream
+template<EStreamType stream_type>
+class in_stream : public stream<stream_type>
 {
 public:
 	bool Open(const char* file_name) override;
@@ -27,18 +37,30 @@ public:
 	T Read();
 };
 
-inline bool in_stream::Open(const char* file_name)
+template<EStreamType stream_type>
+inline bool in_stream<stream_type>::Open(const char* file_name)
 {
-	m_File = fopen(file_name, (const char*)"rb");
+	m_File = fopen(file_name, [&]() -> const char*
+	{
+		switch (stream_type)
+		{
+		case EStreamType::BINARY:
+			return "rb";
+		case EStreamType::TEXT:
+			return "r";
+		}
+	}());
 	return m_File != nullptr;
 }
 
-inline void in_stream::Seek(size_t offset, size_t origin)
+template<EStreamType stream_type>
+inline void in_stream<stream_type>::Seek(size_t offset, size_t origin)
 {
 	fseek(m_File, offset, origin);
 }
 
-inline size_t in_stream::Tell() const
+template<EStreamType stream_type>
+inline size_t in_stream<stream_type>::Tell() const
 {
 	return ftell(m_File);
 }
@@ -49,20 +71,21 @@ inline size_t in_stream::Tell() const
 	return ret; \
 }();
 
-#define _GEN_STREAM_READ_METHOD(ret_type) \
+#define _PRIMITIVE_STREAM_READ_METHOD(ret_type) \
 template<> \
-inline ret_type in_stream::Read() { return _READ_STREAM(m_File, ret_type); }
+template<> \
+inline ret_type in_stream<EStreamType::BINARY>::Read() { return _READ_STREAM(m_File, ret_type); }
 
-_GEN_STREAM_READ_METHOD(int8_t);
-_GEN_STREAM_READ_METHOD(uint8_t);
-_GEN_STREAM_READ_METHOD(int16_t);
-_GEN_STREAM_READ_METHOD(uint16_t);
-_GEN_STREAM_READ_METHOD(int32_t);
-_GEN_STREAM_READ_METHOD(uint32_t);
-_GEN_STREAM_READ_METHOD(int64_t);
-_GEN_STREAM_READ_METHOD(uint64_t);
-_GEN_STREAM_READ_METHOD(float_t);
-_GEN_STREAM_READ_METHOD(double_t);
+_PRIMITIVE_STREAM_READ_METHOD(int8_t);
+_PRIMITIVE_STREAM_READ_METHOD(uint8_t);
+_PRIMITIVE_STREAM_READ_METHOD(int16_t);
+_PRIMITIVE_STREAM_READ_METHOD(uint16_t);
+_PRIMITIVE_STREAM_READ_METHOD(int32_t);
+_PRIMITIVE_STREAM_READ_METHOD(uint32_t);
+_PRIMITIVE_STREAM_READ_METHOD(int64_t);
+_PRIMITIVE_STREAM_READ_METHOD(uint64_t);
+_PRIMITIVE_STREAM_READ_METHOD(float_t);
+_PRIMITIVE_STREAM_READ_METHOD(double_t);
 
 #define READ_VAR(strm, variable) variable = strm.Read<std::remove_reference<decltype(variable)>::type>();
 
@@ -70,7 +93,8 @@ _GEN_STREAM_READ_METHOD(double_t);
 INIT_ARR(arr, size) \
 for (int i = 0; i < size; i++) READ_VAR(strm, arr[i]);
 
-class out_stream : public stream
+template<EStreamType stream_type>
+class out_stream : public stream<stream_type>
 {
 public:
 	bool Open(const char* file_name) override;
@@ -82,9 +106,20 @@ public:
 	void Write(T* data, size_t size);
 };
 
-inline bool out_stream::Open(const char* file_name)
+template<EStreamType stream_type>
+inline bool out_stream<stream_type>::Open(const char* file_name)
 {
-	return fopen_s(&m_File, file_name, "wb+");
+	m_File = fopen(file_name, [&]() -> const char*
+	{
+		switch (stream_type)
+		{
+		case EStreamType::BINARY:
+			return "wb+";
+		case EStreamType::TEXT:
+			return "w+";
+		}
+	}());
+	return m_File != nullptr;
 }
 
 #define _WRITE_STREAM(strm, data_to_write, T) \
@@ -92,23 +127,47 @@ inline bool out_stream::Open(const char* file_name)
 	fwrite(data_to_write, sizeof(T), 1, strm); \
 }();
 
-#define _GEN_STREAM_WRITE_METHOD(T) \
+#define _PRIMITIVE_STREAM_WRITE_METHOD(T) \
 template<> \
-inline void out_stream::Write(T* data) { _WRITE_STREAM(m_File, data, T); }
+template<> \
+inline void out_stream<EStreamType::BINARY>::Write(T* data) { _WRITE_STREAM(m_File, data, T); }
 
-_GEN_STREAM_WRITE_METHOD(int8_t);
-_GEN_STREAM_WRITE_METHOD(uint8_t);
-_GEN_STREAM_WRITE_METHOD(int16_t);
-_GEN_STREAM_WRITE_METHOD(uint16_t);
-_GEN_STREAM_WRITE_METHOD(int32_t);
-_GEN_STREAM_WRITE_METHOD(uint32_t);
-_GEN_STREAM_WRITE_METHOD(int64_t);
-_GEN_STREAM_WRITE_METHOD(uint64_t);
-_GEN_STREAM_WRITE_METHOD(float_t);
-_GEN_STREAM_WRITE_METHOD(double_t);
+_PRIMITIVE_STREAM_WRITE_METHOD(int8_t);
+_PRIMITIVE_STREAM_WRITE_METHOD(uint8_t);
+_PRIMITIVE_STREAM_WRITE_METHOD(int16_t);
+_PRIMITIVE_STREAM_WRITE_METHOD(uint16_t);
+_PRIMITIVE_STREAM_WRITE_METHOD(int32_t);
+_PRIMITIVE_STREAM_WRITE_METHOD(uint32_t);
+_PRIMITIVE_STREAM_WRITE_METHOD(int64_t);
+_PRIMITIVE_STREAM_WRITE_METHOD(uint64_t);
+_PRIMITIVE_STREAM_WRITE_METHOD(float_t);
+_PRIMITIVE_STREAM_WRITE_METHOD(double_t);
 
 template<>
-inline void out_stream::Write(const void* data, size_t size)
+template<>
+inline void out_stream<EStreamType::TEXT>::Write(const void* data, size_t size)
 {
 	fwrite(data, size, 1, m_File);
 }
+
+template<>
+template<>
+inline void out_stream<EStreamType::BINARY>::Write(const void* data, size_t size)
+{
+	fwrite(data, size, 1, m_File);
+}
+
+template<>
+template<>
+inline void out_stream<EStreamType::TEXT>::Write(std::string* data)
+{
+	fwrite(&((*data)[0]), data->size(), sizeof(char), m_File);
+}
+
+template<>
+template<>
+inline void out_stream<EStreamType::BINARY>::Write(std::string* data)
+{
+	fwrite(&((*data)[0]), data->size(), sizeof(char), m_File);
+}
+

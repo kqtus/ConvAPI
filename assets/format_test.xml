@@ -1,0 +1,35 @@
+<dff fileName="dt_hehehe.dff">
+	<clump type="rwCLUMP" size="123" version="0x33000">
+		<clump_data type="rwSTRUCT" size="16" version="0x33000">
+			<object_count>1</object_count>
+			<pad1>0</pad1>
+			<pad2>0</pad2>
+		</clump_data>
+		
+		<frame_list>
+			<frame_list_data>
+				<frame_count>2</frame_count>
+				
+				<frame_info>
+				
+				</frame_info>
+				
+				<frame_info>
+					
+				</frame_info>
+			</frame_list_data>
+			
+			<frame_list_ext>
+			
+			</frame_list_ext>
+			
+			<frame_list_ext>
+				
+			</frame_list_ext>
+		</frame_list>
+		
+		<geometries>
+		
+		</geometries>
+	</clump>
+</dff>

@@ -7,7 +7,7 @@ rw::chunk_base::chunk_base()
 {
 }
 
-bool rw::chunk_base::Read(in_stream& stream)
+bool rw::chunk_base::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	READ_VAR(stream, type);
 	READ_VAR(stream, size);
@@ -15,7 +15,7 @@ bool rw::chunk_base::Read(in_stream& stream)
 	return true;
 }
 
-bool rw::string::Read(in_stream& stream)
+bool rw::string::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 
