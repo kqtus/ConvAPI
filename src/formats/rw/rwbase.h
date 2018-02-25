@@ -96,6 +96,10 @@ namespace rw
 		rpGEOMETRYNATIVEFLAGSMASK = 0x0F000000,
 	};
 
+	std::string Decode(const RpGeometryFlag& flag);
+	std::string Decode(const RwCorePluginID& flag);
+	std::string Decode(const RwPluginVendor& flag);
+
 	class chunk_base : public common::IBinReadable
 	{
 		CONVERTIBLE_ENTITY

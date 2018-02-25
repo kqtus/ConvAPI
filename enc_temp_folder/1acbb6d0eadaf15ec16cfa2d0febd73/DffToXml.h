@@ -140,7 +140,7 @@ xml::node CConverter::From(const rw::core::geometry_data& chunk)
 		for (int i = 0; i < chunk.header.vertex_count; i++)
 		{
 			auto colour_node = xml::node("colour");
-			colour_node["_i"] = STR(i);
+			colour_node["_id"] = STR(i);
 			colour_node["red"] = STR(chunk.colours[i].red);
 			colour_node["green"] = STR(chunk.colours[i].green);
 			colour_node["blue"] = STR(chunk.colours[i].blue);
@@ -156,7 +156,7 @@ xml::node CConverter::From(const rw::core::geometry_data& chunk)
 		for (int i = 0; i < chunk.header.vertex_count; i++)
 		{
 			auto texture_mapping_node = xml::node("texture_mapping");
-			texture_mapping_node["_i"] = STR(i);
+			texture_mapping_node["_id"] = STR(i);
 			texture_mapping_node["u"] = STR(chunk.texture_mappings[i].u);
 			texture_mapping_node["v"] = STR(chunk.texture_mappings[i].v);
 			texture_mappings_node.AddChild(texture_mapping_node);

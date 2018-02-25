@@ -5,5 +5,5 @@ class CConverter
 {
 public:
 	template<class TSrc, class TDest>
-	static TDest From(TSrc source_data);
+	static TDest From(const TSrc& source_data);
 };

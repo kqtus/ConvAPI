@@ -1,11 +1,11 @@
-<clump size="21339" type="16" version="268697599">
-    <clump_data size="12" type="1" version="268697599">
+<clump size="21339" type="rwID_CLUMP" version="268697599">
+    <clump_data size="12" type="rwID_STRUCT" version="268697599">
         <object_count>1</object_count>
         <pad1>0</pad1>
         <pad2>0</pad2>
     </clump_data>
-    <frame_list size="131" type="14" version="268697599">
-        <frame_list_data size="60" type="1" version="268697599">
+    <frame_list size="131" type="rwID_FRAMELIST" version="268697599">
+        <frame_list_data size="60" type="rwID_STRUCT" version="268697599">
             <frame_count>1</frame_count>
             <info>
                 <rotation_0_0>1.000000</rotation_0_0>
@@ -24,19 +24,19 @@
                 <pad>0</pad>
             </info>
         </frame_list_data>
-        <frame_list_ext size="47" type="3" version="268697599">
-            <hanim size="12" type="286" version="268697599"/>
-            <frame_plg size="11" type="39056126" version="268697599">
+        <frame_list_ext size="47" type="rwID_EXTENSION" version="268697599">
+            <hanim size="12" type="UNKNOWN" version="268697599"/>
+            <frame_plg size="11" type="UNKNOWN" version="268697599">
                 <name>dt_bowlsignýýýý</name>
             </frame_plg>
         </frame_list_ext>
     </frame_list>
-    <geometry_list size="21096" type="26" version="268697599">
-        <geometry_list_data size="4" type="1" version="268697599">
+    <geometry_list size="21096" type="rwID_GEOMETRYLIST" version="268697599">
+        <geometry_list_data size="4" type="rwID_STRUCT" version="268697599">
             <geometry_count>1</geometry_count>
         </geometry_list_data>
-        <geometry size="21068" type="15" version="268697599">
-            <geometry_data size="15672" type="1" version="268697599">
+        <geometry size="21068" type="rwID_GEOMETRY" version="268697599">
+            <geometry_data size="15672" type="rwID_STRUCT" version="268697599">
                 <header>
                     <flags>47</flags>
                     <uv_count>1</uv_count>
@@ -2018,8 +2018,8 @@
                     <vertex _i="483" x="-1.023861" y="-0.024070" z="1.306148"/>
                 </vertices>
             </geometry_data>
-            <material_list size="1864" type="8" version="268697599"/>
-            <geometry_ext size="3496" type="3" version="268697599"/>
+            <material_list size="1864" type="rwID_MATLIST" version="268697599"/>
+            <geometry_ext size="3496" type="rwID_EXTENSION" version="268697599"/>
         </geometry>
     </geometry_list>
 </clump>
