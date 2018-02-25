@@ -51,7 +51,11 @@ namespace xml
 
 		static const char* DEFAULT_NODE_NAME;
 		static const char* EMPTY_VALUE;
+
 	private:
+		static node Declaration();
+		static bool WriteDeclaration(out_stream<EStreamType::TEXT>& stream);
+
 		std::string GetIndentStr() const;
 		void UpdateIndentsForSubnodes();
 

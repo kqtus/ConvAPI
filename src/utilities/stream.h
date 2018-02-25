@@ -15,6 +15,8 @@ public:
 	virtual bool Open(const char* file_name) = 0;
 	virtual void Close();
 
+	void Seek(size_t pos, size_t offset);
+	size_t Tell() const;
 protected:
 	FILE* m_File;
 };
@@ -26,12 +28,22 @@ inline void stream<stream_type>::Close()
 }
 
 template<EStreamType stream_type>
+inline void stream<stream_type>::Seek(size_t offset, size_t origin)
+{
+	fseek(m_File, offset, origin);
+}
+
+template<EStreamType stream_type>
+inline size_t stream<stream_type>::Tell() const
+{
+	return ftell(m_File);
+}
+
+template<EStreamType stream_type>
 class in_stream : public stream<stream_type>
 {
 public:
 	bool Open(const char* file_name) override;
-	void Seek(size_t pos, size_t offset);
-	size_t Tell() const;
 
 	template<class T>
 	T Read();
@@ -51,18 +63,6 @@ inline bool in_stream<stream_type>::Open(const char* file_name)
 		}
 	}());
 	return m_File != nullptr;
-}
-
-template<EStreamType stream_type>
-inline void in_stream<stream_type>::Seek(size_t offset, size_t origin)
-{
-	fseek(m_File, offset, origin);
-}
-
-template<EStreamType stream_type>
-inline size_t in_stream<stream_type>::Tell() const
-{
-	return ftell(m_File);
 }
 
 #define _READ_STREAM(strm, T) \

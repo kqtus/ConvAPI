@@ -113,6 +113,11 @@ void xml::node::UpdateIndentsForSubnodes()
 
 bool xml::node::Write(out_stream<EStreamType::TEXT>& stream)
 {
+	if (stream.Tell() == 0)
+	{
+		xml::node::WriteDeclaration(stream);
+	}
+
 	WRITE_STR(stream, (GetIndentStr() + "<"));
 	WRITE_STR(stream, name);
 
@@ -149,5 +154,33 @@ bool xml::node::Write(out_stream<EStreamType::TEXT>& stream)
 		WRITE_STR(stream, ("</" + name + ">\n"));
 	}
 	
+	return true;
+}
+
+xml::node xml::node::Declaration()
+{
+	node decl_node("xml");
+	decl_node["version"] = "1.0";
+	decl_node["encoding"] = "UTF-8";
+	decl_node["standalone"] = "no";
+	return decl_node;
+}
+
+bool xml::node::WriteDeclaration(out_stream<EStreamType::TEXT>& stream)
+{
+	auto decl_node = xml::node::Declaration();
+	WRITE_CSTR(stream, "<?");
+	WRITE_STR(stream, decl_node.name);
+
+	for (auto attribute : decl_node)
+	{
+		WRITE_CSTR(stream, " ");
+		WRITE_STR(stream, attribute.first);
+		WRITE_CSTR(stream, "=\"");
+		WRITE_STR(stream, attribute.second);
+		WRITE_CSTR(stream, "\"");
+	}
+
+	WRITE_CSTR(stream, "?>\n");
 	return true;
 }
