@@ -31,7 +31,7 @@ xml::node CConverter::From(rw::plg::frame chunk)
 {
 	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("frame_plg");
-	node.AddChild(xml::node("name", std::string((const char*)chunk.name)));
+	node.AddChild(xml::node("name", (const char*)chunk.name));
 	return node;
 }
 
@@ -163,6 +163,59 @@ xml::node CConverter::From(rw::core::geometry_data chunk)
 		}
 		node.AddChild(texture_mappings_node);
 	}
+
+	auto faces_node = xml::node("faces");
+	for (int i = 0; i < chunk.header.face_count; i++)
+	{
+		auto face_node = xml::node("face");
+		face_node["_i"] = STR(i);
+		face_node["v1"] = STR(chunk.faces[i].v1);
+		face_node["v2"] = STR(chunk.faces[i].v2);
+		face_node["v3"] = STR(chunk.faces[i].v3);
+		face_node["flags"] = STR(chunk.faces[i].flags);
+		faces_node.AddChild(face_node);
+	}
+	node.AddChild(faces_node);
+
+	auto bounding_sphere_node = xml::node("bounding_sphere");
+	bounding_sphere_node.AddChild(MAKE_NODE("pos.x", (float)chunk.bounding_sphere.pos.x));
+	bounding_sphere_node.AddChild(MAKE_NODE("pos.y", (float)chunk.bounding_sphere.pos.y));
+	bounding_sphere_node.AddChild(MAKE_NODE("pos.z", (float)chunk.bounding_sphere.pos.z));
+	bounding_sphere_node.AddChild(MAKE_NODE("radius", (float)chunk.bounding_sphere.radius));
+	node.AddChild(bounding_sphere_node);
+
+	auto flags_node = xml::node("flags");
+	flags_node.AddChild(MAKE_NODE("has_position", chunk.flags.has_position));
+	flags_node.AddChild(MAKE_NODE("has_normals", chunk.flags.has_normals));
+	node.AddChild(flags_node);
+
+	auto vertices_node = xml::node("vertices");
+	for (int i = 0; i < chunk.header.vertex_count; i++)
+	{
+		auto vertex_node = xml::node("vertex");
+		vertex_node["_i"] = STR(i);
+		vertex_node["x"] = STR(chunk.vertices[i].x);
+		vertex_node["y"] = STR(chunk.vertices[i].y);
+		vertex_node["z"] = STR(chunk.vertices[i].z);
+		vertices_node.AddChild(vertex_node);
+	}
+	node.AddChild(vertices_node);
+
+	if (chunk.header.flags & rw::rpGEOMETRYNORMALS)
+	{
+		auto normals_node = xml::node("normals");
+		for (int i = 0; i < chunk.header.vertex_count; i++)
+		{
+			auto normal_node = xml::node("normal");
+			normal_node["_i"] = STR(i);
+			normal_node["x"] = STR(chunk.normals[i].x);
+			normal_node["y"] = STR(chunk.normals[i].y);
+			normal_node["z"] = STR(chunk.normals[i].z);
+			normals_node.AddChild(normal_node);
+		}
+		node.AddChild(normals_node);
+	}
+
 	return node;
 }
 
