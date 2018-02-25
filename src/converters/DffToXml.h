@@ -21,7 +21,7 @@ xml::node CConverter::From(const rw::chunk_base& chunk)
 template<>
 xml::node CConverter::From(const rw::plg::hanim& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("hanim");
 	return node;
 }
@@ -29,7 +29,7 @@ xml::node CConverter::From(const rw::plg::hanim& chunk)
 template<>
 xml::node CConverter::From(const rw::plg::frame& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("frame_plg");
 	node.AddChild(xml::node("name", (const char*)chunk.name));
 	return node;
@@ -38,7 +38,7 @@ xml::node CConverter::From(const rw::plg::frame& chunk)
 template<>
 xml::node CConverter::From(const rw::core::frame_list_data& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("frame_list_data");
 	node.AddChild(xml::node("frame_count", STR(chunk.frame_count)));
 
@@ -68,17 +68,17 @@ xml::node CConverter::From(const rw::core::frame_list_data& chunk)
 template<>
 xml::node CConverter::From(const rw::core::frame_list_ext& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("frame_list_ext");
-	node.AddChild(CConverter::From<rw::plg::hanim, xml::node>(chunk.hanim_plg));
-	node.AddChild(CConverter::From<rw::plg::frame, xml::node>(chunk.frame_plg));
+	node.AddChild(From<rw::plg::hanim, xml::node>(chunk.hanim_plg));
+	node.AddChild(From<rw::plg::frame, xml::node>(chunk.frame_plg));
 	return node;
 }
 
 template<>
 xml::node CConverter::From(const rw::core::clump_data& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("clump_data");
 	node.AddChild(xml::node("object_count", STR(chunk.object_count)));
 	node.AddChild(xml::node("pad1", STR(chunk.pad1)));
@@ -89,13 +89,13 @@ xml::node CConverter::From(const rw::core::clump_data& chunk)
 template<>
 xml::node CConverter::From(const rw::core::frame_list& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("frame_list");
-	node.AddChild(CConverter::From<rw::core::frame_list_data, xml::node>(chunk.data));
+	node.AddChild(From<rw::core::frame_list_data, xml::node>(chunk.data));
 	
 	for (auto& extension : chunk)
 	{
-		node.AddChild(CConverter::From<rw::core::frame_list_ext, xml::node>(*extension));
+		node.AddChild(From<rw::core::frame_list_ext, xml::node>(*extension));
 	}
 
 	return node;
@@ -104,7 +104,7 @@ xml::node CConverter::From(const rw::core::frame_list& chunk)
 template<>
 xml::node CConverter::From(const rw::core::material_list& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("material_list");
 
 	return node;
@@ -113,7 +113,7 @@ xml::node CConverter::From(const rw::core::material_list& chunk)
 template<>
 xml::node CConverter::From(const rw::core::geometry_data& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("geometry_data");
 
 	auto header_node = xml::node("header");
@@ -222,7 +222,7 @@ xml::node CConverter::From(const rw::core::geometry_data& chunk)
 template<>
 xml::node CConverter::From(const rw::core::geometry_ext& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("geometry_ext");
 
 	return node;
@@ -231,7 +231,7 @@ xml::node CConverter::From(const rw::core::geometry_ext& chunk)
 template<>
 xml::node CConverter::From(const rw::core::geometry& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("geometry");
 	node.AddChild(CConverter::From<rw::core::geometry_data, xml::node>(chunk.data));
 	node.AddChild(CConverter::From<rw::core::material_list, xml::node>(chunk.materials));
@@ -242,7 +242,7 @@ xml::node CConverter::From(const rw::core::geometry& chunk)
 template<>
 xml::node CConverter::From(const rw::core::geometry_list_data& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("geometry_list_data");
 	node.AddChild(xml::node("geometry_count", STR(chunk.geometry_count)));
 	return node;
@@ -251,13 +251,13 @@ xml::node CConverter::From(const rw::core::geometry_list_data& chunk)
 template<>
 xml::node CConverter::From(const rw::core::geometry_list& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("geometry_list");
-	node.AddChild(CConverter::From<rw::core::geometry_list_data, xml::node>(chunk.data));
+	node.AddChild(From<rw::core::geometry_list_data, xml::node>(chunk.data));
 	
 	for (auto& geometry : chunk)
 	{
-		node.AddChild(CConverter::From<rw::core::geometry, xml::node>(*geometry));
+		node.AddChild(From<rw::core::geometry, xml::node>(*geometry));
 	}
 	return node;
 }
@@ -265,11 +265,11 @@ xml::node CConverter::From(const rw::core::geometry_list& chunk)
 template<>
 xml::node CConverter::From(const rw::core::clump& chunk)
 {
-	auto node = CConverter::From<rw::chunk_base, xml::node>(chunk);
+	auto node = From<rw::chunk_base, xml::node>(chunk);
 	node.SetName("clump");
-	node.AddChild(CConverter::From<rw::core::clump_data, xml::node>(chunk.data));
-	node.AddChild(CConverter::From<rw::core::frame_list, xml::node>(chunk.frames));
-	node.AddChild(CConverter::From<rw::core::geometry_list, xml::node>(chunk.geometries));
+	node.AddChild(From<rw::core::clump_data, xml::node>(chunk.data));
+	node.AddChild(From<rw::core::frame_list, xml::node>(chunk.frames));
+	node.AddChild(From<rw::core::geometry_list, xml::node>(chunk.geometries));
 	node.UpdateIndentsForSubnodes();
 	return node;
 }
