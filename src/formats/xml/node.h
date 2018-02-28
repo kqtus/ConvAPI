@@ -41,8 +41,8 @@ namespace xml
 		void SetName(const std::string& name);
 		std::string GetName() const;
 
-		void AddChild(node child);
-		node GetChild(const size_t& pos) const;
+		void AddChild(node* child);
+		node* GetChild(const size_t& pos) const;
 
 		bool HasChildren() const;
 		bool HasValue() const;
@@ -62,6 +62,6 @@ namespace xml
 		std::string name;
 		std::string value;
 		int indent;
-		std::vector<node> subnodes;
+		std::vector<node*> subnodes;
 	};
 }

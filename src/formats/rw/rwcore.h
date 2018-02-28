@@ -8,22 +8,19 @@ namespace rw
 {
 	namespace core
 	{
+		class extension : public chunk_base, public std::vector<chunk_base*>
+		{
+			CONVERTIBLE_ENTITY
+		public:
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+		};
+
 		class texture_data : public chunk_base
 		{
 			CONVERTIBLE_ENTITY
 		public:
 			uint16_t filter_mode_flags;
 			uint16_t pad;
-
-		public:
-			bool Read(in_stream<EStreamType::BINARY>& stream) override;
-		};
-
-		class texture_ext : public chunk_base
-		{
-			CONVERTIBLE_ENTITY
-		protected:
-			plg::sky_mipmap_val sky_mimpap_val_plg;
 
 		public:
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
@@ -36,7 +33,7 @@ namespace rw
 			texture_data data;
 			string texture_name;
 			string mask_name;
-			texture_ext extension;
+			extension ext;
 
 		public:
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
@@ -58,20 +55,13 @@ namespace rw
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
-		class material_ext : public chunk_base
-		{
-			CONVERTIBLE_ENTITY
-		public:
-			bool Read(in_stream<EStreamType::BINARY>& stream) override;
-		};
-
 		class material : public chunk_base
 		{
 			CONVERTIBLE_ENTITY
 		protected:
 			material_data data;
 			texture** textures;
-			material_ext extension;
+			extension ext;
 
 		public:
 			//material();
@@ -84,7 +74,7 @@ namespace rw
 			CONVERTIBLE_ENTITY
 		public:
 			uint32_t material_count;
-			uint32_t pad[11];
+			uint32_t* material_unks;
 
 		public:
 			material_list_data();
@@ -173,24 +163,13 @@ namespace rw
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
-		class geometry_ext : public chunk_base
-		{
-			CONVERTIBLE_ENTITY
-		protected:
-			plg::bin_mesh bin_mesh_plg;
-			plg::morph morph_plg;
-
-		public:
-			bool Read(in_stream<EStreamType::BINARY>& stream) override;
-		};
-
 		class geometry : public chunk_base
 		{
 			CONVERTIBLE_ENTITY
 		protected:
 			geometry_data data;
 			material_list materials;
-			geometry_ext extension;
+			extension ext;
 
 		public:
 			geometry();
@@ -243,18 +222,7 @@ namespace rw
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
 
-		class frame_list_ext : public chunk_base
-		{
-			CONVERTIBLE_ENTITY
-		protected:
-			plg::hanim hanim_plg;
-			plg::frame frame_plg;
-
-		public:
-			bool Read(in_stream<EStreamType::BINARY>& stream) override;
-		};
-
-		class frame_list : public chunk_base, private std::vector<frame_list_ext*>
+		class frame_list : public chunk_base, private std::vector<extension*>
 		{
 			CONVERTIBLE_ENTITY
 		protected:

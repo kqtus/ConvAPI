@@ -72,12 +72,12 @@ std::string xml::node::GetName() const
 	return this->name;
 }
 
-void xml::node::AddChild(node child)
+void xml::node::AddChild(node* child)
 {
 	subnodes.push_back(child);
 }
 
-xml::node xml::node::GetChild(const size_t& pos) const
+xml::node* xml::node::GetChild(const size_t& pos) const
 {
 	return subnodes[pos];
 }
@@ -106,8 +106,8 @@ void xml::node::UpdateIndentsForSubnodes()
 {
 	for (auto& child : subnodes)
 	{
-		child.indent = this->indent + 1;
-		child.UpdateIndentsForSubnodes();
+		child->indent = this->indent + 1;
+		child->UpdateIndentsForSubnodes();
 	}
 }
 
@@ -147,7 +147,7 @@ bool xml::node::Write(out_stream<EStreamType::TEXT>& stream)
 			WRITE_CSTR(stream, "\n");
 			for (auto child : subnodes)
 			{
-				child.Write(stream);
+				child->Write(stream);
 			}
 			WRITE_STR(stream, GetIndentStr());
 		}

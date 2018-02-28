@@ -1,0 +1,1477 @@
+<?xml encoding="UTF-8" standalone="no" version="1.0"?>
+<clump size="14088" type="rwID_CLUMP" version="402915327">
+    <clump_data size="12" type="rwID_STRUCT" version="402915327">
+        <object_count>1</object_count>
+        <pad1>0</pad1>
+        <pad2>0</pad2>
+    </clump_data>
+    <frame_list size="112" type="rwID_FRAMELIST" version="402915327">
+        <frame_list_data size="60" type="rwID_STRUCT" version="402915327">
+            <frame_count>1</frame_count>
+            <info>
+                <rotation_0_0>1.000000</rotation_0_0>
+                <rotation_0_1>0.000000</rotation_0_1>
+                <rotation_0_2>0.000000</rotation_0_2>
+                <rotation_1_0>0.000000</rotation_1_0>
+                <rotation_1_1>1.000000</rotation_1_1>
+                <rotation_1_2>0.000000</rotation_1_2>
+                <rotation_2_0>0.000000</rotation_2_0>
+                <rotation_2_1>0.000000</rotation_2_1>
+                <rotation_2_2>1.000000</rotation_2_2>
+                <coords_offset.x>0.000000</coords_offset.x>
+                <coords_offset.y>0.000000</coords_offset.y>
+                <coords_offset.z>0.000000</coords_offset.z>
+                <parent_frame>4294967295</parent_frame>
+                <pad>0</pad>
+            </info>
+        </frame_list_data>
+        <extension size="28" type="rwID_EXTENSION" version="402915327">
+            <frame_plg size="16" type="UNKNOWN" version="402915327">
+                <name>SV_ground_04_SFSýýýý</name>
+            </frame_plg>
+        </extension>
+    </frame_list>
+    <geometry_list size="13864" type="rwID_GEOMETRYLIST" version="402915327">
+        <geometry_list_data size="4" type="rwID_STRUCT" version="402915327">
+            <geometry_count>1</geometry_count>
+        </geometry_list_data>
+        <geometry size="13836" type="rwID_GEOMETRY" version="402915327">
+            <geometry_data size="9896" type="rwID_STRUCT" version="402915327">
+                <header>
+                    <flags>47</flags>
+                    <uv_count>1</uv_count>
+                    <native_flags>0</native_flags>
+                    <face_count>194</face_count>
+                    <vertex_count>346</vertex_count>
+                    <frame_count>1</frame_count>
+                </header>
+                <colours/>
+                <texture_mappings>
+                    <texture_mapping _i="0" u="-3.797583" v="0.000000"/>
+                    <texture_mapping _i="1" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="2" u="-3.797569" v="-1.000000"/>
+                    <texture_mapping _i="3" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="4" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="5" u="-3.797590" v="0.000000"/>
+                    <texture_mapping _i="6" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="7" u="-3.756884" v="0.000000"/>
+                    <texture_mapping _i="8" u="-1.756884" v="0.000000"/>
+                    <texture_mapping _i="9" u="-3.756863" v="-1.000000"/>
+                    <texture_mapping _i="10" u="-1.756863" v="-1.000000"/>
+                    <texture_mapping _i="11" u="-3.756884" v="0.000000"/>
+                    <texture_mapping _i="12" u="-1.756884" v="0.000000"/>
+                    <texture_mapping _i="13" u="-3.711384" v="0.000000"/>
+                    <texture_mapping _i="14" u="-1.711384" v="0.000000"/>
+                    <texture_mapping _i="15" u="-3.711361" v="-1.000000"/>
+                    <texture_mapping _i="16" u="-1.711361" v="-1.000000"/>
+                    <texture_mapping _i="17" u="-3.711384" v="0.000000"/>
+                    <texture_mapping _i="18" u="-1.711384" v="0.000000"/>
+                    <texture_mapping _i="19" u="-3.669302" v="0.000000"/>
+                    <texture_mapping _i="20" u="-1.669302" v="0.000000"/>
+                    <texture_mapping _i="21" u="-3.669289" v="-1.000000"/>
+                    <texture_mapping _i="22" u="-1.669289" v="-1.000000"/>
+                    <texture_mapping _i="23" u="-3.669310" v="0.000000"/>
+                    <texture_mapping _i="24" u="-1.669310" v="0.000000"/>
+                    <texture_mapping _i="25" u="-3.638885" v="0.000000"/>
+                    <texture_mapping _i="26" u="-1.638885" v="0.000000"/>
+                    <texture_mapping _i="27" u="-3.638872" v="-1.000000"/>
+                    <texture_mapping _i="28" u="-1.638872" v="-1.000000"/>
+                    <texture_mapping _i="29" u="-3.638893" v="0.000000"/>
+                    <texture_mapping _i="30" u="-1.638893" v="0.000000"/>
+                    <texture_mapping _i="31" u="-3.518555" v="0.000000"/>
+                    <texture_mapping _i="32" u="-1.518555" v="0.000000"/>
+                    <texture_mapping _i="33" u="-3.518533" v="-1.000000"/>
+                    <texture_mapping _i="34" u="-1.518533" v="-1.000000"/>
+                    <texture_mapping _i="35" u="-3.518555" v="0.000000"/>
+                    <texture_mapping _i="36" u="-1.518555" v="0.000000"/>
+                    <texture_mapping _i="37" u="-3.221439" v="0.000000"/>
+                    <texture_mapping _i="38" u="-1.221439" v="0.000000"/>
+                    <texture_mapping _i="39" u="-3.221429" v="-1.000000"/>
+                    <texture_mapping _i="40" u="-1.221429" v="-1.000000"/>
+                    <texture_mapping _i="41" u="-3.221449" v="0.000000"/>
+                    <texture_mapping _i="42" u="-1.221449" v="0.000000"/>
+                    <texture_mapping _i="43" u="-3.778589" v="0.000000"/>
+                    <texture_mapping _i="44" u="-0.778589" v="0.000000"/>
+                    <texture_mapping _i="45" u="-3.778576" v="-1.000000"/>
+                    <texture_mapping _i="46" u="-0.778576" v="-1.000000"/>
+                    <texture_mapping _i="47" u="-3.778597" v="0.000000"/>
+                    <texture_mapping _i="48" u="-0.778597" v="0.000000"/>
+                    <texture_mapping _i="49" u="-1.221477" v="0.000000"/>
+                    <texture_mapping _i="50" u="-1.221455" v="-1.000000"/>
+                    <texture_mapping _i="51" u="-1.221477" v="0.000000"/>
+                    <texture_mapping _i="52" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="53" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="54" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="55" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="56" u="0.903285" v="-1.000000"/>
+                    <texture_mapping _i="57" u="0.903285" v="-1.000000"/>
+                    <texture_mapping _i="58" u="1.000000" v="-1.797560"/>
+                    <texture_mapping _i="59" u="1.000000" v="-1.797560"/>
+                    <texture_mapping _i="60" u="0.000000" v="-1.797583"/>
+                    <texture_mapping _i="61" u="0.230000" v="-1.000000"/>
+                    <texture_mapping _i="62" u="0.230000" v="-1.000000"/>
+                    <texture_mapping _i="63" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="64" u="0.000000" v="-1.797590"/>
+                    <texture_mapping _i="65" u="1.000000" v="-1.797569"/>
+                    <texture_mapping _i="66" u="1.000000" v="-1.797569"/>
+                    <texture_mapping _i="67" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="68" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="69" u="1.000000" v="0.243137"/>
+                    <texture_mapping _i="70" u="1.000000" v="0.243137"/>
+                    <texture_mapping _i="71" u="0.000000" v="0.243116"/>
+                    <texture_mapping _i="72" u="0.000000" v="0.243116"/>
+                    <texture_mapping _i="73" u="1.000000" v="0.243130"/>
+                    <texture_mapping _i="74" u="1.000000" v="0.243130"/>
+                    <texture_mapping _i="75" u="1.000000" v="1.288639"/>
+                    <texture_mapping _i="76" u="1.000000" v="1.288639"/>
+                    <texture_mapping _i="77" u="1.000000" v="2.288639"/>
+                    <texture_mapping _i="78" u="1.000000" v="2.288639"/>
+                    <texture_mapping _i="79" u="0.000000" v="1.288616"/>
+                    <texture_mapping _i="80" u="0.000000" v="2.288616"/>
+                    <texture_mapping _i="81" u="0.000000" v="1.288616"/>
+                    <texture_mapping _i="82" u="0.000000" v="2.288616"/>
+                    <texture_mapping _i="83" u="1.000000" v="1.288630"/>
+                    <texture_mapping _i="84" u="1.000000" v="1.288630"/>
+                    <texture_mapping _i="85" u="1.000000" v="2.288630"/>
+                    <texture_mapping _i="86" u="1.000000" v="2.288630"/>
+                    <texture_mapping _i="87" u="1.000000" v="-3.669277"/>
+                    <texture_mapping _i="88" u="1.000000" v="-3.669277"/>
+                    <texture_mapping _i="89" u="1.000000" v="3.330723"/>
+                    <texture_mapping _i="90" u="1.000000" v="3.330723"/>
+                    <texture_mapping _i="91" u="-0.000000" v="-3.669302"/>
+                    <texture_mapping _i="92" u="-0.000000" v="3.330698"/>
+                    <texture_mapping _i="93" u="-0.000000" v="-3.669310"/>
+                    <texture_mapping _i="94" u="-0.000000" v="3.330690"/>
+                    <texture_mapping _i="95" u="1.000000" v="-3.669289"/>
+                    <texture_mapping _i="96" u="1.000000" v="-3.669289"/>
+                    <texture_mapping _i="97" u="1.000000" v="3.330711"/>
+                    <texture_mapping _i="98" u="1.000000" v="3.330711"/>
+                    <texture_mapping _i="99" u="1.000000" v="-1.638863"/>
+                    <texture_mapping _i="100" u="1.000000" v="-1.638863"/>
+                    <texture_mapping _i="101" u="-0.000000" v="-1.638885"/>
+                    <texture_mapping _i="102" u="-0.000000" v="-1.638893"/>
+                    <texture_mapping _i="103" u="1.000000" v="-1.638872"/>
+                    <texture_mapping _i="104" u="1.000000" v="-1.638872"/>
+                    <texture_mapping _i="105" u="1.000000" v="0.481467"/>
+                    <texture_mapping _i="106" u="1.000000" v="0.481467"/>
+                    <texture_mapping _i="107" u="-0.000000" v="0.481445"/>
+                    <texture_mapping _i="108" u="-0.000000" v="0.481445"/>
+                    <texture_mapping _i="109" u="1.000000" v="0.481458"/>
+                    <texture_mapping _i="110" u="1.000000" v="0.481458"/>
+                    <texture_mapping _i="111" u="1.000000" v="0.778581"/>
+                    <texture_mapping _i="112" u="1.000000" v="0.778581"/>
+                    <texture_mapping _i="113" u="1.000000" v="2.778581"/>
+                    <texture_mapping _i="114" u="1.000000" v="2.778581"/>
+                    <texture_mapping _i="115" u="-0.000000" v="0.778561"/>
+                    <texture_mapping _i="116" u="-0.000000" v="2.778561"/>
+                    <texture_mapping _i="117" u="-0.000000" v="0.778551"/>
+                    <texture_mapping _i="118" u="-0.000000" v="2.778551"/>
+                    <texture_mapping _i="119" u="1.000000" v="0.778571"/>
+                    <texture_mapping _i="120" u="1.000000" v="0.778571"/>
+                    <texture_mapping _i="121" u="1.000000" v="2.778571"/>
+                    <texture_mapping _i="122" u="1.000000" v="2.778571"/>
+                    <texture_mapping _i="123" u="1.000000" v="-2.778566"/>
+                    <texture_mapping _i="124" u="1.000000" v="-2.778566"/>
+                    <texture_mapping _i="125" u="1.000000" v="3.221434"/>
+                    <texture_mapping _i="126" u="1.000000" v="3.221434"/>
+                    <texture_mapping _i="127" u="-0.000000" v="-2.778589"/>
+                    <texture_mapping _i="128" u="-0.000000" v="3.221411"/>
+                    <texture_mapping _i="129" u="-0.000000" v="-2.778597"/>
+                    <texture_mapping _i="130" u="-0.000000" v="3.221403"/>
+                    <texture_mapping _i="131" u="1.000000" v="-2.778576"/>
+                    <texture_mapping _i="132" u="1.000000" v="-2.778576"/>
+                    <texture_mapping _i="133" u="1.000000" v="3.221424"/>
+                    <texture_mapping _i="134" u="1.000000" v="3.221424"/>
+                    <texture_mapping _i="135" u="1.000000" v="-0.221455"/>
+                    <texture_mapping _i="136" u="1.000000" v="-0.221455"/>
+                    <texture_mapping _i="137" u="-0.000000" v="-0.221477"/>
+                    <texture_mapping _i="138" u="-0.000000" v="-0.221477"/>
+                    <texture_mapping _i="139" u="1.000000" v="-0.221462"/>
+                    <texture_mapping _i="140" u="1.000000" v="-0.221462"/>
+                    <texture_mapping _i="141" u="0.000000" v="-2.000000"/>
+                    <texture_mapping _i="142" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="143" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="144" u="0.000000" v="1.000000"/>
+                    <texture_mapping _i="145" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="146" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="147" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="148" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="149" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="150" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="151" u="0.000000" v="-3.000000"/>
+                    <texture_mapping _i="152" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="153" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="154" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="155" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="156" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="157" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="158" u="0.000000" v="2.000000"/>
+                    <texture_mapping _i="159" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="160" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="161" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="162" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="163" u="0.000000" v="-3.000000"/>
+                    <texture_mapping _i="164" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="165" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="166" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="167" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="168" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="169" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="170" u="0.000000" v="2.000000"/>
+                    <texture_mapping _i="171" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="172" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="173" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="174" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="175" u="0.000000" v="-3.000000"/>
+                    <texture_mapping _i="176" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="177" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="178" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="179" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="180" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="181" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="182" u="0.000000" v="2.000000"/>
+                    <texture_mapping _i="183" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="184" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="185" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="186" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="187" u="0.000000" v="-2.000000"/>
+                    <texture_mapping _i="188" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="189" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="190" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="191" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="192" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="193" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="194" u="0.000000" v="1.000000"/>
+                    <texture_mapping _i="195" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="196" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="197" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="198" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="199" u="0.000000" v="-2.000000"/>
+                    <texture_mapping _i="200" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="201" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="202" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="203" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="204" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="205" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="206" u="0.000000" v="1.000000"/>
+                    <texture_mapping _i="207" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="208" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="209" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="210" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="211" u="0.000000" v="-2.000000"/>
+                    <texture_mapping _i="212" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="213" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="214" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="215" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="216" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="217" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="218" u="0.000000" v="1.000000"/>
+                    <texture_mapping _i="219" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="220" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="221" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="222" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="223" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="224" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="225" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="226" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="227" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="228" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="229" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="230" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="231" u="0.903285" v="-1.000000"/>
+                    <texture_mapping _i="232" u="1.000000" v="-1.797560"/>
+                    <texture_mapping _i="233" u="1.000000" v="0.243137"/>
+                    <texture_mapping _i="234" u="1.000000" v="0.243130"/>
+                    <texture_mapping _i="235" u="1.000000" v="-1.797569"/>
+                    <texture_mapping _i="236" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="237" u="1.000000" v="1.288639"/>
+                    <texture_mapping _i="238" u="1.000000" v="2.288639"/>
+                    <texture_mapping _i="239" u="1.000000" v="1.288630"/>
+                    <texture_mapping _i="240" u="1.000000" v="2.288630"/>
+                    <texture_mapping _i="241" u="1.000000" v="-3.669277"/>
+                    <texture_mapping _i="242" u="1.000000" v="3.330723"/>
+                    <texture_mapping _i="243" u="1.000000" v="-3.669289"/>
+                    <texture_mapping _i="244" u="1.000000" v="3.330711"/>
+                    <texture_mapping _i="245" u="1.000000" v="-1.638863"/>
+                    <texture_mapping _i="246" u="1.000000" v="-1.638872"/>
+                    <texture_mapping _i="247" u="1.000000" v="0.481467"/>
+                    <texture_mapping _i="248" u="1.000000" v="0.481458"/>
+                    <texture_mapping _i="249" u="1.000000" v="0.778581"/>
+                    <texture_mapping _i="250" u="1.000000" v="2.778581"/>
+                    <texture_mapping _i="251" u="1.000000" v="0.778571"/>
+                    <texture_mapping _i="252" u="1.000000" v="2.778571"/>
+                    <texture_mapping _i="253" u="1.000000" v="-2.778566"/>
+                    <texture_mapping _i="254" u="1.000000" v="3.221434"/>
+                    <texture_mapping _i="255" u="1.000000" v="-2.778576"/>
+                    <texture_mapping _i="256" u="1.000000" v="3.221424"/>
+                    <texture_mapping _i="257" u="1.000000" v="-0.221455"/>
+                    <texture_mapping _i="258" u="1.000000" v="-0.221462"/>
+                    <texture_mapping _i="259" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="260" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="261" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="262" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="263" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="264" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="265" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="266" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="267" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="268" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="269" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="270" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="271" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="272" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="273" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="274" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="275" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="276" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="277" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="278" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="279" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="280" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="281" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="282" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="283" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="284" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="285" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="286" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="287" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="288" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="289" u="0.230000" v="-1.000000"/>
+                    <texture_mapping _i="290" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="291" u="0.000000" v="-2.000000"/>
+                    <texture_mapping _i="292" u="0.000000" v="1.000000"/>
+                    <texture_mapping _i="293" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="294" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="295" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="296" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="297" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="298" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="299" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="300" u="0.000000" v="-3.000000"/>
+                    <texture_mapping _i="301" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="302" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="303" u="0.000000" v="2.000000"/>
+                    <texture_mapping _i="304" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="305" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="306" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="307" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="308" u="0.000000" v="-3.000000"/>
+                    <texture_mapping _i="309" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="310" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="311" u="0.000000" v="2.000000"/>
+                    <texture_mapping _i="312" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="313" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="314" u="1.000000" v="-3.000000"/>
+                    <texture_mapping _i="315" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="316" u="0.000000" v="-3.000000"/>
+                    <texture_mapping _i="317" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="318" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="319" u="0.000000" v="2.000000"/>
+                    <texture_mapping _i="320" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="321" u="1.000000" v="2.000000"/>
+                    <texture_mapping _i="322" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="323" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="324" u="0.000000" v="-2.000000"/>
+                    <texture_mapping _i="325" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="326" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="327" u="0.000000" v="1.000000"/>
+                    <texture_mapping _i="328" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="329" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="330" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="331" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="332" u="0.000000" v="-2.000000"/>
+                    <texture_mapping _i="333" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="334" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="335" u="0.000000" v="1.000000"/>
+                    <texture_mapping _i="336" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="337" u="1.000000" v="1.000000"/>
+                    <texture_mapping _i="338" u="1.000000" v="-2.000000"/>
+                    <texture_mapping _i="339" u="1.000000" v="0.000000"/>
+                    <texture_mapping _i="340" u="0.000000" v="-2.000000"/>
+                    <texture_mapping _i="341" u="0.000000" v="-1.000000"/>
+                    <texture_mapping _i="342" u="0.000000" v="0.000000"/>
+                    <texture_mapping _i="343" u="0.000000" v="1.000000"/>
+                    <texture_mapping _i="344" u="1.000000" v="-1.000000"/>
+                    <texture_mapping _i="345" u="1.000000" v="1.000000"/>
+                </texture_mappings>
+                <faces>
+                    <face _i="0" flags="0" v1="53" v2="52" v3="1"/>
+                    <face _i="1" flags="0" v1="55" v2="54" v3="3"/>
+                    <face _i="2" flags="0" v1="1" v2="4" v3="53"/>
+                    <face _i="3" flags="0" v1="3" v2="6" v3="55"/>
+                    <face _i="4" flags="0" v1="10" v2="2" v3="0"/>
+                    <face _i="5" flags="0" v1="0" v2="8" v3="10"/>
+                    <face _i="6" flags="0" v1="12" v2="5" v3="2"/>
+                    <face _i="7" flags="0" v1="2" v2="10" v3="12"/>
+                    <face _i="8" flags="0" v1="16" v2="9" v3="7"/>
+                    <face _i="9" flags="0" v1="18" v2="11" v3="9"/>
+                    <face _i="10" flags="0" v1="7" v2="14" v3="16"/>
+                    <face _i="11" flags="0" v1="9" v2="16" v3="18"/>
+                    <face _i="12" flags="0" v1="22" v2="15" v3="13"/>
+                    <face _i="13" flags="0" v1="24" v2="17" v3="15"/>
+                    <face _i="14" flags="0" v1="13" v2="20" v3="22"/>
+                    <face _i="15" flags="0" v1="15" v2="22" v3="24"/>
+                    <face _i="16" flags="0" v1="28" v2="21" v3="19"/>
+                    <face _i="17" flags="0" v1="19" v2="26" v3="28"/>
+                    <face _i="18" flags="0" v1="30" v2="23" v3="21"/>
+                    <face _i="19" flags="0" v1="21" v2="28" v3="30"/>
+                    <face _i="20" flags="0" v1="34" v2="27" v3="25"/>
+                    <face _i="21" flags="0" v1="25" v2="32" v3="34"/>
+                    <face _i="22" flags="0" v1="36" v2="29" v3="27"/>
+                    <face _i="23" flags="0" v1="27" v2="34" v3="36"/>
+                    <face _i="24" flags="0" v1="40" v2="33" v3="31"/>
+                    <face _i="25" flags="0" v1="31" v2="38" v3="40"/>
+                    <face _i="26" flags="0" v1="42" v2="35" v3="33"/>
+                    <face _i="27" flags="0" v1="33" v2="40" v3="42"/>
+                    <face _i="28" flags="0" v1="46" v2="39" v3="37"/>
+                    <face _i="29" flags="0" v1="37" v2="44" v3="46"/>
+                    <face _i="30" flags="0" v1="48" v2="41" v3="39"/>
+                    <face _i="31" flags="0" v1="39" v2="46" v3="48"/>
+                    <face _i="32" flags="0" v1="50" v2="45" v3="43"/>
+                    <face _i="33" flags="0" v1="43" v2="49" v3="50"/>
+                    <face _i="34" flags="0" v1="51" v2="47" v3="45"/>
+                    <face _i="35" flags="0" v1="45" v2="50" v3="51"/>
+                    <face _i="36" flags="1" v1="266" v2="269" v3="177"/>
+                    <face _i="37" flags="1" v1="189" v2="179" v3="270"/>
+                    <face _i="38" flags="1" v1="177" v2="167" v3="266"/>
+                    <face _i="39" flags="1" v1="270" v2="273" v3="189"/>
+                    <face _i="40" flags="1" v1="261" v2="265" v3="165"/>
+                    <face _i="41" flags="1" v1="176" v2="180" v3="190"/>
+                    <face _i="42" flags="1" v1="164" v2="168" v3="178"/>
+                    <face _i="43" flags="1" v1="201" v2="191" v3="274"/>
+                    <face _i="44" flags="1" v1="165" v2="155" v3="261"/>
+                    <face _i="45" flags="1" v1="178" v2="175" v3="164"/>
+                    <face _i="46" flags="1" v1="274" v2="277" v3="201"/>
+                    <face _i="47" flags="1" v1="188" v2="192" v3="202"/>
+                    <face _i="48" flags="1" v1="190" v2="187" v3="176"/>
+                    <face _i="49" flags="1" v1="152" v2="156" v3="166"/>
+                    <face _i="50" flags="1" v1="166" v2="163" v3="152"/>
+                    <face _i="51" flags="1" v1="259" v2="260" v3="153"/>
+                    <face _i="52" flags="1" v1="202" v2="199" v3="188"/>
+                    <face _i="53" flags="1" v1="153" v2="146" v3="259"/>
+                    <face _i="54" flags="1" v1="213" v2="203" v3="278"/>
+                    <face _i="55" flags="1" v1="154" v2="151" v3="145"/>
+                    <face _i="56" flags="1" v1="145" v2="147" v3="154"/>
+                    <face _i="57" flags="1" v1="200" v2="204" v3="214"/>
+                    <face _i="58" flags="1" v1="278" v2="281" v3="213"/>
+                    <face _i="59" flags="1" v1="214" v2="211" v3="200"/>
+                    <face _i="60" flags="1" v1="223" v2="215" v3="282"/>
+                    <face _i="61" flags="1" v1="212" v2="216" v3="224"/>
+                    <face _i="62" flags="1" v1="282" v2="285" v3="223"/>
+                    <face _i="63" flags="1" v1="184" v2="181" v3="194"/>
+                    <face _i="64" flags="1" v1="172" v2="169" v3="182"/>
+                    <face _i="65" flags="1" v1="196" v2="193" v3="206"/>
+                    <face _i="66" flags="1" v1="182" v2="186" v3="172"/>
+                    <face _i="67" flags="1" v1="194" v2="198" v3="184"/>
+                    <face _i="68" flags="1" v1="160" v2="157" v3="170"/>
+                    <face _i="69" flags="1" v1="224" v2="141" v3="212"/>
+                    <face _i="70" flags="1" v1="170" v2="174" v3="160"/>
+                    <face _i="71" flags="1" v1="276" v2="271" v3="183"/>
+                    <face _i="72" flags="1" v1="171" v2="185" v3="272"/>
+                    <face _i="73" flags="1" v1="183" v2="197" v3="276"/>
+                    <face _i="74" flags="1" v1="272" v2="267" v3="171"/>
+                    <face _i="75" flags="1" v1="206" v2="210" v3="196"/>
+                    <face _i="76" flags="1" v1="280" v2="275" v3="195"/>
+                    <face _i="77" flags="1" v1="159" v2="173" v3="268"/>
+                    <face _i="78" flags="1" v1="208" v2="205" v3="218"/>
+                    <face _i="79" flags="1" v1="56" v2="225" v3="286"/>
+                    <face _i="80" flags="1" v1="268" v2="262" v3="159"/>
+                    <face _i="81" flags="1" v1="195" v2="209" v3="280"/>
+                    <face _i="82" flags="1" v1="289" v2="286" v3="225"/>
+                    <face _i="83" flags="1" v1="158" v2="162" v3="150"/>
+                    <face _i="84" flags="1" v1="150" v2="148" v3="158"/>
+                    <face _i="85" flags="1" v1="62" v2="142" v3="226"/>
+                    <face _i="86" flags="1" v1="284" v2="279" v3="207"/>
+                    <face _i="87" flags="1" v1="218" v2="222" v3="208"/>
+                    <face _i="88" flags="1" v1="149" v2="161" v3="263"/>
+                    <face _i="89" flags="1" v1="286" v2="231" v3="56"/>
+                    <face _i="90" flags="1" v1="226" v2="57" v3="62"/>
+                    <face _i="91" flags="1" v1="207" v2="221" v3="284"/>
+                    <face _i="92" flags="1" v1="225" v2="61" v3="289"/>
+                    <face _i="93" flags="1" v1="263" v2="264" v3="149"/>
+                    <face _i="94" flags="1" v1="220" v2="217" v3="144"/>
+                    <face _i="95" flags="1" v1="288" v2="283" v3="219"/>
+                    <face _i="96" flags="1" v1="144" v2="230" v3="220"/>
+                    <face _i="97" flags="1" v1="219" v2="229" v3="288"/>
+                    <face _i="98" flags="1" v1="69" v2="58" v3="232"/>
+                    <face _i="99" flags="1" v1="68" v2="228" v3="143"/>
+                    <face _i="100" flags="1" v1="71" v2="60" v3="59"/>
+                    <face _i="101" flags="1" v1="236" v2="287" v3="227"/>
+                    <face _i="102" flags="1" v1="143" v2="63" v3="68"/>
+                    <face _i="103" flags="1" v1="227" v2="67" v3="236"/>
+                    <face _i="104" flags="1" v1="232" v2="233" v3="69"/>
+                    <face _i="105" flags="1" v1="59" v2="70" v3="71"/>
+                    <face _i="106" flags="1" v1="74" v2="66" v3="64"/>
+                    <face _i="107" flags="1" v1="234" v2="235" v3="65"/>
+                    <face _i="108" flags="1" v1="64" v2="72" v3="74"/>
+                    <face _i="109" flags="1" v1="65" v2="73" v3="234"/>
+                    <face _i="110" flags="1" v1="77" v2="69" v3="233"/>
+                    <face _i="111" flags="1" v1="80" v2="71" v3="70"/>
+                    <face _i="112" flags="1" v1="233" v2="238" v3="77"/>
+                    <face _i="113" flags="1" v1="70" v2="78" v3="80"/>
+                    <face _i="114" flags="1" v1="86" v2="74" v3="72"/>
+                    <face _i="115" flags="1" v1="240" v2="234" v3="73"/>
+                    <face _i="116" flags="1" v1="72" v2="82" v3="86"/>
+                    <face _i="117" flags="1" v1="73" v2="85" v3="240"/>
+                    <face _i="118" flags="1" v1="89" v2="75" v3="237"/>
+                    <face _i="119" flags="1" v1="92" v2="79" v3="76"/>
+                    <face _i="120" flags="1" v1="237" v2="242" v3="89"/>
+                    <face _i="121" flags="1" v1="76" v2="90" v3="92"/>
+                    <face _i="122" flags="1" v1="98" v2="84" v3="81"/>
+                    <face _i="123" flags="1" v1="244" v2="239" v3="83"/>
+                    <face _i="124" flags="1" v1="99" v2="87" v3="241"/>
+                    <face _i="125" flags="1" v1="81" v2="94" v3="98"/>
+                    <face _i="126" flags="1" v1="101" v2="91" v3="88"/>
+                    <face _i="127" flags="1" v1="83" v2="97" v3="244"/>
+                    <face _i="128" flags="1" v1="241" v2="245" v3="99"/>
+                    <face _i="129" flags="1" v1="88" v2="100" v3="101"/>
+                    <face _i="130" flags="1" v1="104" v2="96" v3="93"/>
+                    <face _i="131" flags="1" v1="246" v2="243" v3="95"/>
+                    <face _i="132" flags="1" v1="105" v2="99" v3="245"/>
+                    <face _i="133" flags="1" v1="107" v2="101" v3="100"/>
+                    <face _i="134" flags="1" v1="245" v2="247" v3="105"/>
+                    <face _i="135" flags="1" v1="93" v2="102" v3="104"/>
+                    <face _i="136" flags="1" v1="100" v2="106" v3="107"/>
+                    <face _i="137" flags="1" v1="95" v2="103" v3="246"/>
+                    <face _i="138" flags="1" v1="113" v2="105" v3="247"/>
+                    <face _i="139" flags="1" v1="116" v2="107" v3="106"/>
+                    <face _i="140" flags="1" v1="110" v2="104" v3="102"/>
+                    <face _i="141" flags="1" v1="248" v2="246" v3="103"/>
+                    <face _i="142" flags="1" v1="247" v2="250" v3="113"/>
+                    <face _i="143" flags="1" v1="106" v2="114" v3="116"/>
+                    <face _i="144" flags="1" v1="102" v2="108" v3="110"/>
+                    <face _i="145" flags="1" v1="103" v2="109" v3="248"/>
+                    <face _i="146" flags="1" v1="125" v2="111" v3="249"/>
+                    <face _i="147" flags="1" v1="128" v2="115" v3="112"/>
+                    <face _i="148" flags="1" v1="122" v2="110" v3="108"/>
+                    <face _i="149" flags="1" v1="252" v2="248" v3="109"/>
+                    <face _i="150" flags="1" v1="249" v2="254" v3="125"/>
+                    <face _i="151" flags="1" v1="112" v2="126" v3="128"/>
+                    <face _i="152" flags="1" v1="108" v2="118" v3="122"/>
+                    <face _i="153" flags="1" v1="109" v2="121" v3="252"/>
+                    <face _i="154" flags="1" v1="135" v2="123" v3="253"/>
+                    <face _i="155" flags="1" v1="137" v2="127" v3="124"/>
+                    <face _i="156" flags="1" v1="134" v2="120" v3="117"/>
+                    <face _i="157" flags="1" v1="256" v2="251" v3="119"/>
+                    <face _i="158" flags="1" v1="253" v2="257" v3="135"/>
+                    <face _i="159" flags="1" v1="124" v2="136" v3="137"/>
+                    <face _i="160" flags="1" v1="117" v2="130" v3="134"/>
+                    <face _i="161" flags="1" v1="119" v2="133" v3="256"/>
+                    <face _i="162" flags="1" v1="140" v2="132" v3="129"/>
+                    <face _i="163" flags="1" v1="258" v2="255" v3="131"/>
+                    <face _i="164" flags="1" v1="129" v2="138" v3="140"/>
+                    <face _i="165" flags="1" v1="131" v2="139" v3="258"/>
+                    <face _i="166" flags="2" v1="318" v2="315" v3="322"/>
+                    <face _i="167" flags="2" v1="310" v2="307" v3="314"/>
+                    <face _i="168" flags="2" v1="314" v2="316" v3="310"/>
+                    <face _i="169" flags="2" v1="326" v2="323" v3="330"/>
+                    <face _i="170" flags="2" v1="322" v2="324" v3="318"/>
+                    <face _i="171" flags="2" v1="302" v2="299" v3="306"/>
+                    <face _i="172" flags="2" v1="306" v2="308" v3="302"/>
+                    <face _i="173" flags="2" v1="330" v2="332" v3="326"/>
+                    <face _i="174" flags="2" v1="320" v2="317" v3="327"/>
+                    <face _i="175" flags="2" v1="312" v2="309" v3="319"/>
+                    <face _i="176" flags="2" v1="334" v2="331" v3="338"/>
+                    <face _i="177" flags="2" v1="298" v2="300" v3="296"/>
+                    <face _i="178" flags="2" v1="328" v2="325" v3="335"/>
+                    <face _i="179" flags="2" v1="319" v2="321" v3="312"/>
+                    <face _i="180" flags="2" v1="296" v2="294" v3="298"/>
+                    <face _i="181" flags="2" v1="327" v2="329" v3="320"/>
+                    <face _i="182" flags="2" v1="304" v2="301" v3="311"/>
+                    <face _i="183" flags="2" v1="311" v2="313" v3="304"/>
+                    <face _i="184" flags="2" v1="335" v2="337" v3="328"/>
+                    <face _i="185" flags="2" v1="338" v2="340" v3="334"/>
+                    <face _i="186" flags="2" v1="336" v2="333" v3="343"/>
+                    <face _i="187" flags="2" v1="303" v2="305" v3="297"/>
+                    <face _i="188" flags="2" v1="297" v2="295" v3="303"/>
+                    <face _i="189" flags="2" v1="342" v2="339" v3="290"/>
+                    <face _i="190" flags="2" v1="343" v2="345" v3="336"/>
+                    <face _i="191" flags="2" v1="290" v2="291" v3="342"/>
+                    <face _i="192" flags="2" v1="344" v2="341" v3="292"/>
+                    <face _i="193" flags="2" v1="292" v2="293" v3="344"/>
+                </faces>
+                <bounding_sphere>
+                    <pos.x>0.006714</pos.x>
+                    <pos.y>0.006470</pos.y>
+                    <pos.z>-1.012962</pos.z>
+                    <radius>136.253723</radius>
+                </bounding_sphere>
+                <flags>
+                    <has_position>1</has_position>
+                    <has_normals>0</has_normals>
+                </flags>
+                <vertices>
+                    <vertex _i="0" x="-41.121826" y="4.086182" z="-4.411182"/>
+                    <vertex _i="1" x="-41.121826" y="4.086182" z="-4.411182"/>
+                    <vertex _i="2" x="-37.079834" y="8.520447" z="-4.411137"/>
+                    <vertex _i="3" x="-37.079834" y="8.520447" z="-4.411137"/>
+                    <vertex _i="4" x="-37.079834" y="8.520447" z="-4.411137"/>
+                    <vertex _i="5" x="-33.037354" y="12.954468" z="-4.411087"/>
+                    <vertex _i="6" x="-33.037354" y="12.954468" z="-4.411087"/>
+                    <vertex _i="7" x="-25.643799" y="-8.095520" z="-5.750839"/>
+                    <vertex _i="8" x="-25.643799" y="-8.095520" z="-5.750839"/>
+                    <vertex _i="9" x="-22.256348" y="-3.143372" z="-5.750797"/>
+                    <vertex _i="10" x="-22.256348" y="-3.143372" z="-5.750797"/>
+                    <vertex _i="11" x="-18.868652" y="1.808960" z="-5.750755"/>
+                    <vertex _i="12" x="-18.868652" y="1.808960" z="-5.750755"/>
+                    <vertex _i="13" x="-9.182861" y="-19.247803" z="-6.967915"/>
+                    <vertex _i="14" x="-9.182861" y="-19.247803" z="-6.967915"/>
+                    <vertex _i="15" x="-5.840332" y="-14.264893" z="-6.967880"/>
+                    <vertex _i="16" x="-5.840332" y="-14.264893" z="-6.967880"/>
+                    <vertex _i="17" x="-2.498047" y="-9.281982" z="-6.967842"/>
+                    <vertex _i="18" x="-2.498047" y="-9.281982" z="-6.967842"/>
+                    <vertex _i="19" x="4.860596" y="-30.538452" z="-8.085945"/>
+                    <vertex _i="20" x="4.860596" y="-30.538452" z="-8.085945"/>
+                    <vertex _i="21" x="8.858154" y="-26.064087" z="-8.085918"/>
+                    <vertex _i="22" x="8.858154" y="-26.064087" z="-8.085918"/>
+                    <vertex _i="23" x="12.855957" y="-21.589966" z="-8.085890"/>
+                    <vertex _i="24" x="12.855957" y="-21.589966" z="-8.085890"/>
+                    <vertex _i="25" x="16.003662" y="-43.258301" z="-9.128441"/>
+                    <vertex _i="26" x="16.003662" y="-43.258301" z="-9.128441"/>
+                    <vertex _i="27" x="20.442139" y="-39.220947" z="-9.128443"/>
+                    <vertex _i="28" x="20.442139" y="-39.220947" z="-9.128443"/>
+                    <vertex _i="29" x="24.880859" y="-35.183716" z="-9.128445"/>
+                    <vertex _i="30" x="24.880859" y="-35.183716" z="-9.128445"/>
+                    <vertex _i="31" x="25.840820" y="-56.495117" z="-9.929802"/>
+                    <vertex _i="32" x="25.840820" y="-56.495117" z="-9.929802"/>
+                    <vertex _i="33" x="30.740967" y="-53.032471" z="-9.929928"/>
+                    <vertex _i="34" x="30.740967" y="-53.032471" z="-9.929928"/>
+                    <vertex _i="35" x="35.640869" y="-49.569702" z="-9.930056"/>
+                    <vertex _i="36" x="35.640869" y="-49.569702" z="-9.930056"/>
+                    <vertex _i="37" x="36.297119" y="-76.874268" z="-10.338858"/>
+                    <vertex _i="38" x="36.297119" y="-76.874268" z="-10.338858"/>
+                    <vertex _i="39" x="41.550293" y="-73.975098" z="-10.338911"/>
+                    <vertex _i="40" x="41.550293" y="-73.975098" z="-10.338911"/>
+                    <vertex _i="41" x="46.803467" y="-71.075928" z="-10.338963"/>
+                    <vertex _i="42" x="46.803467" y="-71.075928" z="-10.338963"/>
+                    <vertex _i="43" x="47.716309" y="-97.649658" z="-10.399748"/>
+                    <vertex _i="44" x="47.716309" y="-97.649658" z="-10.399748"/>
+                    <vertex _i="45" x="52.977783" y="-94.765747" z="-10.399761"/>
+                    <vertex _i="46" x="52.977783" y="-94.765747" z="-10.399761"/>
+                    <vertex _i="47" x="58.239258" y="-91.881958" z="-10.399775"/>
+                    <vertex _i="48" x="58.239258" y="-91.881958" z="-10.399775"/>
+                    <vertex _i="49" x="59.644531" y="-119.428955" z="-10.156876"/>
+                    <vertex _i="50" x="64.906494" y="-116.546143" z="-10.156868"/>
+                    <vertex _i="51" x="70.168701" y="-113.663452" z="-10.156860"/>
+                    <vertex _i="52" x="-48.639160" y="12.733093" z="-3.685474"/>
+                    <vertex _i="53" x="-44.913086" y="16.067749" z="-3.660477"/>
+                    <vertex _i="54" x="-44.913086" y="16.067749" z="-3.660477"/>
+                    <vertex _i="55" x="-41.187500" y="19.402161" z="-3.685474"/>
+                    <vertex _i="56" x="-42.368896" y="2.681030" z="-4.062424"/>
+                    <vertex _i="57" x="-42.368896" y="2.681030" z="-4.062424"/>
+                    <vertex _i="58" x="-42.368896" y="2.681030" z="-4.062424"/>
+                    <vertex _i="59" x="-42.368896" y="2.681030" z="-4.062424"/>
+                    <vertex _i="60" x="-41.121826" y="4.086182" z="-4.411182"/>
+                    <vertex _i="61" x="-41.121826" y="4.086182" z="-4.411182"/>
+                    <vertex _i="62" x="-41.121826" y="4.086182" z="-4.411182"/>
+                    <vertex _i="63" x="-33.037354" y="12.954468" z="-4.411087"/>
+                    <vertex _i="64" x="-33.037354" y="12.954468" z="-4.411087"/>
+                    <vertex _i="65" x="-32.110352" y="13.934570" z="-4.062305"/>
+                    <vertex _i="66" x="-32.110352" y="13.934570" z="-4.062305"/>
+                    <vertex _i="67" x="-32.110352" y="13.934570" z="-4.062305"/>
+                    <vertex _i="68" x="-32.110352" y="13.934570" z="-4.062305"/>
+                    <vertex _i="69" x="-26.686035" y="-9.658813" z="-5.401913"/>
+                    <vertex _i="70" x="-26.686035" y="-9.658813" z="-5.401913"/>
+                    <vertex _i="71" x="-25.643799" y="-8.095520" z="-5.750839"/>
+                    <vertex _i="72" x="-18.868652" y="1.808960" z="-5.750755"/>
+                    <vertex _i="73" x="-18.088867" y="2.909668" z="-5.401806"/>
+                    <vertex _i="74" x="-18.088867" y="2.909668" z="-5.401806"/>
+                    <vertex _i="75" x="-10.212158" y="-20.819336" z="-6.618866"/>
+                    <vertex _i="76" x="-10.212158" y="-20.819336" z="-6.618866"/>
+                    <vertex _i="77" x="-10.212158" y="-20.819336" z="-6.618866"/>
+                    <vertex _i="78" x="-10.212158" y="-20.819336" z="-6.618866"/>
+                    <vertex _i="79" x="-9.182861" y="-19.247803" z="-6.967915"/>
+                    <vertex _i="80" x="-9.182861" y="-19.247803" z="-6.967915"/>
+                    <vertex _i="81" x="-2.498047" y="-9.281982" z="-6.967842"/>
+                    <vertex _i="82" x="-2.498047" y="-9.281982" z="-6.967842"/>
+                    <vertex _i="83" x="-1.729248" y="-8.172974" z="-6.618778"/>
+                    <vertex _i="84" x="-1.729248" y="-8.172974" z="-6.618778"/>
+                    <vertex _i="85" x="-1.729248" y="-8.172974" z="-6.618778"/>
+                    <vertex _i="86" x="-1.729248" y="-8.172974" z="-6.618778"/>
+                    <vertex _i="87" x="3.623291" y="-31.952148" z="-7.736813"/>
+                    <vertex _i="88" x="3.623291" y="-31.952148" z="-7.736813"/>
+                    <vertex _i="89" x="3.623291" y="-31.952148" z="-7.736813"/>
+                    <vertex _i="90" x="3.623291" y="-31.952148" z="-7.736813"/>
+                    <vertex _i="91" x="4.860596" y="-30.538452" z="-8.085945"/>
+                    <vertex _i="92" x="4.860596" y="-30.538452" z="-8.085945"/>
+                    <vertex _i="93" x="12.855957" y="-21.589966" z="-8.085890"/>
+                    <vertex _i="94" x="12.855957" y="-21.589966" z="-8.085890"/>
+                    <vertex _i="95" x="13.769287" y="-20.596680" z="-7.736740"/>
+                    <vertex _i="96" x="13.769287" y="-20.596680" z="-7.736740"/>
+                    <vertex _i="97" x="13.769287" y="-20.596680" z="-7.736740"/>
+                    <vertex _i="98" x="13.769287" y="-20.596680" z="-7.736740"/>
+                    <vertex _i="99" x="14.625732" y="-44.535522" z="-8.779219"/>
+                    <vertex _i="100" x="14.625732" y="-44.535522" z="-8.779219"/>
+                    <vertex _i="101" x="16.003662" y="-43.258301" z="-9.128441"/>
+                    <vertex _i="102" x="24.880859" y="-35.183716" z="-9.128445"/>
+                    <vertex _i="103" x="25.890625" y="-34.289063" z="-8.779224"/>
+                    <vertex _i="104" x="25.890625" y="-34.289063" z="-8.779224"/>
+                    <vertex _i="105" x="24.312256" y="-57.587280" z="-9.580221"/>
+                    <vertex _i="106" x="24.312256" y="-57.587280" z="-9.580221"/>
+                    <vertex _i="107" x="25.840820" y="-56.495117" z="-9.929802"/>
+                    <vertex _i="108" x="35.640869" y="-49.569702" z="-9.930056"/>
+                    <vertex _i="109" x="36.748291" y="-48.799194" z="-9.580542"/>
+                    <vertex _i="110" x="36.748291" y="-48.799194" z="-9.580542"/>
+                    <vertex _i="111" x="34.654053" y="-77.785034" z="-9.989189"/>
+                    <vertex _i="112" x="34.654053" y="-77.785034" z="-9.989189"/>
+                    <vertex _i="113" x="34.654053" y="-77.785034" z="-9.989189"/>
+                    <vertex _i="114" x="34.654053" y="-77.785034" z="-9.989189"/>
+                    <vertex _i="115" x="36.297119" y="-76.874268" z="-10.338858"/>
+                    <vertex _i="116" x="36.297119" y="-76.874268" z="-10.338858"/>
+                    <vertex _i="117" x="46.803467" y="-71.075928" z="-10.338963"/>
+                    <vertex _i="118" x="46.803467" y="-71.075928" z="-10.338963"/>
+                    <vertex _i="119" x="47.986084" y="-70.427124" z="-9.989323"/>
+                    <vertex _i="120" x="47.986084" y="-70.427124" z="-9.989323"/>
+                    <vertex _i="121" x="47.986084" y="-70.427124" z="-9.989323"/>
+                    <vertex _i="122" x="47.986084" y="-70.427124" z="-9.989323"/>
+                    <vertex _i="123" x="46.068115" y="-98.551392" z="-10.050079"/>
+                    <vertex _i="124" x="46.068115" y="-98.551392" z="-10.050079"/>
+                    <vertex _i="125" x="46.068115" y="-98.551392" z="-10.050079"/>
+                    <vertex _i="126" x="46.068115" y="-98.551392" z="-10.050079"/>
+                    <vertex _i="127" x="47.716309" y="-97.649658" z="-10.399748"/>
+                    <vertex _i="128" x="47.716309" y="-97.649658" z="-10.399748"/>
+                    <vertex _i="129" x="58.239258" y="-91.881958" z="-10.399775"/>
+                    <vertex _i="130" x="58.239258" y="-91.881958" z="-10.399775"/>
+                    <vertex _i="131" x="59.421631" y="-91.232300" z="-10.050116"/>
+                    <vertex _i="132" x="59.421631" y="-91.232300" z="-10.050116"/>
+                    <vertex _i="133" x="59.421631" y="-91.232300" z="-10.050116"/>
+                    <vertex _i="134" x="59.421631" y="-91.232300" z="-10.050116"/>
+                    <vertex _i="135" x="57.994141" y="-120.326904" z="-9.807253"/>
+                    <vertex _i="136" x="57.994141" y="-120.326904" z="-9.807253"/>
+                    <vertex _i="137" x="59.644531" y="-119.428955" z="-10.156876"/>
+                    <vertex _i="138" x="70.168701" y="-113.663452" z="-10.156860"/>
+                    <vertex _i="139" x="71.349365" y="-113.010742" z="-9.807236"/>
+                    <vertex _i="140" x="71.349365" y="-113.010742" z="-9.807236"/>
+                    <vertex _i="141" x="-48.639160" y="12.733093" z="-3.685474"/>
+                    <vertex _i="142" x="-48.639160" y="12.733093" z="-3.685474"/>
+                    <vertex _i="143" x="-41.187500" y="19.402161" z="-3.685474"/>
+                    <vertex _i="144" x="-41.187500" y="19.402161" z="-3.685474"/>
+                    <vertex _i="145" x="-57.605713" y="120.106995" z="10.231300"/>
+                    <vertex _i="146" x="-62.600098" y="120.339844" z="10.406296"/>
+                    <vertex _i="147" x="-62.600098" y="120.339844" z="10.406296"/>
+                    <vertex _i="148" x="-47.616455" y="119.640869" z="10.231300"/>
+                    <vertex _i="149" x="-42.622070" y="119.407898" z="10.406296"/>
+                    <vertex _i="150" x="-42.622070" y="119.407898" z="10.406296"/>
+                    <vertex _i="151" x="-63.126221" y="96.742615" z="5.955826"/>
+                    <vertex _i="152" x="-63.126221" y="96.742615" z="5.955826"/>
+                    <vertex _i="153" x="-68.120605" y="96.975525" z="6.130821"/>
+                    <vertex _i="154" x="-68.120605" y="96.975525" z="6.130821"/>
+                    <vertex _i="155" x="-68.120605" y="96.975525" z="6.130821"/>
+                    <vertex _i="156" x="-68.120605" y="96.975525" z="6.130821"/>
+                    <vertex _i="157" x="-53.136963" y="96.276550" z="5.955826"/>
+                    <vertex _i="158" x="-53.136963" y="96.276550" z="5.955826"/>
+                    <vertex _i="159" x="-48.142578" y="96.043518" z="6.130821"/>
+                    <vertex _i="160" x="-48.142578" y="96.043518" z="6.130821"/>
+                    <vertex _i="161" x="-48.142578" y="96.043518" z="6.130821"/>
+                    <vertex _i="162" x="-48.142578" y="96.043518" z="6.130821"/>
+                    <vertex _i="163" x="-65.661621" y="78.573730" z="1.818527"/>
+                    <vertex _i="164" x="-65.661621" y="78.573730" z="1.818527"/>
+                    <vertex _i="165" x="-70.660400" y="78.675781" z="1.993523"/>
+                    <vertex _i="166" x="-70.660400" y="78.675781" z="1.993523"/>
+                    <vertex _i="167" x="-70.660400" y="78.675781" z="1.993523"/>
+                    <vertex _i="168" x="-70.660400" y="78.675781" z="1.993523"/>
+                    <vertex _i="169" x="-55.663818" y="78.369263" z="1.818527"/>
+                    <vertex _i="170" x="-55.663818" y="78.369263" z="1.818527"/>
+                    <vertex _i="171" x="-50.664795" y="78.267212" z="1.993523"/>
+                    <vertex _i="172" x="-50.664795" y="78.267212" z="1.993523"/>
+                    <vertex _i="173" x="-50.664795" y="78.267212" z="1.993523"/>
+                    <vertex _i="174" x="-50.664795" y="78.267212" z="1.993523"/>
+                    <vertex _i="175" x="-66.350098" y="62.582520" z="-0.157547"/>
+                    <vertex _i="176" x="-66.350098" y="62.582520" z="-0.157547"/>
+                    <vertex _i="177" x="-71.335938" y="62.205017" z="0.017448"/>
+                    <vertex _i="178" x="-71.335938" y="62.205017" z="0.017448"/>
+                    <vertex _i="179" x="-71.335938" y="62.205017" z="0.017448"/>
+                    <vertex _i="180" x="-71.335938" y="62.205017" z="0.017448"/>
+                    <vertex _i="181" x="-56.378662" y="63.337280" z="-0.157547"/>
+                    <vertex _i="182" x="-56.378662" y="63.337280" z="-0.157547"/>
+                    <vertex _i="183" x="-51.393311" y="63.714722" z="0.017448"/>
+                    <vertex _i="184" x="-51.393311" y="63.714722" z="0.017448"/>
+                    <vertex _i="185" x="-51.393311" y="63.714722" z="0.017448"/>
+                    <vertex _i="186" x="-51.393311" y="63.714722" z="0.017448"/>
+                    <vertex _i="187" x="-65.450439" y="45.126892" z="-1.158890"/>
+                    <vertex _i="188" x="-65.450439" y="45.126892" z="-1.158890"/>
+                    <vertex _i="189" x="-70.315430" y="43.974060" z="-0.983894"/>
+                    <vertex _i="190" x="-70.315430" y="43.974060" z="-0.983894"/>
+                    <vertex _i="191" x="-70.315430" y="43.974060" z="-0.983894"/>
+                    <vertex _i="192" x="-70.315430" y="43.974060" z="-0.983894"/>
+                    <vertex _i="193" x="-55.719482" y="47.432251" z="-1.158890"/>
+                    <vertex _i="194" x="-55.719482" y="47.432251" z="-1.158890"/>
+                    <vertex _i="195" x="-50.854492" y="48.584900" z="-0.983894"/>
+                    <vertex _i="196" x="-50.854492" y="48.584900" z="-0.983894"/>
+                    <vertex _i="197" x="-50.854492" y="48.584900" z="-0.983894"/>
+                    <vertex _i="198" x="-50.854492" y="48.584900" z="-0.983894"/>
+                    <vertex _i="199" x="-61.731689" y="32.603394" z="-1.506161"/>
+                    <vertex _i="200" x="-61.731689" y="32.603394" z="-1.506161"/>
+                    <vertex _i="201" x="-66.356934" y="30.703674" z="-1.331161"/>
+                    <vertex _i="202" x="-66.356934" y="30.703674" z="-1.331161"/>
+                    <vertex _i="203" x="-66.356934" y="30.703674" z="-1.331161"/>
+                    <vertex _i="204" x="-66.356934" y="30.703674" z="-1.331161"/>
+                    <vertex _i="205" x="-52.481689" y="36.402527" z="-1.506161"/>
+                    <vertex _i="206" x="-52.481689" y="36.402527" z="-1.506161"/>
+                    <vertex _i="207" x="-47.856445" y="38.302063" z="-1.331161"/>
+                    <vertex _i="208" x="-47.856445" y="38.302063" z="-1.331161"/>
+                    <vertex _i="209" x="-47.856445" y="38.302063" z="-1.331161"/>
+                    <vertex _i="210" x="-47.856445" y="38.302063" z="-1.331161"/>
+                    <vertex _i="211" x="-55.246826" y="19.958740" z="-2.204014"/>
+                    <vertex _i="212" x="-55.246826" y="19.958740" z="-2.204014"/>
+                    <vertex _i="213" x="-59.058594" y="16.722839" z="-2.029015"/>
+                    <vertex _i="214" x="-59.058594" y="16.722839" z="-2.029015"/>
+                    <vertex _i="215" x="-59.058594" y="16.722839" z="-2.029015"/>
+                    <vertex _i="216" x="-59.058594" y="16.722839" z="-2.029015"/>
+                    <vertex _i="217" x="-47.623291" y="26.430481" z="-2.204014"/>
+                    <vertex _i="218" x="-47.623291" y="26.430481" z="-2.204014"/>
+                    <vertex _i="219" x="-43.811768" y="29.666321" z="-2.029015"/>
+                    <vertex _i="220" x="-43.811768" y="29.666321" z="-2.029015"/>
+                    <vertex _i="221" x="-43.811768" y="29.666321" z="-2.029015"/>
+                    <vertex _i="222" x="-43.811768" y="29.666321" z="-2.029015"/>
+                    <vertex _i="223" x="-52.702881" y="9.120239" z="-3.510475"/>
+                    <vertex _i="224" x="-52.702881" y="9.120239" z="-3.510475"/>
+                    <vertex _i="225" x="-52.702881" y="9.120239" z="-3.510475"/>
+                    <vertex _i="226" x="-52.702881" y="9.120239" z="-3.510475"/>
+                    <vertex _i="227" x="-37.193359" y="22.848511" z="-3.510475"/>
+                    <vertex _i="228" x="-37.193359" y="22.848511" z="-3.510475"/>
+                    <vertex _i="229" x="-37.193359" y="22.848511" z="-3.510475"/>
+                    <vertex _i="230" x="-37.193359" y="22.848511" z="-3.510475"/>
+                    <vertex _i="231" x="-42.368896" y="2.681030" z="-6.444527"/>
+                    <vertex _i="232" x="-42.368896" y="2.681030" z="-6.444527"/>
+                    <vertex _i="233" x="-26.686035" y="-9.658813" z="-7.784016"/>
+                    <vertex _i="234" x="-18.088867" y="2.909668" z="-7.783909"/>
+                    <vertex _i="235" x="-32.110352" y="13.934570" z="-6.444408"/>
+                    <vertex _i="236" x="-32.110352" y="13.934570" z="-6.444408"/>
+                    <vertex _i="237" x="-10.212158" y="-20.819336" z="-9.000969"/>
+                    <vertex _i="238" x="-10.212158" y="-20.819336" z="-9.000969"/>
+                    <vertex _i="239" x="-1.729248" y="-8.172974" z="-9.000881"/>
+                    <vertex _i="240" x="-1.729248" y="-8.172974" z="-9.000881"/>
+                    <vertex _i="241" x="3.623291" y="-31.952148" z="-10.118916"/>
+                    <vertex _i="242" x="3.623291" y="-31.952148" z="-10.118916"/>
+                    <vertex _i="243" x="13.769287" y="-20.596680" z="-10.118843"/>
+                    <vertex _i="244" x="13.769287" y="-20.596680" z="-10.118843"/>
+                    <vertex _i="245" x="14.625732" y="-44.535522" z="-11.161324"/>
+                    <vertex _i="246" x="25.890625" y="-34.289063" z="-11.161327"/>
+                    <vertex _i="247" x="24.312256" y="-57.587280" z="-11.962326"/>
+                    <vertex _i="248" x="36.748291" y="-48.799194" z="-11.962646"/>
+                    <vertex _i="249" x="34.654053" y="-77.785034" z="-12.371292"/>
+                    <vertex _i="250" x="34.654053" y="-77.785034" z="-12.371292"/>
+                    <vertex _i="251" x="47.986084" y="-70.427124" z="-12.371426"/>
+                    <vertex _i="252" x="47.986084" y="-70.427124" z="-12.371426"/>
+                    <vertex _i="253" x="46.068115" y="-98.551392" z="-12.432182"/>
+                    <vertex _i="254" x="46.068115" y="-98.551392" z="-12.432182"/>
+                    <vertex _i="255" x="59.421631" y="-91.232300" z="-12.432220"/>
+                    <vertex _i="256" x="59.421631" y="-91.232300" z="-12.432220"/>
+                    <vertex _i="257" x="57.994141" y="-120.326904" z="-12.189354"/>
+                    <vertex _i="258" x="71.349365" y="-113.010742" z="-12.189339"/>
+                    <vertex _i="259" x="-62.600098" y="120.339844" z="8.024193"/>
+                    <vertex _i="260" x="-68.120605" y="96.975525" z="3.748718"/>
+                    <vertex _i="261" x="-68.120605" y="96.975525" z="3.748718"/>
+                    <vertex _i="262" x="-48.142578" y="96.043518" z="3.748718"/>
+                    <vertex _i="263" x="-48.142578" y="96.043518" z="3.748718"/>
+                    <vertex _i="264" x="-42.622070" y="119.407898" z="8.024193"/>
+                    <vertex _i="265" x="-70.660400" y="78.675781" z="-0.388580"/>
+                    <vertex _i="266" x="-70.660400" y="78.675781" z="-0.388580"/>
+                    <vertex _i="267" x="-50.664795" y="78.267212" z="-0.388580"/>
+                    <vertex _i="268" x="-50.664795" y="78.267212" z="-0.388580"/>
+                    <vertex _i="269" x="-71.335938" y="62.205017" z="-2.364655"/>
+                    <vertex _i="270" x="-71.335938" y="62.205017" z="-2.364655"/>
+                    <vertex _i="271" x="-51.393311" y="63.714722" z="-2.364655"/>
+                    <vertex _i="272" x="-51.393311" y="63.714722" z="-2.364655"/>
+                    <vertex _i="273" x="-70.315430" y="43.974060" z="-3.365997"/>
+                    <vertex _i="274" x="-70.315430" y="43.974060" z="-3.365997"/>
+                    <vertex _i="275" x="-50.854492" y="48.584900" z="-3.365997"/>
+                    <vertex _i="276" x="-50.854492" y="48.584900" z="-3.365997"/>
+                    <vertex _i="277" x="-66.356934" y="30.703674" z="-3.713264"/>
+                    <vertex _i="278" x="-66.356934" y="30.703674" z="-3.713264"/>
+                    <vertex _i="279" x="-47.856445" y="38.302063" z="-3.713264"/>
+                    <vertex _i="280" x="-47.856445" y="38.302063" z="-3.713264"/>
+                    <vertex _i="281" x="-59.058594" y="16.722839" z="-4.411118"/>
+                    <vertex _i="282" x="-59.058594" y="16.722839" z="-4.411118"/>
+                    <vertex _i="283" x="-43.811768" y="29.666321" z="-4.411118"/>
+                    <vertex _i="284" x="-43.811768" y="29.666321" z="-4.411118"/>
+                    <vertex _i="285" x="-52.702881" y="9.120239" z="-5.892578"/>
+                    <vertex _i="286" x="-52.702881" y="9.120239" z="-5.892578"/>
+                    <vertex _i="287" x="-37.193359" y="22.848511" z="-5.892578"/>
+                    <vertex _i="288" x="-37.193359" y="22.848511" z="-5.892578"/>
+                    <vertex _i="289" x="-41.121826" y="4.086182" z="-6.793285"/>
+                    <vertex _i="290" x="-48.639160" y="12.733093" z="-3.685474"/>
+                    <vertex _i="291" x="-44.913086" y="16.067749" z="-3.660477"/>
+                    <vertex _i="292" x="-44.913086" y="16.067749" z="-3.660477"/>
+                    <vertex _i="293" x="-41.187500" y="19.402161" z="-3.685474"/>
+                    <vertex _i="294" x="-57.605713" y="120.106995" z="10.231300"/>
+                    <vertex _i="295" x="-52.611084" y="119.873901" z="10.256294"/>
+                    <vertex _i="296" x="-52.611084" y="119.873901" z="10.256294"/>
+                    <vertex _i="297" x="-47.616455" y="119.640869" z="10.231300"/>
+                    <vertex _i="298" x="-63.126221" y="96.742615" z="5.955826"/>
+                    <vertex _i="299" x="-63.126221" y="96.742615" z="5.955826"/>
+                    <vertex _i="300" x="-58.131592" y="96.509583" z="5.980820"/>
+                    <vertex _i="301" x="-58.131592" y="96.509583" z="5.980820"/>
+                    <vertex _i="302" x="-58.131592" y="96.509583" z="5.980820"/>
+                    <vertex _i="303" x="-58.131592" y="96.509583" z="5.980820"/>
+                    <vertex _i="304" x="-53.136963" y="96.276550" z="5.955826"/>
+                    <vertex _i="305" x="-53.136963" y="96.276550" z="5.955826"/>
+                    <vertex _i="306" x="-65.661621" y="78.573730" z="1.818527"/>
+                    <vertex _i="307" x="-65.661621" y="78.573730" z="1.818527"/>
+                    <vertex _i="308" x="-60.662598" y="78.471558" z="1.843521"/>
+                    <vertex _i="309" x="-60.662598" y="78.471558" z="1.843521"/>
+                    <vertex _i="310" x="-60.662598" y="78.471558" z="1.843521"/>
+                    <vertex _i="311" x="-60.662598" y="78.471558" z="1.843521"/>
+                    <vertex _i="312" x="-55.663818" y="78.369263" z="1.818527"/>
+                    <vertex _i="313" x="-55.663818" y="78.369263" z="1.818527"/>
+                    <vertex _i="314" x="-66.350098" y="62.582520" z="-0.157547"/>
+                    <vertex _i="315" x="-66.350098" y="62.582520" z="-0.157547"/>
+                    <vertex _i="316" x="-61.364502" y="62.959961" z="-0.132553"/>
+                    <vertex _i="317" x="-61.364502" y="62.959961" z="-0.132553"/>
+                    <vertex _i="318" x="-61.364502" y="62.959961" z="-0.132553"/>
+                    <vertex _i="319" x="-61.364502" y="62.959961" z="-0.132553"/>
+                    <vertex _i="320" x="-56.378662" y="63.337280" z="-0.157547"/>
+                    <vertex _i="321" x="-56.378662" y="63.337280" z="-0.157547"/>
+                    <vertex _i="322" x="-65.450439" y="45.126892" z="-1.158890"/>
+                    <vertex _i="323" x="-65.450439" y="45.126892" z="-1.158890"/>
+                    <vertex _i="324" x="-60.584961" y="46.279541" z="-1.133896"/>
+                    <vertex _i="325" x="-60.584961" y="46.279541" z="-1.133896"/>
+                    <vertex _i="326" x="-60.584961" y="46.279541" z="-1.133896"/>
+                    <vertex _i="327" x="-60.584961" y="46.279541" z="-1.133896"/>
+                    <vertex _i="328" x="-55.719482" y="47.432251" z="-1.158890"/>
+                    <vertex _i="329" x="-55.719482" y="47.432251" z="-1.158890"/>
+                    <vertex _i="330" x="-61.731689" y="32.603394" z="-1.506161"/>
+                    <vertex _i="331" x="-61.731689" y="32.603394" z="-1.506161"/>
+                    <vertex _i="332" x="-57.106445" y="34.502991" z="-1.481163"/>
+                    <vertex _i="333" x="-57.106445" y="34.502991" z="-1.481163"/>
+                    <vertex _i="334" x="-57.106445" y="34.502991" z="-1.481163"/>
+                    <vertex _i="335" x="-57.106445" y="34.502991" z="-1.481163"/>
+                    <vertex _i="336" x="-52.481689" y="36.402527" z="-1.506161"/>
+                    <vertex _i="337" x="-52.481689" y="36.402527" z="-1.506161"/>
+                    <vertex _i="338" x="-55.246826" y="19.958740" z="-2.204014"/>
+                    <vertex _i="339" x="-55.246826" y="19.958740" z="-2.204014"/>
+                    <vertex _i="340" x="-51.435059" y="23.194641" z="-2.179016"/>
+                    <vertex _i="341" x="-51.435059" y="23.194641" z="-2.179016"/>
+                    <vertex _i="342" x="-51.435059" y="23.194641" z="-2.179016"/>
+                    <vertex _i="343" x="-51.435059" y="23.194641" z="-2.179016"/>
+                    <vertex _i="344" x="-47.623291" y="26.430481" z="-2.204014"/>
+                    <vertex _i="345" x="-47.623291" y="26.430481" z="-2.204014"/>
+                </vertices>
+            </geometry_data>
+            <material_list size="468" type="rwID_MATLIST" version="402915327"/>
+            <extension size="3436" type="rwID_EXTENSION" version="402915327">
+                <bin_mesh_plg size="2008" type="UNKNOWN" version="402915327">
+                    <flags>1</flags>
+                    <mesh_count>3</mesh_count>
+                    <total_indices>493</total_indices>
+                    <meshes>
+                        <mesh>
+                            <index_count>75</index_count>
+                            <mat_index>0</mat_index>
+                            <indices>
+                                <index _i="0">52</index>
+                                <index _i="1">1</index>
+                                <index _i="2">53</index>
+                                <index _i="3">4</index>
+                                <index _i="4">4</index>
+                                <index _i="5">6</index>
+                                <index _i="6">6</index>
+                                <index _i="7">55</index>
+                                <index _i="8">3</index>
+                                <index _i="9">54</index>
+                                <index _i="10">54</index>
+                                <index _i="11">47</index>
+                                <index _i="12">47</index>
+                                <index _i="13">47</index>
+                                <index _i="14">51</index>
+                                <index _i="15">45</index>
+                                <index _i="16">50</index>
+                                <index _i="17">43</index>
+                                <index _i="18">49</index>
+                                <index _i="19">49</index>
+                                <index _i="20">41</index>
+                                <index _i="21">41</index>
+                                <index _i="22">48</index>
+                                <index _i="23">39</index>
+                                <index _i="24">46</index>
+                                <index _i="25">37</index>
+                                <index _i="26">44</index>
+                                <index _i="27">44</index>
+                                <index _i="28">35</index>
+                                <index _i="29">35</index>
+                                <index _i="30">42</index>
+                                <index _i="31">33</index>
+                                <index _i="32">40</index>
+                                <index _i="33">31</index>
+                                <index _i="34">38</index>
+                                <index _i="35">38</index>
+                                <index _i="36">29</index>
+                                <index _i="37">29</index>
+                                <index _i="38">36</index>
+                                <index _i="39">27</index>
+                                <index _i="40">34</index>
+                                <index _i="41">25</index>
+                                <index _i="42">32</index>
+                                <index _i="43">32</index>
+                                <index _i="44">23</index>
+                                <index _i="45">23</index>
+                                <index _i="46">30</index>
+                                <index _i="47">21</index>
+                                <index _i="48">28</index>
+                                <index _i="49">19</index>
+                                <index _i="50">26</index>
+                                <index _i="51">26</index>
+                                <index _i="52">20</index>
+                                <index _i="53">20</index>
+                                <index _i="54">13</index>
+                                <index _i="55">22</index>
+                                <index _i="56">15</index>
+                                <index _i="57">24</index>
+                                <index _i="58">17</index>
+                                <index _i="59">17</index>
+                                <index _i="60">14</index>
+                                <index _i="61">14</index>
+                                <index _i="62">7</index>
+                                <index _i="63">16</index>
+                                <index _i="64">9</index>
+                                <index _i="65">18</index>
+                                <index _i="66">11</index>
+                                <index _i="67">11</index>
+                                <index _i="68">5</index>
+                                <index _i="69">5</index>
+                                <index _i="70">12</index>
+                                <index _i="71">2</index>
+                                <index _i="72">10</index>
+                                <index _i="73">0</index>
+                                <index _i="74">8</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>336</index_count>
+                            <mat_index>1</mat_index>
+                            <indices>
+                                <index _i="0">139</index>
+                                <index _i="1">258</index>
+                                <index _i="2">131</index>
+                                <index _i="3">255</index>
+                                <index _i="4">255</index>
+                                <index _i="5">138</index>
+                                <index _i="6">138</index>
+                                <index _i="7">140</index>
+                                <index _i="8">129</index>
+                                <index _i="9">132</index>
+                                <index _i="10">132</index>
+                                <index _i="11">133</index>
+                                <index _i="12">133</index>
+                                <index _i="13">256</index>
+                                <index _i="14">119</index>
+                                <index _i="15">251</index>
+                                <index _i="16">251</index>
+                                <index _i="17">130</index>
+                                <index _i="18">130</index>
+                                <index _i="19">134</index>
+                                <index _i="20">117</index>
+                                <index _i="21">120</index>
+                                <index _i="22">120</index>
+                                <index _i="23">136</index>
+                                <index _i="24">136</index>
+                                <index _i="25">137</index>
+                                <index _i="26">124</index>
+                                <index _i="27">127</index>
+                                <index _i="28">127</index>
+                                <index _i="29">257</index>
+                                <index _i="30">257</index>
+                                <index _i="31">135</index>
+                                <index _i="32">253</index>
+                                <index _i="33">123</index>
+                                <index _i="34">123</index>
+                                <index _i="35">121</index>
+                                <index _i="36">121</index>
+                                <index _i="37">252</index>
+                                <index _i="38">109</index>
+                                <index _i="39">248</index>
+                                <index _i="40">103</index>
+                                <index _i="41">246</index>
+                                <index _i="42">95</index>
+                                <index _i="43">243</index>
+                                <index _i="44">243</index>
+                                <index _i="45">118</index>
+                                <index _i="46">118</index>
+                                <index _i="47">122</index>
+                                <index _i="48">108</index>
+                                <index _i="49">110</index>
+                                <index _i="50">102</index>
+                                <index _i="51">104</index>
+                                <index _i="52">93</index>
+                                <index _i="53">96</index>
+                                <index _i="54">96</index>
+                                <index _i="55">126</index>
+                                <index _i="56">126</index>
+                                <index _i="57">128</index>
+                                <index _i="58">112</index>
+                                <index _i="59">115</index>
+                                <index _i="60">115</index>
+                                <index _i="61">254</index>
+                                <index _i="62">254</index>
+                                <index _i="63">125</index>
+                                <index _i="64">249</index>
+                                <index _i="65">111</index>
+                                <index _i="66">111</index>
+                                <index _i="67">114</index>
+                                <index _i="68">114</index>
+                                <index _i="69">116</index>
+                                <index _i="70">106</index>
+                                <index _i="71">107</index>
+                                <index _i="72">100</index>
+                                <index _i="73">101</index>
+                                <index _i="74">88</index>
+                                <index _i="75">91</index>
+                                <index _i="76">91</index>
+                                <index _i="77">250</index>
+                                <index _i="78">250</index>
+                                <index _i="79">113</index>
+                                <index _i="80">247</index>
+                                <index _i="81">105</index>
+                                <index _i="82">245</index>
+                                <index _i="83">99</index>
+                                <index _i="84">241</index>
+                                <index _i="85">87</index>
+                                <index _i="86">87</index>
+                                <index _i="87">97</index>
+                                <index _i="88">97</index>
+                                <index _i="89">244</index>
+                                <index _i="90">83</index>
+                                <index _i="91">239</index>
+                                <index _i="92">239</index>
+                                <index _i="93">94</index>
+                                <index _i="94">94</index>
+                                <index _i="95">98</index>
+                                <index _i="96">81</index>
+                                <index _i="97">84</index>
+                                <index _i="98">84</index>
+                                <index _i="99">90</index>
+                                <index _i="100">90</index>
+                                <index _i="101">92</index>
+                                <index _i="102">76</index>
+                                <index _i="103">79</index>
+                                <index _i="104">79</index>
+                                <index _i="105">242</index>
+                                <index _i="106">242</index>
+                                <index _i="107">89</index>
+                                <index _i="108">237</index>
+                                <index _i="109">75</index>
+                                <index _i="110">75</index>
+                                <index _i="111">85</index>
+                                <index _i="112">85</index>
+                                <index _i="113">240</index>
+                                <index _i="114">73</index>
+                                <index _i="115">234</index>
+                                <index _i="116">65</index>
+                                <index _i="117">235</index>
+                                <index _i="118">235</index>
+                                <index _i="119">82</index>
+                                <index _i="120">82</index>
+                                <index _i="121">86</index>
+                                <index _i="122">72</index>
+                                <index _i="123">74</index>
+                                <index _i="124">64</index>
+                                <index _i="125">66</index>
+                                <index _i="126">66</index>
+                                <index _i="127">78</index>
+                                <index _i="128">78</index>
+                                <index _i="129">80</index>
+                                <index _i="130">70</index>
+                                <index _i="131">71</index>
+                                <index _i="132">59</index>
+                                <index _i="133">60</index>
+                                <index _i="134">60</index>
+                                <index _i="135">238</index>
+                                <index _i="136">238</index>
+                                <index _i="137">77</index>
+                                <index _i="138">233</index>
+                                <index _i="139">69</index>
+                                <index _i="140">232</index>
+                                <index _i="141">58</index>
+                                <index _i="142">58</index>
+                                <index _i="143">67</index>
+                                <index _i="144">67</index>
+                                <index _i="145">236</index>
+                                <index _i="146">227</index>
+                                <index _i="147">287</index>
+                                <index _i="148">287</index>
+                                <index _i="149">63</index>
+                                <index _i="150">63</index>
+                                <index _i="151">68</index>
+                                <index _i="152">143</index>
+                                <index _i="153">228</index>
+                                <index _i="154">228</index>
+                                <index _i="155">229</index>
+                                <index _i="156">229</index>
+                                <index _i="157">288</index>
+                                <index _i="158">219</index>
+                                <index _i="159">283</index>
+                                <index _i="160">283</index>
+                                <index _i="161">230</index>
+                                <index _i="162">230</index>
+                                <index _i="163">220</index>
+                                <index _i="164">144</index>
+                                <index _i="165">217</index>
+                                <index _i="166">217</index>
+                                <index _i="167">264</index>
+                                <index _i="168">264</index>
+                                <index _i="169">149</index>
+                                <index _i="170">263</index>
+                                <index _i="171">161</index>
+                                <index _i="172">161</index>
+                                <index _i="173">61</index>
+                                <index _i="174">61</index>
+                                <index _i="175">289</index>
+                                <index _i="176">225</index>
+                                <index _i="177">286</index>
+                                <index _i="178">56</index>
+                                <index _i="179">231</index>
+                                <index _i="180">231</index>
+                                <index _i="181">221</index>
+                                <index _i="182">221</index>
+                                <index _i="183">284</index>
+                                <index _i="184">207</index>
+                                <index _i="185">279</index>
+                                <index _i="186">279</index>
+                                <index _i="187">57</index>
+                                <index _i="188">57</index>
+                                <index _i="189">62</index>
+                                <index _i="190">226</index>
+                                <index _i="191">142</index>
+                                <index _i="192">142</index>
+                                <index _i="193">222</index>
+                                <index _i="194">222</index>
+                                <index _i="195">208</index>
+                                <index _i="196">218</index>
+                                <index _i="197">205</index>
+                                <index _i="198">205</index>
+                                <index _i="199">148</index>
+                                <index _i="200">148</index>
+                                <index _i="201">158</index>
+                                <index _i="202">150</index>
+                                <index _i="203">162</index>
+                                <index _i="204">162</index>
+                                <index _i="205">209</index>
+                                <index _i="206">209</index>
+                                <index _i="207">280</index>
+                                <index _i="208">195</index>
+                                <index _i="209">275</index>
+                                <index _i="210">275</index>
+                                <index _i="211">262</index>
+                                <index _i="212">262</index>
+                                <index _i="213">159</index>
+                                <index _i="214">268</index>
+                                <index _i="215">173</index>
+                                <index _i="216">173</index>
+                                <index _i="217">210</index>
+                                <index _i="218">210</index>
+                                <index _i="219">196</index>
+                                <index _i="220">206</index>
+                                <index _i="221">193</index>
+                                <index _i="222">193</index>
+                                <index _i="223">267</index>
+                                <index _i="224">267</index>
+                                <index _i="225">171</index>
+                                <index _i="226">272</index>
+                                <index _i="227">185</index>
+                                <index _i="228">185</index>
+                                <index _i="229">197</index>
+                                <index _i="230">197</index>
+                                <index _i="231">276</index>
+                                <index _i="232">183</index>
+                                <index _i="233">271</index>
+                                <index _i="234">271</index>
+                                <index _i="235">174</index>
+                                <index _i="236">174</index>
+                                <index _i="237">160</index>
+                                <index _i="238">170</index>
+                                <index _i="239">157</index>
+                                <index _i="240">157</index>
+                                <index _i="241">141</index>
+                                <index _i="242">141</index>
+                                <index _i="243">212</index>
+                                <index _i="244">224</index>
+                                <index _i="245">216</index>
+                                <index _i="246">216</index>
+                                <index _i="247">198</index>
+                                <index _i="248">198</index>
+                                <index _i="249">184</index>
+                                <index _i="250">194</index>
+                                <index _i="251">181</index>
+                                <index _i="252">181</index>
+                                <index _i="253">186</index>
+                                <index _i="254">186</index>
+                                <index _i="255">172</index>
+                                <index _i="256">182</index>
+                                <index _i="257">169</index>
+                                <index _i="258">169</index>
+                                <index _i="259">285</index>
+                                <index _i="260">285</index>
+                                <index _i="261">223</index>
+                                <index _i="262">282</index>
+                                <index _i="263">215</index>
+                                <index _i="264">215</index>
+                                <index _i="265">211</index>
+                                <index _i="266">211</index>
+                                <index _i="267">200</index>
+                                <index _i="268">214</index>
+                                <index _i="269">204</index>
+                                <index _i="270">204</index>
+                                <index _i="271">281</index>
+                                <index _i="272">281</index>
+                                <index _i="273">213</index>
+                                <index _i="274">278</index>
+                                <index _i="275">203</index>
+                                <index _i="276">203</index>
+                                <index _i="277">147</index>
+                                <index _i="278">147</index>
+                                <index _i="279">154</index>
+                                <index _i="280">145</index>
+                                <index _i="281">151</index>
+                                <index _i="282">151</index>
+                                <index _i="283">146</index>
+                                <index _i="284">146</index>
+                                <index _i="285">259</index>
+                                <index _i="286">153</index>
+                                <index _i="287">260</index>
+                                <index _i="288">260</index>
+                                <index _i="289">199</index>
+                                <index _i="290">199</index>
+                                <index _i="291">188</index>
+                                <index _i="292">202</index>
+                                <index _i="293">192</index>
+                                <index _i="294">192</index>
+                                <index _i="295">163</index>
+                                <index _i="296">163</index>
+                                <index _i="297">152</index>
+                                <index _i="298">166</index>
+                                <index _i="299">156</index>
+                                <index _i="300">156</index>
+                                <index _i="301">187</index>
+                                <index _i="302">187</index>
+                                <index _i="303">176</index>
+                                <index _i="304">190</index>
+                                <index _i="305">180</index>
+                                <index _i="306">180</index>
+                                <index _i="307">277</index>
+                                <index _i="308">277</index>
+                                <index _i="309">201</index>
+                                <index _i="310">274</index>
+                                <index _i="311">191</index>
+                                <index _i="312">191</index>
+                                <index _i="313">175</index>
+                                <index _i="314">175</index>
+                                <index _i="315">164</index>
+                                <index _i="316">178</index>
+                                <index _i="317">168</index>
+                                <index _i="318">168</index>
+                                <index _i="319">155</index>
+                                <index _i="320">155</index>
+                                <index _i="321">261</index>
+                                <index _i="322">165</index>
+                                <index _i="323">265</index>
+                                <index _i="324">265</index>
+                                <index _i="325">269</index>
+                                <index _i="326">269</index>
+                                <index _i="327">177</index>
+                                <index _i="328">266</index>
+                                <index _i="329">167</index>
+                                <index _i="330">167</index>
+                                <index _i="331">273</index>
+                                <index _i="332">273</index>
+                                <index _i="333">189</index>
+                                <index _i="334">270</index>
+                                <index _i="335">179</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>82</index_count>
+                            <mat_index>2</mat_index>
+                            <indices>
+                                <index _i="0">293</index>
+                                <index _i="1">344</index>
+                                <index _i="2">292</index>
+                                <index _i="3">341</index>
+                                <index _i="4">341</index>
+                                <index _i="5">291</index>
+                                <index _i="6">291</index>
+                                <index _i="7">342</index>
+                                <index _i="8">290</index>
+                                <index _i="9">339</index>
+                                <index _i="10">339</index>
+                                <index _i="11">345</index>
+                                <index _i="12">345</index>
+                                <index _i="13">336</index>
+                                <index _i="14">343</index>
+                                <index _i="15">333</index>
+                                <index _i="16">333</index>
+                                <index _i="17">295</index>
+                                <index _i="18">295</index>
+                                <index _i="19">303</index>
+                                <index _i="20">297</index>
+                                <index _i="21">305</index>
+                                <index _i="22">305</index>
+                                <index _i="23">340</index>
+                                <index _i="24">340</index>
+                                <index _i="25">334</index>
+                                <index _i="26">338</index>
+                                <index _i="27">331</index>
+                                <index _i="28">331</index>
+                                <index _i="29">337</index>
+                                <index _i="30">337</index>
+                                <index _i="31">328</index>
+                                <index _i="32">335</index>
+                                <index _i="33">325</index>
+                                <index _i="34">325</index>
+                                <index _i="35">313</index>
+                                <index _i="36">313</index>
+                                <index _i="37">304</index>
+                                <index _i="38">311</index>
+                                <index _i="39">301</index>
+                                <index _i="40">301</index>
+                                <index _i="41">329</index>
+                                <index _i="42">329</index>
+                                <index _i="43">320</index>
+                                <index _i="44">327</index>
+                                <index _i="45">317</index>
+                                <index _i="46">317</index>
+                                <index _i="47">315</index>
+                                <index _i="48">315</index>
+                                <index _i="49">322</index>
+                                <index _i="50">318</index>
+                                <index _i="51">324</index>
+                                <index _i="52">324</index>
+                                <index _i="53">321</index>
+                                <index _i="54">321</index>
+                                <index _i="55">312</index>
+                                <index _i="56">319</index>
+                                <index _i="57">309</index>
+                                <index _i="58">309</index>
+                                <index _i="59">300</index>
+                                <index _i="60">300</index>
+                                <index _i="61">296</index>
+                                <index _i="62">298</index>
+                                <index _i="63">294</index>
+                                <index _i="64">294</index>
+                                <index _i="65">332</index>
+                                <index _i="66">332</index>
+                                <index _i="67">326</index>
+                                <index _i="68">330</index>
+                                <index _i="69">323</index>
+                                <index _i="70">323</index>
+                                <index _i="71">308</index>
+                                <index _i="72">308</index>
+                                <index _i="73">302</index>
+                                <index _i="74">306</index>
+                                <index _i="75">299</index>
+                                <index _i="76">299</index>
+                                <index _i="77">316</index>
+                                <index _i="78">316</index>
+                                <index _i="79">310</index>
+                                <index _i="80">314</index>
+                                <index _i="81">307</index>
+                            </indices>
+                        </mesh>
+                    </meshes>
+                </bin_mesh_plg>
+                <xml_node size="4" type="UNKNOWN" version="402915327"/>
+                <xml_node size="1388" type="UNKNOWN" version="402915327"/>
+            </extension>
+        </geometry>
+    </geometry_list>
+</clump>

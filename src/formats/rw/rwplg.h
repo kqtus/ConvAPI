@@ -62,5 +62,17 @@ namespace rw
 		public:
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		};
+
+		class unknown : public chunk_base
+		{
+			CONVERTIBLE_ENTITY
+		protected:
+			uint8_t* data;
+
+		public:
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+		};
+
+		chunk_base* DecodeAndReadPlg(in_stream<EStreamType::BINARY>& stream);
 	}
 }

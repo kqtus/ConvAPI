@@ -47,18 +47,25 @@ rw::core::clump::clump()
 {
 }
 
+bool rw::core::extension::Read(in_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Read(stream);
+	size_t extension_beg_offset = stream.Tell();
+	size_t extension_end_offset = extension_beg_offset + chunk_base::size;
+
+	while (stream.Tell() < extension_end_offset)
+	{
+		chunk_base* child = plg::DecodeAndReadPlg(stream);
+		this->push_back(child);
+	}
+	return true;
+}
+
 bool rw::core::texture_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	READ_VAR(stream, filter_mode_flags);
 	READ_VAR(stream, pad);
-	return true;
-}
-
-bool rw::core::texture_ext::Read(in_stream<EStreamType::BINARY>& stream)
-{
-	chunk_base::Read(stream);
-	sky_mimpap_val_plg.Read(stream);
 	return true;
 }
 
@@ -68,7 +75,7 @@ bool rw::core::texture::Read(in_stream<EStreamType::BINARY>& stream)
 	data.Read(stream);
 	texture_name.Read(stream);
 	mask_name.Read(stream);
-	extension.Read(stream);
+	ext.Read(stream);
 	return true;
 }
 
@@ -88,12 +95,6 @@ bool rw::core::material_data::Read(in_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
-bool rw::core::material_ext::Read(in_stream<EStreamType::BINARY>& stream)
-{
-	chunk_base::Read(stream);
-	return true;
-}
-
 bool rw::core::material::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -106,7 +107,7 @@ bool rw::core::material::Read(in_stream<EStreamType::BINARY>& stream)
 		textures[i]->Read(stream);
 	}
 
-	extension.Read(stream);
+	ext.Read(stream);
 	return true;
 }
 
@@ -115,9 +116,10 @@ bool rw::core::material_list_data::Read(in_stream<EStreamType::BINARY>& stream)
 	chunk_base::Read(stream);
 	READ_VAR(stream, material_count);
 
-	for (int i = 0; i < 11; i++)
+	INIT_ARR(material_unks, material_count);
+	for (int i = 0; i < material_count; i++)
 	{
-		READ_VAR(stream, pad[i]);
+		READ_VAR(stream, material_unks[i]);
 	}
 
 	return true;
@@ -216,20 +218,12 @@ bool rw::core::geometry_data::Read(in_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
-bool rw::core::geometry_ext::Read(in_stream<EStreamType::BINARY>& stream)
-{
-	chunk_base::Read(stream);
-	bin_mesh_plg.Read(stream);
-	morph_plg.Read(stream);
-	return true;
-}
-
 bool rw::core::geometry::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	data.Read(stream);
 	materials.Read(stream);
-	extension.Read(stream);
+	ext.Read(stream);
 	return true;
 }
 
@@ -282,14 +276,6 @@ bool rw::core::frame_list_data::Read(in_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
-bool rw::core::frame_list_ext::Read(in_stream<EStreamType::BINARY>& stream)
-{
-	chunk_base::Read(stream);
-	hanim_plg.Read(stream);
-	frame_plg.Read(stream);
-	return true;
-}
-
 bool rw::core::frame_list::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -298,9 +284,9 @@ bool rw::core::frame_list::Read(in_stream<EStreamType::BINARY>& stream)
 	this->reserve(data.frame_count);
 	for (int i = 0; i < data.frame_count; i++)
 	{
-		auto extension = new frame_list_ext();
-		extension->Read(stream);
-		this->push_back(extension);
+		auto ext = new extension();
+		ext->Read(stream);
+		this->push_back(ext);
 	}
 
 	return true;

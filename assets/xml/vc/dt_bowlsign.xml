@@ -25,12 +25,12 @@
                 <pad>0</pad>
             </info>
         </frame_list_data>
-        <frame_list_ext size="47" type="rwID_EXTENSION" version="268697599">
+        <extension size="47" type="rwID_EXTENSION" version="268697599">
             <hanim size="12" type="UNKNOWN" version="268697599"/>
             <frame_plg size="11" type="UNKNOWN" version="268697599">
-                <name>dt_bowlsignýýýý</name>
+                <name>dt_bowlsignýýýýÝ</name>
             </frame_plg>
-        </frame_list_ext>
+        </extension>
     </frame_list>
     <geometry_list size="21096" type="rwID_GEOMETRYLIST" version="268697599">
         <geometry_list_data size="4" type="rwID_STRUCT" version="268697599">
@@ -46,492 +46,7 @@
                     <vertex_count>484</vertex_count>
                     <frame_count>1</frame_count>
                 </header>
-                <colours>
-                    <colour _i="0" alpha="255" blue="57" green="57" red="57"/>
-                    <colour _i="1" alpha="255" blue="113" green="113" red="113"/>
-                    <colour _i="2" alpha="255" blue="76" green="76" red="76"/>
-                    <colour _i="3" alpha="255" blue="73" green="73" red="73"/>
-                    <colour _i="4" alpha="255" blue="104" green="104" red="104"/>
-                    <colour _i="5" alpha="255" blue="19" green="19" red="19"/>
-                    <colour _i="6" alpha="255" blue="16" green="16" red="16"/>
-                    <colour _i="7" alpha="255" blue="94" green="94" red="94"/>
-                    <colour _i="8" alpha="255" blue="111" green="111" red="111"/>
-                    <colour _i="9" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="10" alpha="255" blue="32" green="32" red="32"/>
-                    <colour _i="11" alpha="255" blue="47" green="47" red="47"/>
-                    <colour _i="12" alpha="255" blue="8" green="8" red="8"/>
-                    <colour _i="13" alpha="255" blue="72" green="72" red="72"/>
-                    <colour _i="14" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="15" alpha="255" blue="69" green="69" red="69"/>
-                    <colour _i="16" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="17" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="18" alpha="255" blue="30" green="30" red="30"/>
-                    <colour _i="19" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="20" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="21" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="22" alpha="255" blue="51" green="51" red="51"/>
-                    <colour _i="23" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="24" alpha="255" blue="6" green="6" red="6"/>
-                    <colour _i="25" alpha="255" blue="12" green="12" red="12"/>
-                    <colour _i="26" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="27" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="28" alpha="255" blue="14" green="14" red="14"/>
-                    <colour _i="29" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="30" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="31" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="32" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="33" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="34" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="35" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="36" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="37" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="38" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="39" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="40" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="41" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="42" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="43" alpha="255" blue="93" green="93" red="93"/>
-                    <colour _i="44" alpha="255" blue="4" green="4" red="4"/>
-                    <colour _i="45" alpha="255" blue="94" green="94" red="94"/>
-                    <colour _i="46" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="47" alpha="255" blue="93" green="93" red="93"/>
-                    <colour _i="48" alpha="255" blue="115" green="115" red="115"/>
-                    <colour _i="49" alpha="255" blue="4" green="4" red="4"/>
-                    <colour _i="50" alpha="255" blue="94" green="94" red="94"/>
-                    <colour _i="51" alpha="255" blue="116" green="116" red="116"/>
-                    <colour _i="52" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="53" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="54" alpha="255" blue="3" green="3" red="3"/>
-                    <colour _i="55" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="56" alpha="255" blue="85" green="85" red="85"/>
-                    <colour _i="57" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="58" alpha="255" blue="3" green="3" red="3"/>
-                    <colour _i="59" alpha="255" blue="85" green="85" red="85"/>
-                    <colour _i="60" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="61" alpha="255" blue="70" green="70" red="70"/>
-                    <colour _i="62" alpha="255" blue="6" green="6" red="6"/>
-                    <colour _i="63" alpha="255" blue="72" green="72" red="72"/>
-                    <colour _i="64" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="65" alpha="255" blue="59" green="59" red="59"/>
-                    <colour _i="66" alpha="255" blue="70" green="70" red="70"/>
-                    <colour _i="67" alpha="255" blue="6" green="6" red="6"/>
-                    <colour _i="68" alpha="255" blue="60" green="60" red="60"/>
-                    <colour _i="69" alpha="255" blue="72" green="72" red="72"/>
-                    <colour _i="70" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="71" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="72" alpha="255" blue="4" green="4" red="4"/>
-                    <colour _i="73" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="74" alpha="255" blue="38" green="38" red="38"/>
-                    <colour _i="75" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="76" alpha="255" blue="4" green="4" red="4"/>
-                    <colour _i="77" alpha="255" blue="39" green="39" red="39"/>
-                    <colour _i="78" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="79" alpha="255" blue="80" green="80" red="80"/>
-                    <colour _i="80" alpha="255" blue="30" green="30" red="30"/>
-                    <colour _i="81" alpha="255" blue="81" green="81" red="81"/>
-                    <colour _i="82" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="83" alpha="255" blue="80" green="80" red="80"/>
-                    <colour _i="84" alpha="255" blue="101" green="101" red="101"/>
-                    <colour _i="85" alpha="255" blue="30" green="30" red="30"/>
-                    <colour _i="86" alpha="255" blue="82" green="82" red="82"/>
-                    <colour _i="87" alpha="255" blue="103" green="103" red="103"/>
-                    <colour _i="88" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="89" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="90" alpha="255" blue="20" green="20" red="20"/>
-                    <colour _i="91" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="92" alpha="255" blue="69" green="69" red="69"/>
-                    <colour _i="93" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="94" alpha="255" blue="21" green="21" red="21"/>
-                    <colour _i="95" alpha="255" blue="71" green="71" red="71"/>
-                    <colour _i="96" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="97" alpha="255" blue="48" green="48" red="48"/>
-                    <colour _i="98" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="99" alpha="255" blue="48" green="48" red="48"/>
-                    <colour _i="100" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="101" alpha="255" blue="29" green="29" red="29"/>
-                    <colour _i="102" alpha="255" blue="48" green="48" red="48"/>
-                    <colour _i="103" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="104" alpha="255" blue="29" green="29" red="29"/>
-                    <colour _i="105" alpha="255" blue="48" green="48" red="48"/>
-                    <colour _i="106" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="107" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="108" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="109" alpha="255" blue="18" green="18" red="18"/>
-                    <colour _i="110" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="111" alpha="255" blue="18" green="18" red="18"/>
-                    <colour _i="112" alpha="255" blue="80" green="80" red="80"/>
-                    <colour _i="113" alpha="255" blue="82" green="82" red="82"/>
-                    <colour _i="114" alpha="255" blue="84" green="84" red="84"/>
-                    <colour _i="115" alpha="255" blue="86" green="86" red="86"/>
-                    <colour _i="116" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="117" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="118" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="119" alpha="255" blue="50" green="50" red="50"/>
-                    <colour _i="120" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="121" alpha="255" blue="51" green="51" red="51"/>
-                    <colour _i="122" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="123" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="124" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="125" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="126" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="127" alpha="255" blue="30" green="30" red="30"/>
-                    <colour _i="128" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="129" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="130" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="131" alpha="255" blue="31" green="31" red="31"/>
-                    <colour _i="132" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="133" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="134" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="135" alpha="255" blue="79" green="79" red="79"/>
-                    <colour _i="136" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="137" alpha="255" blue="81" green="81" red="81"/>
-                    <colour _i="138" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="139" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="140" alpha="255" blue="50" green="50" red="50"/>
-                    <colour _i="141" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="142" alpha="255" blue="51" green="51" red="51"/>
-                    <colour _i="143" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="144" alpha="255" blue="9" green="9" red="9"/>
-                    <colour _i="145" alpha="255" blue="46" green="46" red="46"/>
-                    <colour _i="146" alpha="255" blue="10" green="10" red="10"/>
-                    <colour _i="147" alpha="255" blue="84" green="84" red="84"/>
-                    <colour _i="148" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="149" alpha="255" blue="9" green="9" red="9"/>
-                    <colour _i="150" alpha="255" blue="9" green="9" red="9"/>
-                    <colour _i="151" alpha="255" blue="64" green="64" red="64"/>
-                    <colour _i="152" alpha="255" blue="51" green="51" red="51"/>
-                    <colour _i="153" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="154" alpha="255" blue="8" green="8" red="8"/>
-                    <colour _i="155" alpha="255" blue="79" green="79" red="79"/>
-                    <colour _i="156" alpha="255" blue="5" green="5" red="5"/>
-                    <colour _i="157" alpha="255" blue="9" green="9" red="9"/>
-                    <colour _i="158" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="159" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="160" alpha="255" blue="8" green="8" red="8"/>
-                    <colour _i="161" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="162" alpha="255" blue="8" green="8" red="8"/>
-                    <colour _i="163" alpha="255" blue="49" green="49" red="49"/>
-                    <colour _i="164" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="165" alpha="255" blue="43" green="43" red="43"/>
-                    <colour _i="166" alpha="255" blue="68" green="68" red="68"/>
-                    <colour _i="167" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="168" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="169" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="170" alpha="255" blue="42" green="42" red="42"/>
-                    <colour _i="171" alpha="255" blue="47" green="47" red="47"/>
-                    <colour _i="172" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="173" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="174" alpha="255" blue="70" green="70" red="70"/>
-                    <colour _i="175" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="176" alpha="255" blue="32" green="32" red="32"/>
-                    <colour _i="177" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="178" alpha="255" blue="53" green="53" red="53"/>
-                    <colour _i="179" alpha="255" blue="45" green="45" red="45"/>
-                    <colour _i="180" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="181" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="182" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="183" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="184" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="185" alpha="255" blue="10" green="10" red="10"/>
-                    <colour _i="186" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="187" alpha="255" blue="18" green="18" red="18"/>
-                    <colour _i="188" alpha="255" blue="28" green="28" red="28"/>
-                    <colour _i="189" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="190" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="191" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="192" alpha="255" blue="3" green="3" red="3"/>
-                    <colour _i="193" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="194" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="195" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="196" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="197" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="198" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="199" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="200" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="201" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="202" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="203" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="204" alpha="255" blue="66" green="66" red="66"/>
-                    <colour _i="205" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="206" alpha="255" blue="66" green="66" red="66"/>
-                    <colour _i="207" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="208" alpha="255" blue="65" green="65" red="65"/>
-                    <colour _i="209" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="210" alpha="255" blue="66" green="66" red="66"/>
-                    <colour _i="211" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="212" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="213" alpha="255" blue="63" green="63" red="63"/>
-                    <colour _i="214" alpha="255" blue="68" green="68" red="68"/>
-                    <colour _i="215" alpha="255" blue="63" green="63" red="63"/>
-                    <colour _i="216" alpha="255" blue="68" green="68" red="68"/>
-                    <colour _i="217" alpha="255" blue="63" green="63" red="63"/>
-                    <colour _i="218" alpha="255" blue="68" green="68" red="68"/>
-                    <colour _i="219" alpha="255" blue="66" green="66" red="66"/>
-                    <colour _i="220" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="221" alpha="255" blue="61" green="61" red="61"/>
-                    <colour _i="222" alpha="255" blue="4" green="4" red="4"/>
-                    <colour _i="223" alpha="255" blue="5" green="5" red="5"/>
-                    <colour _i="224" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="225" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="226" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="227" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="228" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="229" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="230" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="231" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="232" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="233" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="234" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="235" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="236" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="237" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="238" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="239" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="240" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="241" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="242" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="243" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="244" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="245" alpha="255" blue="61" green="61" red="61"/>
-                    <colour _i="246" alpha="255" blue="61" green="61" red="61"/>
-                    <colour _i="247" alpha="255" blue="61" green="61" red="61"/>
-                    <colour _i="248" alpha="255" blue="61" green="61" red="61"/>
-                    <colour _i="249" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="250" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="251" alpha="255" blue="59" green="59" red="59"/>
-                    <colour _i="252" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="253" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="254" alpha="255" blue="4" green="4" red="4"/>
-                    <colour _i="255" alpha="255" blue="5" green="5" red="5"/>
-                    <colour _i="256" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="257" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="258" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="259" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="260" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="261" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="262" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="263" alpha="255" blue="59" green="59" red="59"/>
-                    <colour _i="264" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="265" alpha="255" blue="58" green="58" red="58"/>
-                    <colour _i="266" alpha="255" blue="50" green="50" red="50"/>
-                    <colour _i="267" alpha="255" blue="50" green="50" red="50"/>
-                    <colour _i="268" alpha="255" blue="61" green="61" red="61"/>
-                    <colour _i="269" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="270" alpha="255" blue="50" green="50" red="50"/>
-                    <colour _i="271" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="272" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="273" alpha="255" blue="50" green="50" red="50"/>
-                    <colour _i="274" alpha="255" blue="50" green="50" red="50"/>
-                    <colour _i="275" alpha="255" blue="59" green="59" red="59"/>
-                    <colour _i="276" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="277" alpha="255" blue="49" green="49" red="49"/>
-                    <colour _i="278" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="279" alpha="255" blue="3" green="3" red="3"/>
-                    <colour _i="280" alpha="255" blue="4" green="4" red="4"/>
-                    <colour _i="281" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="282" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="283" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="284" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="285" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="286" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="287" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="288" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="289" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="290" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="291" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="292" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="293" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="294" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="295" alpha="255" blue="3" green="3" red="3"/>
-                    <colour _i="296" alpha="255" blue="3" green="3" red="3"/>
-                    <colour _i="297" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="298" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="299" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="300" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="301" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="302" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="303" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="304" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="305" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="306" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="307" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="308" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="309" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="310" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="311" alpha="255" blue="48" green="48" red="48"/>
-                    <colour _i="312" alpha="255" blue="48" green="48" red="48"/>
-                    <colour _i="313" alpha="255" blue="48" green="48" red="48"/>
-                    <colour _i="314" alpha="255" blue="48" green="48" red="48"/>
-                    <colour _i="315" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="316" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="317" alpha="255" blue="47" green="47" red="47"/>
-                    <colour _i="318" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="319" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="320" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="321" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="322" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="323" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="324" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="325" alpha="255" blue="52" green="52" red="52"/>
-                    <colour _i="326" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="327" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="328" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="329" alpha="255" blue="51" green="51" red="51"/>
-                    <colour _i="330" alpha="255" blue="39" green="39" red="39"/>
-                    <colour _i="331" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="332" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="333" alpha="255" blue="39" green="39" red="39"/>
-                    <colour _i="334" alpha="255" blue="53" green="53" red="53"/>
-                    <colour _i="335" alpha="255" blue="39" green="39" red="39"/>
-                    <colour _i="336" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="337" alpha="255" blue="39" green="39" red="39"/>
-                    <colour _i="338" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="339" alpha="255" blue="38" green="38" red="38"/>
-                    <colour _i="340" alpha="255" blue="52" green="52" red="52"/>
-                    <colour _i="341" alpha="255" blue="2" green="2" red="2"/>
-                    <colour _i="342" alpha="255" blue="3" green="3" red="3"/>
-                    <colour _i="343" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="344" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="345" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="346" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="347" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="348" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="349" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="350" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="351" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="352" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="353" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="354" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="355" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="356" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="357" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="358" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="359" alpha="255" blue="38" green="38" red="38"/>
-                    <colour _i="360" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="361" alpha="255" blue="38" green="38" red="38"/>
-                    <colour _i="362" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="363" alpha="255" blue="38" green="38" red="38"/>
-                    <colour _i="364" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="365" alpha="255" blue="37" green="37" red="37"/>
-                    <colour _i="366" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="367" alpha="255" blue="2" green="2" red="2"/>
-                    <colour _i="368" alpha="255" blue="3" green="3" red="3"/>
-                    <colour _i="369" alpha="255" blue="63" green="63" red="63"/>
-                    <colour _i="370" alpha="255" blue="90" green="90" red="90"/>
-                    <colour _i="371" alpha="255" blue="67" green="67" red="67"/>
-                    <colour _i="372" alpha="255" blue="2" green="2" red="2"/>
-                    <colour _i="373" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="374" alpha="255" blue="43" green="43" red="43"/>
-                    <colour _i="375" alpha="255" blue="66" green="66" red="66"/>
-                    <colour _i="376" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="377" alpha="255" blue="55" green="55" red="55"/>
-                    <colour _i="378" alpha="255" blue="66" green="66" red="66"/>
-                    <colour _i="379" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="380" alpha="255" blue="5" green="5" red="5"/>
-                    <colour _i="381" alpha="255" blue="96" green="96" red="96"/>
-                    <colour _i="382" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="383" alpha="255" blue="99" green="99" red="99"/>
-                    <colour _i="384" alpha="255" blue="96" green="96" red="96"/>
-                    <colour _i="385" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="386" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="387" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="388" alpha="255" blue="26" green="26" red="26"/>
-                    <colour _i="389" alpha="255" blue="53" green="53" red="53"/>
-                    <colour _i="390" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="391" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="392" alpha="255" blue="60" green="60" red="60"/>
-                    <colour _i="393" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="394" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="395" alpha="255" blue="49" green="49" red="49"/>
-                    <colour _i="396" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="397" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="398" alpha="255" blue="60" green="60" red="60"/>
-                    <colour _i="399" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="400" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="401" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="402" alpha="255" blue="89" green="89" red="89"/>
-                    <colour _i="403" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="404" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="405" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="406" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="407" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="408" alpha="255" blue="60" green="60" red="60"/>
-                    <colour _i="409" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="410" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="411" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="412" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="413" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="414" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="415" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="416" alpha="255" blue="64" green="64" red="64"/>
-                    <colour _i="417" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="418" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="419" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="420" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="421" alpha="255" blue="2" green="2" red="2"/>
-                    <colour _i="422" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="423" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="424" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="425" alpha="255" blue="116" green="116" red="116"/>
-                    <colour _i="426" alpha="255" blue="144" green="144" red="144"/>
-                    <colour _i="427" alpha="255" blue="25" green="25" red="25"/>
-                    <colour _i="428" alpha="255" blue="48" green="48" red="48"/>
-                    <colour _i="429" alpha="255" blue="114" green="114" red="114"/>
-                    <colour _i="430" alpha="255" blue="89" green="89" red="89"/>
-                    <colour _i="431" alpha="255" blue="49" green="49" red="49"/>
-                    <colour _i="432" alpha="255" blue="126" green="126" red="126"/>
-                    <colour _i="433" alpha="255" blue="47" green="47" red="47"/>
-                    <colour _i="434" alpha="255" blue="53" green="53" red="53"/>
-                    <colour _i="435" alpha="255" blue="81" green="81" red="81"/>
-                    <colour _i="436" alpha="255" blue="121" green="121" red="121"/>
-                    <colour _i="437" alpha="255" blue="4" green="4" red="4"/>
-                    <colour _i="438" alpha="255" blue="96" green="96" red="96"/>
-                    <colour _i="439" alpha="255" blue="48" green="48" red="48"/>
-                    <colour _i="440" alpha="255" blue="80" green="80" red="80"/>
-                    <colour _i="441" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="442" alpha="255" blue="46" green="46" red="46"/>
-                    <colour _i="443" alpha="255" blue="126" green="126" red="126"/>
-                    <colour _i="444" alpha="255" blue="87" green="87" red="87"/>
-                    <colour _i="445" alpha="255" blue="12" green="12" red="12"/>
-                    <colour _i="446" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="447" alpha="255" blue="111" green="111" red="111"/>
-                    <colour _i="448" alpha="255" blue="6" green="6" red="6"/>
-                    <colour _i="449" alpha="255" blue="64" green="64" red="64"/>
-                    <colour _i="450" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="451" alpha="255" blue="14" green="14" red="14"/>
-                    <colour _i="452" alpha="255" blue="47" green="47" red="47"/>
-                    <colour _i="453" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="454" alpha="255" blue="45" green="45" red="45"/>
-                    <colour _i="455" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="456" alpha="255" blue="45" green="45" red="45"/>
-                    <colour _i="457" alpha="255" blue="73" green="73" red="73"/>
-                    <colour _i="458" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="459" alpha="255" blue="1" green="1" red="1"/>
-                    <colour _i="460" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="461" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="462" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="463" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="464" alpha="255" blue="46" green="46" red="46"/>
-                    <colour _i="465" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="466" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="467" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="468" alpha="255" blue="81" green="81" red="81"/>
-                    <colour _i="469" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="470" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="471" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="472" alpha="255" blue="60" green="60" red="60"/>
-                    <colour _i="473" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="474" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="475" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="476" alpha="255" blue="49" green="49" red="49"/>
-                    <colour _i="477" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="478" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="479" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="480" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="481" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="482" alpha="255" blue="0" green="0" red="0"/>
-                    <colour _i="483" alpha="255" blue="0" green="0" red="0"/>
-                </colours>
+                <colours/>
                 <texture_mappings>
                     <texture_mapping _i="0" u="0.976847" v="0.588534"/>
                     <texture_mapping _i="1" u="0.976847" v="0.411466"/>
@@ -2020,7 +1535,924 @@
                 </vertices>
             </geometry_data>
             <material_list size="1864" type="rwID_MATLIST" version="268697599"/>
-            <geometry_ext size="3496" type="rwID_EXTENSION" version="268697599"/>
+            <extension size="3496" type="rwID_EXTENSION" version="268697599">
+                <bin_mesh_plg size="3468" type="UNKNOWN" version="268697599">
+                    <flags>1</flags>
+                    <mesh_count>11</mesh_count>
+                    <total_indices>842</total_indices>
+                    <meshes>
+                        <mesh>
+                            <index_count>21</index_count>
+                            <mat_index>0</mat_index>
+                            <indices>
+                                <index _i="0">105</index>
+                                <index _i="1">102</index>
+                                <index _i="2">99</index>
+                                <index _i="3">97</index>
+                                <index _i="4">97</index>
+                                <index _i="5">101</index>
+                                <index _i="6">101</index>
+                                <index _i="7">104</index>
+                                <index _i="8">109</index>
+                                <index _i="9">111</index>
+                                <index _i="10">111</index>
+                                <index _i="11">103</index>
+                                <index _i="12">103</index>
+                                <index _i="13">98</index>
+                                <index _i="14">110</index>
+                                <index _i="15">107</index>
+                                <index _i="16">110</index>
+                                <index _i="17">106</index>
+                                <index _i="18">108</index>
+                                <index _i="19">96</index>
+                                <index _i="20">100</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>25</index_count>
+                            <mat_index>1</mat_index>
+                            <indices>
+                                <index _i="0">86</index>
+                                <index _i="1">83</index>
+                                <index _i="2">81</index>
+                                <index _i="3">79</index>
+                                <index _i="4">79</index>
+                                <index _i="5">95</index>
+                                <index _i="6">95</index>
+                                <index _i="7">92</index>
+                                <index _i="8">87</index>
+                                <index _i="9">84</index>
+                                <index _i="10">84</index>
+                                <index _i="11">90</index>
+                                <index _i="12">90</index>
+                                <index _i="13">94</index>
+                                <index _i="14">80</index>
+                                <index _i="15">85</index>
+                                <index _i="16">85</index>
+                                <index _i="17">89</index>
+                                <index _i="18">89</index>
+                                <index _i="19">89</index>
+                                <index _i="20">93</index>
+                                <index _i="21">88</index>
+                                <index _i="22">91</index>
+                                <index _i="23">78</index>
+                                <index _i="24">82</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>16</index_count>
+                            <mat_index>3</mat_index>
+                            <indices>
+                                <index _i="0">133</index>
+                                <index _i="1">139</index>
+                                <index _i="2">136</index>
+                                <index _i="3">143</index>
+                                <index _i="4">143</index>
+                                <index _i="5">140</index>
+                                <index _i="6">140</index>
+                                <index _i="7">135</index>
+                                <index _i="8">142</index>
+                                <index _i="9">137</index>
+                                <index _i="10">137</index>
+                                <index _i="11">134</index>
+                                <index _i="12">134</index>
+                                <index _i="13">141</index>
+                                <index _i="14">132</index>
+                                <index _i="15">138</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>28</index_count>
+                            <mat_index>2</mat_index>
+                            <indices>
+                                <index _i="0">121</index>
+                                <index _i="1">131</index>
+                                <index _i="2">119</index>
+                                <index _i="3">127</index>
+                                <index _i="4">127</index>
+                                <index _i="5">118</index>
+                                <index _i="6">118</index>
+                                <index _i="7">126</index>
+                                <index _i="8">116</index>
+                                <index _i="9">122</index>
+                                <index _i="10">122</index>
+                                <index _i="11">124</index>
+                                <index _i="12">124</index>
+                                <index _i="13">129</index>
+                                <index _i="14">117</index>
+                                <index _i="15">120</index>
+                                <index _i="16">120</index>
+                                <index _i="17">114</index>
+                                <index _i="18">114</index>
+                                <index _i="19">112</index>
+                                <index _i="20">115</index>
+                                <index _i="21">113</index>
+                                <index _i="22">113</index>
+                                <index _i="23">130</index>
+                                <index _i="24">130</index>
+                                <index _i="25">125</index>
+                                <index _i="26">128</index>
+                                <index _i="27">123</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>25</index_count>
+                            <mat_index>4</mat_index>
+                            <indices>
+                                <index _i="0">69</index>
+                                <index _i="1">66</index>
+                                <index _i="2">63</index>
+                                <index _i="3">61</index>
+                                <index _i="4">61</index>
+                                <index _i="5">77</index>
+                                <index _i="6">77</index>
+                                <index _i="7">74</index>
+                                <index _i="8">68</index>
+                                <index _i="9">65</index>
+                                <index _i="10">65</index>
+                                <index _i="11">72</index>
+                                <index _i="12">72</index>
+                                <index _i="13">76</index>
+                                <index _i="14">62</index>
+                                <index _i="15">67</index>
+                                <index _i="16">67</index>
+                                <index _i="17">71</index>
+                                <index _i="18">71</index>
+                                <index _i="19">71</index>
+                                <index _i="20">75</index>
+                                <index _i="21">70</index>
+                                <index _i="22">73</index>
+                                <index _i="23">60</index>
+                                <index _i="24">64</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>25</index_count>
+                            <mat_index>5</mat_index>
+                            <indices>
+                                <index _i="0">50</index>
+                                <index _i="1">47</index>
+                                <index _i="2">45</index>
+                                <index _i="3">43</index>
+                                <index _i="4">43</index>
+                                <index _i="5">59</index>
+                                <index _i="6">59</index>
+                                <index _i="7">56</index>
+                                <index _i="8">51</index>
+                                <index _i="9">48</index>
+                                <index _i="10">48</index>
+                                <index _i="11">54</index>
+                                <index _i="12">54</index>
+                                <index _i="13">58</index>
+                                <index _i="14">44</index>
+                                <index _i="15">49</index>
+                                <index _i="16">49</index>
+                                <index _i="17">53</index>
+                                <index _i="18">53</index>
+                                <index _i="19">53</index>
+                                <index _i="20">57</index>
+                                <index _i="21">52</index>
+                                <index _i="22">55</index>
+                                <index _i="23">42</index>
+                                <index _i="24">46</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>98</index_count>
+                            <mat_index>6</mat_index>
+                            <indices>
+                                <index _i="0">14</index>
+                                <index _i="1">6</index>
+                                <index _i="2">9</index>
+                                <index _i="3">0</index>
+                                <index _i="4">5</index>
+                                <index _i="5">3</index>
+                                <index _i="6">12</index>
+                                <index _i="7">11</index>
+                                <index _i="8">20</index>
+                                <index _i="9">11</index>
+                                <index _i="10">24</index>
+                                <index _i="11">15</index>
+                                <index _i="12">28</index>
+                                <index _i="13">15</index>
+                                <index _i="14">22</index>
+                                <index _i="15">8</index>
+                                <index _i="16">13</index>
+                                <index _i="17">7</index>
+                                <index _i="18">18</index>
+                                <index _i="19">10</index>
+                                <index _i="20">21</index>
+                                <index _i="21">17</index>
+                                <index _i="22">29</index>
+                                <index _i="23">26</index>
+                                <index _i="24">37</index>
+                                <index _i="25">26</index>
+                                <index _i="26">32</index>
+                                <index _i="27">19</index>
+                                <index _i="28">27</index>
+                                <index _i="29">16</index>
+                                <index _i="30">27</index>
+                                <index _i="31">23</index>
+                                <index _i="32">34</index>
+                                <index _i="33">31</index>
+                                <index _i="34">39</index>
+                                <index _i="35">35</index>
+                                <index _i="36">41</index>
+                                <index _i="37">33</index>
+                                <index _i="38">36</index>
+                                <index _i="39">25</index>
+                                <index _i="40">30</index>
+                                <index _i="41">30</index>
+                                <index _i="42">36</index>
+                                <index _i="43">38</index>
+                                <index _i="44">41</index>
+                                <index _i="45">40</index>
+                                <index _i="46">39</index>
+                                <index _i="47">34</index>
+                                <index _i="48">34</index>
+                                <index _i="49">34</index>
+                                <index _i="50">27</index>
+                                <index _i="51">34</index>
+                                <index _i="52">32</index>
+                                <index _i="53">40</index>
+                                <index _i="54">37</index>
+                                <index _i="55">38</index>
+                                <index _i="56">29</index>
+                                <index _i="57">30</index>
+                                <index _i="58">21</index>
+                                <index _i="59">30</index>
+                                <index _i="60">18</index>
+                                <index _i="61">25</index>
+                                <index _i="62">13</index>
+                                <index _i="63">25</index>
+                                <index _i="64">22</index>
+                                <index _i="65">33</index>
+                                <index _i="66">28</index>
+                                <index _i="67">35</index>
+                                <index _i="68">24</index>
+                                <index _i="69">31</index>
+                                <index _i="70">20</index>
+                                <index _i="71">23</index>
+                                <index _i="72">12</index>
+                                <index _i="73">16</index>
+                                <index _i="74">5</index>
+                                <index _i="75">16</index>
+                                <index _i="76">9</index>
+                                <index _i="77">19</index>
+                                <index _i="78">14</index>
+                                <index _i="79">26</index>
+                                <index _i="80">14</index>
+                                <index _i="81">17</index>
+                                <index _i="82">6</index>
+                                <index _i="83">10</index>
+                                <index _i="84">2</index>
+                                <index _i="85">7</index>
+                                <index _i="86">1</index>
+                                <index _i="87">8</index>
+                                <index _i="88">4</index>
+                                <index _i="89">15</index>
+                                <index _i="90">11</index>
+                                <index _i="91">11</index>
+                                <index _i="92">4</index>
+                                <index _i="93">3</index>
+                                <index _i="94">1</index>
+                                <index _i="95">0</index>
+                                <index _i="96">2</index>
+                                <index _i="97">6</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>116</index_count>
+                            <mat_index>7</mat_index>
+                            <indices>
+                                <index _i="0">452</index>
+                                <index _i="1">439</index>
+                                <index _i="2">456</index>
+                                <index _i="3">431</index>
+                                <index _i="4">428</index>
+                                <index _i="5">428</index>
+                                <index _i="6">428</index>
+                                <index _i="7">433</index>
+                                <index _i="8">456</index>
+                                <index _i="9">442</index>
+                                <index _i="10">454</index>
+                                <index _i="11">454</index>
+                                <index _i="12">434</index>
+                                <index _i="13">434</index>
+                                <index _i="14">425</index>
+                                <index _i="15">429</index>
+                                <index _i="16">426</index>
+                                <index _i="17">432</index>
+                                <index _i="18">444</index>
+                                <index _i="19">440</index>
+                                <index _i="20">459</index>
+                                <index _i="21">451</index>
+                                <index _i="22">465</index>
+                                <index _i="23">455</index>
+                                <index _i="24">460</index>
+                                <index _i="25">453</index>
+                                <index _i="26">446</index>
+                                <index _i="27">441</index>
+                                <index _i="28">427</index>
+                                <index _i="29">434</index>
+                                <index _i="30">427</index>
+                                <index _i="31">425</index>
+                                <index _i="32">430</index>
+                                <index _i="33">425</index>
+                                <index _i="34">436</index>
+                                <index _i="35">426</index>
+                                <index _i="36">449</index>
+                                <index _i="37">444</index>
+                                <index _i="38">461</index>
+                                <index _i="39">459</index>
+                                <index _i="40">466</index>
+                                <index _i="41">465</index>
+                                <index _i="42">462</index>
+                                <index _i="43">460</index>
+                                <index _i="44">450</index>
+                                <index _i="45">446</index>
+                                <index _i="46">437</index>
+                                <index _i="47">427</index>
+                                <index _i="48">437</index>
+                                <index _i="49">430</index>
+                                <index _i="50">438</index>
+                                <index _i="51">430</index>
+                                <index _i="52">443</index>
+                                <index _i="53">436</index>
+                                <index _i="54">457</index>
+                                <index _i="55">449</index>
+                                <index _i="56">469</index>
+                                <index _i="57">461</index>
+                                <index _i="58">474</index>
+                                <index _i="59">466</index>
+                                <index _i="60">471</index>
+                                <index _i="61">462</index>
+                                <index _i="62">458</index>
+                                <index _i="63">450</index>
+                                <index _i="64">445</index>
+                                <index _i="65">437</index>
+                                <index _i="66">445</index>
+                                <index _i="67">438</index>
+                                <index _i="68">435</index>
+                                <index _i="69">438</index>
+                                <index _i="70">447</index>
+                                <index _i="71">443</index>
+                                <index _i="72">472</index>
+                                <index _i="73">457</index>
+                                <index _i="74">478</index>
+                                <index _i="75">469</index>
+                                <index _i="76">480</index>
+                                <index _i="77">474</index>
+                                <index _i="78">479</index>
+                                <index _i="79">471</index>
+                                <index _i="80">473</index>
+                                <index _i="81">458</index>
+                                <index _i="82">448</index>
+                                <index _i="83">445</index>
+                                <index _i="84">448</index>
+                                <index _i="85">435</index>
+                                <index _i="86">464</index>
+                                <index _i="87">435</index>
+                                <index _i="88">468</index>
+                                <index _i="89">447</index>
+                                <index _i="90">476</index>
+                                <index _i="91">472</index>
+                                <index _i="92">481</index>
+                                <index _i="93">478</index>
+                                <index _i="94">483</index>
+                                <index _i="95">480</index>
+                                <index _i="96">482</index>
+                                <index _i="97">479</index>
+                                <index _i="98">477</index>
+                                <index _i="99">473</index>
+                                <index _i="100">470</index>
+                                <index _i="101">448</index>
+                                <index _i="102">464</index>
+                                <index _i="103">464</index>
+                                <index _i="104">483</index>
+                                <index _i="105">483</index>
+                                <index _i="106">481</index>
+                                <index _i="107">482</index>
+                                <index _i="108">475</index>
+                                <index _i="109">467</index>
+                                <index _i="110">467</index>
+                                <index _i="111">467</index>
+                                <index _i="112">463</index>
+                                <index _i="113">482</index>
+                                <index _i="114">470</index>
+                                <index _i="115">477</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>115</index_count>
+                            <mat_index>8</mat_index>
+                            <indices>
+                                <index _i="0">393</index>
+                                <index _i="1">391</index>
+                                <index _i="2">382</index>
+                                <index _i="3">372</index>
+                                <index _i="4">375</index>
+                                <index _i="5">369</index>
+                                <index _i="6">381</index>
+                                <index _i="7">370</index>
+                                <index _i="8">392</index>
+                                <index _i="9">389</index>
+                                <index _i="10">404</index>
+                                <index _i="11">403</index>
+                                <index _i="12">410</index>
+                                <index _i="13">409</index>
+                                <index _i="14">407</index>
+                                <index _i="15">409</index>
+                                <index _i="16">405</index>
+                                <index _i="17">399</index>
+                                <index _i="18">397</index>
+                                <index _i="19">390</index>
+                                <index _i="20">390</index>
+                                <index _i="21">390</index>
+                                <index _i="22">379</index>
+                                <index _i="23">399</index>
+                                <index _i="24">373</index>
+                                <index _i="25">376</index>
+                                <index _i="26">376</index>
+                                <index _i="27">376</index>
+                                <index _i="28">387</index>
+                                <index _i="29">399</index>
+                                <index _i="30">396</index>
+                                <index _i="31">409</index>
+                                <index _i="32">396</index>
+                                <index _i="33">403</index>
+                                <index _i="34">388</index>
+                                <index _i="35">389</index>
+                                <index _i="36">377</index>
+                                <index _i="37">370</index>
+                                <index _i="38">374</index>
+                                <index _i="39">369</index>
+                                <index _i="40">380</index>
+                                <index _i="41">372</index>
+                                <index _i="42">390</index>
+                                <index _i="43">391</index>
+                                <index _i="44">397</index>
+                                <index _i="45">391</index>
+                                <index _i="46">405</index>
+                                <index _i="47">393</index>
+                                <index _i="48">407</index>
+                                <index _i="49">400</index>
+                                <index _i="50">400</index>
+                                <index _i="51">393</index>
+                                <index _i="52">385</index>
+                                <index _i="53">382</index>
+                                <index _i="54">378</index>
+                                <index _i="55">375</index>
+                                <index _i="56">384</index>
+                                <index _i="57">381</index>
+                                <index _i="58">398</index>
+                                <index _i="59">392</index>
+                                <index _i="60">411</index>
+                                <index _i="61">404</index>
+                                <index _i="62">414</index>
+                                <index _i="63">410</index>
+                                <index _i="64">413</index>
+                                <index _i="65">407</index>
+                                <index _i="66">400</index>
+                                <index _i="67">400</index>
+                                <index _i="68">400</index>
+                                <index _i="69">412</index>
+                                <index _i="70">413</index>
+                                <index _i="71">419</index>
+                                <index _i="72">414</index>
+                                <index _i="73">423</index>
+                                <index _i="74">411</index>
+                                <index _i="75">418</index>
+                                <index _i="76">398</index>
+                                <index _i="77">408</index>
+                                <index _i="78">384</index>
+                                <index _i="79">383</index>
+                                <index _i="80">378</index>
+                                <index _i="81">371</index>
+                                <index _i="82">385</index>
+                                <index _i="83">386</index>
+                                <index _i="84">400</index>
+                                <index _i="85">412</index>
+                                <index _i="86">412</index>
+                                <index _i="87">412</index>
+                                <index _i="88">406</index>
+                                <index _i="89">386</index>
+                                <index _i="90">395</index>
+                                <index _i="91">371</index>
+                                <index _i="92">402</index>
+                                <index _i="93">383</index>
+                                <index _i="94">416</index>
+                                <index _i="95">408</index>
+                                <index _i="96">421</index>
+                                <index _i="97">418</index>
+                                <index _i="98">424</index>
+                                <index _i="99">423</index>
+                                <index _i="100">422</index>
+                                <index _i="101">419</index>
+                                <index _i="102">417</index>
+                                <index _i="103">412</index>
+                                <index _i="104">417</index>
+                                <index _i="105">406</index>
+                                <index _i="106">422</index>
+                                <index _i="107">394</index>
+                                <index _i="108">401</index>
+                                <index _i="109">401</index>
+                                <index _i="110">401</index>
+                                <index _i="111">415</index>
+                                <index _i="112">422</index>
+                                <index _i="113">420</index>
+                                <index _i="114">424</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>256</index_count>
+                            <mat_index>9</mat_index>
+                            <indices>
+                                <index _i="0">357</index>
+                                <index _i="1">328</index>
+                                <index _i="2">354</index>
+                                <index _i="3">323</index>
+                                <index _i="4">323</index>
+                                <index _i="5">227</index>
+                                <index _i="6">227</index>
+                                <index _i="7">226</index>
+                                <index _i="8">225</index>
+                                <index _i="9">224</index>
+                                <index _i="10">224</index>
+                                <index _i="11">346</index>
+                                <index _i="12">346</index>
+                                <index _i="13">344</index>
+                                <index _i="14">343</index>
+                                <index _i="15">345</index>
+                                <index _i="16">345</index>
+                                <index _i="17">285</index>
+                                <index _i="18">285</index>
+                                <index _i="19">284</index>
+                                <index _i="20">283</index>
+                                <index _i="21">282</index>
+                                <index _i="22">282</index>
+                                <index _i="23">350</index>
+                                <index _i="24">350</index>
+                                <index _i="25">349</index>
+                                <index _i="26">348</index>
+                                <index _i="27">347</index>
+                                <index _i="28">347</index>
+                                <index _i="29">342</index>
+                                <index _i="30">342</index>
+                                <index _i="31">368</index>
+                                <index _i="32">341</index>
+                                <index _i="33">367</index>
+                                <index _i="34">367</index>
+                                <index _i="35">230</index>
+                                <index _i="36">230</index>
+                                <index _i="37">231</index>
+                                <index _i="38">228</index>
+                                <index _i="39">229</index>
+                                <index _i="40">229</index>
+                                <index _i="41">223</index>
+                                <index _i="42">223</index>
+                                <index _i="43">255</index>
+                                <index _i="44">222</index>
+                                <index _i="45">254</index>
+                                <index _i="46">254</index>
+                                <index _i="47">290</index>
+                                <index _i="48">290</index>
+                                <index _i="49">291</index>
+                                <index _i="50">289</index>
+                                <index _i="51">288</index>
+                                <index _i="52">288</index>
+                                <index _i="53">280</index>
+                                <index _i="54">280</index>
+                                <index _i="55">296</index>
+                                <index _i="56">279</index>
+                                <index _i="57">295</index>
+                                <index _i="58">295</index>
+                                <index _i="59">293</index>
+                                <index _i="60">293</index>
+                                <index _i="61">292</index>
+                                <index _i="62">286</index>
+                                <index _i="63">287</index>
+                                <index _i="64">287</index>
+                                <index _i="65">281</index>
+                                <index _i="66">281</index>
+                                <index _i="67">297</index>
+                                <index _i="68">278</index>
+                                <index _i="69">294</index>
+                                <index _i="70">294</index>
+                                <index _i="71">207</index>
+                                <index _i="72">207</index>
+                                <index _i="73">203</index>
+                                <index _i="74">238</index>
+                                <index _i="75">235</index>
+                                <index _i="76">235</index>
+                                <index _i="77">205</index>
+                                <index _i="78">240</index>
+                                <index _i="79">209</index>
+                                <index _i="80">209</index>
+                                <index _i="81">251</index>
+                                <index _i="82">251</index>
+                                <index _i="83">248</index>
+                                <index _i="84">221</index>
+                                <index _i="85">217</index>
+                                <index _i="86">217</index>
+                                <index _i="87">236</index>
+                                <index _i="88">236</index>
+                                <index _i="89">233</index>
+                                <index _i="90">252</index>
+                                <index _i="91">250</index>
+                                <index _i="92">250</index>
+                                <index _i="93">264</index>
+                                <index _i="94">264</index>
+                                <index _i="95">260</index>
+                                <index _i="96">304</index>
+                                <index _i="97">301</index>
+                                <index _i="98">301</index>
+                                <index _i="99">261</index>
+                                <index _i="100">306</index>
+                                <index _i="101">256</index>
+                                <index _i="102">256</index>
+                                <index _i="103">275</index>
+                                <index _i="104">275</index>
+                                <index _i="105">268</index>
+                                <index _i="106">265</index>
+                                <index _i="107">263</index>
+                                <index _i="108">263</index>
+                                <index _i="109">317</index>
+                                <index _i="110">317</index>
+                                <index _i="111">314</index>
+                                <index _i="112">277</index>
+                                <index _i="113">270</index>
+                                <index _i="114">270</index>
+                                <index _i="115">302</index>
+                                <index _i="116">302</index>
+                                <index _i="117">299</index>
+                                <index _i="118">318</index>
+                                <index _i="119">316</index>
+                                <index _i="120">316</index>
+                                <index _i="121">219</index>
+                                <index _i="122">219</index>
+                                <index _i="123">216</index>
+                                <index _i="124">208</index>
+                                <index _i="125">206</index>
+                                <index _i="126">206</index>
+                                <index _i="127">212</index>
+                                <index _i="128">212</index>
+                                <index _i="129">244</index>
+                                <index _i="130">211</index>
+                                <index _i="131">242</index>
+                                <index _i="132">242</index>
+                                <index _i="133">215</index>
+                                <index _i="134">215</index>
+                                <index _i="135">248</index>
+                                <index _i="136">213</index>
+                                <index _i="137">246</index>
+                                <index _i="138">246</index>
+                                <index _i="139">207</index>
+                                <index _i="140">207</index>
+                                <index _i="141">237</index>
+                                <index _i="142">220</index>
+                                <index _i="143">253</index>
+                                <index _i="144">253</index>
+                                <index _i="145">239</index>
+                                <index _i="146">239</index>
+                                <index _i="147">257</index>
+                                <index _i="148">234</index>
+                                <index _i="149">262</index>
+                                <index _i="150">262</index>
+                                <index _i="151">243</index>
+                                <index _i="152">243</index>
+                                <index _i="153">272</index>
+                                <index _i="154">241</index>
+                                <index _i="155">259</index>
+                                <index _i="156">259</index>
+                                <index _i="157">247</index>
+                                <index _i="158">247</index>
+                                <index _i="159">267</index>
+                                <index _i="160">245</index>
+                                <index _i="161">274</index>
+                                <index _i="162">274</index>
+                                <index _i="163">232</index>
+                                <index _i="164">232</index>
+                                <index _i="165">260</index>
+                                <index _i="166">249</index>
+                                <index _i="167">269</index>
+                                <index _i="168">269</index>
+                                <index _i="169">271</index>
+                                <index _i="170">271</index>
+                                <index _i="171">310</index>
+                                <index _i="172">258</index>
+                                <index _i="173">308</index>
+                                <index _i="174">308</index>
+                                <index _i="175">266</index>
+                                <index _i="176">266</index>
+                                <index _i="177">314</index>
+                                <index _i="178">273</index>
+                                <index _i="179">312</index>
+                                <index _i="180">312</index>
+                                <index _i="181">264</index>
+                                <index _i="182">264</index>
+                                <index _i="183">303</index>
+                                <index _i="184">276</index>
+                                <index _i="185">319</index>
+                                <index _i="186">319</index>
+                                <index _i="187">313</index>
+                                <index _i="188">313</index>
+                                <index _i="189">335</index>
+                                <index _i="190">311</index>
+                                <index _i="191">333</index>
+                                <index _i="192">333</index>
+                                <index _i="193">305</index>
+                                <index _i="194">305</index>
+                                <index _i="195">320</index>
+                                <index _i="196">300</index>
+                                <index _i="197">326</index>
+                                <index _i="198">326</index>
+                                <index _i="199">321</index>
+                                <index _i="200">354</index>
+                                <index _i="201">351</index>
+                                <index _i="202">351</index>
+                                <index _i="203">298</index>
+                                <index _i="204">298</index>
+                                <index _i="205">324</index>
+                                <index _i="206">315</index>
+                                <index _i="207">336</index>
+                                <index _i="208">336</index>
+                                <index _i="209">309</index>
+                                <index _i="210">309</index>
+                                <index _i="211">331</index>
+                                <index _i="212">307</index>
+                                <index _i="213">322</index>
+                                <index _i="214">322</index>
+                                <index _i="215">332</index>
+                                <index _i="216">352</index>
+                                <index _i="217">358</index>
+                                <index _i="218">358</index>
+                                <index _i="219">360</index>
+                                <index _i="220">353</index>
+                                <index _i="221">355</index>
+                                <index _i="222">355</index>
+                                <index _i="223">362</index>
+                                <index _i="224">356</index>
+                                <index _i="225">364</index>
+                                <index _i="226">364</index>
+                                <index _i="227">210</index>
+                                <index _i="228">210</index>
+                                <index _i="229">204</index>
+                                <index _i="230">214</index>
+                                <index _i="231">218</index>
+                                <index _i="232">218</index>
+                                <index _i="233">330</index>
+                                <index _i="234">330</index>
+                                <index _i="235">335</index>
+                                <index _i="236">359</index>
+                                <index _i="237">363</index>
+                                <index _i="238">363</index>
+                                <index _i="239">338</index>
+                                <index _i="240">338</index>
+                                <index _i="241">327</index>
+                                <index _i="242">366</index>
+                                <index _i="243">357</index>
+                                <index _i="244">357</index>
+                                <index _i="245">334</index>
+                                <index _i="246">334</index>
+                                <index _i="247">325</index>
+                                <index _i="248">340</index>
+                                <index _i="249">329</index>
+                                <index _i="250">329</index>
+                                <index _i="251">365</index>
+                                <index _i="252">365</index>
+                                <index _i="253">361</index>
+                                <index _i="254">339</index>
+                                <index _i="255">337</index>
+                            </indices>
+                        </mesh>
+                        <mesh>
+                            <index_count>117</index_count>
+                            <mat_index>10</mat_index>
+                            <indices>
+                                <index _i="0">181</index>
+                                <index _i="1">189</index>
+                                <index _i="2">176</index>
+                                <index _i="3">185</index>
+                                <index _i="4">178</index>
+                                <index _i="5">187</index>
+                                <index _i="6">188</index>
+                                <index _i="7">192</index>
+                                <index _i="8">198</index>
+                                <index _i="9">197</index>
+                                <index _i="10">202</index>
+                                <index _i="11">197</index>
+                                <index _i="12">200</index>
+                                <index _i="13">191</index>
+                                <index _i="14">186</index>
+                                <index _i="15">186</index>
+                                <index _i="16">186</index>
+                                <index _i="17">184</index>
+                                <index _i="18">200</index>
+                                <index _i="19">189</index>
+                                <index _i="20">196</index>
+                                <index _i="21">181</index>
+                                <index _i="22">194</index>
+                                <index _i="23">175</index>
+                                <index _i="24">183</index>
+                                <index _i="25">168</index>
+                                <index _i="26">173</index>
+                                <index _i="27">158</index>
+                                <index _i="28">173</index>
+                                <index _i="29">164</index>
+                                <index _i="30">180</index>
+                                <index _i="31">169</index>
+                                <index _i="32">182</index>
+                                <index _i="33">172</index>
+                                <index _i="34">177</index>
+                                <index _i="35">167</index>
+                                <index _i="36">170</index>
+                                <index _i="37">163</index>
+                                <index _i="38">166</index>
+                                <index _i="39">155</index>
+                                <index _i="40">165</index>
+                                <index _i="41">152</index>
+                                <index _i="42">168</index>
+                                <index _i="43">158</index>
+                                <index _i="44">168</index>
+                                <index _i="45">168</index>
+                                <index _i="46">168</index>
+                                <index _i="47">175</index>
+                                <index _i="48">165</index>
+                                <index _i="49">171</index>
+                                <index _i="50">166</index>
+                                <index _i="51">174</index>
+                                <index _i="52">170</index>
+                                <index _i="53">179</index>
+                                <index _i="54">177</index>
+                                <index _i="55">190</index>
+                                <index _i="56">182</index>
+                                <index _i="57">195</index>
+                                <index _i="58">180</index>
+                                <index _i="59">193</index>
+                                <index _i="60">173</index>
+                                <index _i="61">193</index>
+                                <index _i="62">183</index>
+                                <index _i="63">201</index>
+                                <index _i="64">194</index>
+                                <index _i="65">199</index>
+                                <index _i="66">196</index>
+                                <index _i="67">199</index>
+                                <index _i="68">200</index>
+                                <index _i="69">201</index>
+                                <index _i="70">202</index>
+                                <index _i="71">193</index>
+                                <index _i="72">202</index>
+                                <index _i="73">195</index>
+                                <index _i="74">198</index>
+                                <index _i="75">190</index>
+                                <index _i="76">188</index>
+                                <index _i="77">179</index>
+                                <index _i="78">178</index>
+                                <index _i="79">174</index>
+                                <index _i="80">176</index>
+                                <index _i="81">171</index>
+                                <index _i="82">181</index>
+                                <index _i="83">175</index>
+                                <index _i="84">175</index>
+                                <index _i="85">172</index>
+                                <index _i="86">172</index>
+                                <index _i="87">161</index>
+                                <index _i="88">167</index>
+                                <index _i="89">156</index>
+                                <index _i="90">163</index>
+                                <index _i="91">151</index>
+                                <index _i="92">155</index>
+                                <index _i="93">147</index>
+                                <index _i="94">152</index>
+                                <index _i="95">145</index>
+                                <index _i="96">158</index>
+                                <index _i="97">148</index>
+                                <index _i="98">164</index>
+                                <index _i="99">153</index>
+                                <index _i="100">169</index>
+                                <index _i="101">159</index>
+                                <index _i="102">172</index>
+                                <index _i="103">161</index>
+                                <index _i="104">161</index>
+                                <index _i="105">154</index>
+                                <index _i="106">154</index>
+                                <index _i="107">149</index>
+                                <index _i="108">160</index>
+                                <index _i="109">144</index>
+                                <index _i="110">146</index>
+                                <index _i="111">146</index>
+                                <index _i="112">146</index>
+                                <index _i="113">150</index>
+                                <index _i="114">160</index>
+                                <index _i="115">157</index>
+                                <index _i="116">162</index>
+                            </indices>
+                        </mesh>
+                    </meshes>
+                </bin_mesh_plg>
+                <xml_node size="4" type="UNKNOWN" version="268697599"/>
+            </extension>
         </geometry>
     </geometry_list>
 </clump>
