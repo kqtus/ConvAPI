@@ -116,10 +116,10 @@ bool rw::core::material_list_data::Read(in_stream<EStreamType::BINARY>& stream)
 	chunk_base::Read(stream);
 	READ_VAR(stream, material_count);
 
-	INIT_ARR(material_unks, material_count);
+	INIT_ARR(material_indices, material_count);
 	for (int i = 0; i < material_count; i++)
 	{
-		READ_VAR(stream, material_unks[i]);
+		READ_VAR(stream, material_indices[i]);
 	}
 
 	return true;
@@ -144,13 +144,11 @@ bool rw::core::geometry_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	READ_VAR(stream, header.flags);
-	READ_VAR(stream, header.uv_count);
-	READ_VAR(stream, header.native_flags);
 	READ_VAR(stream, header.face_count);
 	READ_VAR(stream, header.vertex_count);
 	READ_VAR(stream, header.frame_count);
 
-	if (version == 4099)
+	if (DecodeVersion() < 0x34000)
 	{
 		READ_VAR(stream, lighting.ambient);
 		READ_VAR(stream, lighting.diffuse);
@@ -311,10 +309,4 @@ bool rw::core::clump::Read(in_stream<EStreamType::BINARY>& stream)
 	// #TODO: Read optional sections
 
 	return true;
-}
-
-std::string rw::core::clump::ToString() const
-{
-	return "clump:\n" + chunk_base::ToString() +
-		"\n<object_count>: " + std::to_string(data.object_count);
 }

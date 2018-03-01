@@ -64,6 +64,15 @@ std::string rw::Decode(const rw::RwCorePluginID& flag)
 	DECODE_IF_EQ(flag, rwID_UVANIMDICT);
 	DECODE_IF_EQ(flag, rwID_COLLTREE);
 	DECODE_IF_EQ(flag, rwID_ENVIRONMENT);
+
+	// -- Plugins
+	DECODE_IF_EQ(flag, rwID_MORPHPLG);
+	DECODE_IF_EQ(flag, rwID_BINMESHPLG);
+	DECODE_IF_EQ(flag, rwID_SKYMIPMAPVALPLG);
+	DECODE_IF_EQ(flag, rwID_HANIMPLG);
+	DECODE_IF_EQ(flag, rwID_FRAMEPLG);
+	// --
+
 	DECODE_IF_EQ(flag, rwID_COREPLUGINIDMAX);
 	return "UNKNOWN";
 }
@@ -85,11 +94,13 @@ std::string rw::Decode(const rw::RwPluginVendor& flag)
 	return "UNKNOWN";
 }
 
-rw::chunk_base::chunk_base()
-	: type(0)
-	, size(0)
-	, version(0)
+uint32_t rw::chunk_base::DecodeVersion() const
 {
+	if (version & 0xFFFF0000)
+	{
+		return (version >> 14 & 0x3FF00) + 0x30000 | (version >> 16 & 0x3F);
+	}	
+	return version << 8;
 }
 
 bool rw::chunk_base::Read(in_stream<EStreamType::BINARY>& stream)
@@ -112,11 +123,3 @@ bool rw::string::Read(in_stream<EStreamType::BINARY>& stream)
 
 	return true;
 }
-
-std::string rw::chunk_base::ToString() const
-{
-	return "chunk_base:\n<section_type>: " + std::to_string(type) +
-		"\n<section_size>: " + std::to_string(size) +
-		"\n<version>: " + std::to_string(version);
-}
-

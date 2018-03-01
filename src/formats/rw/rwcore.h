@@ -74,7 +74,7 @@ namespace rw
 			CONVERTIBLE_ENTITY
 		public:
 			uint32_t material_count;
-			uint32_t* material_unks;
+			uint32_t* material_indices;
 
 		public:
 			material_list_data();
@@ -101,9 +101,7 @@ namespace rw
 		public:
 			struct
 			{
-				uint16_t flags;
-				uint8_t uv_count;
-				uint8_t native_flags;
+				uint32_t flags;
 				uint32_t face_count;
 				uint32_t vertex_count;
 				uint32_t frame_count;
@@ -247,7 +245,7 @@ namespace rw
 			clump_data();
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
-			//std::string ToString() const;
+
 		};
 
 		class clump : public chunk_base
@@ -262,7 +260,6 @@ namespace rw
 			clump();
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
-			std::string ToString() const;
 		};
 	}
 }

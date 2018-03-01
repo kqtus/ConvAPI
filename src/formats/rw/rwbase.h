@@ -117,10 +117,8 @@ namespace rw
 		uint32_t version;
 
 	public:
-		chunk_base();
-
+		uint32_t DecodeVersion() const;
 		bool Read(in_stream<EStreamType::BINARY>& stream) override;
-		std::string ToString() const;
 	};
 
 	class string : public chunk_base, public std::vector<uint8_t>

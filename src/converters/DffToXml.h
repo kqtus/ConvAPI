@@ -4,8 +4,16 @@
 #include "formats\xml\node.h"
 #include "formats\rw\rwcore.h"
 #include <string>
+#include <sstream>
 
 #define STR(x) std::to_string(x)
+
+#define STR_HEX(x) [&] { \
+	std::stringstream ss; \
+	ss << std::hex << x; \
+	return "0x" + ss.str(); \
+}();
+
 #define MAKE_NODE(name, data) new xml::node(name, STR(data))
 
 template<>
@@ -14,7 +22,7 @@ xml::node* CConverter::From(rw::chunk_base* chunk)
 	auto node = new xml::node();
 	(*node)["type"] = rw::Decode((rw::RwCorePluginID)chunk->type);
 	(*node)["size"] = STR(chunk->size);
-	(*node)["version"] = STR(chunk->version);
+	(*node)["version"] = STR_HEX(chunk->version);
 	return node;
 }
 
@@ -170,8 +178,6 @@ xml::node* CConverter::From(rw::core::geometry_data* chunk)
 
 	auto header_node = new xml::node("header");
 	header_node->AddChild(MAKE_NODE("flags", chunk->header.flags));
-	header_node->AddChild(MAKE_NODE("uv_count", chunk->header.uv_count));
-	header_node->AddChild(MAKE_NODE("native_flags", chunk->header.native_flags));
 	header_node->AddChild(MAKE_NODE("face_count", chunk->header.face_count));
 	header_node->AddChild(MAKE_NODE("vertex_count", chunk->header.vertex_count));
 	header_node->AddChild(MAKE_NODE("frame_count", chunk->header.frame_count));

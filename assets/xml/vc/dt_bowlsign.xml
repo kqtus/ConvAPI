@@ -26,9 +26,9 @@
             </info>
         </frame_list_data>
         <extension size="47" type="rwID_EXTENSION" version="268697599">
-            <hanim size="12" type="UNKNOWN" version="268697599"/>
-            <frame_plg size="11" type="UNKNOWN" version="268697599">
-                <name>dt_bowlsignýýýýÝ</name>
+            <hanim size="12" type="rwID_HANIMPLG" version="268697599"/>
+            <frame_plg size="11" type="rwID_FRAMEPLG" version="268697599">
+                <name>dt_bowlsignýýýý</name>
             </frame_plg>
         </extension>
     </frame_list>
@@ -1536,7 +1536,7 @@
             </geometry_data>
             <material_list size="1864" type="rwID_MATLIST" version="268697599"/>
             <extension size="3496" type="rwID_EXTENSION" version="268697599">
-                <bin_mesh_plg size="3468" type="UNKNOWN" version="268697599">
+                <bin_mesh_plg size="3468" type="rwID_BINMESHPLG" version="268697599">
                     <flags>1</flags>
                     <mesh_count>11</mesh_count>
                     <total_indices>842</total_indices>
@@ -2451,7 +2451,7 @@
                         </mesh>
                     </meshes>
                 </bin_mesh_plg>
-                <xml_node size="4" type="UNKNOWN" version="268697599"/>
+                <xml_node size="4" type="rwID_MORPHPLG" version="268697599"/>
             </extension>
         </geometry>
     </geometry_list>

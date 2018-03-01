@@ -1,12 +1,12 @@
 <?xml encoding="UTF-8" standalone="no" version="1.0"?>
-<clump size="14088" type="rwID_CLUMP" version="402915327">
-    <clump_data size="12" type="rwID_STRUCT" version="402915327">
+<clump size="14088" type="rwID_CLUMP" version="0x1803ffff">
+    <clump_data size="12" type="rwID_STRUCT" version="0x1803ffff">
         <object_count>1</object_count>
         <pad1>0</pad1>
         <pad2>0</pad2>
     </clump_data>
-    <frame_list size="112" type="rwID_FRAMELIST" version="402915327">
-        <frame_list_data size="60" type="rwID_STRUCT" version="402915327">
+    <frame_list size="112" type="rwID_FRAMELIST" version="0x1803ffff">
+        <frame_list_data size="60" type="rwID_STRUCT" version="0x1803ffff">
             <frame_count>1</frame_count>
             <info>
                 <rotation_0_0>1.000000</rotation_0_0>
@@ -25,22 +25,20 @@
                 <pad>0</pad>
             </info>
         </frame_list_data>
-        <extension size="28" type="rwID_EXTENSION" version="402915327">
-            <frame_plg size="16" type="UNKNOWN" version="402915327">
+        <extension size="28" type="rwID_EXTENSION" version="0x1803ffff">
+            <frame_plg size="16" type="rwID_FRAMEPLG" version="0x1803ffff">
                 <name>SV_ground_04_SFSýýýý</name>
             </frame_plg>
         </extension>
     </frame_list>
-    <geometry_list size="13864" type="rwID_GEOMETRYLIST" version="402915327">
-        <geometry_list_data size="4" type="rwID_STRUCT" version="402915327">
+    <geometry_list size="13864" type="rwID_GEOMETRYLIST" version="0x1803ffff">
+        <geometry_list_data size="4" type="rwID_STRUCT" version="0x1803ffff">
             <geometry_count>1</geometry_count>
         </geometry_list_data>
-        <geometry size="13836" type="rwID_GEOMETRY" version="402915327">
-            <geometry_data size="9896" type="rwID_STRUCT" version="402915327">
+        <geometry size="13836" type="rwID_GEOMETRY" version="0x1803ffff">
+            <geometry_data size="9896" type="rwID_STRUCT" version="0x1803ffff">
                 <header>
-                    <flags>47</flags>
-                    <uv_count>1</uv_count>
-                    <native_flags>0</native_flags>
+                    <flags>65583</flags>
                     <face_count>194</face_count>
                     <vertex_count>346</vertex_count>
                     <frame_count>1</frame_count>
@@ -949,9 +947,9 @@
                     <vertex _i="345" x="-47.623291" y="26.430481" z="-2.204014"/>
                 </vertices>
             </geometry_data>
-            <material_list size="468" type="rwID_MATLIST" version="402915327"/>
-            <extension size="3436" type="rwID_EXTENSION" version="402915327">
-                <bin_mesh_plg size="2008" type="UNKNOWN" version="402915327">
+            <material_list size="468" type="rwID_MATLIST" version="0x1803ffff"/>
+            <extension size="3436" type="rwID_EXTENSION" version="0x1803ffff">
+                <bin_mesh_plg size="2008" type="rwID_BINMESHPLG" version="0x1803ffff">
                     <flags>1</flags>
                     <mesh_count>3</mesh_count>
                     <total_indices>493</total_indices>
@@ -1469,8 +1467,8 @@
                         </mesh>
                     </meshes>
                 </bin_mesh_plg>
-                <xml_node size="4" type="UNKNOWN" version="402915327"/>
-                <xml_node size="1388" type="UNKNOWN" version="402915327"/>
+                <xml_node size="4" type="UNKNOWN" version="0x1803ffff"/>
+                <xml_node size="1388" type="UNKNOWN" version="0x1803ffff"/>
             </extension>
         </geometry>
     </geometry_list>
