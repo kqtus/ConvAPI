@@ -143,6 +143,8 @@ _PRIMITIVE_STREAM_WRITE_METHOD(uint64_t);
 _PRIMITIVE_STREAM_WRITE_METHOD(float_t);
 _PRIMITIVE_STREAM_WRITE_METHOD(double_t);
 
+#define WRITE_VAR(strm, variable) strm.Write(&variable);
+
 template<>
 template<>
 inline void out_stream<EStreamType::TEXT>::Write(const void* data, size_t size)

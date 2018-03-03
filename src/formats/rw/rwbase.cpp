@@ -94,6 +94,28 @@ std::string rw::Decode(const rw::RwPluginVendor& flag)
 	return "UNKNOWN";
 }
 
+rw::string::string()
+	: string(DEFAULT_RW_TYPE)
+{
+}
+
+rw::string::string(uint32_t type)
+	: chunk_base(rwID_STRING)
+{
+}
+
+rw::chunk_base::chunk_base()
+	: chunk_base(rwID_NAOBJECT)
+{
+}
+
+rw::chunk_base::chunk_base(uint32_t type, uint32_t version /* = 0x1803FFFF */, uint32_t size /* = 0 */)
+	: type(type)
+	, version(version)
+	, size(size)
+{
+}
+
 uint32_t rw::chunk_base::DecodeVersion() const
 {
 	if (version & 0xFFFF0000)
@@ -111,6 +133,14 @@ bool rw::chunk_base::Read(in_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+bool rw::chunk_base::Write(out_stream<EStreamType::BINARY>& stream)
+{
+	WRITE_VAR(stream, type);
+	WRITE_VAR(stream, size);
+	WRITE_VAR(stream, version);
+	return true;
+}
+
 bool rw::string::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -119,6 +149,18 @@ bool rw::string::Read(in_stream<EStreamType::BINARY>& stream)
 	for (int i = 0; i < chunk_base::size; i++)
 	{
 		READ_VAR(stream, this->operator[](i));
+	}
+
+	return true;
+}
+
+bool rw::string::Write(out_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Write(stream);
+
+	for (int i = 0; i < chunk_base::size; i++)
+	{
+		WRITE_VAR(stream, this->operator[](i));
 	}
 
 	return true;

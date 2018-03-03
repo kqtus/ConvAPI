@@ -12,6 +12,8 @@
 #define RWFORCEENUMSIZEINT ((int)((~((unsigned int)0))>>1))
 #define MAKECHUNKID(vendorID, chunkID) (((vendorID & 0xFFFFFF) << 8) | (chunkID & 0xFF))
 
+#define DEFAULT_RW_TYPE 0x1803FFFF
+
 namespace rw
 {
 	enum RwPluginVendor
@@ -108,7 +110,9 @@ namespace rw
 	std::string Decode(const RwCorePluginID& flag);
 	std::string Decode(const RwPluginVendor& flag);
 
-	class chunk_base : public common::IBinReadable
+	class chunk_base 
+		: public common::IBinReadable
+		, public common::IBinWriteable
 	{
 		CONVERTIBLE_ENTITY
 	protected:
@@ -117,15 +121,26 @@ namespace rw
 		uint32_t version;
 
 	public:
+		chunk_base();
+		chunk_base(uint32_t type, uint32_t version = DEFAULT_RW_TYPE, uint32_t size = 0);
+
 		uint32_t DecodeVersion() const;
+
 		bool Read(in_stream<EStreamType::BINARY>& stream) override;
+		bool Write(out_stream<EStreamType::BINARY>& stream) override;
 	};
 
-	class string : public chunk_base, public std::vector<uint8_t>
+	class string 
+		: public chunk_base
+		, public std::vector<uint8_t>
 	{
 		CONVERTIBLE_ENTITY
 	public:
+		string();
+		string(uint32_t type);
+
 		bool Read(in_stream<EStreamType::BINARY>& stream) override;
+		bool Write(out_stream<EStreamType::BINARY>& stream) override;
 	};
 
 }

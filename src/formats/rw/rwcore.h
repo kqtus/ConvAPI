@@ -8,11 +8,17 @@ namespace rw
 {
 	namespace core
 	{
-		class extension : public chunk_base, public std::vector<chunk_base*>
+		class extension 
+			: public chunk_base
+			, public std::vector<chunk_base*>
 		{
 			CONVERTIBLE_ENTITY
 		public:
+			extension();
+			extension(uint32_t type);
+
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class texture_data : public chunk_base
@@ -23,7 +29,11 @@ namespace rw
 			uint16_t pad;
 
 		public:
+			texture_data();
+			texture_data(uint32_t type);
+
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class texture : public chunk_base
@@ -36,7 +46,11 @@ namespace rw
 			extension ext;
 
 		public:
+			texture();
+			texture(uint32_t type);
+
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class material_data : public chunk_base
@@ -50,9 +64,11 @@ namespace rw
 			vec3<float_t> unk_vec;
 
 		public:
-			//material_data();
+			material_data();
+			material_data(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class material : public chunk_base
@@ -64,9 +80,11 @@ namespace rw
 			extension ext;
 
 		public:
-			//material();
+			material();
+			material(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class material_list_data : public chunk_base
@@ -78,11 +96,15 @@ namespace rw
 
 		public:
 			material_list_data();
+			material_list_data(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
-		class material_list : public chunk_base, private std::vector<material*>
+		class material_list 
+			: public chunk_base
+			, private std::vector<material*>
 		{
 			CONVERTIBLE_ENTITY
 		protected:
@@ -90,8 +112,11 @@ namespace rw
 
 		public:
 			material_list();
+			material_list(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
+
 			using vector::operator[];
 		};
 
@@ -157,8 +182,10 @@ namespace rw
 
 		public:
 			geometry_data();
+			geometry_data(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class geometry : public chunk_base
@@ -171,8 +198,10 @@ namespace rw
 
 		public:
 			geometry();
+			geometry(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class geometry_list_data : public chunk_base
@@ -183,11 +212,15 @@ namespace rw
 
 		public:
 			geometry_list_data();
+			geometry_list_data(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
-		class geometry_list : public chunk_base, private std::vector<geometry*>
+		class geometry_list 
+			: public chunk_base
+			, private std::vector<geometry*>
 		{
 			CONVERTIBLE_ENTITY
 		protected:
@@ -195,8 +228,11 @@ namespace rw
 
 		public:
 			geometry_list();
+			geometry_list(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
+
 			using vector::operator[];
 		};
 
@@ -216,11 +252,15 @@ namespace rw
 
 		public:
 			frame_list_data();
+			frame_list_data(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
-		class frame_list : public chunk_base, private std::vector<extension*>
+		class frame_list 
+			: public chunk_base
+			, private std::vector<extension*>
 		{
 			CONVERTIBLE_ENTITY
 		protected:
@@ -228,8 +268,11 @@ namespace rw
 
 		public:
 			frame_list();
+			frame_list(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
+
 			using vector::operator[];
 		};
 
@@ -243,9 +286,10 @@ namespace rw
 
 		public:
 			clump_data();
+			clump_data(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
-
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class clump : public chunk_base
@@ -258,8 +302,10 @@ namespace rw
 
 		public:
 			clump();
+			clump(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 	}
 }

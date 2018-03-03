@@ -42,20 +42,26 @@ project "formats"
 	
 project "converters"
 	kind "StaticLib"
-	includedirs { "src/formats/**" }
+	includedirs { "3rd/include", "src/formats/**" }
 	files "src/converters/**"
 	flags { "NoPCH" }
+	
+	defines "FBXSDK_SHARED"
+		
 	useFormatsLib()
-
+	links "3rd/lib/x64/debug/libfbxsdk"
+	
 project "ConvAPI"
 	kind "ConsoleApp"
 	files "src/conv_api/**"
-
+	
+	includedirs { "3rd/include", "src", "src/conv_api/**" }
+	
+		
 	flags { "NoPCH" }
 	
 	useUtilitiesLib()
 	useFormatsLib()
 	useConvertersLib()
 	
-	includedirs { "src", "src/conv_api/**" }
-	
+	links "3rd/lib/x64/debug/libfbxsdk"

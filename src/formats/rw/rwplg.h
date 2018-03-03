@@ -24,6 +24,7 @@ namespace rw
 
 		public:
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class morph : public chunk_base
@@ -34,6 +35,7 @@ namespace rw
 
 		public:
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class sky_mipmap_val : public chunk_base
@@ -44,6 +46,7 @@ namespace rw
 
 		public:
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class frame : public chunk_base
@@ -54,6 +57,7 @@ namespace rw
 
 		public:
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class hanim : public chunk_base
@@ -61,6 +65,7 @@ namespace rw
 			CONVERTIBLE_ENTITY
 		public:
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		class unknown : public chunk_base
@@ -71,6 +76,7 @@ namespace rw
 
 		public:
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
 		chunk_base* DecodeAndReadPlg(in_stream<EStreamType::BINARY>& stream);
