@@ -20774,4 +20774,225 @@
             </extension>
         </geometry>
     </geometry_list>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>10</frame_index>
+            <geometry_index>0</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>37</frame_index>
+            <geometry_index>1</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>38</frame_index>
+            <geometry_index>2</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>35</frame_index>
+            <geometry_index>3</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>36</frame_index>
+            <geometry_index>4</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>33</frame_index>
+            <geometry_index>5</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>34</frame_index>
+            <geometry_index>6</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>31</frame_index>
+            <geometry_index>7</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>32</frame_index>
+            <geometry_index>8</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>29</frame_index>
+            <geometry_index>9</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>30</frame_index>
+            <geometry_index>10</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>27</frame_index>
+            <geometry_index>11</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>28</frame_index>
+            <geometry_index>12</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>25</frame_index>
+            <geometry_index>13</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>26</frame_index>
+            <geometry_index>14</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>23</frame_index>
+            <geometry_index>15</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>24</frame_index>
+            <geometry_index>16</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>21</frame_index>
+            <geometry_index>17</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>22</frame_index>
+            <geometry_index>18</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <atomic size="56" type="rwID_ATOMIC" version="0xc02ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0xc02ffff">
+            <frame_index>20</frame_index>
+            <geometry_index>19</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="16" type="rwID_EXTENSION" version="0xc02ffff">
+            <xml_node size="4" type="UNKNOWN" version="0xc02ffff"/>
+        </extension>
+    </atomic>
+    <extension size="0" type="rwID_EXTENSION" version="0xc02ffff"/>
 </clump>

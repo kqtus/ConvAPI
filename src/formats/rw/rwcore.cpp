@@ -159,6 +159,32 @@ rw::core::frame_list::frame_list(uint32_t type)
 {
 }
 
+rw::core::atomic_data::atomic_data()
+	: atomic_data(DEFAULT_RW_TYPE)
+{
+}
+
+rw::core::atomic_data::atomic_data(uint32_t type)
+	: chunk_base(rwID_STRUCT, type)
+	, frame_index(0)
+	, geometry_index(0)
+	, flags(0)
+	, pad(0)
+{
+}
+
+rw::core::atomic::atomic()
+	: atomic(DEFAULT_RW_TYPE)
+{
+}
+
+rw::core::atomic::atomic(uint32_t type)
+	: chunk_base(rwID_ATOMIC, type)
+	, data(type)
+	, ext(type)
+{
+}
+
 rw::core::clump_data::clump_data()
 	: clump_data(DEFAULT_RW_TYPE)
 {
@@ -649,6 +675,42 @@ bool rw::core::frame_list::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+bool rw::core::atomic_data::Read(in_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Read(stream);
+	READ_VAR(stream, frame_index);
+	READ_VAR(stream, geometry_index);
+	READ_VAR(stream, flags);
+	READ_VAR(stream, pad);
+	return true;
+}
+
+bool rw::core::atomic_data::Write(out_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Write(stream);
+	WRITE_VAR(stream, frame_index);
+	WRITE_VAR(stream, geometry_index);
+	WRITE_VAR(stream, flags);
+	WRITE_VAR(stream, pad);
+	return true;
+}
+
+bool rw::core::atomic::Read(in_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Read(stream);
+	data.Read(stream);
+	ext.Read(stream);
+	return true;
+}
+
+bool rw::core::atomic::Write(out_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Write(stream);
+	data.Write(stream);
+	ext.Write(stream);
+	return true;
+}
+
 bool rw::core::clump_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -673,9 +735,16 @@ bool rw::core::clump::Read(in_stream<EStreamType::BINARY>& stream)
 	data.Read(stream);
 	frames.Read(stream);
 	geometries.Read(stream);
-
-	// #TODO: Read optional sections
-
+	
+	for (int i = 0; i < data.object_count; i++)
+	{
+		atomic cur_atomic;
+		cur_atomic.Read(stream);
+		atomics.push_back(cur_atomic);
+	}
+	// #TODO: Read lights and cameras
+	// now it is assumed that model doesn't have them
+	ext.Read(stream);
 	return true;
 }
 
@@ -686,7 +755,11 @@ bool rw::core::clump::Write(out_stream<EStreamType::BINARY>& stream)
 	frames.Write(stream);
 	geometries.Write(stream);
 
-	// #TODO: Write optional sections
+	for (auto& cur_atomic : atomics)
+	{
+		cur_atomic.Write(stream);
+	}
 
+	ext.Write(stream);
 	return true;
 }

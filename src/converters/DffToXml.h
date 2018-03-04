@@ -312,6 +312,28 @@ xml::node* CConverter::From(rw::core::geometry_list* chunk)
 }
 
 template<>
+xml::node* CConverter::From(rw::core::atomic_data* chunk)
+{
+	auto node = From<rw::chunk_base*, xml::node*>(chunk);
+	node->SetName("atomic_data");
+	node->AddChild(MAKE_NODE("frame_index", chunk->frame_index));
+	node->AddChild(MAKE_NODE("geometry_index", chunk->geometry_index));
+	node->AddChild(MAKE_NODE("flags", chunk->flags));
+	node->AddChild(MAKE_NODE("pad", chunk->pad));
+	return node;
+}
+
+template<>
+xml::node* CConverter::From(rw::core::atomic* chunk)
+{
+	auto node = From<rw::chunk_base*, xml::node*>(chunk);
+	node->SetName("atomic");
+	node->AddChild(From<rw::core::atomic_data*, xml::node*>(&chunk->data));
+	node->AddChild(From<rw::core::extension*, xml::node*>(&chunk->ext));
+	return node;
+}
+
+template<>
 xml::node* CConverter::From(rw::core::clump* chunk)
 {
 	auto node = From<rw::chunk_base*, xml::node*>(chunk);
@@ -319,6 +341,13 @@ xml::node* CConverter::From(rw::core::clump* chunk)
 	node->AddChild(From<rw::core::clump_data*, xml::node*>(&chunk->data));
 	node->AddChild(From<rw::core::frame_list*, xml::node*>(&chunk->frames));
 	node->AddChild(From<rw::core::geometry_list*, xml::node*>(&chunk->geometries));
+
+	for (auto& atomic : chunk->atomics)
+	{
+		node->AddChild(From<rw::core::atomic*, xml::node*>(&atomic));
+	}
+
+	node->AddChild(From<rw::core::extension*, xml::node*>(&chunk->ext));
 	node->UpdateIndentsForSubnodes();
 	return node;
 }

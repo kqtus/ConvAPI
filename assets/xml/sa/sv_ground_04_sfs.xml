@@ -1472,4 +1472,14 @@
             </extension>
         </geometry>
     </geometry_list>
+    <atomic size="40" type="rwID_ATOMIC" version="0x1803ffff">
+        <atomic_data size="16" type="rwID_STRUCT" version="0x1803ffff">
+            <frame_index>0</frame_index>
+            <geometry_index>0</geometry_index>
+            <flags>5</flags>
+            <pad>0</pad>
+        </atomic_data>
+        <extension size="0" type="rwID_EXTENSION" version="0x1803ffff"/>
+    </atomic>
+    <extension size="0" type="rwID_EXTENSION" version="0x1803ffff"/>
 </clump>

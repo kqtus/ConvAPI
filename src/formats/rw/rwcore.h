@@ -276,6 +276,39 @@ namespace rw
 			using vector::operator[];
 		};
 
+		class atomic_data : public chunk_base
+		{
+			CONVERTIBLE_ENTITY
+		protected:
+			uint32_t frame_index;
+			uint32_t geometry_index;
+			uint32_t flags;
+			uint32_t pad;
+
+		public:
+			atomic_data();
+			atomic_data(uint32_t type);
+
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
+		};
+
+		class atomic : public chunk_base
+		{
+			CONVERTIBLE_ENTITY
+		protected:
+			atomic_data data;
+			// geometry geom; - might have geometry if clump's geometry list is empty
+			extension ext;
+
+		public:
+			atomic();
+			atomic(uint32_t type);
+
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
+		};
+
 		class clump_data : public chunk_base
 		{
 			CONVERTIBLE_ENTITY
@@ -299,6 +332,8 @@ namespace rw
 			clump_data data;
 			frame_list frames;
 			geometry_list geometries;
+			std::vector<atomic> atomics;
+			extension ext;
 
 		public:
 			clump();
