@@ -315,8 +315,8 @@ namespace rw
 			CONVERTIBLE_ENTITY
 		public:
 			uint32_t object_count;
-			uint32_t pad1;
-			uint32_t pad2;
+			uint32_t light_count;
+			uint32_t camera_count;
 
 		public:
 			clump_data();
@@ -339,6 +339,114 @@ namespace rw
 		public:
 			clump();
 			clump(uint32_t type);
+
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
+		};
+	}
+
+	namespace core
+	{
+		class texture_native_data : public chunk_base
+		{
+			CONVERTIBLE_ENTITY
+		protected:
+			uint32_t platform_id;
+			uint8_t filter_mode;
+			uint8_t uv_addressing;
+			uint8_t* name;
+			uint8_t* mask_name;
+			uint16_t pad;
+
+			uint32_t raster_format;
+
+			union
+			{
+				uint32_t has_alpha;
+				uint32_t d3d_format;
+			};
+
+			uint16_t width;
+			uint16_t height;
+			uint8_t depth;
+			uint8_t level_count;
+			uint8_t raster_type;
+
+			union
+			{
+				uint8_t compression;
+
+				struct
+				{
+					uint8_t alpha : 1;
+					uint8_t cube_texture : 1;
+					uint8_t auto_mip_maps : 1;
+					uint8_t compressed : 1;
+					uint8_t pad2 : 4;
+				};
+			};
+
+		public:
+			texture_native_data();
+			texture_native_data(uint32_t type);
+
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
+		};
+
+		class texture_native : public chunk_base
+		{
+			CONVERTIBLE_ENTITY
+		protected:
+			texture_native_data data;
+			extension ext;
+
+		public:
+			texture_native();
+			texture_native(uint32_t type);
+
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
+		};
+
+		class texture_dictionary_data : public chunk_base
+		{
+			CONVERTIBLE_ENTITY
+		public:
+			union
+			{
+				struct
+				{
+					uint32_t texture_count;
+				} old_version;
+
+				struct
+				{
+					uint16_t texture_count;
+					uint16_t device_id;
+				} new_version;
+			};
+
+		public:
+			texture_dictionary_data();
+			texture_dictionary_data(uint32_t type);
+
+			bool Read(in_stream<EStreamType::BINARY>& stream) override;
+			bool Write(out_stream<EStreamType::BINARY>& stream) override;
+		};
+
+		class texture_dictionary 
+			: public chunk_base
+			, public std::vector<texture_native*>
+		{
+			CONVERTIBLE_ENTITY
+		protected:
+			texture_dictionary_data data;
+			extension ext;
+
+		public:
+			texture_dictionary();
+			texture_dictionary(uint32_t type);
 
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;

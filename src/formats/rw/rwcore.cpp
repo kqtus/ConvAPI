@@ -193,8 +193,8 @@ rw::core::clump_data::clump_data()
 rw::core::clump_data::clump_data(uint32_t type)
 	: chunk_base(rwID_STRUCT, type)
 	, object_count(0)
-	, pad1(0)
-	, pad2(0)
+	, light_count(0)
+	, camera_count(0)
 {
 }
 
@@ -733,8 +733,8 @@ bool rw::core::clump_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	READ_VAR(stream, object_count);
-	READ_VAR(stream, pad1);
-	READ_VAR(stream, pad2);
+	READ_VAR(stream, light_count);
+	READ_VAR(stream, camera_count);
 	return true;
 }
 
@@ -742,8 +742,8 @@ bool rw::core::clump_data::Write(out_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Write(stream);
 	WRITE_VAR(stream, object_count);
-	WRITE_VAR(stream, pad1);
-	WRITE_VAR(stream, pad2);
+	WRITE_VAR(stream, light_count);
+	WRITE_VAR(stream, camera_count);
 	return true;
 }
 
@@ -776,6 +776,171 @@ bool rw::core::clump::Write(out_stream<EStreamType::BINARY>& stream)
 	for (auto& cur_atomic : atomics)
 	{
 		cur_atomic.Write(stream);
+	}
+
+	ext.Write(stream);
+	return true;
+}
+
+rw::core::texture_native_data::texture_native_data()
+	: texture_native_data(DEFAULT_RW_TYPE)
+{
+}
+
+rw::core::texture_native_data::texture_native_data(uint32_t type)
+	: chunk_base(rwID_STRUCT, type)
+	, platform_id(0)
+	, filter_mode(0)
+	, uv_addressing(0)
+	, name(nullptr)
+	, mask_name(nullptr)
+	, pad(0)
+	, raster_format(0)
+	, has_alpha(0)
+	, width(0)
+	, height(0)
+	, depth(0)
+	, level_count(0)
+	, raster_type(0)
+	, compression(0)
+{
+}
+
+rw::core::texture_native::texture_native()
+	: texture_native(DEFAULT_RW_TYPE)
+{
+}
+
+rw::core::texture_native::texture_native(uint32_t type)
+	: chunk_base(rwID_TEXTURENATIVE, type)
+	, data(type)
+	, ext(type)
+{
+}
+
+rw::core::texture_dictionary_data::texture_dictionary_data()
+	: texture_dictionary_data(DEFAULT_RW_TYPE)
+{
+}
+
+rw::core::texture_dictionary_data::texture_dictionary_data(uint32_t type)
+	: chunk_base(rwID_STRUCT, type)
+{
+}
+
+rw::core::texture_dictionary::texture_dictionary()
+	: texture_dictionary(DEFAULT_RW_TYPE)
+{
+}
+
+rw::core::texture_dictionary::texture_dictionary(uint32_t type)
+	: chunk_base(rwID_TEXDICTIONARY, type)
+	, data(type)
+	, ext(type)
+{
+}
+
+bool rw::core::texture_native_data::Read(in_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Read(stream);
+	READ_VAR(stream, platform_id);
+	READ_VAR(stream, filter_mode);
+	READ_VAR(stream, uv_addressing);
+	READ_ARR(stream, name, 32);
+	READ_ARR(stream, mask_name, 32);
+	READ_VAR(stream, pad);
+	READ_VAR(stream, raster_format);
+	READ_VAR(stream, has_alpha);
+	READ_VAR(stream, width);
+	READ_VAR(stream, height);
+	READ_VAR(stream, depth);
+	READ_VAR(stream, level_count);
+	READ_VAR(stream, raster_type);
+	READ_VAR(stream, compression);
+
+	// #TODO: Read mimaps and actual image data
+
+	return true;
+}
+
+bool rw::core::texture_native_data::Write(out_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Write(stream);
+	WRITE_VAR(stream, platform_id);
+	WRITE_VAR(stream, filter_mode);
+	WRITE_VAR(stream, uv_addressing);
+	WRITE_ARR(stream, name, 32);
+	WRITE_ARR(stream, mask_name, 32);
+	WRITE_VAR(stream, pad);
+	WRITE_VAR(stream, raster_format);
+	WRITE_VAR(stream, has_alpha);
+	WRITE_VAR(stream, width);
+	WRITE_VAR(stream, height);
+	WRITE_VAR(stream, depth);
+	WRITE_VAR(stream, level_count);
+	WRITE_VAR(stream, raster_type);
+	WRITE_VAR(stream, compression);
+
+	// #TODO: Write mimaps and actual image data
+
+	return true;
+}
+
+bool rw::core::texture_native::Read(in_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Read(stream);
+	data.Read(stream);
+	ext.Read(stream);
+	return true;
+}
+
+bool rw::core::texture_native::Write(out_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Write(stream);
+	data.Write(stream);
+	ext.Write(stream);
+	return true;
+}
+
+bool rw::core::texture_dictionary_data::Read(in_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Read(stream);
+	READ_VAR(stream, old_version.texture_count);
+	return true;
+}
+
+bool rw::core::texture_dictionary_data::Write(out_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Write(stream);
+	WRITE_VAR(stream, old_version.texture_count);
+	return true;
+}
+
+bool rw::core::texture_dictionary::Read(in_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Read(stream);
+	data.Read(stream);
+
+	// #TODO: Add switch to manage old/new version
+	for (int i = 0; i < data.old_version.texture_count; i++)
+	{
+		auto tex_native = new texture_native();
+		tex_native->Read(stream);
+		this->push_back(tex_native);
+	}
+
+	ext.Read(stream);
+	return true;
+}
+
+bool rw::core::texture_dictionary::Write(out_stream<EStreamType::BINARY>& stream)
+{
+	chunk_base::Write(stream);
+	data.Write(stream);
+
+	for (auto& tex_native : *this)
+	{
+		tex_native->Write(stream);
 	}
 
 	ext.Write(stream);

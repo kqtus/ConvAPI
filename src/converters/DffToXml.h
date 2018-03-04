@@ -141,8 +141,8 @@ xml::node* CConverter::From(rw::core::clump_data* chunk)
 	auto node = From<rw::chunk_base*, xml::node*>(chunk);
 	node->SetName("clump_data");
 	node->AddChild(new xml::node("object_count", STR(chunk->object_count)));
-	node->AddChild(new xml::node("pad1", STR(chunk->pad1)));
-	node->AddChild(new xml::node("pad2", STR(chunk->pad2)));
+	node->AddChild(new xml::node("light_count", STR(chunk->light_count)));
+	node->AddChild(new xml::node("camera_count", STR(chunk->camera_count)));
 	return node;
 }
 

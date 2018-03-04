@@ -145,6 +145,10 @@ _PRIMITIVE_STREAM_WRITE_METHOD(double_t);
 
 #define WRITE_VAR(strm, variable) strm.Write(&variable);
 
+#define WRITE_ARR(strm, arr, size) \
+for (int i = 0; i < size; i++) WRITE_VAR(strm, arr[i]);
+
+
 template<>
 template<>
 inline void out_stream<EStreamType::TEXT>::Write(const void* data, size_t size)
