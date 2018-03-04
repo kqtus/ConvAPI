@@ -414,13 +414,23 @@ bool rw::core::geometry_data::Read(in_stream<EStreamType::BINARY>& stream)
 		}
 	}
 
-	if (header.flags & rpGEOMETRYTEXTURED)
+	if ((header.flags & rpGEOMETRYTEXTURED) || (header.flags & rpGEOMETRYTEXTURED2))
 	{
 		INIT_ARR(texture_mappings, header.vertex_count);
 		for (int i = 0; i < header.vertex_count; i++)
 		{
 			READ_VAR(stream, texture_mappings[i].u);
 			READ_VAR(stream, texture_mappings[i].v);
+		}
+	}
+
+	if (header.flags & rpGEOMETRYTEXTURED2)
+	{
+		INIT_ARR(texture_mappings2, header.vertex_count);
+		for (int i = 0; i < header.vertex_count; i++)
+		{
+			READ_VAR(stream, texture_mappings2[i].u);
+			READ_VAR(stream, texture_mappings2[i].v);
 		}
 	}
 
@@ -489,7 +499,7 @@ bool rw::core::geometry_data::Write(out_stream<EStreamType::BINARY>& stream)
 		}
 	}
 
-	if (header.flags & rpGEOMETRYTEXTURED)
+	if ((header.flags & rpGEOMETRYTEXTURED) || (header.flags & rpGEOMETRYTEXTURED2))
 	{
 		for (int i = 0; i < header.vertex_count; i++)
 		{
@@ -498,6 +508,14 @@ bool rw::core::geometry_data::Write(out_stream<EStreamType::BINARY>& stream)
 		}
 	}
 
+	if (header.flags & rpGEOMETRYTEXTURED2)
+	{
+		for (int i = 0; i < header.vertex_count; i++)
+		{
+			WRITE_VAR(stream, texture_mappings2[i].u);
+			WRITE_VAR(stream, texture_mappings2[i].v);
+		}
+	}
 	for (int i = 0; i < header.face_count; i++)
 	{
 		WRITE_VAR(stream, faces[i].v2);

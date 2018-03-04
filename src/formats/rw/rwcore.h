@@ -163,6 +163,7 @@ namespace rw
 
 			colour* colours;
 			texture_mapping* texture_mappings;
+			texture_mapping* texture_mappings2;
 			face* faces;
 
 			struct

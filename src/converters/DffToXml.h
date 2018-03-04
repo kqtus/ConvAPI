@@ -208,7 +208,7 @@ xml::node* CConverter::From(rw::core::geometry_data* chunk)
 		node->AddChild(colours_node);
 	}
 
-	if (chunk->header.flags & rw::rpGEOMETRYTEXTURED)
+	if ((chunk->header.flags & rw::rpGEOMETRYTEXTURED) || (chunk->header.flags & rw::rpGEOMETRYTEXTURED2))
 	{
 		auto texture_mappings_node = new xml::node("texture_mappings");
 		for (int i = 0; i < chunk->header.vertex_count; i++)
@@ -217,6 +217,20 @@ xml::node* CConverter::From(rw::core::geometry_data* chunk)
 			(*texture_mapping_node)["_i"] = STR(i);
 			(*texture_mapping_node)["u"] = STR(chunk->texture_mappings[i].u);
 			(*texture_mapping_node)["v"] = STR(chunk->texture_mappings[i].v);
+			texture_mappings_node->AddChild(texture_mapping_node);
+		}
+		node->AddChild(texture_mappings_node);
+	}
+
+	if (chunk->header.flags & rw::rpGEOMETRYTEXTURED2)
+	{
+		auto texture_mappings_node = new xml::node("texture_mapping2");
+		for (int i = 0; i < chunk->header.vertex_count; i++)
+		{
+			auto texture_mapping_node = new xml::node("texture_mapping");
+			(*texture_mapping_node)["_i"] = STR(i);
+			(*texture_mapping_node)["u"] = STR(chunk->texture_mappings2[i].u);
+			(*texture_mapping_node)["v"] = STR(chunk->texture_mappings2[i].v);
 			texture_mappings_node->AddChild(texture_mapping_node);
 		}
 		node->AddChild(texture_mappings_node);
