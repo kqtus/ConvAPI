@@ -118,11 +118,7 @@ rw::chunk_base::chunk_base(uint32_t type, uint32_t version /* = 0x1803FFFF */, u
 
 uint32_t rw::chunk_base::DecodeVersion() const
 {
-	if (version & 0xFFFF0000)
-	{
-		return (version >> 14 & 0x3FF00) + 0x30000 | (version >> 16 & 0x3F);
-	}	
-	return version << 8;
+	return (version & 0xFFFF0000) ? (version >> 14 & 0x3FF00) + 0x30000 | (version >> 16 & 0x3F) : version << 8;
 }
 
 bool rw::chunk_base::Read(in_stream<EStreamType::BINARY>& stream)

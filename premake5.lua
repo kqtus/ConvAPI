@@ -49,7 +49,7 @@ project "converters"
 	defines "FBXSDK_SHARED"
 		
 	useFormatsLib()
-	links "3rd/lib/x64/debug/libfbxsdk"
+	--links "3rd/lib/x64/debug/libfbxsdk"
 	
 project "ConvAPI"
 	kind "ConsoleApp"
@@ -64,4 +64,4 @@ project "ConvAPI"
 	useFormatsLib()
 	useConvertersLib()
 	
-	links "3rd/lib/x64/debug/libfbxsdk"
+	--links "3rd/lib/x64/debug/libfbxsdk"

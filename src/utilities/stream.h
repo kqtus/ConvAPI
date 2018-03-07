@@ -12,14 +12,34 @@ template<EStreamType stream_type>
 class stream
 {
 public:
+	stream();
+	~stream();
+
 	virtual bool Open(const char* file_name) = 0;
 	virtual void Close();
 
 	void Seek(size_t pos, size_t offset);
 	size_t Tell() const;
+
+	std::string GetFileName() const;
+
 protected:
 	FILE* m_File;
+	std::string m_FileName;
 };
+
+template<EStreamType stream_type>
+inline stream<stream_type>::stream()
+	: m_FIle(nullptr)
+	, m_FileName("")
+{
+}
+
+template<EStreamType stream_type>
+inline stream<stream_type>::~stream()
+{
+	delete m_File;
+}
 
 template<EStreamType stream_type>
 inline void stream<stream_type>::Close()
@@ -40,6 +60,12 @@ inline size_t stream<stream_type>::Tell() const
 }
 
 template<EStreamType stream_type>
+inline std::string stream<stream_type>::GetFileName() const
+{
+	return m_File
+}
+
+template<EStreamType stream_type>
 class in_stream : public stream<stream_type>
 {
 public:
@@ -52,6 +78,11 @@ public:
 template<EStreamType stream_type>
 inline bool in_stream<stream_type>::Open(const char* file_name)
 {
+	if (m_File)
+	{
+		delete m_File;
+	}
+
 	m_File = fopen(file_name, [&]() -> const char*
 	{
 		switch (stream_type)
@@ -109,6 +140,11 @@ public:
 template<EStreamType stream_type>
 inline bool out_stream<stream_type>::Open(const char* file_name)
 {
+	if (m_File)
+	{
+		delete m_File;
+	}
+
 	m_File = fopen(file_name, [&]() -> const char*
 	{
 		switch (stream_type)
