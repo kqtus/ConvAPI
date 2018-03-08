@@ -111,12 +111,7 @@ xml::node* CConverter::From(rw::core::extension* chunk)
 
 	for (auto child : *chunk)
 	{
-		if (child->type == rw::rwID_HANIMPLG)
-		{
-			auto casted_child = dynamic_cast<rw::plg::hanim*>(child);
-			node->AddChild(From<rw::plg::hanim*, xml::node*>(casted_child));
-		}
-		else if (child->type == rw::rwID_FRAMEPLG)
+		if (child->type == rw::rwID_FRAMEPLG)
 		{
 			auto casted_child = dynamic_cast<rw::plg::frame*>(child);
 			node->AddChild(From<rw::plg::frame*, xml::node*>(casted_child));
@@ -126,6 +121,13 @@ xml::node* CConverter::From(rw::core::extension* chunk)
 			auto casted_child = dynamic_cast<rw::plg::bin_mesh*>(child);
 			node->AddChild(From<rw::plg::bin_mesh*, xml::node*>(casted_child));
 		}
+		/*
+		else if (child->type == rw::rwID_HANIMPLG)
+		{
+		auto casted_child = dynamic_cast<rw::plg::hanim*>(child);
+		node->AddChild(From<rw::plg::hanim*, xml::node*>(casted_child));
+		}
+		*/
 		else
 		{
 			node->AddChild(From<rw::chunk_base*, xml::node*>(child));

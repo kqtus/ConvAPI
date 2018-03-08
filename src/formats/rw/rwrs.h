@@ -2,6 +2,7 @@
 #include <vector>
 #include "rwcore.h"
 
+
 namespace rw
 {
 	namespace rs
@@ -16,13 +17,16 @@ namespace rw
 		};
 
 		template<EArchiveVer version>
+		class archive;
+
+		template<EArchiveVer version>
 		class archive_entry_header
 			: public common::IBinReadable
 			, public common::IBinWriteable
 		{
 			CONVERTIBLE_ENTITY
 			friend class archive<version>;
-		protected:
+		public:
 			uint32_t offset;
 			union
 			{
@@ -39,16 +43,18 @@ namespace rw
 			uint8_t* file_name;
 
 		public:
-			archive_entry_header();
-			~archive_entry_header();
+			//archive_entry_header();
+			//~archive_entry_header();
 
 			bool Read(TInStream& stream) override;
 			bool Write(TOutStream& stream) override;
 
 			size_t GetHeaderSize() const;
 
-			const int FILE_NAME_SIZE = 24;
+			const static int FILE_NAME_SIZE = 24;
+			const static int SECTOR_SIZE = 2048;
 		};
+
 
 		template<EArchiveVer version>
 		class archive
@@ -56,8 +62,7 @@ namespace rw
 			, public common::IBinWriteable
 		{
 			CONVERTIBLE_ENTITY
-			using THeadersVec = std::vector<archive_entry_header<version>*>;
-		
+				using THeadersVec = std::vector<archive_entry_header<version>*>;
 		private:
 			TInStream m_InputStream;
 			uint32_t m_EntryCount;
@@ -65,13 +70,22 @@ namespace rw
 			uint8_t* m_Label;
 
 		public:
-			archive();
-			~archive();
+			//archive();
+			//~archive();
 
 			bool Read(TInStream& stream) override;
 			bool Write(TOutStream& stream) override;
-		};
+			const THeadersVec& GetEntryHeaders() const;
 
+			bool GetFileStream(TInStream& stream, std::string file_name);
+		};
+		
+		template<EArchiveVer version>
+		inline const std::vector<archive_entry_header<version>*>& archive<version>::GetEntryHeaders() const
+		{
+			return m_EntryHeaders;
+		}
+		
 		template<EArchiveVer version>
 		bool archive_entry_header<version>::Read(TInStream& stream)
 		{
@@ -79,6 +93,7 @@ namespace rw
 			READ_VAR(stream, ver1.streaming_size);
 			INIT_ARR(file_name, FILE_NAME_SIZE);
 			READ_ARR(stream, file_name, FILE_NAME_SIZE);
+			return true;
 		}
 
 		template<EArchiveVer version>
@@ -87,6 +102,7 @@ namespace rw
 			WRITE_VAR(stream, offset);
 			WRITE_VAR(stream, ver1.streaming_size);
 			WRITE_ARR(stream, file_name, FILE_NAME_SIZE);
+			return true;
 		}
 
 		template<EArchiveVer version>
@@ -99,15 +115,42 @@ namespace rw
 		bool archive<EArchiveVer::VER1>::Read(TInStream& stream)
 		{
 			m_InputStream = stream;
-			// Open .dir file and read headers
+			
+			std::string dir_fname = stream.GetFileName();
+			dir_fname.erase(dir_fname.find_last_of("."));
+			dir_fname.append(".dir");
+
+			TInStream dir_stream;
+			if (dir_stream.Open(dir_fname.c_str()))
+			{
+				while (!dir_stream.Eof())
+				{
+					auto header = new archive_entry_header<EArchiveVer::VER1>();
+					
+					header->Read(dir_stream);
+					this->m_EntryHeaders.push_back(header);
+				}
+				dir_stream.Close();
+				m_EntryCount = m_EntryHeaders.size();
+				return true;
+			}
+			
 			return false;
 		}
 
 		template<>
 		bool archive<EArchiveVer::VER1>::Write(TOutStream& stream)
 		{
-			// Open .dir file and write headers
-			return false;
+			WRITE_ARR(stream, m_Label, 4);
+			WRITE_VAR(stream, m_EntryCount);
+
+			for (auto& entry_hd : m_EntryHeaders)
+			{
+				entry_hd->Write(stream);
+			}
+
+			// #TODO: Write files to stream
+			return true;
 		}
 
 		template<>
@@ -140,8 +183,23 @@ namespace rw
 				entry_hd->Write(stream);
 			}
 
-			// #TODO: Write files from m_InputStream
+			// #TODO: Write files to stream
 			return true;
+		}
+	
+		template<EArchiveVer version>
+		bool archive<version>::GetFileStream(TInStream& stream, std::string file_name)
+		{
+			for (auto& eh : m_EntryHeaders)
+			{
+				if (strcmp((char*)eh->file_name, file_name.c_str()) == 0)
+				{
+					stream = m_InputStream;
+					stream.Seek(eh->offset * archive_entry_header<version>::SECTOR_SIZE, 0);
+					return true;
+				}
+			}
+			return false;
 		}
 	}
 }

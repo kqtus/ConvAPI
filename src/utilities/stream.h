@@ -20,6 +20,7 @@ public:
 
 	void Seek(size_t pos, size_t offset);
 	size_t Tell() const;
+	bool Eof() const;
 
 	std::string GetFileName() const;
 
@@ -30,7 +31,7 @@ protected:
 
 template<EStreamType stream_type>
 inline stream<stream_type>::stream()
-	: m_FIle(nullptr)
+	: m_File(nullptr)
 	, m_FileName("")
 {
 }
@@ -38,7 +39,7 @@ inline stream<stream_type>::stream()
 template<EStreamType stream_type>
 inline stream<stream_type>::~stream()
 {
-	delete m_File;
+	//fclose(m_File);
 }
 
 template<EStreamType stream_type>
@@ -60,9 +61,15 @@ inline size_t stream<stream_type>::Tell() const
 }
 
 template<EStreamType stream_type>
+inline bool stream<stream_type>::Eof() const
+{
+	return feof(m_File);
+}
+
+template<EStreamType stream_type>
 inline std::string stream<stream_type>::GetFileName() const
 {
-	return m_File
+	return m_FileName;
 }
 
 template<EStreamType stream_type>
@@ -78,9 +85,10 @@ public:
 template<EStreamType stream_type>
 inline bool in_stream<stream_type>::Open(const char* file_name)
 {
+	m_FileName = file_name;
 	if (m_File)
 	{
-		delete m_File;
+		fclose(m_File);
 	}
 
 	m_File = fopen(file_name, [&]() -> const char*
@@ -93,6 +101,7 @@ inline bool in_stream<stream_type>::Open(const char* file_name)
 			return "r";
 		}
 	}());
+
 	return m_File != nullptr;
 }
 
@@ -140,9 +149,10 @@ public:
 template<EStreamType stream_type>
 inline bool out_stream<stream_type>::Open(const char* file_name)
 {
+	m_FileName = file_name;
 	if (m_File)
 	{
-		delete m_File;
+		fclose(m_File);
 	}
 
 	m_File = fopen(file_name, [&]() -> const char*
