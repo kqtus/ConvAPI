@@ -87,7 +87,7 @@ namespace rw
 		}
 		
 		template<EArchiveVer version>
-		bool archive_entry_header<version>::Read(TInStream& stream)
+		inline bool archive_entry_header<version>::Read(TInStream& stream)
 		{
 			READ_VAR(stream, offset);
 			READ_VAR(stream, ver1.streaming_size);
@@ -97,7 +97,7 @@ namespace rw
 		}
 
 		template<EArchiveVer version>
-		bool archive_entry_header<version>::Write(TOutStream& stream)
+		inline bool archive_entry_header<version>::Write(TOutStream& stream)
 		{
 			WRITE_VAR(stream, offset);
 			WRITE_VAR(stream, ver1.streaming_size);
@@ -106,13 +106,13 @@ namespace rw
 		}
 
 		template<EArchiveVer version>
-		size_t archive_entry_header<version>::GetHeaderSize() const
+		inline size_t archive_entry_header<version>::GetHeaderSize() const
 		{
 			return sizeof(offset) + sizeof(ver1.streaming_size) + FILE_NAME_SIZE;
 		}
 
 		template<>
-		bool archive<EArchiveVer::VER1>::Read(TInStream& stream)
+		inline bool archive<EArchiveVer::VER1>::Read(TInStream& stream)
 		{
 			m_InputStream = stream;
 			
@@ -139,7 +139,7 @@ namespace rw
 		}
 
 		template<>
-		bool archive<EArchiveVer::VER1>::Write(TOutStream& stream)
+		inline bool archive<EArchiveVer::VER1>::Write(TOutStream& stream)
 		{
 			WRITE_ARR(stream, m_Label, 4);
 			WRITE_VAR(stream, m_EntryCount);
@@ -154,7 +154,7 @@ namespace rw
 		}
 
 		template<>
-		bool archive<EArchiveVer::VER2>::Read(TInStream& stream)
+		inline bool archive<EArchiveVer::VER2>::Read(TInStream& stream)
 		{
 			m_InputStream = stream;
 
@@ -173,7 +173,7 @@ namespace rw
 		}
 
 		template<>
-		bool archive<EArchiveVer::VER2>::Write(TOutStream& stream)
+		inline bool archive<EArchiveVer::VER2>::Write(TOutStream& stream)
 		{
 			WRITE_ARR(stream, m_Label, 4);
 			WRITE_VAR(stream, m_EntryCount);
@@ -188,7 +188,7 @@ namespace rw
 		}
 	
 		template<EArchiveVer version>
-		bool archive<version>::GetFileStream(TInStream& stream, std::string file_name)
+		inline bool archive<version>::GetFileStream(TInStream& stream, std::string file_name)
 		{
 			for (auto& eh : m_EntryHeaders)
 			{

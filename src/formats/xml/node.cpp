@@ -184,3 +184,40 @@ bool xml::node::WriteDeclaration(out_stream<EStreamType::TEXT>& stream)
 	WRITE_CSTR(stream, "?>\n");
 	return true;
 }
+
+std::string xml::node::ToString() const
+{
+	std::string ret;
+	ret += (GetIndentStr() + "<");
+	ret += name;
+
+	for (auto attribute : *this)
+	{
+		ret += " " + attribute.first + "=\"" + attribute.second + "\"";
+	}
+
+	if (!HasChildren() && !HasValue())
+	{
+		ret += "/>\n";
+	}
+	else
+	{
+		ret += ">";
+
+		if (HasValue())
+		{
+			ret += value;
+		}
+		else
+		{
+			ret += "\n";
+			for (auto child : subnodes)
+			{
+				ret += child->ToString();
+			}
+			ret += GetIndentStr();
+		}
+		ret += ("</" + name + ">\n");
+	}
+	return ret;
+}

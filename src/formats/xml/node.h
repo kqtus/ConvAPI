@@ -49,6 +49,8 @@ namespace xml
 
 		bool Write(out_stream<EStreamType::TEXT>& stream) override;
 
+		std::string ToString() const;
+
 		static const char* DEFAULT_NODE_NAME;
 		static const char* EMPTY_VALUE;
 
