@@ -39,10 +39,12 @@ project "utilities"
 
 project "formats"
 	kind "StaticLib"
-	includedirs { "src/utilities/**" }
+	includedirs { "3rd/include", "src/utilities/**" }
 	files "src/formats/**"
 	flags { "NoPCH" }
+	
 	useUtilitiesLib()
+	links "3rd/lib/x64/debug/libfbxsdk"
 	
 project "converters"
 	kind "StaticLib"
@@ -53,7 +55,7 @@ project "converters"
 	defines "FBXSDK_SHARED"
 		
 	useFormatsLib()
-	--links "3rd/lib/x64/debug/libfbxsdk"
+	links "3rd/lib/x64/debug/libfbxsdk"
 
 project "services"
 	kind "StaticLib"
@@ -61,9 +63,9 @@ project "services"
 	files "src/services/**"
 	flags { "NoPCH" }
 	
+	useUtilitiesLib()
 	useFormatsLib()
 	useConvertersLib()
-	useUtilitiesLib()
 	
 project "ConvAPI"
 	kind "ConsoleApp"
@@ -79,4 +81,4 @@ project "ConvAPI"
 	useConvertersLib()
 	useServicesLib()
 	
-	--links "3rd/lib/x64/debug/libfbxsdk"
+	links "3rd/lib/x64/debug/libfbxsdk"

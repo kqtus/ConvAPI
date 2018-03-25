@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "utilities/stream.h"
+#include "../utilities/stream.h"
 #include <map>
 
 enum class ELogKind
@@ -10,7 +10,7 @@ enum class ELogKind
 	INFO
 };
 
-std::map<ELogKind, std::string> LogKindLabels
+static std::map<ELogKind, std::string> LogKindLabels
 {
 	{ ELogKind::WARNING, "WARNING" },
 	{ ELogKind::ERROR, "ERROR" },
@@ -29,10 +29,10 @@ public:
 protected:
 	void WriteInitLogInfo();
 	void WriteEntryInfo(const ELogKind& log_kind);
-	void WriteCurrentTime();
 	void WriteEndl();
 	void Write(const std::string& token);
 	
+	std::string GetCurrentTime();
 
 	std::string m_LogFilePath;
 	out_stream<EStreamType::TEXT>* m_LogStream;

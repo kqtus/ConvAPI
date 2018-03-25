@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Unignore 3rd party libs
+!/3rd/
+
 # Generated with premake
 *.sln
 *.vcxproj

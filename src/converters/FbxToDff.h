@@ -1,7 +1,7 @@
 #pragma once
 #include "Converter.h"
 
-#include "formats/rw/rwcore.h"
+#include "../formats/rw/rwcore.h"
 #include "fbxsdk.h"
 
 template<>
