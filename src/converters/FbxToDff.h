@@ -3,6 +3,7 @@
 
 #include "../formats/rw/rwcore.h"
 #include "fbxsdk.h"
+#include <set>
 
 const static int RW_HEADER_SIZE = 12;
 
@@ -103,17 +104,68 @@ rw::core::frame_list* CConverter::From(FbxNode* node)
 }
 
 template<>
+rw::core::geometry_list_data* CConverter::From(FbxNode* node)
+{
+	auto geometry_data = new rw::core::geometry_list_data();
+	geometry_data->geometry_count = node->GetChildCount();
+	geometry_data->size += sizeof(geometry_data->geometry_count);
+	return geometry_data;
+}
+
+template<>
+rw::core::geometry_data* CConverter::From(FbxNode* node)
+{
+	auto data = new rw::core::geometry_data();
+	data->header.flags = 0x2F;
+	FbxMesh* mesh = (FbxMesh*)node->GetNodeAttribute();
+	
+	int poly_count = mesh->GetPolygonCount();
+	int* vertices = mesh->GetPolygonVertices();
+
+	for (int i = 0; i < poly_count; i++)
+	{
+		int start_index = mesh->GetPolygonVertexIndex(i);
+		
+	}
+
+	data->header.frame_count = 1;
+	return data;
+}
+
+template<>
+rw::core::material_list* CConverter::From(FbxNode* node)
+{
+	auto materials = new rw::core::material_list();
+	
+	return materials;
+}
+
+template<>
+rw::core::geometry* CConverter::From(FbxNode* node)
+{
+	auto geometry = new rw::core::geometry();
+	geometry->data = *From<FbxNode*, rw::core::geometry_data*>(node);
+	geometry->materials = *From<FbxNode*, rw::core::material_list*>(node);
+	return geometry;
+}
+
+template<>
 rw::core::geometry_list* CConverter::From(FbxNode* node)
 {
 	auto geometries = new rw::core::geometry_list();
-	for (int i = 0; i < node->GetChildCount(); i++)
+	geometries->data = *From<FbxNode*, rw::core::geometry_list_data*>(node);
+	((rw::chunk_base*)geometries)->size += geometries->data.size + RW_HEADER_SIZE;
+
+	for (int i = 0; i < geometries->data.geometry_count; i++)
 	{
 		auto child = node->GetChild(i);
 		auto attr_type = child->GetNodeAttribute()->GetAttributeType();
 
 		if (attr_type == FbxNodeAttribute::eMesh)
 		{
-
+			auto geometry = From<FbxNode*, rw::core::geometry*>(node->GetChild(i));
+			geometries->push_back(geometry);
+			((rw::chunk_base*)geometries)->size += geometry->size + RW_HEADER_SIZE;
 		}
 	}
 	return geometries;
