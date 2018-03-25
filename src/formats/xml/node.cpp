@@ -1,8 +1,5 @@
 #include "node.h"
 
-#define WRITE_STR(strm, x) stream.Write(&((std::string)x));
-#define WRITE_CSTR(strm, x) stream.Write(static_cast<const void*>(x), strlen(x));
-
 xml::attribute::attribute()
 {
 }

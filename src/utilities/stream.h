@@ -223,3 +223,6 @@ inline void out_stream<EStreamType::BINARY>::Write(std::string* data)
 	fwrite(&((*data)[0]), data->size(), sizeof(char), m_File);
 }
 
+#define WRITE_STR(strm, x) stream.Write(&((std::string)x));
+#define WRITE_CSTR(strm, x) stream.Write(static_cast<const void*>(x), strlen(x));
+

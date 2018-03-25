@@ -27,6 +27,10 @@ end
 function useConvertersLib()
 	links "converters"
 end
+
+function useServicesLib()
+	links "services"
+end
 	
 project "utilities"
 	kind "StaticLib"
@@ -50,6 +54,16 @@ project "converters"
 		
 	useFormatsLib()
 	--links "3rd/lib/x64/debug/libfbxsdk"
+
+project "services"
+	kind "StaticLib"
+	includedirs { "3rd/include", "src/formats/**", "src/converters/**", "src/utilities/**" }
+	files "src/services/**"
+	flags { "NoPCH" }
+	
+	useFormatsLib()
+	useConvertersLib()
+	useUtilitiesLib()
 	
 project "ConvAPI"
 	kind "ConsoleApp"
@@ -63,5 +77,6 @@ project "ConvAPI"
 	useUtilitiesLib()
 	useFormatsLib()
 	useConvertersLib()
+	useServicesLib()
 	
 	--links "3rd/lib/x64/debug/libfbxsdk"

@@ -16,6 +16,19 @@ namespace rw
 			VER2
 		};
 
+		enum class EColVer
+		{
+			COLL,
+			COL2,
+			COL3
+		};
+	}
+
+	// IMG Archive
+	namespace rs
+	{
+
+
 		template<EArchiveVer version>
 		class archive;
 
@@ -201,5 +214,17 @@ namespace rw
 			}
 			return false;
 		}
+	}
+
+	// COL Archive
+	namespace rs
+	{
+		class col_header
+			: public common::IBinReadable
+			, public common::IBinWriteable
+		{
+			CONVERTIBLE_ENTITY
+
+		};
 	}
 }
