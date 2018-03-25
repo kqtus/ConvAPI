@@ -23,6 +23,9 @@ namespace rw
 			}* meshes;
 
 		public:
+			bin_mesh();
+			bin_mesh(uint32_t type);
+
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -34,6 +37,9 @@ namespace rw
 			uint32_t morph_target_index;
 
 		public:
+			morph();
+			morph(uint32_t type);
+
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -45,6 +51,9 @@ namespace rw
 			uint32_t kl_value;
 
 		public:
+			sky_mipmap_val();
+			sky_mipmap_val(uint32_t type);
+
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -56,6 +65,9 @@ namespace rw
 			uint8_t* name;
 
 		public:
+			frame();
+			frame(uint32_t type);
+
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -64,6 +76,9 @@ namespace rw
 		{
 			CONVERTIBLE_ENTITY
 		public:
+			hanim();
+			hanim(uint32_t type);
+
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -75,6 +90,9 @@ namespace rw
 			uint8_t* data;
 
 		public:
+			unknown();
+			unknown(uint32_t type);
+
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};

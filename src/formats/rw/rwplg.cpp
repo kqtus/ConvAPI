@@ -1,6 +1,74 @@
 #include "../formats_pch.h"
 #include "rwplg.h"
 
+rw::plg::bin_mesh::bin_mesh()
+	: bin_mesh(DEFAULT_RW_TYPE)
+{
+}
+
+rw::plg::bin_mesh::bin_mesh(uint32_t type)
+	: chunk_base(rwID_BINMESHPLG, type)
+	, flags(0)
+	, mesh_count(0)
+	, total_indices(0)
+	, meshes(nullptr)
+{
+}
+
+rw::plg::morph::morph()
+	: morph(DEFAULT_RW_TYPE)
+{
+}
+
+rw::plg::morph::morph(uint32_t type)
+	: chunk_base(rwID_MORPHPLG, type)
+	, morph_target_index(0)
+{
+}
+
+rw::plg::sky_mipmap_val::sky_mipmap_val()
+	: sky_mipmap_val(DEFAULT_RW_TYPE)
+{
+}
+
+rw::plg::sky_mipmap_val::sky_mipmap_val(uint32_t type)
+	: chunk_base(rwID_SKYMIPMAPVALPLG, type)
+	, kl_value(0)
+{
+}
+
+rw::plg::frame::frame()
+	: frame(DEFAULT_RW_TYPE)
+{
+}
+
+rw::plg::frame::frame(uint32_t type)
+	: chunk_base(rwID_FRAMEPLG, type)
+	, name(nullptr)
+{
+}
+
+rw::plg::hanim::hanim()
+	: hanim(DEFAULT_RW_TYPE)
+{
+}
+
+rw::plg::hanim::hanim(uint32_t type)
+	: chunk_base(rwID_HANIMPLG, type)
+{
+}
+
+rw::plg::unknown::unknown()
+	: unknown(DEFAULT_RW_TYPE)
+{
+}
+
+rw::plg::unknown::unknown(uint32_t type)
+	: chunk_base(rwID_NAOBJECT, type)
+	, data(nullptr)
+{
+}
+
 bool rw::plg::bin_mesh::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
