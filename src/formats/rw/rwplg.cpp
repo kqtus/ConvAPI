@@ -113,6 +113,15 @@ bool rw::plg::bin_mesh::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::plg::bin_mesh::UpdateSize()
+{
+	chunk_base::size =
+		sizeof(flags) +
+		sizeof(mesh_count) +
+		sizeof(total_indices) +
+		sizeof(*meshes) * total_indices;
+}
+
 bool rw::plg::morph::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -127,6 +136,11 @@ bool rw::plg::morph::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::plg::morph::UpdateSize()
+{
+	chunk_base::size = sizeof(morph_target_index);
+}
+
 bool rw::plg::sky_mipmap_val::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -139,6 +153,11 @@ bool rw::plg::sky_mipmap_val::Write(out_stream<EStreamType::BINARY>& stream)
 	chunk_base::Write(stream);
 	WRITE_VAR(stream, kl_value);
 	return true;
+}
+
+void rw::plg::sky_mipmap_val::UpdateSize()
+{
+	chunk_base::size = sizeof(kl_value);
 }
 
 bool rw::plg::frame::Read(in_stream<EStreamType::BINARY>& stream)
@@ -166,6 +185,11 @@ bool rw::plg::frame::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::plg::frame::UpdateSize()
+{
+	chunk_base::size = strlen((const char*)name);
+}
+
 bool rw::plg::hanim::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -181,6 +205,11 @@ bool rw::plg::hanim::Write(out_stream<EStreamType::BINARY>& stream)
 
 	// #TODO: Write proper data when reading implementation is done.
 	return true;
+}
+
+void rw::plg::hanim::UpdateSize()
+{
+	chunk_base::size = 0;
 }
 
 bool rw::plg::unknown::Read(in_stream<EStreamType::BINARY>& stream)
@@ -206,6 +235,11 @@ bool rw::plg::unknown::Write(out_stream<EStreamType::BINARY>& stream)
 	}
 
 	return true;
+}
+
+void rw::plg::unknown::UpdateSize()
+{
+	chunk_base::size = strlen((const char*)data);
 }
 
 #define CREATE_OBJ_IF_EQUAL(obj_inst, lhs_cond, rhs_cond, T) \

@@ -115,7 +115,7 @@ namespace rw
 		, public common::IBinWriteable
 	{
 		CONVERTIBLE_ENTITY
-	protected:
+	public:
 		uint32_t type;
 		uint32_t size;
 		uint32_t version;
@@ -125,9 +125,12 @@ namespace rw
 		chunk_base(uint32_t type, uint32_t version = DEFAULT_RW_TYPE, uint32_t size = 0);
 
 		uint32_t DecodeVersion() const;
+		uint32_t GetThisSize() const;
 
 		bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		bool Write(out_stream<EStreamType::BINARY>& stream) override;
+
+		virtual void UpdateSize() = 0;
 	};
 
 	class string 
@@ -138,6 +141,8 @@ namespace rw
 	public:
 		string();
 		string(uint32_t type);
+
+		void UpdateSize() override;
 
 		bool Read(in_stream<EStreamType::BINARY>& stream) override;
 		bool Write(out_stream<EStreamType::BINARY>& stream) override;

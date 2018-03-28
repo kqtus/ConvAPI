@@ -129,6 +129,11 @@ bool rw::chunk_base::Read(in_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+uint32_t rw::chunk_base::GetThisSize() const
+{
+	return sizeof(type) + sizeof(size) + sizeof(version) + size;
+}
+
 bool rw::chunk_base::Write(out_stream<EStreamType::BINARY>& stream)
 {
 	WRITE_VAR(stream, type);
@@ -160,4 +165,9 @@ bool rw::string::Write(out_stream<EStreamType::BINARY>& stream)
 	}
 
 	return true;
+}
+
+void rw::string::string::UpdateSize()
+{
+	chunk_base::size = std::vector<uint8_t>::size() * sizeof(uint8_t);
 }

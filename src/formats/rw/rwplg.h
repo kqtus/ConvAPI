@@ -26,6 +26,7 @@ namespace rw
 			bin_mesh();
 			bin_mesh(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -40,6 +41,7 @@ namespace rw
 			morph();
 			morph(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -54,6 +56,7 @@ namespace rw
 			sky_mipmap_val();
 			sky_mipmap_val(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -68,6 +71,7 @@ namespace rw
 			frame();
 			frame(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -79,6 +83,7 @@ namespace rw
 			hanim();
 			hanim(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -93,6 +98,7 @@ namespace rw
 			unknown();
 			unknown(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};

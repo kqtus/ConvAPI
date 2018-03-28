@@ -17,6 +17,7 @@ namespace rw
 			extension();
 			extension(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -32,6 +33,7 @@ namespace rw
 			texture_data();
 			texture_data(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -49,6 +51,7 @@ namespace rw
 			texture();
 			texture(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -67,22 +70,25 @@ namespace rw
 			material_data();
 			material_data(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
 
-		class material : public chunk_base
+		class material 
+			: public chunk_base
+			, public std::vector<texture*>
 		{
 			CONVERTIBLE_ENTITY
 		protected:
 			material_data data;
-			texture** textures;
 			extension ext;
 
 		public:
 			material();
 			material(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -98,6 +104,7 @@ namespace rw
 			material_list_data();
 			material_list_data(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -114,6 +121,7 @@ namespace rw
 			material_list();
 			material_list(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 
@@ -185,6 +193,7 @@ namespace rw
 			geometry_data();
 			geometry_data(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -201,6 +210,7 @@ namespace rw
 			geometry();
 			geometry(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -215,6 +225,7 @@ namespace rw
 			geometry_list_data();
 			geometry_list_data(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -231,6 +242,7 @@ namespace rw
 			geometry_list();
 			geometry_list(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 
@@ -243,18 +255,21 @@ namespace rw
 		public:
 			uint32_t frame_count;
 
-			struct
+			struct info
 			{
 				mat3x3<float_t> rotation;
 				vec3<float_t> coords_offset;
 				uint32_t parent_frame;
 				uint32_t pad;
-			}* infos;
+			};
+
+			info* infos;
 
 		public:
 			frame_list_data();
 			frame_list_data(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -271,6 +286,7 @@ namespace rw
 			frame_list();
 			frame_list(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 
@@ -290,6 +306,7 @@ namespace rw
 			atomic_data();
 			atomic_data(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -306,6 +323,7 @@ namespace rw
 			atomic();
 			atomic(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -322,6 +340,7 @@ namespace rw
 			clump_data();
 			clump_data(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -340,6 +359,7 @@ namespace rw
 			clump();
 			clump(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -390,6 +410,7 @@ namespace rw
 			texture_native_data();
 			texture_native_data(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -405,6 +426,7 @@ namespace rw
 			texture_native();
 			texture_native(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -431,6 +453,7 @@ namespace rw
 			texture_dictionary_data();
 			texture_dictionary_data(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};
@@ -448,6 +471,7 @@ namespace rw
 			texture_dictionary();
 			texture_dictionary(uint32_t type);
 
+			void UpdateSize() override;
 			bool Read(in_stream<EStreamType::BINARY>& stream) override;
 			bool Write(out_stream<EStreamType::BINARY>& stream) override;
 		};

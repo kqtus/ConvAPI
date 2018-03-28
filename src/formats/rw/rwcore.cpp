@@ -58,7 +58,6 @@ rw::core::material::material()
 rw::core::material::material(uint32_t type)
 	: chunk_base(rwID_MATERIAL, type)
 	, data(type)
-	, textures(nullptr)
 	, ext(type)
 {
 }
@@ -234,6 +233,17 @@ bool rw::core::extension::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::core::extension::UpdateSize()
+{
+	chunk_base::size = 0;
+	for (auto ext : *this)
+	{
+		ext->UpdateSize();
+		chunk_base::size += ext->GetThisSize();
+	}
+}
+
+
 bool rw::core::texture_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -248,6 +258,11 @@ bool rw::core::texture_data::Write(out_stream<EStreamType::BINARY>& stream)
 	WRITE_VAR(stream, filter_mode_flags);
 	WRITE_VAR(stream, pad);
 	return true;
+}
+
+void rw::core::texture_data ::UpdateSize()
+{
+	chunk_base::size = sizeof(filter_mode_flags) + sizeof(pad);
 }
 
 bool rw::core::texture::Read(in_stream<EStreamType::BINARY>& stream)
@@ -268,6 +283,20 @@ bool rw::core::texture::Write(out_stream<EStreamType::BINARY>& stream)
 	mask_name.Write(stream);
 	ext.Write(stream);
 	return true;
+}
+
+void rw::core::texture::UpdateSize()
+{
+	data.UpdateSize();
+	texture_name.UpdateSize();
+	mask_name.UpdateSize();
+	ext.UpdateSize();
+
+	chunk_base::size = 
+		data.GetThisSize() +
+		texture_name.GetThisSize() +
+		mask_name.GetThisSize() +
+		ext.GetThisSize();
 }
 
 bool rw::core::material_data::Read(in_stream<EStreamType::BINARY>& stream)
@@ -302,16 +331,26 @@ bool rw::core::material_data::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::core::material_data::UpdateSize()
+{
+	chunk_base::size =
+		sizeof(pad1) +
+		sizeof(color) +
+		sizeof(pad2) +
+		sizeof(texture_count) +
+		sizeof(unk_vec);
+}
+
 bool rw::core::material::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
 	data.Read(stream);
 
-	INIT_ARR(textures, data.texture_count);
 	for (int i = 0; i < data.texture_count; i++)
 	{
-		textures[i] = new texture();
-		textures[i]->Read(stream);
+		auto tex = new texture();
+		tex->Read(stream);
+		this->push_back(tex);
 	}
 
 	ext.Read(stream);
@@ -323,13 +362,28 @@ bool rw::core::material::Write(out_stream<EStreamType::BINARY>& stream)
 	chunk_base::Write(stream);
 	data.Write(stream);
 
-	for (int i = 0; i < data.texture_count; i++)
+	for (auto tex : *this)
 	{
-		textures[i]->Write(stream);
+		tex->Write(stream);
 	}
 
 	ext.Write(stream);
 	return true;
+}
+
+void rw::core::material::UpdateSize()
+{
+	data.UpdateSize();
+	chunk_base::size = data.GetThisSize();
+
+	for (auto& tex : *this)
+	{
+		tex->UpdateSize();
+		chunk_base::size += tex->GetThisSize();
+	}
+
+	ext.UpdateSize();
+	chunk_base::size += ext.GetThisSize();
 }
 
 bool rw::core::material_list_data::Read(in_stream<EStreamType::BINARY>& stream)
@@ -359,6 +413,13 @@ bool rw::core::material_list_data::Write(out_stream<EStreamType::BINARY>& stream
 	return true;
 }
 
+void rw::core::material_list_data::UpdateSize()
+{
+	chunk_base::size = 
+		sizeof(material_count) +
+		sizeof(*material_indices) * material_count;
+}
+
 bool rw::core::material_list::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -385,6 +446,18 @@ bool rw::core::material_list::Write(out_stream<EStreamType::BINARY>& stream)
 	}
 
 	return true;
+}
+
+void rw::core::material_list::UpdateSize()
+{
+	data.UpdateSize();
+	chunk_base::size = data.GetThisSize();
+
+	for (auto& mat : *this)
+	{
+		mat->UpdateSize();
+		chunk_base::size += mat->GetThisSize();
+	}
 }
 
 bool rw::core::geometry_data::Read(in_stream<EStreamType::BINARY>& stream)
@@ -552,6 +625,41 @@ bool rw::core::geometry_data::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::core::geometry_data::UpdateSize()
+{
+	chunk_base::size = sizeof(header);
+
+	if (DecodeVersion() < 0x34000)
+	{
+		chunk_base::size += sizeof(lighting);
+	}
+	
+	if (header.flags & rpGEOMETRYPRELIT)
+	{
+		chunk_base::size += sizeof(*colours) * header.vertex_count;
+	}
+
+	if ((header.flags & rpGEOMETRYTEXTURED) || (header.flags & rpGEOMETRYTEXTURED2))
+	{
+		chunk_base::size += sizeof(*texture_mappings) * chunk_base::size;
+	}
+
+	if (header.flags & rpGEOMETRYTEXTURED2)
+	{
+		chunk_base::size += sizeof(*texture_mappings2) * chunk_base::size;
+	}
+
+	chunk_base::size += sizeof(*faces) * header.face_count;
+	chunk_base::size += sizeof(bounding_sphere);
+	chunk_base::size += sizeof(flags);
+	chunk_base::size += sizeof(*vertices) * header.vertex_count;
+
+	if (header.flags & rpGEOMETRYNORMALS)
+	{
+		chunk_base::size += sizeof(*normals) * header.vertex_count;
+	}
+}
+
 bool rw::core::geometry::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -570,6 +678,18 @@ bool rw::core::geometry::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::core::geometry::UpdateSize()
+{
+	data.UpdateSize();
+	materials.UpdateSize();
+	ext.UpdateSize();
+
+	chunk_base::size =
+		data.GetThisSize() +
+		materials.GetThisSize() +
+		ext.GetThisSize();
+}
+
 bool rw::core::geometry_list_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -582,6 +702,11 @@ bool rw::core::geometry_list_data::Write(out_stream<EStreamType::BINARY>& stream
 	chunk_base::Write(stream);
 	WRITE_VAR(stream, geometry_count);
 	return true;
+}
+
+void rw::core::geometry_list_data::UpdateSize()
+{
+	chunk_base::size = sizeof(geometry_count);
 }
 
 bool rw::core::geometry_list::Read(in_stream<EStreamType::BINARY>& stream)
@@ -611,6 +736,18 @@ bool rw::core::geometry_list::Write(out_stream<EStreamType::BINARY>& stream)
 	}
 
 	return true;
+}
+
+void rw::core::geometry_list::UpdateSize()
+{
+	data.UpdateSize();
+	chunk_base::size = data.GetThisSize();
+
+	for (auto& geom : *this)
+	{
+		geom->UpdateSize();
+		chunk_base::size += geom->GetThisSize();
+	}
 }
 
 bool rw::core::frame_list_data::Read(in_stream<EStreamType::BINARY>& stream)
@@ -664,6 +801,18 @@ bool rw::core::frame_list_data::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::core::frame_list_data::UpdateSize()
+{
+	chunk_base::size = sizeof(frame_count);
+
+	// #TODO: Make it more elegant.
+	chunk_base::size += 
+		(sizeof(float_t) * 9 +
+		sizeof(float_t) * 3 +
+		sizeof(uint32_t) +
+		sizeof(uint32_t)) * frame_count;
+}
+
 bool rw::core::frame_list::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -693,6 +842,18 @@ bool rw::core::frame_list::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::core::frame_list::UpdateSize()
+{
+	data.UpdateSize();
+	chunk_base::size = data.GetThisSize();
+
+	for (auto& ext : *this)
+	{
+		ext->UpdateSize();
+		chunk_base::size += ext->GetThisSize();
+	}
+}
+
 bool rw::core::atomic_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -713,6 +874,15 @@ bool rw::core::atomic_data::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::core::atomic_data::UpdateSize()
+{
+	chunk_base::size =
+		sizeof(frame_index) +
+		sizeof(geometry_index) +
+		sizeof(flags) +
+		sizeof(pad);
+}
+
 bool rw::core::atomic::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -727,6 +897,15 @@ bool rw::core::atomic::Write(out_stream<EStreamType::BINARY>& stream)
 	data.Write(stream);
 	ext.Write(stream);
 	return true;
+}
+
+void rw::core::atomic::UpdateSize()
+{
+	data.UpdateSize();
+	chunk_base::size = data.GetThisSize();
+
+	ext.UpdateSize();
+	chunk_base::size += ext.GetThisSize();
 }
 
 bool rw::core::clump_data::Read(in_stream<EStreamType::BINARY>& stream)
@@ -745,6 +924,14 @@ bool rw::core::clump_data::Write(out_stream<EStreamType::BINARY>& stream)
 	WRITE_VAR(stream, light_count);
 	WRITE_VAR(stream, camera_count);
 	return true;
+}
+
+void rw::core::clump_data::UpdateSize()
+{
+	chunk_base::size =
+		sizeof(object_count) +
+		sizeof(light_count) +
+		sizeof(camera_count);
 }
 
 bool rw::core::clump::Read(in_stream<EStreamType::BINARY>& stream)
@@ -780,6 +967,27 @@ bool rw::core::clump::Write(out_stream<EStreamType::BINARY>& stream)
 
 	ext.Write(stream);
 	return true;
+}
+
+void rw::core::clump::UpdateSize()
+{
+	data.UpdateSize();
+	chunk_base::size = data.GetThisSize();
+
+	frames.UpdateSize();
+	chunk_base::size += frames.GetThisSize();
+
+	geometries.UpdateSize();
+	chunk_base::size += geometries.GetThisSize();
+	
+	for (auto& atm : atomics)
+	{
+		atm.UpdateSize();
+		chunk_base::size += atm.GetThisSize();
+	}
+
+	ext.UpdateSize();
+	chunk_base::size += ext.GetThisSize();
 }
 
 rw::core::texture_native_data::texture_native_data()
@@ -886,6 +1094,25 @@ bool rw::core::texture_native_data::Write(out_stream<EStreamType::BINARY>& strea
 	return true;
 }
 
+void rw::core::texture_native_data::UpdateSize()
+{
+	chunk_base::size =
+		sizeof(platform_id) +
+		sizeof(filter_mode) +
+		sizeof(uv_addressing) +
+		sizeof(*name) * strlen((const char*)name) +
+		sizeof(*mask_name) * strlen((const char*)mask_name) +
+		sizeof(pad) +
+		sizeof(raster_format) +
+		sizeof(has_alpha) +
+		sizeof(width) +
+		sizeof(height) +
+		sizeof(depth) +
+		sizeof(level_count) +
+		sizeof(raster_type) +
+		sizeof(compression);
+}
+
 bool rw::core::texture_native::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -902,6 +1129,15 @@ bool rw::core::texture_native::Write(out_stream<EStreamType::BINARY>& stream)
 	return true;
 }
 
+void rw::core::texture_native::UpdateSize()
+{
+	data.UpdateSize();
+	chunk_base::size = data.GetThisSize();
+
+	ext.UpdateSize();
+	chunk_base::size += ext.GetThisSize();
+}
+
 bool rw::core::texture_dictionary_data::Read(in_stream<EStreamType::BINARY>& stream)
 {
 	chunk_base::Read(stream);
@@ -914,6 +1150,11 @@ bool rw::core::texture_dictionary_data::Write(out_stream<EStreamType::BINARY>& s
 	chunk_base::Write(stream);
 	WRITE_VAR(stream, old_version.texture_count);
 	return true;
+}
+
+void rw::core::texture_dictionary_data::UpdateSize()
+{
+	chunk_base::size = sizeof(old_version);
 }
 
 bool rw::core::texture_dictionary::Read(in_stream<EStreamType::BINARY>& stream)
@@ -945,4 +1186,19 @@ bool rw::core::texture_dictionary::Write(out_stream<EStreamType::BINARY>& stream
 
 	ext.Write(stream);
 	return true;
+}
+
+void rw::core::texture_dictionary::UpdateSize()
+{
+	data.UpdateSize();
+	chunk_base::size = data.GetThisSize();
+
+	ext.UpdateSize();
+	chunk_base::size += ext.GetThisSize();
+
+	for (auto& tn : *this)
+	{
+		tn->UpdateSize();
+		chunk_base::size += tn->GetThisSize();
+	}
 }
