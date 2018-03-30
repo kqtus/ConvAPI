@@ -105,7 +105,7 @@ rw::core::geometry_data* CConverter::From(FbxNode* node)
 	auto data = new rw::core::geometry_data();
 	auto mesh = (FbxMesh*)(node->GetNodeAttribute());
 	
-	data->header.flags = 0x2F;
+	data->header.flags = 0x2F & ~rw::rpGEOMETRYPRELIT & ~rw::rpGEOMETRYTEXTURED;
 	data->header.frame_count = 1;
 	data->header.face_count = 0;
 	data->header.vertex_count = mesh->GetControlPointsCount();
@@ -138,11 +138,29 @@ rw::core::geometry_data* CConverter::From(FbxNode* node)
 
 	}
 
-	INIT_ARR(data->faces, data->header.face_count);
-	for (int i = 0; i < data->header.face_count; i++)
-	{
+	const int FACE_VERTEX_COUNT = 3;
+	using TFace = rw::core::geometry_data::face;
 
+	std::vector<TFace> faces;
+
+	int polygon_count = mesh->GetPolygonCount();
+	for (int i = 0; i < polygon_count; i++)
+	{
+		int polygon_size = mesh->GetPolygonSize(i);
+		for (int j = 0; j < polygon_size; j += FACE_VERTEX_COUNT)
+		{
+			uint16_t v1 = mesh->GetPolygonVertex(i, j);
+			uint16_t v2 = mesh->GetPolygonVertex(i, (j + 1) % polygon_size);
+			uint16_t v3 = mesh->GetPolygonVertex(i, (j + 2) % polygon_size);
+			uint16_t flags = 0; // What is this responsible for??
+
+			faces.push_back(TFace { v2, v1, flags, v3 } );
+		}
 	}
+
+	data->header.face_count = faces.size();
+	INIT_ARR(data->faces, data->header.face_count);
+	std::copy(faces.begin(), faces.end(), data->faces);
 
 	mesh->ComputeBBox();
 	
@@ -183,7 +201,7 @@ template<>
 rw::core::material_list_data* CConverter::From(FbxNode* node)
 {
 	auto data = new rw::core::material_list_data();
-	data->material_count = node->GetMaterialCount();
+	data->material_count = 0;//node->GetMaterialCount();
 
 	INIT_ARR(data->material_indices, data->material_count);
 	for (int i = 0; i < data->material_count; i++)
@@ -195,6 +213,62 @@ rw::core::material_list_data* CConverter::From(FbxNode* node)
 }
 
 template<>
+rw::core::texture_data* CConverter::From(FbxNode* node)
+{
+	auto tex_data = new rw::core::texture_data();
+
+	return tex_data;
+}
+
+template<>
+rw::string* CConverter::From(FbxNode* node)
+{
+	auto str = new rw::string();
+	
+	return str;
+}
+
+template<>
+rw::core::texture* CConverter::From(FbxNode* node)
+{
+	auto tex = new rw::core::texture();
+
+	tex->data = *From<FbxNode*, rw::core::texture_data*>(node);
+	tex->texture_name = *From<FbxNode*, rw::string*>(node);
+	tex->mask_name = *From<FbxNode*, rw::string*>(node);
+
+	return tex;
+}
+
+template<>
+rw::core::material_data* CConverter::From(FbxNode* node)
+{
+	auto mat_data = new rw::core::material_data();
+	mat_data->pad1 = 0;
+	mat_data->texture_count = 0;
+	mat_data->color = rgba{ 255, 255, 255, 255 };
+	mat_data->pad2 = 0;
+	mat_data->unk_vec.x = 1.0f;
+	mat_data->unk_vec.y = 0.0f;
+	mat_data->unk_vec.z = 1.0f;
+	return mat_data;
+}
+
+template<>
+rw::core::material* CConverter::From(FbxNode* node)
+{
+	auto material = new rw::core::material();
+	material->data = *From<FbxNode*, rw::core::material_data*>(node);
+
+	for (int i = 0; i < material->data.texture_count; i++)
+	{
+		auto tex = From<FbxNode*, rw::core::texture*>(node);
+		material->push_back(tex);
+	}
+	return material;
+}
+
+template<>
 rw::core::material_list* CConverter::From(FbxNode* node)
 {
 	auto materials = new rw::core::material_list();
@@ -203,10 +277,8 @@ rw::core::material_list* CConverter::From(FbxNode* node)
 	for (int i = 0; i < materials->data.material_count; i++)
 	{
 		auto child = node->GetChild(i);
-		/*
 		auto material = From<FbxNode*, rw::core::material*>(child);
 		materials->push_back(material);
-		*/
 	}
 	return materials;
 }
@@ -243,6 +315,24 @@ rw::core::geometry_list* CConverter::From(FbxNode* node)
 }
 
 template<>
+rw::core::atomic_data* CConverter::From(FbxNode* node, int num)
+{
+	auto data = new rw::core::atomic_data();
+	data->frame_index = num;
+	data->geometry_index = num;
+	data->flags = 0x01 | 0x04;
+	return data;
+}
+
+template<>
+rw::core::atomic* CConverter::From(FbxNode* node, int num)
+{
+	auto atomic = new rw::core::atomic();
+	atomic->data = *From<FbxNode*, rw::core::atomic_data*>(node, num);
+	return atomic;
+}
+
+template<>
 rw::core::clump* CConverter::From(FbxNode* node)
 {
 	auto clump = new rw::core::clump();
@@ -252,6 +342,12 @@ rw::core::clump* CConverter::From(FbxNode* node)
 	clump->data = *From<FbxNode*, rw::core::clump_data*>(node);
 	clump->frames = *From<FbxNode*, rw::core::frame_list*>(node);
 	clump->geometries = *From<FbxNode*, rw::core::geometry_list*>(node);
+
+	for (int i = 0; i < clump->data.object_count; i++)
+	{
+		auto atm = *From<FbxNode*, rw::core::atomic*>(node, i);
+		clump->atomics.push_back(atm);
+	}
 
 	clump->UpdateSize();
 	return clump;

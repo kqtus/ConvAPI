@@ -636,17 +636,17 @@ void rw::core::geometry_data::UpdateSize()
 	
 	if (header.flags & rpGEOMETRYPRELIT)
 	{
-		chunk_base::size += sizeof(*colours) * header.vertex_count;
+		chunk_base::size += sizeof(colour) * header.vertex_count;
 	}
 
 	if ((header.flags & rpGEOMETRYTEXTURED) || (header.flags & rpGEOMETRYTEXTURED2))
 	{
-		chunk_base::size += sizeof(*texture_mappings) * chunk_base::size;
+		chunk_base::size += sizeof(texture_mapping) * header.vertex_count;
 	}
 
 	if (header.flags & rpGEOMETRYTEXTURED2)
 	{
-		chunk_base::size += sizeof(*texture_mappings2) * chunk_base::size;
+		chunk_base::size += sizeof(texture_mapping) * header.vertex_count;
 	}
 
 	chunk_base::size += sizeof(*faces) * header.face_count;
