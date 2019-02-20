@@ -4,24 +4,11 @@
 #include <string>
 
 #include "services/Timer.h"
+#include "IApp.h"
 
-class IRenderer;
 class IScene;
 
-class CAppBase
-{
-public:
-	virtual bool Init() = 0;
-	virtual void OnResize() = 0;
-	virtual void UpdateScene(float dt) = 0;
-	virtual void DrawScene() = 0;
-
-protected:
-	IRenderer* m_Renderer = nullptr;
-};
-
-
-class CD3DApp : public CAppBase
+class CD3DApp : public IApp
 {
 public:
 	CD3DApp(HINSTANCE hInstance);
@@ -37,6 +24,7 @@ public:
 	virtual void OnResize() override;
 	virtual void UpdateScene(float dt) override;
 	virtual void DrawScene() override;
+	virtual IRenderer* GetRenderer() const override;
 
 	virtual LRESULT MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -51,6 +39,8 @@ protected:
 	void CalculateFrameStats();
 
 protected:
+	IRenderer* m_Renderer = nullptr;
+
 	HINSTANCE m_AppInstance;
 	HWND m_MainWnd;
 

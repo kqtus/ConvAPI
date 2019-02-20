@@ -17,8 +17,8 @@ public:
 	virtual void Rotate(float dx, float dy) = 0;
 
 	virtual void OnResize() = 0;
-	virtual void SetWindowWidth(UINT width) = 0;
-	virtual void SetWindowHeight(UINT height) = 0;
+	virtual void SetWindowWidth(unsigned int width) = 0;
+	virtual void SetWindowHeight(unsigned int height) = 0;
 
 	virtual bool BuildGeomBuffers() = 0;
 };

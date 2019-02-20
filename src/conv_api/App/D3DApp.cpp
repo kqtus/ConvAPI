@@ -1,6 +1,5 @@
 #include "D3DApp.h"
-
-#include "Renderer.h"
+#include "D3DX11Renderer.h"
 #include "Scene.h"
 
 #include <sstream>
@@ -95,7 +94,7 @@ bool CD3DApp::Init()
 		return false;
 
 	m_MainScene = new CScene();
-	m_Renderer->AddRenderSource(m_MainScene);
+	GetRenderer()->AddRenderSource(m_MainScene);
 
 	// Test: add simple object to scene
 	const char* in_path = "assets\\dff\\vc\\sabre.dff";
@@ -109,25 +108,30 @@ bool CD3DApp::Init()
 		m_MainScene->AddObject(test_mdl);
 	}
 
-	m_Renderer->BuildGeomBuffers();
+	GetRenderer()->BuildGeomBuffers();
 	return true;
 }
 
 void CD3DApp::OnResize()
 {
-	m_Renderer->OnResize();
+	GetRenderer()->OnResize();
 }
 
 void CD3DApp::UpdateScene(float dt)
 {
-	if (m_Renderer)
-		m_Renderer->Update(dt);
+	if (GetRenderer())
+		GetRenderer()->Update(dt);
 }
 
 void CD3DApp::DrawScene()
 {
-	if (m_Renderer)
-		m_Renderer->Render();
+	if (GetRenderer())
+		GetRenderer()->Render();
+}
+
+IRenderer* CD3DApp::GetRenderer() const
+{
+	return m_Renderer;
 }
 
 LRESULT CD3DApp::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -240,14 +244,14 @@ void CD3DApp::OnMouseMove(WPARAM btnState, int x, int y)
 		float dx = XMConvertToRadians(0.25f * static_cast<float>(x - m_LastMousePos.x));
 		float dy = XMConvertToRadians(0.25f * static_cast<float>(y - m_LastMousePos.y));
 
-		m_Renderer->Rotate(dx, dy);
+		GetRenderer()->Rotate(dx, dy);
 	}
 	else if (btnState & MK_RBUTTON)
 	{
 		float dx = 0.005f * static_cast<float>(x - m_LastMousePos.x);
 		float dy = 0.005f * static_cast<float>(y - m_LastMousePos.y);
 
-		m_Renderer->Move(dx, dy);
+		GetRenderer()->Move(dx, dy);
 	}
 
 	m_LastMousePos.x = x;
