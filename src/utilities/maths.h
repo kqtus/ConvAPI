@@ -12,18 +12,36 @@ template<class T>
 struct vec2
 {
 	T x, y;
+
+	vec2()
+	{ }
+
+	vec2(T _x, T _y)
+		: x(_x), y(_y) { }
 };
 
 template<class T>
 struct vec3 : public vec2<T>
 {
 	T z;
+
+	vec3()
+	{ }
+
+	vec3(T _x, T _y, T _z)
+		: vec2(_x, _y), z(_z) { }
 };
 
 template<class T>
 struct vec4 : public vec3<T>
 {
 	T w;
+
+	vec4()
+	{ }
+
+	vec4(T _x, T _y, T _z, T _w)
+		: vec3(_x, _y, _z), w(_w) { }
 };
 
 template<int dim_size, class TValue>

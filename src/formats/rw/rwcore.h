@@ -201,7 +201,7 @@ namespace rw
 		class geometry : public chunk_base
 		{
 			CONVERTIBLE_ENTITY
-		protected:
+		public:
 			geometry_data data;
 			material_list materials;
 			extension ext;

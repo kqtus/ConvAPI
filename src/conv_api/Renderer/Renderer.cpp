@@ -1,4 +1,26 @@
 #include "Renderer.h"
+#include <algorithm>
+
+#include "IRenderable.h"
+#include "IRenderSource.h"
+
+bool CRenderer::AddRenderSource(IRenderSource* render_src)
+{
+	if (std::find(m_RenderSources.begin(), m_RenderSources.end(), render_src) == m_RenderSources.end())
+	{
+		m_RenderSources.push_back(render_src);
+		return true;
+	}
+	return false;
+}
+
+bool CRenderer::RemoveRenderSource(IRenderSource* render_src)
+{
+	return std::remove_if(m_RenderSources.begin(), m_RenderSources.end(), [&render_src](IRenderSource* lhs)
+	{
+		return lhs == render_src;
+	}) != m_RenderSources.end();
+}
 
 void CRenderer::SetWindowWidth(UINT width)
 {
@@ -22,16 +44,37 @@ UINT CRenderer::GetWindowHeight() const
 	return m_ClientHeight;
 }
 
+bool CRenderer::BuildGeomBuffers()
+{
+	IRenderSource::TRenderables renderables;
+	for (auto& render_src : m_RenderSources)
+	{
+		render_src->GetRenderables(renderables);
+	}
+
+	bool res = true;
+	for (auto& renderable : renderables)
+	{
+		res &= BuildGeomBuffers(renderable);
+	}
+
+	return res;
+}
+
 #include <Windows.h>
 
 CD3DX11Renderer::CD3DX11Renderer(HWND target_window)
 	: m_WindowHandler(target_window)
 {
+	XMMATRIX identity = XMMatrixIdentity();
+	XMStoreFloat4x4(&m_World, identity);
+	XMStoreFloat4x4(&m_View, identity);
+	XMStoreFloat4x4(&m_Proj, identity);
 }
 
 CD3DX11Renderer::~CD3DX11Renderer()
 {
-
+	// #TODO: Release all COM objects;
 }
 
 bool CD3DX11Renderer::Init()
@@ -57,28 +100,99 @@ bool CD3DX11Renderer::Init()
 
 void CD3DX11Renderer::Update(float dt)
 {
+	float x = m_Radius * sinf(m_Phi) * cosf(m_Theta);
+	float y = m_Radius * sinf(m_Phi) * sinf(m_Phi);
+	float z = m_Radius * cosf(m_Phi);
 
+	XMVECTOR pos = XMVectorSet(x, y, z, 1.0f);
+	XMVECTOR target = XMVectorSet(0.f, 0.f, 0.f, 1.f);
+	XMVECTOR up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
+
+	XMMATRIX v = XMMatrixLookAtLH(pos, target, up);
+	XMStoreFloat4x4(&m_View, v);
 }
 
 void CD3DX11Renderer::Render()
 {
-	XMVECTORF32 blue = { 0.f, 0.f, 1.f, 1.f };
+	XMVECTORF32 blue = { 0.f, 0.f, 0.f, 1.f };
 
-	m_D3DContext->ClearRenderTargetView(
-		m_RenderTargetView,
-		reinterpret_cast<const float*>(&blue)
-	);
+	m_D3DContext->ClearRenderTargetView(m_RenderTargetView, reinterpret_cast<const float*>(&blue));
+	m_D3DContext->ClearDepthStencilView(m_DepthStencilView, D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 
+	m_D3DContext->IASetInputLayout(m_InputLayout);
+
+	{
+		m_D3DContext->IASetPrimitiveTopology(D3D10_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
+		m_D3DContext->VSSetShader(m_BgVertShader, nullptr, 0);
+		m_D3DContext->PSSetShader(m_BgPixelShader, nullptr, 0);
+		m_D3DContext->Draw(4, 0);
+	}
+
+
+	m_D3DContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	
-	m_D3DContext->ClearDepthStencilView(
-		m_DepthStencilView,
-		D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL,
-		1.0f,
-		0
-	);
-	
+	UINT stride = sizeof(IRenderable::TVertex);
+	UINT offset = 0;
+
+	m_D3DContext->IASetVertexBuffers(0, 1, &m_StaticObjsVB, &stride, &offset);
+	m_D3DContext->IASetIndexBuffer(m_StaticObjsIB, DXGI_FORMAT_R32_UINT, 0);
+
+	XMMATRIX world = XMLoadFloat4x4(&m_World);
+	XMMATRIX view = XMLoadFloat4x4(&m_View);
+	XMMATRIX proj = XMLoadFloat4x4(&m_Proj);
+	XMMATRIX wvp_mat = world * view * proj;
+
+	m_FxWorldViewProj->SetMatrix(reinterpret_cast<float*>(&wvp_mat));
+
+	int index_count = 0;
+	for (auto& src : m_RenderSources)
+	{
+		IRenderSource::TRenderables renderables;
+		src->GetRenderables(renderables);
+
+		for (auto& renderable : renderables)
+		{
+			index_count += renderable->GetIndexCount();
+		}
+	}
+
+	D3DX11_TECHNIQUE_DESC tech_desc;
+	m_Technique->GetDesc(&tech_desc);
+
+	for (UINT i = 0; i < tech_desc.Passes; ++i)
+	{
+		m_Technique->GetPassByIndex(i)->Apply(0, m_D3DContext);
+		m_D3DContext->DrawIndexed(index_count, 0, 0);
+	}
 
 	m_SwapChain->Present(0, 0);
+}
+
+template<class T>
+T _clamp(T val, T min, T max)
+{
+	return val < min ? min : (val > max ? max : val);
+}
+
+void CD3DX11Renderer::Move(float dx, float dy)
+{
+	m_Radius += dx - dy;
+	m_Radius = _clamp(m_Radius, 3.0f, 25.0f);
+}
+
+void CD3DX11Renderer::Rotate(float dx, float dy)
+{
+	m_Theta += dx;
+	m_Phi += dy;
+	m_Phi = _clamp(m_Phi, 0.1f, 3.14f - 0.1f);
+}
+
+void CD3DX11Renderer::OnResize()
+{
+	__super::OnResize();
+
+	XMMATRIX P = XMMatrixPerspectiveFovLH(0.25f * 3.14f, 4.f / 3.f, 1.0f, 1000.0f);
+	XMStoreFloat4x4(&m_Proj, P);
 }
 
 HWND CD3DX11Renderer::GetWindowHandler()
@@ -252,4 +366,116 @@ void CD3DX11Renderer::CreateViewport()
 	vp.MaxDepth = 1.f;
 
 	m_D3DContext->RSSetViewports(1, &vp);
+}
+
+bool CD3DX11Renderer::BuildGeomBuffers(IRenderable* renderable)
+{
+	D3D11_BUFFER_DESC vbd;
+	vbd.Usage = D3D11_USAGE_IMMUTABLE;
+	vbd.ByteWidth = sizeof(IRenderable::TVertex) * renderable->GetVertexCount();
+	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+	vbd.CPUAccessFlags = 0;
+	vbd.MiscFlags = 0;
+	vbd.StructureByteStride = 0;
+
+	D3D11_SUBRESOURCE_DATA vinit_data;
+	vinit_data.pSysMem = renderable->GetVertices();
+
+	HRESULT res = m_D3DDevice->CreateBuffer(&vbd, &vinit_data, &m_StaticObjsVB);
+
+	if (FAILED(res))
+		return false;
+
+	D3D11_BUFFER_DESC ibd;
+	ibd.Usage = D3D11_USAGE_IMMUTABLE;
+	ibd.ByteWidth = sizeof(unsigned int) * renderable->GetIndexCount();
+	ibd.BindFlags = D3D11_BIND_INDEX_BUFFER;
+	ibd.CPUAccessFlags = 0;
+	ibd.MiscFlags = 0;
+	ibd.StructureByteStride = 0;
+	D3D11_SUBRESOURCE_DATA iinit_data;
+	iinit_data.pSysMem = renderable->GetIndices();
+
+	res = m_D3DDevice->CreateBuffer(&ibd, &iinit_data, &m_StaticObjsIB);
+
+	if (FAILED(res))
+		return false;
+
+	BuildFX();
+	BuildVertexLayout();
+
+	return true;
+}
+
+void CD3DX11Renderer::BuildFX()
+{
+	DWORD shader_flags = 0;
+#if defined(DEBUG) || defined(_DEBUG)
+	shader_flags |= D3D10_SHADER_DEBUG;
+	shader_flags |= D3D10_SHADER_SKIP_OPTIMIZATION;
+#endif
+
+	ID3DBlob* compiled_shader = nullptr;
+	ID3DBlob* compilation_msgs = nullptr;
+
+	HRESULT hr = D3DCompileFromFile(L"C://Users//Marek//Documents//mod-dev//conv_api//fx//color.fx", nullptr, nullptr, nullptr, "fx_5_0", shader_flags, 0, &compiled_shader, &compilation_msgs);
+
+	
+	if (compilation_msgs)
+	{
+		//MessageBoxA(0, (char*)compilation_msgs->GetBufferPointer(), 0, 0);
+		compilation_msgs->Release();
+	}
+	
+
+	hr = D3DX11CreateEffectFromMemory(compiled_shader->GetBufferPointer(), compiled_shader->GetBufferSize(), 0, m_D3DDevice, &m_Fx);
+
+	if (FAILED(hr))
+		return;
+
+	m_Technique = m_Fx->GetTechniqueByName("ColorTech");
+	m_FxWorldViewProj = m_Fx->GetVariableByName("gWorldViewProj")->AsMatrix();
+
+	// Background.fx
+	hr = D3DCompileFromFile(L"C://Users//Marek//Documents//mod-dev//conv_api//fx//background.fx", nullptr, nullptr, "main", "vs_5_0", 0, 0, &compiled_shader, &compilation_msgs);
+	
+	if (compilation_msgs)
+	{
+		MessageBoxA(0, (char*)compilation_msgs->GetBufferPointer(), 0, 0);
+		compilation_msgs->Release();
+	}
+
+	if (FAILED(hr))
+		return;
+
+	hr = m_D3DDevice->CreateVertexShader(compiled_shader->GetBufferPointer(), compiled_shader->GetBufferSize(), nullptr, &m_BgVertShader);
+	
+	hr = D3DCompileFromFile(L"C://Users//Marek//Documents//mod-dev//conv_api//fx//background.ps", nullptr, nullptr, "main", "ps_5_0", 0, 0, &compiled_shader, &compilation_msgs);
+
+	if (compilation_msgs)
+	{
+		MessageBoxA(0, (char*)compilation_msgs->GetBufferPointer(), 0, 0);
+		compilation_msgs->Release();
+	}
+
+	if (FAILED(hr))
+		return;
+
+	hr = m_D3DDevice->CreatePixelShader(compiled_shader->GetBufferPointer(), compiled_shader->GetBufferSize(), nullptr, &m_BgPixelShader);
+	
+	compiled_shader->Release();
+}
+
+void CD3DX11Renderer::BuildVertexLayout()
+{
+	D3D11_INPUT_ELEMENT_DESC vertex_desc[] = 
+	{
+		{"POSITION", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, 12, D3D11_INPUT_PER_VERTEX_DATA, 0}
+	};
+
+	D3DX11_PASS_DESC pass_desc;
+	m_Technique->GetPassByIndex(0)->GetDesc(&pass_desc);
+
+	m_D3DDevice->CreateInputLayout(vertex_desc, 2, pass_desc.pIAInputSignature, pass_desc.IAInputSignatureSize, &m_InputLayout);
 }

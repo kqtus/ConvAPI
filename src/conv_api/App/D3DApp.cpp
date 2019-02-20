@@ -1,7 +1,11 @@
 #include "D3DApp.h"
 
 #include "Renderer.h"
+#include "Scene.h"
+
 #include <sstream>
+#include "formats\rw\rwcore.h"
+#include "Renderables.h"
 
 namespace
 {
@@ -23,6 +27,9 @@ CD3DApp::CD3DApp(HINSTANCE hInstance)
 {
 	m_AppInstance = hInstance;
 	g_D3DApp = this;
+
+	m_LastMousePos.x = 0;
+	m_LastMousePos.y = 0;
 }
 
 CD3DApp::~CD3DApp()
@@ -77,15 +84,38 @@ int CD3DApp::Run()
 
 bool CD3DApp::Init()
 {
-	if (InitMainWindow())
-		return InitRenderer();
+	bool res = InitMainWindow();
 
-	return false;
+	if (!res)
+		return false;
+
+	res = InitRenderer();
+
+	if (!res)
+		return false;
+
+	m_MainScene = new CScene();
+	m_Renderer->AddRenderSource(m_MainScene);
+
+	// Test: add simple object to scene
+	const char* in_path = "assets\\dff\\vc\\sabre.dff";
+	in_stream<EStreamType::BINARY> dff_stream;
+	if (dff_stream.Open(in_path))
+	{
+		auto test_mdl = new CRwModel();
+		test_mdl->Read(dff_stream);
+		dff_stream.Close();
+
+		m_MainScene->AddObject(test_mdl);
+	}
+
+	m_Renderer->BuildGeomBuffers();
+	return true;
 }
 
 void CD3DApp::OnResize()
 {
-
+	m_Renderer->OnResize();
 }
 
 void CD3DApp::UpdateScene(float dt)
@@ -201,6 +231,27 @@ LRESULT CD3DApp::MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	}
 
 	return DefWindowProc(hwnd, msg, wParam, lParam);
+}
+
+void CD3DApp::OnMouseMove(WPARAM btnState, int x, int y)
+{
+	if (btnState & MK_LBUTTON)
+	{
+		float dx = XMConvertToRadians(0.25f * static_cast<float>(x - m_LastMousePos.x));
+		float dy = XMConvertToRadians(0.25f * static_cast<float>(y - m_LastMousePos.y));
+
+		m_Renderer->Rotate(dx, dy);
+	}
+	else if (btnState & MK_RBUTTON)
+	{
+		float dx = 0.005f * static_cast<float>(x - m_LastMousePos.x);
+		float dy = 0.005f * static_cast<float>(y - m_LastMousePos.y);
+
+		m_Renderer->Move(dx, dy);
+	}
+
+	m_LastMousePos.x = x;
+	m_LastMousePos.y = y;
 }
 
 bool CD3DApp::InitMainWindow()

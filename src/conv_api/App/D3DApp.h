@@ -5,8 +5,8 @@
 
 #include "services/Timer.h"
 
-class CRenderer;
-
+class IRenderer;
+class IScene;
 
 class CAppBase
 {
@@ -17,7 +17,7 @@ public:
 	virtual void DrawScene() = 0;
 
 protected:
-	CRenderer* m_Renderer = nullptr;
+	IRenderer* m_Renderer = nullptr;
 };
 
 
@@ -42,7 +42,7 @@ public:
 
 	virtual void OnMouseDown(WPARAM btnState, int x, int y) { }
 	virtual void OnMouseUp(WPARAM btnState, int x, int y) { }
-	virtual void OnMouseMove(WPARAM btnState, int x, int y) { }
+	virtual void OnMouseMove(WPARAM btnState, int x, int y);
 
 protected:
 	bool InitMainWindow();
@@ -65,4 +65,7 @@ protected:
 	int m_ClientHeight = 600;
 
 	CTimer m_Timer;
+	IScene* m_MainScene = nullptr;
+
+	POINT m_LastMousePos;
 };

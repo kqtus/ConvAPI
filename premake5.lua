@@ -71,9 +71,7 @@ project "ConvAPI"
 	kind "WindowedApp"
 	files "src/conv_api/**"
 	
-	-- Hardcoded DXSDK_DIRs, to be changed.
-	includedirs { "3rd/include", "src", "src/conv_api/**", "C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)/Include" }
-	libdirs("C:/Program Files (x86)/Microsoft DirectX SDK (June 2010)/Lib/x64")
+	includedirs { "3rd/include", "src", "src/conv_api/**" }
 		
 	flags { "NoPCH" }
 	
@@ -82,4 +80,4 @@ project "ConvAPI"
 	useConvertersLib()
 	useServicesLib()
 	
-	links { "3rd/lib/x64/debug/libfbxsdk" }
+	links { "3rd/lib/x64/debug/libfbxsdk", "3rd/lib/x64/debug/Effects11d", "d3d11", "D3DCompiler" }
