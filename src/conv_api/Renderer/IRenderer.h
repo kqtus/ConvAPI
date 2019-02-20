@@ -20,5 +20,4 @@ public:
 	virtual void SetWindowWidth(unsigned int width) = 0;
 	virtual void SetWindowHeight(unsigned int height) = 0;
 
-	virtual bool BuildGeomBuffers() = 0;
 };

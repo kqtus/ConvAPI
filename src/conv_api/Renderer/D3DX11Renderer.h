@@ -25,6 +25,10 @@ public:
 	virtual void Rotate(float dx, float dy) override;
 
 	virtual void OnResize() override;
+
+	virtual bool AddRenderSource(IRenderSource* render_src) override;
+	virtual bool RemoveRenderSource(IRenderSource* render_src) override;
+
 	/* End of IRenderer Interface */
 
 	HWND GetWindowHandler();
@@ -40,7 +44,6 @@ protected:
 
 	void CreateViewport();
 
-	virtual bool BuildGeomBuffers(IRenderable* renderable) override;
 	virtual void BuildFX();
 	virtual void BuildVertexLayout();
 
@@ -72,7 +75,6 @@ protected:
 
 	ID3D11InputLayout* m_InputLayout = nullptr;
 
-	XMFLOAT4X4 m_World;
 	XMFLOAT4X4 m_Proj;
 	XMFLOAT4X4 m_View;
 

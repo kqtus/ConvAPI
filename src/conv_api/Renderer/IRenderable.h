@@ -22,4 +22,13 @@ public:
 
 	virtual int GetIndexCount() const = 0;
 	virtual TIndices GetIndices() const = 0;
+
+	virtual vec3<float> GetPos() const = 0;
+	virtual void SetPos(const vec3<float>& pos) = 0;
+
+	virtual vec3<float> GetRot() const = 0;
+	virtual void SetRot(const vec3<float>& pos) = 0;
+
+	virtual vec3<float> GetScale() const = 0;
+	virtual void SetScale(const vec3<float>& pos) = 0;
 };

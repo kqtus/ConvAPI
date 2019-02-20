@@ -1,14 +1,16 @@
 #include "D3DX11Renderer.h"
 #include "IRenderable.h"
 #include "IRenderSource.h"
+#include "ID3DXRenderData.h"
 
 #include <Windows.h>
+
+using namespace DirectX;
 
 CD3DX11Renderer::CD3DX11Renderer(HWND target_window)
 	: m_WindowHandler(target_window)
 {
 	XMMATRIX identity = XMMatrixIdentity();
-	XMStoreFloat4x4(&m_World, identity);
 	XMStoreFloat4x4(&m_View, identity);
 	XMStoreFloat4x4(&m_Proj, identity);
 }
@@ -35,6 +37,8 @@ bool CD3DX11Renderer::Init()
 		return false;
 
 	CreateViewport();
+	BuildFX();
+	BuildVertexLayout();
 
 	return true;
 }
@@ -72,38 +76,44 @@ void CD3DX11Renderer::Render()
 
 	m_D3DContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	UINT stride = sizeof(IRenderable::TVertex);
-	UINT offset = 0;
-
-	m_D3DContext->IASetVertexBuffers(0, 1, &m_StaticObjsVB, &stride, &offset);
-	m_D3DContext->IASetIndexBuffer(m_StaticObjsIB, DXGI_FORMAT_R32_UINT, 0);
-
-	XMMATRIX world = XMLoadFloat4x4(&m_World);
-	XMMATRIX view = XMLoadFloat4x4(&m_View);
-	XMMATRIX proj = XMLoadFloat4x4(&m_Proj);
-	XMMATRIX wvp_mat = world * view * proj;
-
-	m_FxWorldViewProj->SetMatrix(reinterpret_cast<float*>(&wvp_mat));
-
-	int index_count = 0;
-	for (auto& src : m_RenderSources)
-	{
-		IRenderSource::TRenderables renderables;
-		src->GetRenderables(renderables);
-
-		for (auto& renderable : renderables)
-		{
-			index_count += renderable->GetIndexCount();
-		}
-	}
-
 	D3DX11_TECHNIQUE_DESC tech_desc;
 	m_Technique->GetDesc(&tech_desc);
 
-	for (UINT i = 0; i < tech_desc.Passes; ++i)
+	XMMATRIX view = XMLoadFloat4x4(&m_View);
+	XMMATRIX proj = XMLoadFloat4x4(&m_Proj);
+
+	UINT stride = sizeof(IRenderable::TVertex);
+	UINT offset = 0;
+
+	for (auto& render_src : m_RenderSources)
 	{
-		m_Technique->GetPassByIndex(i)->Apply(0, m_D3DContext);
-		m_D3DContext->DrawIndexed(index_count, 0, 0);
+		for (auto& src : m_RenderSources)
+		{
+			IRenderSource::TRenderables renderables;
+			src->GetRenderables(renderables);
+
+			for (auto& renderable : renderables)
+			{
+				if (auto d3d_renderable = dynamic_cast<ID3DXRenderData*>(renderable))
+				{
+					const XMMATRIX& world = XMLoadFloat4x4(&d3d_renderable->GetWorldMat());
+					XMMATRIX wvp_mat = world * view * proj;
+					m_FxWorldViewProj->SetMatrix(reinterpret_cast<float*>(&wvp_mat));
+
+					auto vbo = d3d_renderable->GetVertexBuffer();
+					auto ibo = d3d_renderable->GetIndexBuffer();
+
+					m_D3DContext->IASetVertexBuffers(0, 1, &vbo, &stride, &offset);
+					m_D3DContext->IASetIndexBuffer(ibo, DXGI_FORMAT_R32_UINT, 0);
+
+					for (UINT i = 0; i < tech_desc.Passes; ++i)
+					{
+						m_Technique->GetPassByIndex(i)->Apply(0, m_D3DContext);
+						m_D3DContext->DrawIndexed(renderable->GetIndexCount(), 0, 0);
+					}
+				}
+			}
+		}
 	}
 
 	m_SwapChain->Present(0, 0);
@@ -134,6 +144,46 @@ void CD3DX11Renderer::OnResize()
 
 	XMMATRIX P = XMMatrixPerspectiveFovLH(0.25f * 3.14f, 4.f / 3.f, 1.0f, 1000.0f);
 	XMStoreFloat4x4(&m_Proj, P);
+}
+
+bool CD3DX11Renderer::AddRenderSource(IRenderSource* render_src)
+{
+	if (__super::AddRenderSource(render_src))
+	{
+		IRenderSource::TRenderables renderables;
+		render_src->GetRenderables(renderables);
+
+		for (auto& renderable : renderables)
+		{
+			if (auto d3d_rendeable = dynamic_cast<ID3DXRenderData*>(renderable))
+			{
+				d3d_rendeable->InitBuffers(m_D3DDevice);
+			}
+		}
+
+		return true;
+	}
+	return false;
+}
+
+bool CD3DX11Renderer::RemoveRenderSource(IRenderSource* render_src)
+{
+	if (__super::RemoveRenderSource(render_src))
+	{
+		IRenderSource::TRenderables renderables;
+		render_src->GetRenderables(renderables);
+
+		for (auto& renderable : renderables)
+		{
+			if (auto d3d_rendeable = dynamic_cast<ID3DXRenderData*>(renderable))
+			{
+				d3d_rendeable->ReleaseBuffers();
+			}
+		}
+
+		return true;
+	}
+	return false;
 }
 
 HWND CD3DX11Renderer::GetWindowHandler()
@@ -307,45 +357,6 @@ void CD3DX11Renderer::CreateViewport()
 	vp.MaxDepth = 1.f;
 
 	m_D3DContext->RSSetViewports(1, &vp);
-}
-
-bool CD3DX11Renderer::BuildGeomBuffers(IRenderable* renderable)
-{
-	D3D11_BUFFER_DESC vbd;
-	vbd.Usage = D3D11_USAGE_IMMUTABLE;
-	vbd.ByteWidth = sizeof(IRenderable::TVertex) * renderable->GetVertexCount();
-	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-	vbd.CPUAccessFlags = 0;
-	vbd.MiscFlags = 0;
-	vbd.StructureByteStride = 0;
-
-	D3D11_SUBRESOURCE_DATA vinit_data;
-	vinit_data.pSysMem = renderable->GetVertices();
-
-	HRESULT res = m_D3DDevice->CreateBuffer(&vbd, &vinit_data, &m_StaticObjsVB);
-
-	if (FAILED(res))
-		return false;
-
-	D3D11_BUFFER_DESC ibd;
-	ibd.Usage = D3D11_USAGE_IMMUTABLE;
-	ibd.ByteWidth = sizeof(unsigned int) * renderable->GetIndexCount();
-	ibd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-	ibd.CPUAccessFlags = 0;
-	ibd.MiscFlags = 0;
-	ibd.StructureByteStride = 0;
-	D3D11_SUBRESOURCE_DATA iinit_data;
-	iinit_data.pSysMem = renderable->GetIndices();
-
-	res = m_D3DDevice->CreateBuffer(&ibd, &iinit_data, &m_StaticObjsIB);
-
-	if (FAILED(res))
-		return false;
-
-	BuildFX();
-	BuildVertexLayout();
-
-	return true;
 }
 
 void CD3DX11Renderer::BuildFX()

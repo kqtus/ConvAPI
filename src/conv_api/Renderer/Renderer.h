@@ -25,11 +25,7 @@ public:
 	unsigned int GetWindowWidth() const;
 	unsigned int GetWindowHeight() const;
 
-	virtual bool BuildGeomBuffers() override;
-
 protected:
-	virtual bool BuildGeomBuffers(IRenderable* renderable) { return false; }
-
 	virtual void OnWindowWidthSet() { }
 	virtual void OnWindowHeightSet() { }
 

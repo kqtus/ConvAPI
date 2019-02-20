@@ -94,21 +94,38 @@ bool CD3DApp::Init()
 		return false;
 
 	m_MainScene = new CScene();
+
+	// Test: Displaying simple objs on scene
+	auto read_model = [&](auto path, vec3<float> pos) -> CRwModel*
+	{
+		in_stream<EStreamType::BINARY> dff_stream;
+		if (dff_stream.Open(path))
+		{
+			auto test_mdl = new CRwModel();
+			test_mdl->Read(dff_stream);
+			test_mdl->SetPos(pos);
+			dff_stream.Close();
+
+			return test_mdl;
+		}
+
+		return nullptr;
+	};
+
+	auto read_and_add_mdl = [&](auto path, vec3<float> pos)
+	{
+		if (auto mdl = read_model(path, pos))
+		{
+			m_MainScene->AddObject(mdl);
+		}
+	};
+
+	read_and_add_mdl("assets\\dff\\sa\\sv_ground_04_sfs.dff",	{ 1.0f, 2.f, 0.f });
+	read_and_add_mdl("assets\\dff\\vc\\dt_bowlsign.dff",		{ -2.0f, -2.f, 0.f });
+	read_and_add_mdl("assets\\dff\\vc\\sabre.dff",				{ 10.0f, -2.f, 0.f });
+
 	GetRenderer()->AddRenderSource(m_MainScene);
 
-	// Test: add simple object to scene
-	const char* in_path = "assets\\dff\\vc\\sabre.dff";
-	in_stream<EStreamType::BINARY> dff_stream;
-	if (dff_stream.Open(in_path))
-	{
-		auto test_mdl = new CRwModel();
-		test_mdl->Read(dff_stream);
-		dff_stream.Close();
-
-		m_MainScene->AddObject(test_mdl);
-	}
-
-	GetRenderer()->BuildGeomBuffers();
 	return true;
 }
 

@@ -43,20 +43,3 @@ unsigned int CRenderer::GetWindowHeight() const
 {
 	return m_ClientHeight;
 }
-
-bool CRenderer::BuildGeomBuffers()
-{
-	IRenderSource::TRenderables renderables;
-	for (auto& render_src : m_RenderSources)
-	{
-		render_src->GetRenderables(renderables);
-	}
-
-	bool res = true;
-	for (auto& renderable : renderables)
-	{
-		res &= BuildGeomBuffers(renderable);
-	}
-
-	return res;
-}
