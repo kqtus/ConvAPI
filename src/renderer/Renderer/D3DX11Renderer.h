@@ -81,6 +81,4 @@ protected:
 	float m_Theta = 1.5f * 3.14f;
 	float m_Phi = 0.25f * 3.14f;
 	float m_Radius = 10.0f;
-
-	POINT m_LastMousePos;
 };

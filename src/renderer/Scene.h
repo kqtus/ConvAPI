@@ -1,8 +1,7 @@
 #pragma once
 #include <vector>
-#include "../Renderer/Renderer.h"
-
-#include "IRenderSource.h"
+#include "Renderer/Renderer.h"
+#include "Renderer/IRenderSource.h"
 
 class IScene : public IRenderSource
 {

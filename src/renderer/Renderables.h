@@ -1,6 +1,6 @@
-#include "formats/rw/rwcore.h"
-#include "IRenderable.h"
-#include "ID3DXRenderData.h"
+#include "../formats/rw/rwcore.h"
+#include "Renderer/IRenderable.h"
+#include "Renderer/ID3DXRenderData.h"
 
 #include <DirectXMath.h>
 

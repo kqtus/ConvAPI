@@ -1,10 +1,9 @@
 #include "D3DApp.h"
-#include "D3DX11Renderer.h"
-#include "Scene.h"
-
+#include "renderer/Renderer/D3DX11Renderer.h"
 #include <sstream>
 #include "formats\rw\rwcore.h"
-#include "Renderables.h"
+#include "renderer/Scene.h"
+#include "renderer/Renderables.h"
 
 namespace
 {

@@ -1,7 +1,7 @@
 #include "Scene.h"
 #include <algorithm>
 
-#include "IRenderable.h"
+#include "Renderer/IRenderable.h"
 
 CScene::CScene()
 {
