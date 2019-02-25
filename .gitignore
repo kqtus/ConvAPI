@@ -4,10 +4,10 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # Unignore 3rd party libs
-!/3rd/lib/x64/debug/
-!/3rd/lib/x86/debug/
-!/3rd/lib/x64/release/
-!/3rd/lib/x86/release/
+!/3rd/lib/x64/debug/*
+!/3rd/lib/x86/debug/*
+!/3rd/lib/x64/release/*
+!/3rd/lib/x86/release/*
 
 # Generated with premake
 *.sln
