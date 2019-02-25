@@ -370,7 +370,7 @@ void CD3DX11Renderer::BuildFX()
 	ID3DBlob* compiled_shader = nullptr;
 	ID3DBlob* compilation_msgs = nullptr;
 
-	HRESULT hr = D3DCompileFromFile(L"C://Users//Marek//Documents//mod-dev//conv_api//fx//color.fx", nullptr, nullptr, nullptr, "fx_5_0", shader_flags, 0, &compiled_shader, &compilation_msgs);
+	HRESULT hr = D3DCompileFromFile(L"C://Users//elMarcoPL//Documents//Developer//ConvAPI//fx//color.fx", nullptr, nullptr, nullptr, "fx_5_0", shader_flags, 0, &compiled_shader, &compilation_msgs);
 
 
 	if (compilation_msgs)
@@ -389,7 +389,7 @@ void CD3DX11Renderer::BuildFX()
 	m_FxWorldViewProj = m_Fx->GetVariableByName("gWorldViewProj")->AsMatrix();
 
 	// Background.fx
-	hr = D3DCompileFromFile(L"C://Users//Marek//Documents//mod-dev//conv_api//fx//background.fx", nullptr, nullptr, "main", "vs_5_0", 0, 0, &compiled_shader, &compilation_msgs);
+	hr = D3DCompileFromFile(L"C://Users//elMarcoPL//Documents//Developer//ConvAPI//fx//background.fx", nullptr, nullptr, "main", "vs_5_0", 0, 0, &compiled_shader, &compilation_msgs);
 
 	if (compilation_msgs)
 	{
@@ -402,7 +402,7 @@ void CD3DX11Renderer::BuildFX()
 
 	hr = m_D3DDevice->CreateVertexShader(compiled_shader->GetBufferPointer(), compiled_shader->GetBufferSize(), nullptr, &m_BgVertShader);
 
-	hr = D3DCompileFromFile(L"C://Users//Marek//Documents//mod-dev//conv_api//fx//background.ps", nullptr, nullptr, "main", "ps_5_0", 0, 0, &compiled_shader, &compilation_msgs);
+	hr = D3DCompileFromFile(L"C://Users//elMarcoPL//Documents//Developer//ConvAPI//fx//background.ps", nullptr, nullptr, "main", "ps_5_0", 0, 0, &compiled_shader, &compilation_msgs);
 
 	if (compilation_msgs)
 	{
