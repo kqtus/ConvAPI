@@ -24,6 +24,8 @@ protected:
 	virtual void CreateActions();
 	virtual void CreateWidgets();
 
+	void TestComponents();
+
 private:
 	CQD3DWidget* m_D3DWidget = nullptr;
 };

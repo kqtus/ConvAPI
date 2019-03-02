@@ -7,11 +7,14 @@
 
 #include "Widgets/D3DWidget.h"
 
+#include "../services/Components/RwLevel/RwLevelManager.h"
+
 CQMainWindow::CQMainWindow()
 {
 	CreateWidgets();
 	CreateToolbar();
 	CreateActions();
+	TestComponents();
 }
 
 CQMainWindow::~CQMainWindow()
@@ -84,4 +87,11 @@ void CQMainWindow::CreateWidgets()
 	m_D3DWidget->InitRenderer();
 	m_D3DWidget->show();
 	centralWidget()->setLayout(layout);
+}
+
+void CQMainWindow::TestComponents()
+{
+	CRwLevelManager mgr;
+	mgr.SetRootDir(L"C://Program Files (x86)//Steam//steamapps//common//Grand Theft Auto Vice City//");
+	bool level_loaded = mgr.LoadLevel("airport");
 }

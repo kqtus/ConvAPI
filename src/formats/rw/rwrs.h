@@ -129,9 +129,9 @@ namespace rw
 		{
 			m_InputStream = stream;
 			
-			std::string dir_fname = stream.GetFileName();
-			dir_fname.erase(dir_fname.find_last_of("."));
-			dir_fname.append(".dir");
+			std::wstring dir_fname = stream.GetFileName();
+			dir_fname.erase(dir_fname.find_last_of(L"."));
+			dir_fname.append(L".dir");
 
 			TInStream dir_stream;
 			if (dir_stream.Open(dir_fname.c_str()))

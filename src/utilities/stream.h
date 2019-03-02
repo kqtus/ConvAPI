@@ -1,6 +1,7 @@
 #pragma once
 #include "utilities_pch.h"
 #include <string>
+#include <cstdlib>
 
 enum class EStreamType
 {
@@ -16,23 +17,24 @@ public:
 	~stream();
 
 	virtual bool Open(const char* file_name) = 0;
+	virtual bool Open(const wchar_t* file_name) = 0;
 	virtual void Close();
 
 	void Seek(size_t pos, size_t offset);
 	size_t Tell() const;
 	bool Eof() const;
 
-	std::string GetFileName() const;
+	std::wstring GetFileName() const;
 
 protected:
 	FILE* m_File;
-	std::string m_FileName;
+	std::wstring m_FileName;
 };
 
 template<EStreamType stream_type>
 inline stream<stream_type>::stream()
 	: m_File(nullptr)
-	, m_FileName("")
+	, m_FileName(L"")
 {
 }
 
@@ -67,7 +69,7 @@ inline bool stream<stream_type>::Eof() const
 }
 
 template<EStreamType stream_type>
-inline std::string stream<stream_type>::GetFileName() const
+inline std::wstring stream<stream_type>::GetFileName() const
 {
 	return m_FileName;
 }
@@ -77,6 +79,7 @@ class in_stream : public stream<stream_type>
 {
 public:
 	bool Open(const char* file_name) override;
+	bool Open(const wchar_t* file_name) override;
 
 	template<class T>
 	T Read();
@@ -85,7 +88,8 @@ public:
 template<EStreamType stream_type>
 inline bool in_stream<stream_type>::Open(const char* file_name)
 {
-	m_FileName = file_name;
+	mbtowc((wchar_t*)m_FileName.c_str(), file_name, strlen(file_name));
+
 	if (m_File)
 	{
 		fclose(m_File);
@@ -99,6 +103,29 @@ inline bool in_stream<stream_type>::Open(const char* file_name)
 			return "rb";
 		case EStreamType::TEXT:
 			return "r";
+		}
+	}());
+
+	return m_File != nullptr;
+}
+
+template<EStreamType stream_type>
+inline bool in_stream<stream_type>::Open(const wchar_t* file_name)
+{
+	m_FileName = file_name;
+	if (m_File)
+	{
+		fclose(m_File);
+	}
+
+	m_File = _wfopen(file_name, [&]() -> const wchar_t*
+	{
+		switch (stream_type)
+		{
+		case EStreamType::BINARY:
+			return L"rb";
+		case EStreamType::TEXT:
+			return L"r";
 		}
 	}());
 
@@ -127,17 +154,29 @@ _PRIMITIVE_STREAM_READ_METHOD(uint64_t);
 _PRIMITIVE_STREAM_READ_METHOD(float_t);
 _PRIMITIVE_STREAM_READ_METHOD(double_t);
 
+template<>
+template<>
+inline uint8_t in_stream<EStreamType::TEXT>::Read() { return _READ_STREAM(m_File, uint8_t); }
+
 #define READ_VAR(strm, variable) variable = strm.Read<std::remove_reference<decltype(variable)>::type>();
 
 #define READ_ARR(strm, arr, size) \
 INIT_ARR(arr, size) \
 for (int i = 0; i < size; i++) READ_VAR(strm, arr[i]);
 
+#define READ_LINE(strm, str)			\
+{										\
+	uint8_t c;							\
+	do { READ_VAR(strm, c); str += c; } \
+	while (c != '\n' && c != '\0');		\
+}
+
 template<EStreamType stream_type>
 class out_stream : public stream<stream_type>
 {
 public:
 	bool Open(const char* file_name) override;
+	bool Open(const wchar_t* file_name) override;
 
 	template<class T>
 	void Write(T* data);
@@ -149,7 +188,8 @@ public:
 template<EStreamType stream_type>
 inline bool out_stream<stream_type>::Open(const char* file_name)
 {
-	m_FileName = file_name;
+	mbtowc((wchar_t*)m_FileName.c_str(), file_name, strlen(file_name));
+
 	if (m_File)
 	{
 		fclose(m_File);
@@ -168,6 +208,27 @@ inline bool out_stream<stream_type>::Open(const char* file_name)
 	return m_File != nullptr;
 }
 
+template<EStreamType stream_type>
+inline bool out_stream<stream_type>::Open(const wchar_t* file_name)
+{
+	m_FileName = file_name;
+	if (m_File)
+	{
+		fclose(m_File);
+	}
+
+	m_File = _wfopen(file_name, [&]() -> const wchar_t*
+	{
+		switch (stream_type)
+		{
+		case EStreamType::BINARY:
+			return L"wb+";
+		case EStreamType::TEXT:
+			return L"w+";
+		}
+	}());
+	return m_File != nullptr;
+}
 #define _WRITE_STREAM(strm, data_to_write, T) \
 [&] { \
 	fwrite(data_to_write, sizeof(T), 1, strm); \

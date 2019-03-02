@@ -10,7 +10,7 @@ struct SLevelStats
 	int lod_buildings = 0;
 };
 
-class ILevel : public ILogicalLevel, IPhysicalLevel
+class ILevel : public ILogicalLevel, public IPhysicalLevel
 {
 public:
 	virtual void GetStats(SLevelStats& stats) const = 0;
