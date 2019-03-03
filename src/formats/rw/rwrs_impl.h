@@ -210,6 +210,11 @@ namespace rw
 			return "";
 		}
 
+		void ide_cars_entry::Clear()
+		{
+
+		}
+
 		bool ide_hier_entry::FromString(const std::string& str)
 		{
 			str_tokenizer tokenizer;
@@ -270,6 +275,11 @@ namespace rw
 		std::string ide_2dfx_entry::ToString() const
 		{
 			return "";
+		}
+
+		void ide_2dfx_entry::Clear()
+		{
+
 		}
 
 		#undef CLR_AND_RET_ON_FALSE

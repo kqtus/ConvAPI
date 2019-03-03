@@ -247,12 +247,18 @@ namespace rw
 			static std::string ToString(TYPE type);
 		};
 
-
-		struct ide_obj_entry
+		struct IIdeEntry
 		{
-			bool FromString(const std::string& str);
-			std::string ToString() const;
-			void Clear();
+			virtual bool FromString(const std::string& str) = 0;
+			virtual std::string ToString() const = 0;
+			virtual void Clear() = 0;
+		};
+
+		struct ide_obj_entry : public IIdeEntry
+		{
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
 
 			unsigned int		id;
 			std::string			model_name;
@@ -262,11 +268,11 @@ namespace rw
 			int					flags;
 		};
 
-		struct ide_tobj_entry
+		struct ide_tobj_entry : public IIdeEntry
 		{
-			bool FromString(const std::string& str);
-			std::string ToString() const;
-			void Clear();
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
 
 			unsigned int		id;
 			std::string			model_name;
@@ -278,11 +284,11 @@ namespace rw
 			int					time_off;
 		};
 
-		struct ide_anim_entry
+		struct ide_anim_entry : public IIdeEntry
 		{
-			bool FromString(const std::string& str);
-			std::string ToString() const;
-			void Clear();
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
 
 			unsigned int	id;
 			std::string		model_name;
@@ -292,11 +298,11 @@ namespace rw
 			int				flags;
 		};
 		
-		struct ide_peds_entry
+		struct ide_peds_entry : public IIdeEntry
 		{
-			bool FromString(const std::string& str);
-			std::string ToString() const;
-			void Clear();
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
 
 			// GTA III
 			unsigned int	id;
@@ -312,11 +318,11 @@ namespace rw
 			unsigned int	radio2;
 		};
 
-		struct ide_weap_entry
+		struct ide_weap_entry : public IIdeEntry
 		{
-			bool FromString(const std::string& str);
-			std::string ToString() const;
-			void Clear();
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
 
 			unsigned int	id;
 			std::string		model_name;
@@ -327,17 +333,18 @@ namespace rw
 			std::string		unk2;
 		};
 
-		struct ide_cars_entry
+		struct ide_cars_entry : public IIdeEntry
 		{
-			bool FromString(const std::string& str);
-			std::string ToString() const;
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
 		};
 
-		struct ide_hier_entry
+		struct ide_hier_entry : public IIdeEntry
 		{
-			bool FromString(const std::string& str);
-			std::string ToString() const;
-			void Clear();
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
 
 			unsigned int	id;
 			std::string		model_name;
@@ -346,21 +353,21 @@ namespace rw
 			float			unk2; // normally 2000.0
 		};
 
-		struct ide_txdp_entry
+		struct ide_txdp_entry : public IIdeEntry
 		{
-			bool FromString(const std::string& str);
-			std::string ToString() const;
-
-			void Clear();
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
 
 			std::string		txd_name;
 			std::string		parent_txd_name;
 		};
 
-		struct ide_2dfx_entry
+		struct ide_2dfx_entry : public IIdeEntry
 		{
-			bool FromString(const std::string& str);
-			std::string ToString() const;
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
 		};
 
 		class item_definitions
