@@ -13,11 +13,17 @@ bool CRwLevelDeserializer::Deserialize(ILevelResourcesDesc* rsc_desc, TLevelEnti
 	CRwLevelResourcesDesc::TWStrVec paths;
 	rw_rsc_desc->GetItemDefinitionFilePaths(paths);
 
-	for (auto& ide_path : paths)
+	for (auto ide_path : paths)
 	{
 		in_stream<EStreamType::TEXT> ide_strm;
 		if (!ide_strm.Open(ide_path.c_str()))
 			continue;
+			
+		rw::rs::item_definitions ide;
+		if (ide.Read(ide_strm))
+		{
+
+		}
 
 		ide_strm.Close();
 	}

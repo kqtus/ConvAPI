@@ -102,7 +102,7 @@ inline bool in_stream<stream_type>::Open(const char* file_name)
 		case EStreamType::BINARY:
 			return "rb";
 		case EStreamType::TEXT:
-			return "r";
+			return "r+";
 		}
 	}());
 
@@ -125,7 +125,7 @@ inline bool in_stream<stream_type>::Open(const wchar_t* file_name)
 		case EStreamType::BINARY:
 			return L"rb";
 		case EStreamType::TEXT:
-			return L"r";
+			return L"r+";
 		}
 	}());
 
@@ -169,6 +169,7 @@ for (int i = 0; i < size; i++) READ_VAR(strm, arr[i]);
 	uint8_t c;							\
 	do { READ_VAR(strm, c); str += c; } \
 	while (c != '\n' && c != '\0');		\
+	str.pop_back();						\
 }
 
 template<EStreamType stream_type>

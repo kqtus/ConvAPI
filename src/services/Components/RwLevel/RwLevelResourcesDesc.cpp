@@ -65,7 +65,7 @@ bool CRwLevelResourcesDesc::InitFromDir(const std::wstring& dir_name, const std:
 		const size_t entry_offset = 4;
 		std::wstring w_entry(gta_dat_entry.begin() + 4, gta_dat_entry.end());
 		
-		return dir_name + w_entry;
+		return std::wstring(fs::path(dir_name + w_entry).generic_wstring()) + L'\0';
 	};
 
 	while (!gta_dat_strm.Eof())

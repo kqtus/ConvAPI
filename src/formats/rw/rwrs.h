@@ -2,7 +2,6 @@
 #include <vector>
 #include "rwcore.h"
 
-
 namespace rw
 {
 	namespace rs
@@ -27,8 +26,6 @@ namespace rw
 	// IMG Archive
 	namespace rs
 	{
-
-
 		template<EArchiveVer version>
 		class archive;
 
@@ -227,4 +224,173 @@ namespace rw
 
 		};
 	}
+
+	namespace rs
+	{
+		struct EIdeSectionType
+		{
+			enum TYPE
+			{
+				_UNKNOWN,
+				OBJS,
+				TOBJ,
+				ANIM,
+				PEDS,
+				WEAP,
+				CARS,
+				HIER,
+				TXDP,
+				_2DFX,
+			};
+
+			static TYPE FromString(const std::string& str);
+			static std::string ToString(TYPE type);
+		};
+
+
+		struct ide_obj_entry
+		{
+			bool FromString(const std::string& str);
+			std::string ToString() const;
+			void Clear();
+
+			unsigned int		id;
+			std::string			model_name;
+			std::string			txd_name;
+			int					object_count;
+			std::vector<float>	draw_dists;
+			int					flags;
+		};
+
+		struct ide_tobj_entry
+		{
+			bool FromString(const std::string& str);
+			std::string ToString() const;
+			void Clear();
+
+			unsigned int		id;
+			std::string			model_name;
+			std::string			txd_name;
+			int					object_count;
+			std::vector<float>	draw_dists;
+			int					flags;
+			int					time_on;
+			int					time_off;
+		};
+
+		struct ide_anim_entry
+		{
+			bool FromString(const std::string& str);
+			std::string ToString() const;
+			void Clear();
+
+			unsigned int	id;
+			std::string		model_name;
+			std::string		txd_name;
+			std::string		anim_name;
+			float			draw_dist;
+			int				flags;
+		};
+		
+		struct ide_peds_entry
+		{
+			bool FromString(const std::string& str);
+			std::string ToString() const;
+			void Clear();
+
+			// GTA III
+			unsigned int	id;
+			std::string		model_name;
+			std::string		txd_name;
+			std::string		threat;
+			std::string		behavior;
+			std::string		animation_type;
+			unsigned int	veh_class; // read in hex!
+			// + GTA VC
+			std::string		start_animation;
+			unsigned int	radio1;
+			unsigned int	radio2;
+		};
+
+		struct ide_weap_entry
+		{
+			bool FromString(const std::string& str);
+			std::string ToString() const;
+			void Clear();
+
+			unsigned int	id;
+			std::string		model_name;
+			std::string		txd_name;
+			std::string		anim_name;
+			std::string		unk1;
+			float			draw_dist;
+			std::string		unk2;
+		};
+
+		struct ide_cars_entry
+		{
+			bool FromString(const std::string& str);
+			std::string ToString() const;
+		};
+
+		struct ide_hier_entry
+		{
+			bool FromString(const std::string& str);
+			std::string ToString() const;
+			void Clear();
+
+			unsigned int	id;
+			std::string		model_name;
+			std::string		txd_name;
+			std::string		unk1;
+			float			unk2; // normally 2000.0
+		};
+
+		struct ide_txdp_entry
+		{
+			bool FromString(const std::string& str);
+			std::string ToString() const;
+
+			void Clear();
+
+			std::string		txd_name;
+			std::string		parent_txd_name;
+		};
+
+		struct ide_2dfx_entry
+		{
+			bool FromString(const std::string& str);
+			std::string ToString() const;
+		};
+
+		class item_definitions
+			: public common::ITexReadable
+			, public common::ITexWriteable
+		{
+		public:
+			virtual bool Read(in_stream<EStreamType::TEXT>& stream) override;
+			virtual bool Write(out_stream<EStreamType::TEXT>& stream) override;
+
+		protected:
+			std::vector<ide_obj_entry> m_ObjEntries;
+			std::vector<ide_tobj_entry> m_TobjEntries;
+			std::vector<ide_anim_entry> m_AnimEntries;
+			std::vector<ide_peds_entry> m_PedsEntries;
+			std::vector<ide_weap_entry> m_WeapEntries;
+			std::vector<ide_cars_entry> m_CarsEntries;
+			std::vector<ide_hier_entry> m_HierEntries;
+			std::vector<ide_txdp_entry> m_TxdpEntries;
+			std::vector<ide_2dfx_entry> m_2dfxEntries;
+		};
+
+		class item_placements
+			: public common::ITexReadable
+			, public common::ITexWriteable
+		{
+			virtual bool Read(in_stream<EStreamType::TEXT>& stream) override;
+			virtual bool Write(out_stream<EStreamType::TEXT>& stream) override;
+		};
+	}
 }
+
+#include "rwrs_impl.h"

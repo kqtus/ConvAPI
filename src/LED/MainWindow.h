@@ -1,5 +1,4 @@
 #pragma once
-
 #include <qmainwindow.h>
 
 class CQD3DWidget;

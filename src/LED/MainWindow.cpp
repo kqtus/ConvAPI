@@ -92,6 +92,6 @@ void CQMainWindow::CreateWidgets()
 void CQMainWindow::TestComponents()
 {
 	CRwLevelManager mgr;
-	mgr.SetRootDir(L"C://Program Files (x86)//Steam//steamapps//common//Grand Theft Auto Vice City//");
+	mgr.SetRootDir(L"C:/Program Files (x86)/Steam/steamapps/common/Grand Theft Auto Vice City/");
 	bool level_loaded = mgr.LoadLevel("airport");
 }
