@@ -397,6 +397,16 @@ namespace rw
 			virtual bool Read(in_stream<EStreamType::TEXT>& stream) override;
 			virtual bool Write(out_stream<EStreamType::TEXT>& stream) override;
 
+			const std::vector<ide_obj_entry>& GetObjEntries() const;
+			const std::vector<ide_tobj_entry>& GetTobjEntries() const;
+			const std::vector<ide_anim_entry>& GetAnimEntries() const;
+			const std::vector<ide_peds_entry>& GetPedsEntries() const;
+			const std::vector<ide_weap_entry>& GetWeapEntries() const;
+			const std::vector<ide_cars_entry>& GetCarsEntries() const;
+			const std::vector<ide_hier_entry>& GetHierEntries() const;
+			const std::vector<ide_txdp_entry>& GetTxdpEntries() const;
+			const std::vector<ide_2dfx_entry>& Get2dfxEntries() const;
+
 		protected:
 			std::vector<ide_obj_entry> m_ObjEntries;
 			std::vector<ide_tobj_entry> m_TobjEntries;
@@ -515,6 +525,15 @@ namespace rw
 			virtual bool Read(in_stream<EStreamType::TEXT>& stream) override;
 			virtual bool Write(out_stream<EStreamType::TEXT>& stream) override;
 		
+			const std::vector<ipl_inst_entry>& GetInstEntries() const;
+			const std::vector<ipl_cull_entry>& GetCullEntries() const;
+			const std::vector<ipl_grge_entry>& GetGrgeEntries() const;
+			const std::vector<ipl_enex_entry>& GetEnexEntries() const;
+			const std::vector<ipl_pick_entry>& GetPickEntries() const;
+			const std::vector<ipl_cars_entry>& GetCarsEntries() const;
+			const std::vector<ipl_occl_entry>& GetOcclEntries() const;
+			const std::vector<ipl_jump_entry>& GetJumpEntries() const;
+
 		protected:
 			std::vector<ipl_inst_entry> m_InstEntries;
 			std::vector<ipl_cull_entry> m_CullEntries;

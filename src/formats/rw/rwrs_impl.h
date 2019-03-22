@@ -431,6 +431,51 @@ namespace rw
 			return false;
 		}
 
+		const std::vector<ide_obj_entry>& item_definitions::GetObjEntries() const
+		{
+			return m_ObjEntries;
+		}
+
+		const std::vector<ide_tobj_entry>& item_definitions::GetTobjEntries() const
+		{
+			return m_TobjEntries;
+		}
+
+		const std::vector<ide_anim_entry>& item_definitions::GetAnimEntries() const
+		{
+			return m_AnimEntries;
+		}
+
+		const std::vector<ide_peds_entry>& item_definitions::GetPedsEntries() const
+		{
+			return m_PedsEntries;
+		}
+
+		const std::vector<ide_weap_entry>& item_definitions::GetWeapEntries() const
+		{
+			return m_WeapEntries;
+		}
+
+		const std::vector<ide_cars_entry>& item_definitions::GetCarsEntries() const
+		{
+			return m_CarsEntries;
+		}
+
+		const std::vector<ide_hier_entry>& item_definitions::GetHierEntries() const
+		{
+			return m_HierEntries;
+		}
+
+		const std::vector<ide_txdp_entry>& item_definitions::GetTxdpEntries() const
+		{
+			return m_TxdpEntries;
+		}
+
+		const std::vector<ide_2dfx_entry>& item_definitions::Get2dfxEntries() const
+		{
+			return m_2dfxEntries;
+		}
+
 		bool ipl_inst_entry::FromString(const std::string& str)
 		{
 			str_tokenizer tokenizer;
@@ -676,6 +721,46 @@ namespace rw
 		bool item_placements::Write(out_stream<EStreamType::TEXT>& stream)
 		{
 			return false;
+		}
+
+		const std::vector<ipl_inst_entry>& item_placements::GetInstEntries() const
+		{
+			return m_InstEntries;
+		}
+
+		const std::vector<ipl_cull_entry>& item_placements::GetCullEntries() const
+		{
+			return m_CullEntries;
+		}
+
+		const std::vector<ipl_grge_entry>& item_placements::GetGrgeEntries() const
+		{
+			return m_GrgeEntries;
+		}
+
+		const std::vector<ipl_enex_entry>& item_placements::GetEnexEntries() const
+		{
+			return m_EnexEntries;
+		}
+
+		const std::vector<ipl_pick_entry>& item_placements::GetPickEntries() const
+		{
+			return m_PickEntries;
+		}
+
+		const std::vector<ipl_cars_entry>& item_placements::GetCarsEntries() const
+		{
+			return m_CarsEntries;
+		}
+
+		const std::vector<ipl_occl_entry>& item_placements::GetOcclEntries() const
+		{
+			return m_OcclEntries;
+		}
+
+		const std::vector<ipl_jump_entry>& item_placements::GetJumpEntries() const
+		{
+			return m_JumpEntries;
 		}
 
 		#undef CLR_AND_RET_ON_FALSE
