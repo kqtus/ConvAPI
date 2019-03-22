@@ -145,7 +145,6 @@ void CD3DX11Renderer::OnResize()
 	XMMATRIX P = XMMatrixPerspectiveFovLH(0.25f * 3.14f, (float)GetWindowWidth() / (float)GetWindowHeight(), 1.0f, 1000.0f);
 	XMStoreFloat4x4(&m_Proj, P);
 
-	
 	m_D3DContext->OMSetRenderTargets(0, nullptr, nullptr);
 	m_RenderTargetView->Release();
 
@@ -296,6 +295,9 @@ bool CD3DX11Renderer::CreateSwapChain()
 	if (FAILED(result))
 		return false;
 
+	if (m_SwapChain)
+		m_SwapChain->Release();
+
 	result = dxgi_factory->CreateSwapChain(m_D3DDevice, &m_SwapChainDesc, &m_SwapChain);
 
 	if (FAILED(result))
@@ -310,6 +312,9 @@ bool CD3DX11Renderer::CreateSwapChain()
 
 bool CD3DX11Renderer::CreateRenderTargetView()
 {
+	//if (m_RenderTargetView)
+	//	m_RenderTargetView->Release();
+
 	ID3D11Texture2D* back_buffer = nullptr;
 	m_SwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(&back_buffer));
 	m_D3DDevice->CreateRenderTargetView(back_buffer, 0, &m_RenderTargetView);
@@ -342,6 +347,13 @@ bool CD3DX11Renderer::CreateDepthStencil()
 	ds_desc.BindFlags = D3D11_BIND_DEPTH_STENCIL;
 	ds_desc.CPUAccessFlags = 0;
 	ds_desc.MiscFlags = 0;
+
+	
+	if (m_DepthStencilBuffer)
+		m_DepthStencilBuffer->Release();
+	if (m_DepthStencilView)
+		m_DepthStencilView->Release();
+	
 
 	HRESULT result = m_D3DDevice->CreateTexture2D(&ds_desc, 0, &m_DepthStencilBuffer);
 
