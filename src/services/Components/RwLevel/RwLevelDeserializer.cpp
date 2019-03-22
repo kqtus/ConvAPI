@@ -1,6 +1,7 @@
 #include "../Level/ILevelResourceDesc.h"
 #include "RwLevelDeserializer.h"
 #include "RwLevelResourcesDesc.h"
+#include <algorithm>
 #include "../../formats/rw/rwrs.h"
 
 bool CRwLevelDeserializer::Deserialize(ILevelResourcesDesc* rsc_desc, TLevelEntitiyPtrs& out_entities)
@@ -22,12 +23,13 @@ bool CRwLevelDeserializer::Deserialize(ILevelResourcesDesc* rsc_desc, TLevelEnti
 		rw::rs::item_definitions ide;
 		if (ide.Read(ide_strm))
 		{
-
+			
 		}
 
 		ide_strm.Close();
 	}
 
+	paths.clear();
 	rw_rsc_desc->GetItemPlacementFilePaths(paths);
 
 	for (auto& ipl_path : paths)
@@ -36,8 +38,14 @@ bool CRwLevelDeserializer::Deserialize(ILevelResourcesDesc* rsc_desc, TLevelEnti
 		if (!ipl_strm.Open(ipl_path.c_str()))
 			continue;
 
+		rw::rs::item_placements ipl;
+		if (ipl.Read(ipl_strm))
+		{
+
+		}
+
 		ipl_strm.Close();
 	}
 
-	return false;
+	return true;
 }

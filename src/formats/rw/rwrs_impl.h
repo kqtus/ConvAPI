@@ -5,11 +5,52 @@ namespace rw
 {
 	namespace rs
 	{
-		#define CLR_AND_RET_ON_FALSE(expr)	\
-		if (!expr)							\
-		{									\
-			Clear();						\
-			return false;					\
+		namespace
+		{
+			auto is_skippable_line = [](const std::string& str)
+			{
+				if (str.empty())
+					return true;
+				if (str == "\n")
+					return true;
+				if (str.size() > 0 && str[0] == '#')
+					return true;
+
+				return false;
+			};
+
+			auto is_ide_section_scope_def = [](const std::string& str)
+			{
+				return EIdeSectionType::FromString(str) != EIdeSectionType::_UNKNOWN;
+			};
+
+			auto is_ipl_section_scope_def = [](const std::string& str)
+			{
+				return EIplSectionType::FromString(str) != EIplSectionType::_UNKNOWN;
+			};
+
+			auto is_section_scope_end = [](const std::string& str)
+			{
+				return str == "end";
+			};
+
+			#define CLR_AND_RET_ON_FALSE(expr)	\
+			if (!expr)							\
+			{									\
+				Clear();						\
+				return false;					\
+			}
+
+			#define MAKE_SECTION_CASE(sect_type, TObj, dest_vec)	\
+			case sect_type:											\
+			{														\
+				TObj obj;											\
+				if (obj.FromString(line))							\
+					dest_vec.push_back(obj);						\
+				break;												\
+			}
+
+			#define MAKE_STR_TO_ENUM_CASE(cmp_str, cmp_type) if (str == cmp_str) return cmp_type;
 		}
 
 		bool ide_obj_entry::FromString(const std::string& str)
@@ -282,23 +323,17 @@ namespace rw
 
 		}
 
-		#undef CLR_AND_RET_ON_FALSE
-
 		EIdeSectionType::TYPE EIdeSectionType::FromString(const std::string& str)
 		{
-			#define MAKE_CASE(cmp_str, cmp_type) if (str == cmp_str) return cmp_type;
-
-			MAKE_CASE("objs", EIdeSectionType::OBJS);
-			MAKE_CASE("tobj", EIdeSectionType::TOBJ);
-			MAKE_CASE("anim", EIdeSectionType::ANIM);
-			MAKE_CASE("peds", EIdeSectionType::PEDS);
-			MAKE_CASE("weap", EIdeSectionType::WEAP);
-			MAKE_CASE("cars", EIdeSectionType::CARS);
-			MAKE_CASE("hier", EIdeSectionType::HIER);
-			MAKE_CASE("txdp", EIdeSectionType::TXDP);
-			MAKE_CASE("2dfx", EIdeSectionType::_2DFX);
-
-			#undef MAKE_CASE
+			MAKE_STR_TO_ENUM_CASE("objs", EIdeSectionType::OBJS);
+			MAKE_STR_TO_ENUM_CASE("tobj", EIdeSectionType::TOBJ);
+			MAKE_STR_TO_ENUM_CASE("anim", EIdeSectionType::ANIM);
+			MAKE_STR_TO_ENUM_CASE("peds", EIdeSectionType::PEDS);
+			MAKE_STR_TO_ENUM_CASE("weap", EIdeSectionType::WEAP);
+			MAKE_STR_TO_ENUM_CASE("cars", EIdeSectionType::CARS);
+			MAKE_STR_TO_ENUM_CASE("hier", EIdeSectionType::HIER);
+			MAKE_STR_TO_ENUM_CASE("txdp", EIdeSectionType::TXDP);
+			MAKE_STR_TO_ENUM_CASE("2dfx", EIdeSectionType::_2DFX);
 
 			return EIdeSectionType::_UNKNOWN;
 		}
@@ -320,30 +355,38 @@ namespace rw
 			}
 		}
 
+		EIplSectionType::TYPE EIplSectionType::FromString(const std::string& str)
+		{
+			MAKE_STR_TO_ENUM_CASE("inst", EIplSectionType::INST);
+			MAKE_STR_TO_ENUM_CASE("cull", EIplSectionType::CULL);
+			MAKE_STR_TO_ENUM_CASE("grge", EIplSectionType::GRGE);
+			MAKE_STR_TO_ENUM_CASE("enex", EIplSectionType::ENEX);
+			MAKE_STR_TO_ENUM_CASE("pick", EIplSectionType::PICK);
+			MAKE_STR_TO_ENUM_CASE("cars", EIplSectionType::CARS);
+			MAKE_STR_TO_ENUM_CASE("occl", EIplSectionType::OCCL);
+			MAKE_STR_TO_ENUM_CASE("jump", EIplSectionType::JUMP);
+
+			return EIplSectionType::_UNKNOWN;
+		}
+
+		std::string EIplSectionType::ToString(TYPE type)
+		{
+			switch (type)
+			{
+			case EIplSectionType::INST: return "inst";
+			case EIplSectionType::CULL: return "cull";
+			case EIplSectionType::GRGE: return "grge";
+			case EIplSectionType::ENEX: return "enex";
+			case EIplSectionType::PICK: return "pick";
+			case EIplSectionType::CARS: return "cars";
+			case EIplSectionType::OCCL: return "occl";
+			case EIplSectionType::JUMP: return "jump";
+			default: return "";
+			}
+		}
+
 		bool item_definitions::Read(in_stream<EStreamType::TEXT>& stream)
 		{
-			auto is_skippable_line = [](const std::string& str)
-			{
-				if (str.empty())
-					return true;
-				if (str == "\n")
-					return true;
-				if (str.size() > 0 && str[0] == '#')
-					return true;
-
-				return false;
-			};
-
-			auto is_section_scope_def = [](const std::string& str)
-			{
-				return EIdeSectionType::FromString(str) != EIdeSectionType::_UNKNOWN;
-			};
-
-			auto is_section_scope_end = [](const std::string& str)
-			{
-				return str == "end";
-			};
-
 			EIdeSectionType::TYPE cur_section = EIdeSectionType::_UNKNOWN;
 
 			while (!stream.Eof())
@@ -354,7 +397,7 @@ namespace rw
 				if (is_skippable_line(line))
 					continue;
 
-				if (is_section_scope_def(line))
+				if (is_ide_section_scope_def(line))
 				{
 					cur_section = EIdeSectionType::FromString(line);
 					continue;
@@ -366,29 +409,18 @@ namespace rw
 					continue;
 				}
 					
-				#define MAKE_CASE(sect_type, TObj, dest_vec)	\
-				case sect_type:									\
-				{												\
-					TObj obj;									\
-					if (obj.FromString(line))					\
-						dest_vec.push_back(obj);				\
-					break;										\
-				}
-				
 				switch (cur_section)
 				{
-					MAKE_CASE(EIdeSectionType::OBJS, ide_obj_entry, m_ObjEntries);
-					MAKE_CASE(EIdeSectionType::TOBJ, ide_tobj_entry, m_TobjEntries);
-					MAKE_CASE(EIdeSectionType::ANIM, ide_anim_entry, m_AnimEntries);
-					MAKE_CASE(EIdeSectionType::PEDS, ide_peds_entry, m_PedsEntries);
-					MAKE_CASE(EIdeSectionType::WEAP, ide_weap_entry, m_WeapEntries);
-					MAKE_CASE(EIdeSectionType::CARS, ide_cars_entry, m_CarsEntries);
-					MAKE_CASE(EIdeSectionType::HIER, ide_hier_entry, m_HierEntries);
-					MAKE_CASE(EIdeSectionType::TXDP, ide_txdp_entry, m_TxdpEntries);
-					MAKE_CASE(EIdeSectionType::_2DFX, ide_2dfx_entry, m_2dfxEntries);
+					MAKE_SECTION_CASE(EIdeSectionType::OBJS, ide_obj_entry, m_ObjEntries);
+					MAKE_SECTION_CASE(EIdeSectionType::TOBJ, ide_tobj_entry, m_TobjEntries);
+					MAKE_SECTION_CASE(EIdeSectionType::ANIM, ide_anim_entry, m_AnimEntries);
+					MAKE_SECTION_CASE(EIdeSectionType::PEDS, ide_peds_entry, m_PedsEntries);
+					MAKE_SECTION_CASE(EIdeSectionType::WEAP, ide_weap_entry, m_WeapEntries);
+					MAKE_SECTION_CASE(EIdeSectionType::CARS, ide_cars_entry, m_CarsEntries);
+					MAKE_SECTION_CASE(EIdeSectionType::HIER, ide_hier_entry, m_HierEntries);
+					MAKE_SECTION_CASE(EIdeSectionType::TXDP, ide_txdp_entry, m_TxdpEntries);
+					MAKE_SECTION_CASE(EIdeSectionType::_2DFX, ide_2dfx_entry, m_2dfxEntries);
 				}
-
-				#undef MAKE_CASE
 			}
 
 			return true;
@@ -399,14 +431,256 @@ namespace rw
 			return false;
 		}
 
-		bool item_placements::Read(in_stream<EStreamType::TEXT>& stream)
+		bool ipl_inst_entry::FromString(const std::string& str)
+		{
+			str_tokenizer tokenizer;
+			if (!tokenizer.Tokenize(str))
+				return false;
+
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(0, id));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(1, model_name));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(2, interior));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(3, pos_x));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(4, pos_y));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(5, pos_z));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(6, scale_x));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(7, scale_y));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(8, scale_z));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(9, rot_x));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(10, rot_y));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(11, rot_z));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(12, rot_w));
+
+			return true;
+		}
+
+		std::string ipl_inst_entry::ToString() const
+		{
+			return "";
+		}
+
+		void ipl_inst_entry::Clear()
+		{
+			id = 0;
+			model_name = "";
+			interior = 0;
+			pos_x = 0.f;
+			pos_y = 0.f;
+			pos_z = 0.f;
+			scale_x = 0.f;
+			scale_y = 0.f;
+			scale_z = 0.f;
+			rot_x = 0.f;
+			rot_y = 0.f;
+			rot_z = 0.f;
+			rot_w = 0.f;
+		}
+
+		bool ipl_cull_entry::FromString(const std::string& str)
+		{
+			str_tokenizer tokenizer;
+			if (!tokenizer.Tokenize(str))
+				return false;
+
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(0, center_x));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(1, center_y));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(2, center_z));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(3, lower_left_x));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(4, lower_left_y));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(5, lower_left_z));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(6, upper_right_x));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(7, upper_right_y));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(8, upper_right_z));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(9, flags));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(10, unk));
+
+			return true;
+		}
+
+		std::string ipl_cull_entry::ToString() const
+		{
+			return "";
+		}
+
+		void ipl_cull_entry::Clear()
+		{
+			center_x = 0.f;
+			center_y = 0.f;
+			center_z = 0.f;
+			lower_left_x = 0.f;
+			lower_left_y = 0.f;
+			lower_left_z = 0.f;
+			upper_right_x = 0.f;
+			upper_right_y = 0.f;
+			upper_right_z = 0.f;
+			flags = 0;
+			unk = 0;
+		}
+
+		bool ipl_grge_entry::FromString(const std::string& str)
+		{
+			str_tokenizer tokenizer;
+			if (!tokenizer.Tokenize(str))
+				return false;
+
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(0, pos_x));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(1, pos_y));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(2, pos_z));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(3, line_x));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(4, line_y));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(5, cube_x));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(6, cube_y));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(7, cube_z));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(8, door_type));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(9, garage_type));
+			CLR_AND_RET_ON_FALSE(tokenizer.Get(10, name));
+
+			return true;
+		}
+
+		std::string ipl_grge_entry::ToString() const
+		{
+			return "";
+		}
+
+		void ipl_grge_entry::Clear()
+		{
+			pos_x = 0.f;
+			pos_y = 0.f;
+			pos_z = 0.f;
+			line_x = 0.f;
+			line_y = 0.f;
+			cube_x = 0.f;
+			cube_y = 0.f;
+			cube_z = 0.f;
+			door_type = 0;
+			garage_type = 0;
+			name = "";
+		}
+
+		bool ipl_enex_entry::FromString(const std::string& str)
 		{
 			return false;
+		}
+
+		std::string ipl_enex_entry::ToString() const
+		{
+			return "";
+		}
+
+		void ipl_enex_entry::Clear()
+		{
+
+		}
+
+		bool ipl_pick_entry::FromString(const std::string& str)
+		{
+			return false;
+		}
+
+		std::string ipl_pick_entry::ToString() const
+		{
+			return "";
+		}
+
+		void ipl_pick_entry::Clear()
+		{
+
+		}
+
+		bool ipl_cars_entry::FromString(const std::string& str)
+		{
+			return false;
+		}
+
+		std::string ipl_cars_entry::ToString() const
+		{
+			return "";
+		}
+
+		void ipl_cars_entry::Clear()
+		{
+
+		}
+
+		bool ipl_occl_entry::FromString(const std::string& str)
+		{
+			return false;
+		}
+
+		std::string ipl_occl_entry::ToString() const
+		{
+			return "";
+		}
+
+		void ipl_occl_entry::Clear()
+		{
+
+		}
+
+		bool ipl_jump_entry::FromString(const std::string& str)
+		{
+			return false;
+		}
+
+		std::string ipl_jump_entry::ToString() const
+		{
+			return "";
+		}
+
+		void ipl_jump_entry::Clear()
+		{
+
+		}
+
+		bool item_placements::Read(in_stream<EStreamType::TEXT>& stream)
+		{
+			EIplSectionType::TYPE cur_section = EIplSectionType::_UNKNOWN;
+
+			while (!stream.Eof())
+			{
+				std::string line;
+				READ_LINE(stream, line);
+
+				if (is_skippable_line(line))
+					continue;
+
+				if (is_ipl_section_scope_def(line))
+				{
+					cur_section = EIplSectionType::FromString(line);
+					continue;
+				}
+
+				if (is_section_scope_end(line))
+				{
+					cur_section = EIplSectionType::_UNKNOWN;
+					continue;
+				}
+
+				switch (cur_section)
+				{
+					MAKE_SECTION_CASE(EIplSectionType::INST, ipl_inst_entry, m_InstEntries);
+					MAKE_SECTION_CASE(EIplSectionType::CULL, ipl_cull_entry, m_CullEntries);
+					MAKE_SECTION_CASE(EIplSectionType::GRGE, ipl_grge_entry, m_GrgeEntries);
+					MAKE_SECTION_CASE(EIplSectionType::ENEX, ipl_enex_entry, m_EnexEntries);
+					MAKE_SECTION_CASE(EIplSectionType::PICK, ipl_pick_entry, m_PickEntries);
+					MAKE_SECTION_CASE(EIplSectionType::CARS, ipl_cars_entry, m_CarsEntries);
+					MAKE_SECTION_CASE(EIplSectionType::OCCL, ipl_occl_entry, m_OcclEntries);
+					MAKE_SECTION_CASE(EIplSectionType::JUMP, ipl_jump_entry, m_JumpEntries);
+				}
+			}
+
+			return true;
 		}
 
 		bool item_placements::Write(out_stream<EStreamType::TEXT>& stream)
 		{
 			return false;
 		}
+
+		#undef CLR_AND_RET_ON_FALSE
+		#undef MAKE_SECTION_CASE
+		#undef MAKE_STR_TO_ENUM_CASE
 	}
 }
+

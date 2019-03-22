@@ -142,8 +142,19 @@ void CD3DX11Renderer::OnResize()
 {
 	__super::OnResize();
 
-	XMMATRIX P = XMMatrixPerspectiveFovLH(0.25f * 3.14f, 4.f / 3.f, 1.0f, 1000.0f);
+	XMMATRIX P = XMMatrixPerspectiveFovLH(0.25f * 3.14f, (float)GetWindowWidth() / (float)GetWindowHeight(), 1.0f, 1000.0f);
 	XMStoreFloat4x4(&m_Proj, P);
+
+	
+	m_D3DContext->OMSetRenderTargets(0, nullptr, nullptr);
+	m_RenderTargetView->Release();
+
+	HRESULT hr;
+	hr = m_SwapChain->ResizeBuffers(0, 0, 0, DXGI_FORMAT_R8G8B8A8_UNORM, 0);
+
+	CreateRenderTargetView();
+	CreateDepthStencil();
+	CreateViewport();
 }
 
 bool CD3DX11Renderer::AddRenderSource(IRenderSource* render_src)
@@ -338,7 +349,7 @@ bool CD3DX11Renderer::CreateDepthStencil()
 		return false;
 
 	result = m_D3DDevice->CreateDepthStencilView(m_DepthStencilBuffer, 0, &m_DepthStencilView);
-
+	
 	if (FAILED(result))
 		return false;
 
@@ -370,7 +381,7 @@ void CD3DX11Renderer::BuildFX()
 	ID3DBlob* compiled_shader = nullptr;
 	ID3DBlob* compilation_msgs = nullptr;
 
-	HRESULT hr = D3DCompileFromFile(L"C://Users//Marek//Documents//mod-dev//conv_api//fx//color.fx", nullptr, nullptr, nullptr, "fx_5_0", shader_flags, 0, &compiled_shader, &compilation_msgs);
+	HRESULT hr = D3DCompileFromFile(L"C://Users//elMarcoPL//Documents//Developer//ConvAPI//fx//color.fx", nullptr, nullptr, nullptr, "fx_5_0", shader_flags, 0, &compiled_shader, &compilation_msgs);
 
 
 	if (compilation_msgs)
@@ -389,7 +400,7 @@ void CD3DX11Renderer::BuildFX()
 	m_FxWorldViewProj = m_Fx->GetVariableByName("gWorldViewProj")->AsMatrix();
 
 	// Background.fx
-	hr = D3DCompileFromFile(L"C://Users//Marek//Documents//mod-dev//conv_api//fx//background.fx", nullptr, nullptr, "main", "vs_5_0", 0, 0, &compiled_shader, &compilation_msgs);
+	hr = D3DCompileFromFile(L"C://Users//elMarcoPL//Documents//Developer//ConvAPI//fx//background.fx", nullptr, nullptr, "main", "vs_5_0", 0, 0, &compiled_shader, &compilation_msgs);
 
 	if (compilation_msgs)
 	{
@@ -402,7 +413,7 @@ void CD3DX11Renderer::BuildFX()
 
 	hr = m_D3DDevice->CreateVertexShader(compiled_shader->GetBufferPointer(), compiled_shader->GetBufferSize(), nullptr, &m_BgVertShader);
 
-	hr = D3DCompileFromFile(L"C://Users//Marek//Documents//mod-dev//conv_api//fx//background.ps", nullptr, nullptr, "main", "ps_5_0", 0, 0, &compiled_shader, &compilation_msgs);
+	hr = D3DCompileFromFile(L"C://Users//elMarcoPL//Documents//Developer//ConvAPI//fx//background.ps", nullptr, nullptr, "main", "ps_5_0", 0, 0, &compiled_shader, &compilation_msgs);
 
 	if (compilation_msgs)
 	{

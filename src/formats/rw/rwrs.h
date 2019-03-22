@@ -247,14 +247,33 @@ namespace rw
 			static std::string ToString(TYPE type);
 		};
 
-		struct IIdeEntry
+		struct EIplSectionType
+		{
+			enum TYPE
+			{
+				_UNKNOWN,
+				INST,
+				CULL,
+				GRGE,
+				ENEX,
+				PICK,
+				CARS,
+				OCCL,
+				JUMP,
+			};
+
+			static TYPE FromString(const std::string& str);
+			static std::string ToString(TYPE type);
+		};
+
+		struct IEntry
 		{
 			virtual bool FromString(const std::string& str) = 0;
 			virtual std::string ToString() const = 0;
 			virtual void Clear() = 0;
 		};
 
-		struct ide_obj_entry : public IIdeEntry
+		struct ide_obj_entry : public IEntry
 		{
 			virtual bool FromString(const std::string& str) override;
 			virtual std::string ToString() const override;
@@ -268,7 +287,7 @@ namespace rw
 			int					flags;
 		};
 
-		struct ide_tobj_entry : public IIdeEntry
+		struct ide_tobj_entry : public IEntry
 		{
 			virtual bool FromString(const std::string& str) override;
 			virtual std::string ToString() const override;
@@ -284,7 +303,7 @@ namespace rw
 			int					time_off;
 		};
 
-		struct ide_anim_entry : public IIdeEntry
+		struct ide_anim_entry : public IEntry
 		{
 			virtual bool FromString(const std::string& str) override;
 			virtual std::string ToString() const override;
@@ -298,7 +317,7 @@ namespace rw
 			int				flags;
 		};
 		
-		struct ide_peds_entry : public IIdeEntry
+		struct ide_peds_entry : public IEntry
 		{
 			virtual bool FromString(const std::string& str) override;
 			virtual std::string ToString() const override;
@@ -318,7 +337,7 @@ namespace rw
 			unsigned int	radio2;
 		};
 
-		struct ide_weap_entry : public IIdeEntry
+		struct ide_weap_entry : public IEntry
 		{
 			virtual bool FromString(const std::string& str) override;
 			virtual std::string ToString() const override;
@@ -333,14 +352,14 @@ namespace rw
 			std::string		unk2;
 		};
 
-		struct ide_cars_entry : public IIdeEntry
+		struct ide_cars_entry : public IEntry
 		{
 			virtual bool FromString(const std::string& str) override;
 			virtual std::string ToString() const override;
 			virtual void Clear() override;
 		};
 
-		struct ide_hier_entry : public IIdeEntry
+		struct ide_hier_entry : public IEntry
 		{
 			virtual bool FromString(const std::string& str) override;
 			virtual std::string ToString() const override;
@@ -353,7 +372,7 @@ namespace rw
 			float			unk2; // normally 2000.0
 		};
 
-		struct ide_txdp_entry : public IIdeEntry
+		struct ide_txdp_entry : public IEntry
 		{
 			virtual bool FromString(const std::string& str) override;
 			virtual std::string ToString() const override;
@@ -363,7 +382,7 @@ namespace rw
 			std::string		parent_txd_name;
 		};
 
-		struct ide_2dfx_entry : public IIdeEntry
+		struct ide_2dfx_entry : public IEntry
 		{
 			virtual bool FromString(const std::string& str) override;
 			virtual std::string ToString() const override;
@@ -390,12 +409,121 @@ namespace rw
 			std::vector<ide_2dfx_entry> m_2dfxEntries;
 		};
 
+		struct ipl_inst_entry : public IEntry
+		{
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
+
+			// GTA VC 
+			unsigned int	id;
+			std::string		model_name;
+			unsigned int	interior;
+			float			pos_x;
+			float			pos_y;
+			float			pos_z;
+			float			scale_x;
+			float			scale_y;
+			float			scale_z;
+			float			rot_x;
+			float			rot_y;
+			float			rot_z;
+			float			rot_w;
+		};
+
+		struct ipl_cull_entry : public IEntry
+		{
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
+
+			// GTA III and VC
+			float			center_x;
+			float			center_y;
+			float			center_z;
+			float			lower_left_x;
+			float			lower_left_y;
+			float			lower_left_z;
+			float			upper_right_x;
+			float			upper_right_y;
+			float			upper_right_z;
+			unsigned int	flags;
+			unsigned int	unk;
+		};
+
+		struct ipl_grge_entry : public IEntry
+		{
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
+
+			// GTA SA
+			float			pos_x;
+			float			pos_y;
+			float			pos_z;
+			float			line_x;
+			float			line_y;
+			float			cube_x;
+			float			cube_y;
+			float			cube_z;
+			unsigned int	door_type;
+			unsigned int	garage_type;
+			std::string		name;
+		};
+
+		struct ipl_enex_entry : public IEntry
+		{
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
+		};
+
+
+		struct ipl_pick_entry : public IEntry
+		{
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
+		};
+
+		struct ipl_cars_entry : public IEntry
+		{
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
+		};
+
+		struct ipl_occl_entry : public IEntry
+		{
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
+		};
+
+		struct ipl_jump_entry : public IEntry
+		{
+			virtual bool FromString(const std::string& str) override;
+			virtual std::string ToString() const override;
+			virtual void Clear() override;
+		};
+
 		class item_placements
 			: public common::ITexReadable
 			, public common::ITexWriteable
 		{
+		public:
 			virtual bool Read(in_stream<EStreamType::TEXT>& stream) override;
 			virtual bool Write(out_stream<EStreamType::TEXT>& stream) override;
+		
+		protected:
+			std::vector<ipl_inst_entry> m_InstEntries;
+			std::vector<ipl_cull_entry> m_CullEntries;
+			std::vector<ipl_grge_entry> m_GrgeEntries;
+			std::vector<ipl_enex_entry> m_EnexEntries;
+			std::vector<ipl_pick_entry> m_PickEntries;
+			std::vector<ipl_cars_entry> m_CarsEntries;
+			std::vector<ipl_occl_entry> m_OcclEntries;
+			std::vector<ipl_jump_entry> m_JumpEntries;
 		};
 	}
 }

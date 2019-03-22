@@ -62,9 +62,10 @@ void CQMainWindow::CreateToolbar()
 	QToolBar* edit_tool_bar = new QToolBar("Edit");
 	addToolBar(Qt::LeftToolBarArea, edit_tool_bar);
 
-	edit_tool_bar->addAction(QIcon(), "Add");
-	edit_tool_bar->addAction(QIcon(), "Move");
-	edit_tool_bar->addAction(QIcon(), "Connect");
+	edit_tool_bar->addAction(QIcon("C:/Users/elMarcoPL/Documents/Developer/ConvAPI/icons/icons8-drag-40.png"), "Move");
+	edit_tool_bar->addAction(QIcon("C:/Users/elMarcoPL/Documents/Developer/ConvAPI/icons/icons8-plus-math-40.png"), "Add");
+	edit_tool_bar->addAction(QIcon("C:/Users/elMarcoPL/Documents/Developer/ConvAPI/icons/icons8-enlarge-40"), "Scale");
+	edit_tool_bar->addAction(QIcon("C:/Users/elMarcoPL/Documents/Developer/ConvAPI/icons/icons8-link-40.png"), "Connect");
 	//QToolBar* file_tool_bar = addToolBar(tr("File"));
 }
 
@@ -92,6 +93,6 @@ void CQMainWindow::CreateWidgets()
 void CQMainWindow::TestComponents()
 {
 	CRwLevelManager mgr;
-	mgr.SetRootDir(L"C:/Program Files (x86)/Steam/steamapps/common/Grand Theft Auto Vice City/");
+	mgr.SetRootDir(L"D:/steam/steamapps/common/Grand Theft Auto Vice City/");
 	bool level_loaded = mgr.LoadLevel("airport");
 }

@@ -8,6 +8,15 @@
 #include "../../renderer/Renderables.h"
 #include "../../formats/rw/rwcore.h"
 
+void CQD3DWidget::resizeEvent(QResizeEvent* event)
+{
+	__super::resizeEvent(event);
+
+	m_Renderer->SetWindowWidth(width());
+	m_Renderer->SetWindowHeight(height());
+	m_Renderer->OnResize();
+}
+
 void CQD3DWidget::timerEvent(QTimerEvent* event)
 {
 	OnFrame();
@@ -66,7 +75,6 @@ void CQD3DWidget::InitRenderer()
 	m_Renderer->SetWindowHeight(600);
 	m_Renderer->Init();
 	m_Renderer->OnResize();
-
 
 	m_MainScene = new CScene();
 
