@@ -50,8 +50,8 @@ void CQD3DWidget::mouseMoveEvent(QMouseEvent* event)
 	int y = event->localPos().y();
 
 	{
-		float dx = 0.010f * static_cast<float>(x - m_LastMouseX);
-		float dy = 0.010f * static_cast<float>(y - m_LastMouseY);
+		float dx = 0.030f * static_cast<float>(x - m_LastMouseX);
+		float dy = 0.030f * static_cast<float>(y - m_LastMouseY);
 
 		m_Renderer->Move(dx, dy);
 	}
@@ -107,7 +107,7 @@ void CQD3DWidget::InitRenderer()
 	read_and_add_mdl("assets\\dff\\vc\\dt_bowlsign.dff", { -2.0f, -2.f, 0.f });
 	read_and_add_mdl("assets\\dff\\vc\\sabre.dff", { 10.0f, -2.f, 0.f });
 
-	m_Renderer->AddRenderSource(m_MainScene);
+
 }
 
 void CQD3DWidget::OnFrame()
@@ -116,3 +116,12 @@ void CQD3DWidget::OnFrame()
 	m_Renderer->Render();
 }
 
+void CQD3DWidget::AddRenderable(CRwModel* model)
+{
+	m_MainScene->AddObject(model);
+}
+
+void CQD3DWidget::ApplyRenderSource()
+{
+	m_Renderer->AddRenderSource(m_MainScene);
+}

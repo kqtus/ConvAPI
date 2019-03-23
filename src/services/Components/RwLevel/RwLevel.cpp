@@ -95,3 +95,13 @@ ILevelResourcesDesc* CRwLevel::GetCurrLoadedRscDesc() const
 {
 	return m_LoadedLvlRscDesc;
 }
+
+#include "RwLevelDeserializer.h"
+
+void CRwLevel::GetRwObjects(std::vector<SPositionedMesh*>& objs) const
+{
+	auto rw_deserializer = dynamic_cast<CRwLevelDeserializer*>(GetDeserializer());
+
+	if (rw_deserializer)
+		rw_deserializer->GetLoadedEntities(objs);
+}

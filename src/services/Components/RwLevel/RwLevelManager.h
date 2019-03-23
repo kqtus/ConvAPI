@@ -2,9 +2,13 @@
 #include <vector>
 
 #include "../Level/ILevelManager.h"
-#include "RwLevel.h"
-#include "RwLevelSerializer.h"
-#include "RwLevelDeserializer.h"
+
+class ILevel;
+class CRwLevelDeserializer;
+class CRwLevelSerializer;
+class CRwLevelResourcesDAO;
+class ILevelDeserializer;
+class ILevelSerializer;
 
 class CRwLevelManager : public ILevelManager
 {
@@ -22,10 +26,16 @@ public:
 	virtual bool UnloadAllLevels() override;
 	virtual bool SaveAllLevels() override;
 
+	virtual ILevelDeserializer* GetDeserializer() const;
+	virtual ILevelSerializer* GetSerializer() const;
+
+	void GetLevels(std::vector<ILevel*>& levels) const;
+
 private:
 	std::wstring m_RootDir;
 	std::vector<ILevel*> m_LoadedLevels;
 
-	CRwLevelSerializer m_DefaultLvlSerializer;
-	CRwLevelDeserializer m_DefaultLvlDeserializer;
+	CRwLevelResourcesDAO* m_ResourcesDAO;
+	CRwLevelSerializer* m_DefaultLvlSerializer;
+	CRwLevelDeserializer* m_DefaultLvlDeserializer;
 };

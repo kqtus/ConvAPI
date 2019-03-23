@@ -7,6 +7,12 @@ CRwModel::CRwModel()
 	DirectX::XMStoreFloat4x4(&m_WorldMat, DirectX::XMMatrixIdentity());
 }
 
+CRwModel::CRwModel(rw::core::clump& copy)
+	: rw::core::clump(copy)
+{
+	DirectX::XMStoreFloat4x4(&m_WorldMat, DirectX::XMMatrixIdentity());
+}
+
 CRwModel::~CRwModel()
 {
 }

@@ -4,6 +4,12 @@
 
 #include "../Level/LevelBase.h"
 
+// Temporary
+#include "../../../formats/rw/rwcore.h"
+
+struct SPositionedMesh;
+// --
+
 class CRwLevel : public CLevelBase
 {
 public:
@@ -29,6 +35,9 @@ public:
 	/** End of IPhysicalLevel Interface **/
 
 	ILevelResourcesDesc* GetCurrLoadedRscDesc() const;
+
+	// Temporary solution, to be deleted (GetObjects)
+	void GetRwObjects(std::vector<SPositionedMesh*>& objs) const;
 
 protected:
 	std::vector<ILevelEntity*> m_LevelEntities;

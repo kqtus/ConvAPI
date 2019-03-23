@@ -1,10 +1,7 @@
 #pragma once
 
 // From 'Renderer' proj
-class IRenderable
-{
 
-};
 
 struct EEntityType
 {
@@ -17,7 +14,7 @@ struct EEntityType
 	};
 };
 
-class ILevelEntity : public IRenderable
+class ILevelEntity
 {
 public:
 	virtual EEntityType::TYPE GetType() = 0;

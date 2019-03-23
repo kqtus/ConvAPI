@@ -49,8 +49,8 @@ void CD3DX11Renderer::Update(float dt)
 	float y = m_Radius * sinf(m_Phi) * sinf(m_Phi);
 	float z = m_Radius * cosf(m_Phi);
 
-	XMVECTOR pos = XMVectorSet(x, y, z, 1.0f);
-	XMVECTOR target = XMVectorSet(0.f, 0.f, 0.f, 1.f);
+	XMVECTOR pos = XMVectorSet(-1556.478394f + x + -80.f, 19.82657051f + y + -20.f, -970.8729248f + z + -50.f, 1.0f);
+	XMVECTOR target = XMVectorSet(-1556.478394f, 19.82657051f, -970.8729248f, 1.f);
 	XMVECTOR up = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);
 
 	XMMATRIX v = XMMatrixLookAtLH(pos, target, up);
@@ -64,15 +64,16 @@ void CD3DX11Renderer::Render()
 	m_D3DContext->ClearRenderTargetView(m_RenderTargetView, reinterpret_cast<const float*>(&blue));
 	m_D3DContext->ClearDepthStencilView(m_DepthStencilView, D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 
+	
 	m_D3DContext->IASetInputLayout(m_InputLayout);
-
+	/*
 	{
 		m_D3DContext->IASetPrimitiveTopology(D3D10_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 		m_D3DContext->VSSetShader(m_BgVertShader, nullptr, 0);
 		m_D3DContext->PSSetShader(m_BgPixelShader, nullptr, 0);
 		m_D3DContext->Draw(4, 0);
 	}
-
+	*/
 
 	m_D3DContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
@@ -128,7 +129,7 @@ T _clamp(T val, T min, T max)
 void CD3DX11Renderer::Move(float dx, float dy)
 {
 	m_Radius += dx - dy;
-	m_Radius = _clamp(m_Radius, 3.0f, 25.0f);
+	m_Radius = _clamp(m_Radius, 3.0f, 150.0f);
 }
 
 void CD3DX11Renderer::Rotate(float dx, float dy)

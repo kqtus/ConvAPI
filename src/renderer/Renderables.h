@@ -11,6 +11,7 @@ class CRwModel
 {
 public:
 	CRwModel();
+	CRwModel(rw::core::clump& copy);
 	virtual ~CRwModel();
 
 	virtual bool InitBuffers(ID3D11Device* d3d_device) override;

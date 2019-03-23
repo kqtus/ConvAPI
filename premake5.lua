@@ -103,9 +103,8 @@ project "ConvAPI"
 	flags { "NoPCH" }
 	
 	useUtilitiesLib()
-	useFormatsLib()
-	useConvertersLib()
 	useServicesLib()
+	useConvertersLib()
 	useRendererLib()
 	
 	links { "3rd/lib/x64/debug/libfbxsdk" }
@@ -129,11 +128,10 @@ project "LED"
 	
 	flags { "NoPCH" }
 	
-	useFormatsLib()
-	useConvertersLib()
-	useUtilitiesLib()
-	useRendererLib()
 	
+	useServicesLib()
+	useRendererLib()
+
 	-- Qt stuff
 	
 	useQtLibs();

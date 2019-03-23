@@ -8,6 +8,10 @@
 #include "Widgets/D3DWidget.h"
 
 #include "../services/Components/RwLevel/RwLevelManager.h"
+#include "../services/Components/RwLevel/RwLevel.h"
+#include "../services/Components/RwLevel/RwLevelDeserializer.h"
+
+#include "../renderer/Renderables.h"
 
 CQMainWindow::CQMainWindow()
 {
@@ -95,4 +99,23 @@ void CQMainWindow::TestComponents()
 	CRwLevelManager mgr;
 	mgr.SetRootDir(L"D:/steam/steamapps/common/Grand Theft Auto Vice City/");
 	bool level_loaded = mgr.LoadLevel("airport");
+
+	std::vector<ILevel*> levels;
+	mgr.GetLevels(levels);
+
+	for (auto& lvl : levels)
+	{
+		std::vector<SPositionedMesh*> meshes;
+		((CRwLevel*)lvl)->GetRwObjects(meshes);
+
+		for (auto& pos_msh : meshes)
+		{
+			auto rw_mdl = new CRwModel(*pos_msh->mesh);
+			rw_mdl->SetPos(pos_msh->pos);
+			rw_mdl->SetRot(pos_msh->rot);
+			m_D3DWidget->AddRenderable(rw_mdl);
+		}
+	}
+
+	m_D3DWidget->ApplyRenderSource();
 }

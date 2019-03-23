@@ -4,6 +4,10 @@
 class IRenderer;
 class CScene;
 
+#include "../../utilities/maths.h"
+
+class CRwModel;
+
 class CQD3DWidget : public QWidget
 {
 	Q_OBJECT 
@@ -29,6 +33,10 @@ public:
 
 	virtual void InitRenderer();
 	virtual void OnFrame();
+
+	void AddRenderable(CRwModel* model);
+
+	void ApplyRenderSource();
 
 protected:
 	IRenderer* m_Renderer = nullptr;

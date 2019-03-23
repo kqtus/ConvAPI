@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _RWRS
+#define _RWRS
+
 #include <vector>
 #include "rwcore.h"
 
@@ -11,12 +13,14 @@ namespace rw
 
 		enum class EArchiveVer
 		{
+			_Unknown,
 			VER1,
 			VER2
 		};
 
 		enum class EColVer
 		{
+			_Unknown,
 			COLL,
 			COL2,
 			COL3
@@ -72,7 +76,7 @@ namespace rw
 			, public common::IBinWriteable
 		{
 			CONVERTIBLE_ENTITY
-				using THeadersVec = std::vector<archive_entry_header<version>*>;
+			using THeadersVec = std::vector<archive_entry_header<version>*>;
 		private:
 			TInStream m_InputStream;
 			uint32_t m_EntryCount;
@@ -87,17 +91,17 @@ namespace rw
 			bool Write(TOutStream& stream) override;
 			const THeadersVec& GetEntryHeaders() const;
 
-			bool GetFileStream(TInStream& stream, std::string file_name);
+			bool GetFileStream(TInStream& stream, std::string file_name) const;
 		};
 		
 		template<EArchiveVer version>
-		inline const std::vector<archive_entry_header<version>*>& archive<version>::GetEntryHeaders() const
+		inline inline const std::vector<archive_entry_header<version>*>& archive<version>::GetEntryHeaders() const
 		{
 			return m_EntryHeaders;
 		}
 		
 		template<EArchiveVer version>
-		bool archive_entry_header<version>::Read(TInStream& stream)
+		inline bool archive_entry_header<version>::Read(TInStream& stream)
 		{
 			READ_VAR(stream, offset);
 			READ_VAR(stream, ver1.streaming_size);
@@ -107,7 +111,7 @@ namespace rw
 		}
 
 		template<EArchiveVer version>
-		bool archive_entry_header<version>::Write(TOutStream& stream)
+		inline bool archive_entry_header<version>::Write(TOutStream& stream)
 		{
 			WRITE_VAR(stream, offset);
 			WRITE_VAR(stream, ver1.streaming_size);
@@ -116,13 +120,13 @@ namespace rw
 		}
 
 		template<EArchiveVer version>
-		size_t archive_entry_header<version>::GetHeaderSize() const
+		inline size_t archive_entry_header<version>::GetHeaderSize() const
 		{
 			return sizeof(offset) + sizeof(ver1.streaming_size) + FILE_NAME_SIZE;
 		}
 
 		template<>
-		bool archive<EArchiveVer::VER1>::Read(TInStream& stream)
+		inline bool archive<EArchiveVer::VER1>::Read(TInStream& stream)
 		{
 			m_InputStream = stream;
 			
@@ -149,7 +153,7 @@ namespace rw
 		}
 
 		template<>
-		bool archive<EArchiveVer::VER1>::Write(TOutStream& stream)
+		inline bool archive<EArchiveVer::VER1>::Write(TOutStream& stream)
 		{
 			WRITE_ARR(stream, m_Label, 4);
 			WRITE_VAR(stream, m_EntryCount);
@@ -164,7 +168,7 @@ namespace rw
 		}
 
 		template<>
-		bool archive<EArchiveVer::VER2>::Read(TInStream& stream)
+		inline bool archive<EArchiveVer::VER2>::Read(TInStream& stream)
 		{
 			m_InputStream = stream;
 
@@ -183,7 +187,7 @@ namespace rw
 		}
 
 		template<>
-		bool archive<EArchiveVer::VER2>::Write(TOutStream& stream)
+		inline bool archive<EArchiveVer::VER2>::Write(TOutStream& stream)
 		{
 			WRITE_ARR(stream, m_Label, 4);
 			WRITE_VAR(stream, m_EntryCount);
@@ -198,7 +202,7 @@ namespace rw
 		}
 	
 		template<EArchiveVer version>
-		bool archive<version>::GetFileStream(TInStream& stream, std::string file_name)
+		inline bool archive<version>::GetFileStream(TInStream& stream, std::string file_name) const
 		{
 			for (auto& eh : m_EntryHeaders)
 			{
@@ -547,4 +551,5 @@ namespace rw
 	}
 }
 
-#include "rwrs_impl.h"
+#endif
+

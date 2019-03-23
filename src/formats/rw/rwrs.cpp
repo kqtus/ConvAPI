@@ -1,4 +1,4 @@
-#pragma once
+#include "rwrs.h"
 #include "../../utilities/string_tokenizer.h"
 
 namespace rw
@@ -768,4 +768,3 @@ namespace rw
 		#undef MAKE_STR_TO_ENUM_CASE
 	}
 }
-
